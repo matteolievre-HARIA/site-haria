@@ -1,0 +1,11 @@
+{
+  "name": "site-haria",
+  "version": "1.0.0",
+  "description": "Site Haria",
+  "scripts": {
+    "start": "live-server"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

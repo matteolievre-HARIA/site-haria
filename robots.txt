@@ -1,0 +1,11 @@
+# Robots.txt pour Haria
+# https://haria.fr/
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://haria.fr/sitemap.xml
+
+# Bloquer les dossiers non nécessaires pour le SEO
+Disallow: /node_modules/

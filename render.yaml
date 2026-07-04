@@ -26,3 +26,12 @@ services:
       - path: /images/*
         name: Cache-Control
         value: public, max-age=604800
+      - path: /*.css
+        name: Cache-Control
+        value: public, max-age=86400
+      - path: /*.js
+        name: Cache-Control
+        value: public, max-age=86400
+      - path: /*.png
+        name: Cache-Control
+        value: public, max-age=604800

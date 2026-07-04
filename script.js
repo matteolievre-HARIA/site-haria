@@ -81,11 +81,13 @@ function initFAQ() {
             faqItems.forEach(otherItem => {
                 if (otherItem !== item && otherItem.classList.contains('active')) {
                     otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
                 }
             });
-            
+
             // Toggle current item
-            item.classList.toggle('active');
+            const isOpen = item.classList.toggle('active');
+            question.setAttribute('aria-expanded', String(isOpen));
         });
     });
 }
@@ -227,9 +229,12 @@ function initTestimonialsSlider() {
     
     if (!track) return;
     
-    // Clone items for infinite scroll
-    const items = track.innerHTML;
-    track.innerHTML = items + items;
+    // Clone items for infinite scroll (clones cachés aux lecteurs d'écran)
+    Array.from(track.children).forEach(item => {
+        const clone = item.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        track.appendChild(clone);
+    });
     
     // Pause on hover
     track.addEventListener('mouseenter', () => {
@@ -280,7 +285,7 @@ function initChatDemo() {
         { type: 'user', text: 'Je cherche une solution pour augmenter les ventes sur mon site web.' },
         { type: 'bot', text: 'Génial, qu\'avez-vous déjà essayé jusqu\'à présent ?' },
         { type: 'user', text: 'J\'ai investi beaucoup d\'argent dans la refonte de mon site, mais sans réels résultats.' },
-        { type: 'bot', text: 'Je comprends. Dans ce cas, un chatbot IA pourrait clairement être la solution à votre problème. Il vous permettrait de réaugmenter les ventes sur votre site web.' }
+        { type: 'bot', text: 'Je comprends. Dans ce cas, un chatbot IA pourrait clairement être la solution à votre problème. Il vous permettrait d\'augmenter les ventes de votre site web.' }
     ];
     
     let messageIndex = 0;
@@ -321,16 +326,16 @@ function initChatDemo() {
         
         // Afficher l'indicateur de typing
         const typingIndicator = showTypingIndicator(currentMessage.type);
-        
-        // Après 3 secondes, remplacer le typing par le message
+
+        // Après 1,2 seconde, remplacer le typing par le message
         setTimeout(() => {
             typingIndicator.remove();
             addMessage(currentMessage.type, currentMessage.text);
             messageIndex++;
-            
+
             // Passer au message suivant après une courte pause
-            setTimeout(playNextMessage, 1000);
-        }, 3000);
+            setTimeout(playNextMessage, 800);
+        }, 1200);
     }
     
     // Démarrer l'animation après 2 secondes

@@ -1,0 +1,36 @@
+# Haria
+
+> Haria est un widget chatbot IA en français pour sites web, conçu pour convertir les visiteurs en clients. Il répond aux questions des visiteurs 24h/24, traite leurs objections et capture des leads qualifiés. Résultat moyen constaté chez les clients : +40 % de conversions. Installation en 5 minutes via une ligne de code, compatible avec tous les sites (WordPress, Shopify, Webflow, sites sur mesure).
+
+Points clés :
+- Chatbot IA entraîné sur le contenu et les informations de chaque entreprise cliente (configuration réalisée par l'équipe Haria en 48-72h)
+- Capture de leads intelligente : le chatbot détecte le bon moment pour demander les coordonnées du visiteur
+- Conversations illimitées, analytics détaillés, optimisation continue par un expert dédié
+- 100 % conforme RGPD : serveurs en Europe, données hébergées en France, consentement demandé aux visiteurs, aucune revente de données
+- Note moyenne : 4,7/5 par plus de 80 entreprises
+
+## Tarifs
+
+- Mensuel : 99 €/mois + 500 € de frais d'installation (sans engagement, annulable à tout moment)
+- Annuel : 99 €/mois facturé à l'année, frais d'installation (500 €) offerts — formule la plus populaire
+- Max (grandes organisations) : sur devis — chatbots illimités, white-label, intégrations sur mesure, SLA garanti, account manager dédié
+- Garantie satisfait ou remboursé 7 jours sur toutes les formules
+
+## Résultats clients
+
+- Sixt Occasion (vente de voitures d'occasion) : +150 leads dès le premier mois, +37 % de taux de conversion
+- Edabos (e-commerce) : 2,3× plus de rendez-vous dès le premier mois, +130 % de taux de conversion
+- Synergie (installation solaire) : 2× plus de demandes de devis, +95 % de taux de conversion
+
+## Questions fréquentes
+
+- Compatibilité : fonctionne sur tous les sites web via une simple ligne de code JavaScript (WordPress, Shopify, Webflow, etc.)
+- Apparence : entièrement personnalisable à la charte graphique du client, configuration prise en charge par l'équipe Haria
+- Si l'IA ne sait pas répondre : elle propose de prendre les coordonnées du visiteur pour un rappel humain, ou redirige vers un live chat
+- Engagement : aucun, annulation en un clic
+
+## Contact
+
+- Site : https://haria.fr/
+- LinkedIn : https://www.linkedin.com/company/haria-funnel/
+- Démo gratuite de 15 minutes : https://calendly.com/matteolievre/15min

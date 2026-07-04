@@ -1,11 +1,57 @@
 # Robots.txt pour Haria
 # https://haria.fr/
 
+# --- Moteurs de recherche classiques ---
 User-agent: *
 Allow: /
+Disallow: /node_modules/
+
+# --- Crawlers IA : explicitement autorisés ---
+# OpenAI (entraînement + recherche ChatGPT + navigation utilisateur)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic (Claude)
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google (Gemini / AI Overviews)
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+# Mistral AI
+User-agent: MistralAI-User
+Allow: /
+
+# --- Ressource pour les IA ---
+# Résumé structuré du site : https://haria.fr/llms.txt
 
 # Sitemap
 Sitemap: https://haria.fr/sitemap.xml
-
-# Bloquer les dossiers non nécessaires pour le SEO
-Disallow: /node_modules/

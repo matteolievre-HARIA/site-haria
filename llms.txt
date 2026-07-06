@@ -29,6 +29,12 @@ Points clés :
 - Si l'IA ne sait pas répondre : elle propose de prendre les coordonnées du visiteur pour un rappel humain, ou redirige vers un live chat
 - Engagement : aucun, annulation en un clic
 
+## Guides
+
+- Combien coûte un chatbot IA pour un site web en 2026 : https://haria-chatbot.com/combien-coute-un-chatbot-ia.html
+- Chatbot IA pour e-commerce (guide + cas client Edabos) : https://haria-chatbot.com/chatbot-ia-ecommerce.html
+- Comparatif Haria vs Intercom vs Crisp : https://haria-chatbot.com/haria-vs-intercom-vs-crisp.html
+
 ## Contact
 
 - Site : https://haria-chatbot.com/

@@ -1775,3 +1775,96 @@ h1, h2, h3, h4, h5, h6 {
 .testimonial-author .testimonial-role {
     display: block;
 }
+
+/* ============================================
+   Pages guides / articles (GEO)
+   ============================================ */
+.article-main .container {
+    max-width: 800px;
+}
+
+.article-breadcrumb {
+    font-size: 0.8125rem;
+    color: var(--gray-500);
+    margin-bottom: 24px;
+}
+
+.article-breadcrumb a {
+    color: var(--primary);
+}
+
+.article-tldr {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.06) 0%, rgba(168, 85, 247, 0.06) 100%);
+    border-left: 4px solid var(--primary);
+    border-radius: var(--radius-md);
+    padding: 20px 24px;
+    margin: 24px 0 32px;
+}
+
+.article-tldr p {
+    margin-bottom: 0;
+    color: var(--gray-700);
+}
+
+.table-scroll {
+    overflow-x: auto;
+    margin: 24px 0;
+}
+
+.article-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+    min-width: 560px;
+}
+
+.article-table th,
+.article-table td {
+    border: 1px solid var(--gray-200);
+    padding: 12px 14px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.article-table th {
+    background: var(--gray-50);
+    color: var(--gray-900);
+    font-weight: 600;
+}
+
+.article-table .col-haria {
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.article-cta {
+    background: var(--gradient);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.article-cta p {
+    color: var(--white);
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.article-cta .btn {
+    background: var(--white);
+    color: var(--primary);
+}
+
+.article-main h3 {
+    font-size: 1.0625rem;
+    margin: 24px 0 8px;
+}
+
+.article-sources {
+    font-size: 0.8125rem;
+    color: var(--gray-500);
+    border-top: 1px solid var(--gray-200);
+    padding-top: 20px;
+    margin-top: 40px;
+}

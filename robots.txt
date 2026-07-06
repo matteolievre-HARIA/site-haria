@@ -1,5 +1,5 @@
 # Robots.txt pour Haria
-# https://haria.fr/
+# https://haria-chatbot.com/
 
 # --- Moteurs de recherche classiques ---
 User-agent: *
@@ -51,7 +51,7 @@ User-agent: MistralAI-User
 Allow: /
 
 # --- Ressource pour les IA ---
-# Résumé structuré du site : https://haria.fr/llms.txt
+# Résumé structuré du site : https://haria-chatbot.com/llms.txt
 
 # Sitemap
-Sitemap: https://haria.fr/sitemap.xml
+Sitemap: https://haria-chatbot.com/sitemap.xml

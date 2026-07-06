@@ -199,6 +199,11 @@ function initMobileMenu() {
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
+            // Liens externes (ex: LinkedIn en attente d'URL) : ne pas détourner
+            if (this.target === '_blank') {
+                e.preventDefault();
+                return;
+            }
             const href = this.getAttribute('href');
             if (href === '#') {
                 e.preventDefault();

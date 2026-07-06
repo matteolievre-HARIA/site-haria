@@ -1753,3 +1753,25 @@ h1, h2, h3, h4, h5, h6 {
 .stat-source:hover {
     color: var(--primary);
 }
+
+/* ============================================
+   Lien LinkedIn des témoignages
+   ============================================ */
+.testimonial-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 6px;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: #0a66c2;
+}
+
+.testimonial-linkedin:hover {
+    text-decoration: underline;
+    color: #004182;
+}
+
+.testimonial-author .testimonial-role {
+    display: block;
+}

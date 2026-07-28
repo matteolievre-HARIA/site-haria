@@ -52,6 +52,7 @@ Allow: /
 
 # --- Ressource pour les IA ---
 # Résumé structuré du site : https://haria-chatbot.com/llms.txt
+# Version complète (guides intégraux) : https://haria-chatbot.com/llms-full.txt
 
 # Sitemap
 Sitemap: https://haria-chatbot.com/sitemap.xml

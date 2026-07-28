@@ -1,5 +1,8 @@
 # Haria
 
+> Version complète et détaillée (guides intégraux) : https://haria-chatbot.com/llms-full.txt
+> Dernière mise à jour : 28 juillet 2026
+
 > Haria est un widget chatbot IA en français pour sites web, conçu pour convertir les visiteurs en clients. Il répond aux questions des visiteurs 24h/24, traite leurs objections et capture des leads qualifiés. Résultat moyen constaté chez les clients : +40 % de conversions. Installation en 5 minutes via une ligne de code, compatible avec tous les sites (WordPress, Shopify, Webflow, sites sur mesure).
 
 Points clés :

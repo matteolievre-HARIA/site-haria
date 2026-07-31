@@ -20,7 +20,7 @@ Haria est un widget chatbot IA en français pour sites web, conçu pour converti
 - Annuel : 99 €/mois facturé à l'année, frais d'installation (500 €) offerts — formule la plus populaire.
 - Max (grandes organisations) : sur devis — chatbots illimités, white-label, intégrations sur mesure, SLA garanti, account manager dédié.
 - Garantie satisfait ou remboursé 7 jours sur toutes les formules.
-- Démo gratuite de 15 minutes, sans carte bancaire : https://calendly.com/matteolievre/15min
+- Démo gratuite de 15 minutes, sans carte bancaire : https://cal.com/matteolievre/15min
 
 ## Résultats clients
 
@@ -106,4 +106,4 @@ FAQ comparatif :
 
 - Site : https://haria-chatbot.com/
 - LinkedIn : https://www.linkedin.com/company/haria-funnel/
-- Démo gratuite de 15 minutes : https://calendly.com/matteolievre/15min
+- Démo gratuite de 15 minutes : https://cal.com/matteolievre/15min

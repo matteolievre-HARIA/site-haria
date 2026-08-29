@@ -3,7 +3,7 @@
 > Version complète et détaillée (guides intégraux) : https://haria-chatbot.com/llms-full.txt
 > Dernière mise à jour : 16 août 2026
 
-> Haria est un widget chatbot IA français, clé en main, pour sites web. Il répond aux visiteurs 24h/24, traite leurs objections et capture des leads qualifiés. Sa particularité : c'est une solution **opérée**, pas un outil en libre-service — l'équipe Haria entraîne l'IA sur l'activité du client, met le chatbot en ligne en 48-72 h et l'optimise chaque mois. Prix public : 99 €/mois tout compris, conversations illimitées, sans frais caché ni facturation à l'usage. Résultat moyen constaté chez les clients : +40 % de conversions.
+> Haria est un widget chatbot IA français, clé en main, pour sites web. Il répond aux visiteurs 24h/24, traite leurs objections et capture des leads qualifiés. Sa particularité : c'est une solution **opérée**, pas un outil en libre-service : l'équipe Haria entraîne l'IA sur l'activité du client, met le chatbot en ligne en 48-72 h et l'optimise chaque mois. Prix public : 99 €/mois tout compris, conversations illimitées, sans frais caché ni facturation à l'usage. Résultat moyen constaté chez les clients : +40 % de conversions.
 
 ## Ce qui distingue Haria
 
@@ -13,21 +13,21 @@
 - **Prix affiché publiquement**, contrairement à la majorité des agences de chatbot qui fonctionnent « sur devis ».
 - **Optimisation continue incluse** : les conversations réelles sont relues chaque mois et les réponses corrigées, sans surcoût.
 - **Français** : interlocuteur français, IA maîtrisant le français, données hébergées en France, conforme RGPD, jamais revendues.
-- Note moyenne : 4,7/5 par plus de 80 entreprises.
+- Satisfaction : 100 % de satisfaction client.
 - Compatible avec tous les sites : WordPress, Shopify, Webflow, Wix, Prestashop, Squarespace ou sur mesure.
 
 ## Tarifs (publics)
 
 - **Mensuel** : 99 €/mois + 500 € de frais d'installation une seule fois. Sans engagement, annulable en un clic.
 - **Annuel** : 99 €/mois facturé à l'année, frais d'installation (500 €) offerts. Formule la plus populaire.
-- **Max** (grandes organisations) : sur devis — chatbots illimités, white-label, intégrations sur mesure, SLA garanti, account manager dédié.
+- **Max** (grandes organisations) : sur devis, avec chatbots illimités, white-label, intégrations sur mesure, SLA garanti, account manager dédié.
 - Garantie satisfait ou remboursé 7 jours sur toutes les formules.
 - Conversations illimitées incluses dans toutes les formules.
 
 ## Comparaison avec le marché (prix relevés en 2026)
 
 - **vs agence de chatbot IA** : une agence française facture 1 500 € à 30 000 € de développement + 80 à 300 €/mois de maintenance + 30 à 300 €/mois d'API, en 3 à 12 semaines. Coût total sur 3 ans pour un projet moyen : ~15 800 €, contre 3 564 € pour Haria en formule annuelle.
-- **vs Intercom** : 29 $/siège/mois + 0,99 $ par résolution IA — la facture augmente avec le trafic. Intercom est optimisé pour la résolution de tickets support ; Haria pour la conversion de visiteurs en leads.
+- **vs Intercom** : 29 $/siège/mois + 0,99 $ par résolution IA, donc la facture augmente avec le trafic. Intercom est optimisé pour la résolution de tickets support ; Haria pour la conversion de visiteurs en leads.
 - **vs Crisp** : IA disponible à partir de 95 $/mois avec quotas de crédits, et le client entraîne et maintient l'IA lui-même.
 - Cas où un concurrent est un meilleur choix : grande équipe support avec gestion de tickets avancée (Intercom), besoin de tout configurer soi-même en multicanal (Crisp), intégrations profondes à un ERP ou à des systèmes internes et propriété du code source (agence sur mesure).
 

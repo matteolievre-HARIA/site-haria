@@ -2163,3 +2163,284 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.75rem;
     }
 }
+
+/* ============================================
+   Corrections mobile & lisibilité (audit)
+   ============================================ */
+
+/* --- Contrastes (WCAG AA) --- */
+.stat-source {
+    font-size: 0.8125rem;
+    color: var(--gray-500);
+}
+
+.verified-text {
+    color: #047857;
+}
+
+.verified-badge {
+    border-color: #047857;
+}
+
+.transparency-note a,
+.guide-link,
+.hero-subtitle .highlight-text,
+.price-note-highlight,
+.article-main a,
+.footer-col a {
+    color: var(--primary-dark);
+}
+
+.footer-col a {
+    color: var(--gray-300);
+}
+
+/* --- Surlignage lisible sur fond coloré --- */
+.final-cta .highlight,
+.cta-title .highlight {
+    color: var(--white);
+}
+
+.final-cta .highlight::after,
+.cta-title .highlight::after {
+    background: rgba(255, 255, 255, 0.25);
+    height: 30%;
+}
+
+/* --- CTA intermédiaire (section problème) --- */
+.inline-cta {
+    margin-top: 48px;
+    text-align: center;
+}
+
+.inline-cta-text {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--gray-800);
+    margin-bottom: 18px;
+}
+
+.inline-cta-note {
+    display: block;
+    margin-top: 12px;
+    font-size: 0.8125rem;
+    color: var(--gray-500);
+}
+
+/* --- Widget de chat : accessibilité tactile + charte --- */
+#haria-widget-input {
+    font-size: 16px !important;
+}
+
+#haria-consent-cb {
+    width: 22px !important;
+    height: 22px !important;
+    min-width: 22px !important;
+    flex-shrink: 0;
+    accent-color: var(--primary);
+}
+
+#haria-widget-consent label {
+    align-items: center;
+    gap: 10px;
+    line-height: 1.45;
+}
+
+#haria-widget-btn {
+    background: var(--gradient) !important;
+    box-shadow: 0 10px 26px -8px rgba(99, 102, 241, 0.6) !important;
+}
+
+#haria-widget-header {
+    background: var(--gradient) !important;
+}
+
+#haria-widget-teaser {
+    font-weight: 600;
+}
+
+/* --- Menu mobile ouvert : plus de surcouches par-dessus --- */
+body.menu-open #haria-widget-btn,
+body.menu-open #haria-widget-teaser,
+body.menu-open cal-floating-button,
+body.menu-open .navbar .btn {
+    display: none !important;
+}
+
+@media (max-width: 1024px) {
+    /* --- Titre du hero : pas de retour à la ligne forcé --- */
+    .br-desktop {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    /* --- Badges de réassurance en 2x2 --- */
+    .trust-badges {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px 10px;
+        margin-bottom: 40px;
+    }
+
+    .trust-badge {
+        justify-content: center;
+        font-size: 0.875rem;
+        text-align: left;
+    }
+
+    /* --- Statistiques : 3 chiffres au lieu de 3 écrans --- */
+    .stats-grid {
+        gap: 14px;
+    }
+
+    .stat-card {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-areas: "icon number" "icon label" "icon source";
+        align-items: center;
+        gap: 2px 16px;
+        padding: 20px;
+        text-align: left;
+    }
+
+    .stat-card .stat-icon {
+        grid-area: icon;
+        justify-content: center;
+        margin-bottom: 0;
+    }
+
+    .stat-card .stat-number {
+        grid-area: number;
+        font-size: 1.875rem;
+    }
+
+    .stat-card .stat-label {
+        grid-area: label;
+        font-size: 0.9375rem;
+    }
+
+    .stat-card .stat-source {
+        grid-area: source;
+        margin-top: 6px;
+        padding-top: 0;
+    }
+
+    /* --- Maquette du hero : moins de vide --- */
+    .browser-content {
+        padding: 16px;
+        min-height: 340px;
+    }
+
+    .demo-mockup {
+        transform: none;
+    }
+
+    /* --- Cartes cas clients : plus de vide en bas --- */
+    .case-card {
+        padding: 24px 20px;
+    }
+
+    .case-stats {
+        margin-bottom: 0;
+        gap: 12px;
+    }
+
+    /* --- Cibles tactiles --- */
+    .footer-col a,
+    .transparency-note a,
+    .guide-link {
+        display: inline-block;
+        padding: 6px 0;
+    }
+
+    .mobile-menu-btn {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    .testimonial-linkedin {
+        min-height: 40px;
+        align-items: center;
+        padding: 8px 0;
+    }
+
+    .stat-card .stat-source {
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+    }
+
+    .footer-col a {
+        padding: 10px 0;
+    }
+
+    /* --- Densité générale --- */
+    .section-header {
+        margin-bottom: 36px;
+    }
+}
+
+/* ============================================
+   Témoignages : marquee sur desktop,
+   carrousel lisible au doigt sur mobile
+   ============================================ */
+.testimonials-hint {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .testimonials-hint {
+        display: block;
+        text-align: center;
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: var(--gray-500);
+        margin-top: -12px;
+        margin-bottom: 16px;
+    }
+
+    .testimonials-slider {
+        margin-top: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        mask-image: none;
+        -webkit-mask-image: none;
+        padding: 4px 20px 8px;
+        scrollbar-width: none;
+    }
+
+    .testimonials-slider::-webkit-scrollbar {
+        display: none;
+    }
+
+    .testimonials-track {
+        animation: none !important;
+        width: max-content;
+        gap: 14px;
+    }
+
+    .testimonial-card {
+        width: min(84vw, 330px);
+        scroll-snap-align: center;
+        padding: 24px 20px;
+    }
+
+    .testimonial-text {
+        font-size: 0.9375rem;
+    }
+}
+
+/* Arrivée directe sur une ancre (ex. /#tarifs depuis une pub) :
+   le titre ne doit pas passer sous la barre fixe */
+section[id],
+[id="demo"] {
+    scroll-margin-top: 95px;
+}

@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initTestimonialsSlider();
     initChatDemo();
+    initLiveDemoButton();
+    initWidgetPolish();
 });
 
 /* ============================================
@@ -126,8 +128,7 @@ function initMobileMenu() {
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px);
+            background: var(--white);
             z-index: 999;
             opacity: 0;
             visibility: hidden;
@@ -145,19 +146,27 @@ function initMobileMenu() {
             align-items: center;
             justify-content: center;
             height: 100%;
-            gap: 24px;
+            gap: 8px;
             padding: 24px;
         }
         
         .mobile-link {
-            font-size: 1.5rem;
+            font-size: 1.375rem;
             font-weight: 600;
             color: var(--gray-800);
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
             transition: color 0.2s ease;
         }
         
         .mobile-link:hover {
             color: var(--primary);
+        }
+
+        .mobile-menu-content .btn {
+            margin-top: 20px;
         }
         
         .mobile-menu-btn.active span:nth-child(1) {
@@ -179,6 +188,7 @@ function initMobileMenu() {
         isOpen = !isOpen;
         menuBtn.classList.toggle('active');
         mobileMenu.classList.toggle('active');
+        document.body.classList.toggle('menu-open', isOpen);
         document.body.style.overflow = isOpen ? 'hidden' : '';
     });
     
@@ -188,6 +198,7 @@ function initMobileMenu() {
             isOpen = false;
             menuBtn.classList.remove('active');
             mobileMenu.classList.remove('active');
+            document.body.classList.remove('menu-open');
             document.body.style.overflow = '';
         });
     });
@@ -233,13 +244,19 @@ function initTestimonialsSlider() {
     const track = document.querySelector('.testimonials-track');
     
     if (!track) return;
-    
-    // Clone items for infinite scroll (clones cachés aux lecteurs d'écran)
-    Array.from(track.children).forEach(item => {
-        const clone = item.cloneNode(true);
-        clone.setAttribute('aria-hidden', 'true');
-        track.appendChild(clone);
-    });
+
+    // Sur mobile le bandeau ne défile pas tout seul : on le fait glisser au doigt.
+    // Les clones ne servent qu'au défilement infini du desktop.
+    const marquee = window.matchMedia('(min-width: 769px)').matches;
+
+    if (marquee) {
+        // Clone items for infinite scroll (clones cachés aux lecteurs d'écran)
+        Array.from(track.children).forEach(item => {
+            const clone = item.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
+            track.appendChild(clone);
+        });
+    }
     
     // Pause on hover
     track.addEventListener('mouseenter', () => {
@@ -438,4 +455,74 @@ function throttle(func, limit) {
             setTimeout(() => inThrottle = false, limit);
         }
     };
+}
+
+
+/* ============================================
+   Bouton « Tester le chatbot en direct »
+   ============================================ */
+function initLiveDemoButton() {
+    const btn = document.getElementById('hero-live-demo');
+
+    if (!btn) return;
+
+    btn.addEventListener('click', (e) => {
+        const widgetBtn = document.getElementById('haria-widget-btn');
+
+        // Tant que le widget n'est pas chargé, on garde le repli vers la maquette (#demo)
+        if (!widgetBtn) return;
+
+        e.preventDefault();
+
+        const panel = document.getElementById('haria-widget-panel');
+        if (!panel || !panel.classList.contains('open')) widgetBtn.click();
+    });
+}
+
+/* ============================================
+   Retouches du widget de chat (chargé à distance)
+   Les corrections définitives sont à faire dans widget.js ;
+   ici on ne fait que rattraper l'affichage côté site.
+   ============================================ */
+function initWidgetPolish() {
+    const TEASER_DELAY = 9000;
+    let teaserHandled = false;
+
+    const polish = () => {
+        const input = document.getElementById('haria-widget-input');
+        if (input && input.placeholder && input.placeholder.startsWith('Ecrivez')) {
+            input.placeholder = 'Écrivez votre message…';
+        }
+
+        const teaser = document.getElementById('haria-widget-teaser');
+        if (teaser && !teaserHandled) {
+            teaserHandled = true;
+
+            if (sessionStorage.getItem('haria-teaser-vu')) {
+                teaser.remove();
+                return;
+            }
+
+            const label = teaser.querySelector('span');
+            if (label && label.textContent.includes('Test le chatbot')) {
+                label.textContent = 'Une question ? Testez le chatbot';
+            }
+
+            // Elle ne doit pas rester en travers du contenu pendant toute la visite
+            setTimeout(() => {
+                teaser.style.transition = 'opacity 300ms ease';
+                teaser.style.opacity = '0';
+                setTimeout(() => teaser.remove(), 350);
+            }, TEASER_DELAY);
+
+            teaser.addEventListener('click', () => sessionStorage.setItem('haria-teaser-vu', '1'));
+        }
+    };
+
+    polish();
+
+    // Le widget est injecté après coup : on surveille son arrivée, puis on s'arrête.
+    const observer = new MutationObserver(polish);
+    observer.observe(document.body, { childList: true, subtree: true });
+    setTimeout(() => observer.disconnect(), 20000);
 }

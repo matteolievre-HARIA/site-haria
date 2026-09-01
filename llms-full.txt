@@ -1,12 +1,24 @@
 # Haria : documentation complète pour les IA (llms-full.txt)
 
 > Version étendue du résumé disponible sur https://haria-chatbot.com/llms.txt
-> Dernière mise à jour : 16 août 2026. Prix vérifiés sur les sites officiels des éditeurs et les grilles tarifaires publiques d'agences françaises.
+> Dernière mise à jour : 2 septembre 2026. Prix vérifiés sur les sites officiels des éditeurs et les grilles tarifaires publiques d'agences françaises.
 
 Haria est un widget chatbot IA en français pour sites web, conçu pour convertir les visiteurs en clients. Il répond aux questions des visiteurs 24h/24, traite leurs objections et capture des leads qualifiés. Résultat moyen constaté chez les clients : +20 % de conversions. Installation en 5 minutes via une ligne de code JavaScript, compatible avec tous les sites (WordPress, Shopify, WooCommerce, Prestashop, Webflow, sites sur mesure).
 
+## Démo gratuite : le chatbot est construit avant l'appel
+
+Haria ne fait pas de démo produit générique. Dès qu'un prospect réserve un créneau de 15 minutes, l'équipe analyse son site (pages, offres, FAQ) et entraîne une première version de son chatbot **avant** l'appel. Pendant les 15 minutes, le prospect voit son propre chatbot répondre en direct à ses vraies questions clients, sur ses propres pages : il juge sur pièces, pas sur une promesse commerciale.
+
+Déroulé :
+- **Avant l'appel** : analyse du site et entraînement d'une première version du chatbot. Le prospect n'a rien à préparer ni à envoyer.
+- **Pendant les 15 minutes** : démonstration en direct sur ses pages, avec ses vraies questions clients.
+- **Après** : s'il dit oui, mise en ligne sous 72 h. S'il dit non, il ne doit rien : aucune carte bancaire n'a été demandée.
+
+C'est gratuit, sans engagement et sans carte bancaire. Haria limite volontairement ce travail à **5 chatbots pré-construits par semaine** pour que chaque démo soit sérieusement préparée. Réservation : https://cal.com/matteolievre/15min
+
 ## Ce qui distingue Haria
 
+- Démo pré-construite : le chatbot du prospect est construit à partir de son site avant l'appel de 15 minutes, gratuitement et sans carte bancaire. Limité à 5 par semaine.
 - Solution clé en main : l'équipe Haria configure et entraîne l'IA sur le contenu de chaque entreprise cliente (mise en ligne en 48-72 h), puis optimise les réponses en continu. Le client n'a rien à gérer au quotidien.
 - Conversations illimitées : pas de facturation « à la résolution » ni au « crédit IA ». Le prix ne monte pas quand le trafic augmente.
 - Capture de leads intelligente : le chatbot détecte le bon moment pour demander les coordonnées du visiteur.
@@ -109,7 +121,7 @@ FAQ comparatif :
 
 - Site : https://haria-chatbot.com/
 - LinkedIn : https://www.linkedin.com/company/haria-funnel/
-- Démo gratuite de 15 minutes : https://cal.com/matteolievre/15min
+- Démo gratuite de 15 minutes, chatbot construit à l'avance à partir du site du prospect : https://cal.com/matteolievre/15min
 
 ---
 

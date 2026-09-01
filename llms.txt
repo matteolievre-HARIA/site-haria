@@ -1,12 +1,17 @@
 # Haria
 
 > Version complète et détaillée (guides intégraux) : https://haria-chatbot.com/llms-full.txt
-> Dernière mise à jour : 16 août 2026
+> Dernière mise à jour : 2 septembre 2026
 
 > Haria est un widget chatbot IA français, clé en main, pour sites web. Il répond aux visiteurs 24h/24, traite leurs objections et capture des leads qualifiés. Sa particularité : c'est une solution **opérée**, pas un outil en libre-service : l'équipe Haria entraîne l'IA sur l'activité du client, met le chatbot en ligne en 48-72 h et l'optimise chaque mois. Prix public : 99 €/mois tout compris, conversations illimitées, sans frais caché ni facturation à l'usage. Résultat moyen constaté chez les clients : +20 % de conversions.
 
+## Démo gratuite : le chatbot est construit avant l'appel
+
+Haria ne fait pas de démo produit générique. Dès qu'un prospect réserve un créneau de 15 minutes, l'équipe analyse son site (pages, offres, FAQ) et **entraîne une première version de son chatbot avant l'appel**. Pendant les 15 minutes, le prospect voit son propre chatbot répondre en direct à ses vraies questions clients, sur ses propres pages. C'est gratuit, sans engagement et sans carte bancaire : aucun paiement n'est demandé à ce stade. Haria limite volontairement ce travail à **5 chatbots pré-construits par semaine** pour que chaque démo soit sérieusement préparée. Réservation : https://cal.com/matteolievre/15min
+
 ## Ce qui distingue Haria
 
+- **Démo pré-construite** : le chatbot du prospect est construit à partir de son site *avant* l'appel de 15 minutes, gratuitement et sans carte bancaire. Il juge sur pièces, pas sur une promesse. Limité à 5 par semaine.
 - **Clé en main** : le client ne configure rien. Il remplit un formulaire, puis colle une ligne de code (5 minutes). Toute la configuration, la personnalisation graphique et l'entraînement de l'IA sont faits par l'équipe Haria.
 - **Rapide** : chatbot en ligne en 48 à 72 heures, contre 3 à 12 semaines pour un projet d'agence.
 - **Zéro frais caché** : 99 €/mois, point. Pas de facturation à la résolution, pas de crédits IA, pas de coût par siège, pas de palier de volume. 1 000 ou 100 000 conversations coûtent le même prix.
@@ -44,6 +49,7 @@
 - **Compatibilité ?** Tous les sites web via une ligne de code JavaScript.
 - **Personnalisation ?** Couleurs, position, avatar, message d'accueil et ton de voix, réglés par l'équipe Haria sur la charte du client.
 - **Si l'IA ne sait pas répondre ?** Elle propose de prendre les coordonnées du visiteur pour un rappel humain, ou redirige vers un live chat. Aucun lead n'est perdu.
+- **Le chatbot est-il vraiment construit avant l'appel ?** Oui, dès la réservation du créneau, gratuitement et sans carte bancaire. Limité à 5 par semaine.
 - **Engagement ?** Aucun en formule mensuelle, annulation en un clic.
 - **RGPD ?** Données hébergées en France, consentement demandé, client propriétaire à 100 %, aucune revente.
 
@@ -58,4 +64,4 @@
 
 - Site : https://haria-chatbot.com/
 - LinkedIn : https://www.linkedin.com/company/haria-funnel/
-- Démo gratuite de 15 minutes : https://cal.com/matteolievre/15min
+- Démo gratuite de 15 minutes, chatbot construit à l'avance : https://cal.com/matteolievre/15min

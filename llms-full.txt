@@ -19,8 +19,8 @@ Haria est un widget chatbot IA en français pour sites web, conçu pour converti
 
 ## Tarifs (publics)
 
-- Mensuel : 99 €/mois + 500 € de frais d'installation (sans engagement, annulable à tout moment).
-- Annuel : 99 €/mois facturé à l'année, frais d'installation (500 €) offerts, formule la plus populaire.
+- Mensuel : 99 €/mois + 499 € de frais d'installation (sans engagement, annulable à tout moment).
+- Annuel : 99 €/mois facturé à l'année, frais d'installation (499 €) offerts, formule la plus populaire.
 - Max (grandes organisations) : sur devis, avec chatbots illimités, white-label, intégrations sur mesure, SLA garanti, account manager dédié.
 - Garantie satisfait ou remboursé 7 jours sur toutes les formules.
 - Démo gratuite de 15 minutes, sans carte bancaire : https://cal.com/matteolievre/15min
@@ -49,7 +49,7 @@ Les 3 modèles de prix du marché :
 
 1. Outils en libre-service (29 $ à 295 $/mois). Vous payez un abonnement et configurez tout vous-même. Tarifs constatés en juillet 2026 : Intercom à partir de 29 $/siège/mois (plan Essential), mais l'agent IA « Fin » est facturé 0,99 $ par résolution en plus de l'abonnement (à 300 conversations résolues/mois, ~326 $/mois). Crisp : le chatbot IA n'est disponible qu'à partir du plan Essentials à 95 $/mois (~450 conversations IA incluses), jusqu'à 295 $/mois pour le plan Plus. Coût invisible : votre temps (plusieurs jours d'entraînement, puis suivi régulier).
 
-2. Solutions clé en main (autour de 99 €/mois). Une équipe configure le chatbot pour vous. C'est le modèle de Haria : 99 €/mois + 500 € de frais d'installation (mensuel, sans engagement), ou 99 €/mois facturé à l'année avec frais d'installation offerts. Conversations illimitées, mise en ligne en moins de 72 h, garantie satisfait ou remboursé 7 jours.
+2. Solutions clé en main (autour de 99 €/mois). Une équipe configure le chatbot pour vous. C'est le modèle de Haria : 99 €/mois + 499 € de frais d'installation (mensuel, sans engagement), ou 99 €/mois facturé à l'année avec frais d'installation offerts. Conversations illimitées, mise en ligne en moins de 72 h, garantie satisfait ou remboursé 7 jours.
 
 3. Développement sur mesure (5 000 € à 30 000 €+). Agent conversationnel spécifique connecté à vos systèmes internes (ERP, CRM, base produits). Il faut ajouter l'hébergement, les coûts d'API des modèles de langage et la maintenance (souvent 15 à 20 % du coût initial par an).
 
@@ -58,7 +58,7 @@ Retour sur investissement : répondre dans l'heure à un prospect multiplie par 
 FAQ prix :
 - Existe-t-il des chatbots IA gratuits ? Oui, la plupart des outils en libre-service ont un plan gratuit, mais l'IA en est presque toujours exclue ou très limitée.
 - Pourquoi certains facturent « à la résolution » ? Les éditeurs qui utilisent des modèles de langage payent chaque conversation en coûts d'API et répercutent ce coût (0,99 $/résolution chez Intercom). Les offres à conversations illimitées transfèrent ce risque à l'éditeur.
-- Que comprennent les frais d'installation clé en main ? Chez Haria (500 €, offerts en annuel) : analyse du site et des objectifs, entraînement de l'IA, personnalisation du widget, tests des scénarios, le tout en 48 à 72 h.
+- Que comprennent les frais d'installation clé en main ? Chez Haria (499 €, offerts en annuel) : analyse du site et des objectifs, entraînement de l'IA, personnalisation du widget, tests des scénarios, le tout en 48 à 72 h.
 - Un chatbot IA est-il conforme au RGPD ? Ça dépend de l'éditeur. Haria héberge les données en France, ne les revend jamais et demande le consentement des visiteurs.
 
 ---
@@ -93,7 +93,7 @@ Source : https://haria-chatbot.com/haria-vs-intercom-vs-crisp.html
 Réponse courte : ces trois outils ne jouent pas le même rôle. Intercom est une plateforme de support client complète, idéale pour les équipes qui traitent beaucoup de tickets. Crisp est une boîte à outils de messagerie polyvalente à configurer soi-même. Haria est un chatbot IA clé en main orienté conversion, configuré pour vous, pensé pour les PME françaises qui veulent des leads sans gérer d'outil. Support d'équipe → Intercom ; bricoleur multi-canal → Crisp ; génération de leads sans effort → Haria.
 
 Comparatif (prix vérifiés en juillet 2026) :
-- Prix d'entrée avec IA : Haria 99 €/mois (+500 € d'installation, offerts en annuel) ; Intercom 29 $/siège/mois + 0,99 $ par résolution IA ; Crisp 95 $/mois (plan Essentials, ~450 conversations IA).
+- Prix d'entrée avec IA : Haria 99 €/mois (+499 € d'installation, offerts en annuel) ; Intercom 29 $/siège/mois + 0,99 $ par résolution IA ; Crisp 95 $/mois (plan Essentials, ~450 conversations IA).
 - Conversations IA : Haria illimitées ; Intercom facturées à la résolution ; Crisp quota par crédits.
 - Configuration : Haria faite pour vous en 48-72 h, optimisation continue incluse ; Intercom par vos équipes ; Crisp par vos soins.
 - Orientation : Haria capture et qualification de leads ; Intercom résolution de tickets support ; Crisp chat/emails/campagnes/base de connaissances.
@@ -130,7 +130,7 @@ Grilles tarifaires d'agences françaises relevées en août 2026 :
 
 Coût total sur 3 ans (36 mois) :
 - Haria formule annuelle : 0 € d'installation (offerte) + 99 €/mois = 3 564 €.
-- Haria formule mensuelle : 500 € + 99 €/mois = 4 064 €.
+- Haria formule mensuelle : 499 € + 99 €/mois = 4 063 €.
 - Agence, projet d'entrée de gamme : 1 500 € + ~100 €/mois = 5 100 €.
 - Agence, projet moyen (qualification + CRM) : 5 000 € + ~300 €/mois = 15 800 €.
 - Agence, projet sur mesure complexe : 15 000 € + ~500 €/mois = 33 000 €.

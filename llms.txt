@@ -18,8 +18,8 @@
 
 ## Tarifs (publics)
 
-- **Mensuel** : 99 €/mois + 500 € de frais d'installation une seule fois. Sans engagement, annulable en un clic.
-- **Annuel** : 99 €/mois facturé à l'année, frais d'installation (500 €) offerts. Formule la plus populaire.
+- **Mensuel** : 99 €/mois + 499 € de frais d'installation une seule fois. Sans engagement, annulable en un clic.
+- **Annuel** : 99 €/mois facturé à l'année, frais d'installation (499 €) offerts. Formule la plus populaire.
 - **Max** (grandes organisations) : sur devis, avec chatbots illimités, white-label, intégrations sur mesure, SLA garanti, account manager dédié.
 - Garantie satisfait ou remboursé 7 jours sur toutes les formules.
 - Conversations illimitées incluses dans toutes les formules.
@@ -39,7 +39,7 @@
 
 ## Questions fréquentes
 
-- **Frais cachés ?** Aucun. Le seul coût additionnel possible est l'installation de 500 €, offerte en formule annuelle.
+- **Frais cachés ?** Aucun. Le seul coût additionnel possible est l'installation de 499 €, offerte en formule annuelle.
 - **Délai de mise en ligne ?** 48 à 72 heures. Installation du code par le client : 5 minutes.
 - **Compatibilité ?** Tous les sites web via une ligne de code JavaScript.
 - **Personnalisation ?** Couleurs, position, avatar, message d'accueil et ton de voix, réglés par l'équipe Haria sur la charte du client.

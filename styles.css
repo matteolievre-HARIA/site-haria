@@ -2450,12 +2450,12 @@ section[id],
    ============================================ */
 .thanks-body {
     min-height: 100vh;
-    background: linear-gradient(180deg, #f6f3ff 0%, #efeaff 55%, #f7effb 100%);
+    background: linear-gradient(180deg, #f8f5ff 0%, #f3eeff 55%, #fbf2f8 100%);
     position: relative;
     overflow-x: hidden;
 }
 
-/* Dégradé « mesh » : quelques taches de couleur floutées derrière la carte */
+/* Dégradé « mesh » pastel : taches de couleur floutées derrière la carte */
 .thanks-body::before {
     content: '';
     position: fixed;
@@ -2463,12 +2463,12 @@ section[id],
     z-index: -1;
     pointer-events: none;
     background:
-        radial-gradient(680px 520px at 16% 10%, rgba(99, 102, 241, 0.58), transparent 66%),
-        radial-gradient(620px 480px at 86% 6%, rgba(168, 85, 247, 0.52), transparent 66%),
-        radial-gradient(740px 580px at 90% 90%, rgba(236, 72, 153, 0.40), transparent 66%),
-        radial-gradient(660px 540px at 8% 94%, rgba(56, 189, 248, 0.42), transparent 66%),
-        radial-gradient(820px 620px at 50% 52%, rgba(139, 92, 246, 0.24), transparent 72%);
-    filter: blur(40px);
+        radial-gradient(680px 520px at 16% 10%, rgba(129, 140, 248, 0.46), transparent 66%),
+        radial-gradient(620px 480px at 86% 6%, rgba(168, 85, 247, 0.40), transparent 66%),
+        radial-gradient(740px 580px at 90% 90%, rgba(244, 114, 182, 0.34), transparent 66%),
+        radial-gradient(660px 540px at 8% 94%, rgba(125, 211, 252, 0.34), transparent 66%),
+        radial-gradient(820px 620px at 50% 52%, rgba(167, 139, 250, 0.20), transparent 72%);
+    filter: blur(46px);
     animation: thanksAurora 18s ease-in-out infinite alternate;
 }
 
@@ -2492,45 +2492,70 @@ section[id],
     /* blanc pur et opaque : le logo.png (fond blanc, sans alpha) s'y fond sans carré visible */
     background: var(--white);
     border: 1px solid rgba(255, 255, 255, 0.9);
-    border-radius: var(--radius-xl);
-    box-shadow: 0 24px 60px -12px rgba(76, 29, 149, 0.22), 0 8px 24px -8px rgba(76, 29, 149, 0.14);
-    padding: 48px 40px 40px;
+    border-radius: 28px;
+    box-shadow: 0 30px 70px -14px rgba(76, 29, 149, 0.24), 0 10px 28px -10px rgba(76, 29, 149, 0.14);
+    padding: 44px 44px 34px;
 }
 
+/* ---------- Logo ---------- */
 .thanks-logo {
     display: inline-flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
     font-weight: 800;
-    font-size: 1.75rem;
+    font-size: 1.6875rem;
     color: var(--gray-900);
     letter-spacing: -0.02em;
-    margin-bottom: 32px;
+    margin-bottom: 26px;
 }
 
 .thanks-logo img {
-    width: 76px;
-    height: 76px;
-    border-radius: var(--radius-lg);
+    width: 46px;
+    height: 46px;
+    border-radius: var(--radius-sm);
+}
+
+/* ---------- Pastille de validation + halo + étincelles ---------- */
+.thanks-check-wrap {
+    position: relative;
+    width: 260px;
+    height: 150px;
+    margin: 0 auto 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* halo diffus autour de la pastille */
+.thanks-check-wrap::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 140px;
+    height: 140px;
+    transform: translate(-50%, -50%);
+    border-radius: var(--radius-full);
+    background: rgba(139, 92, 246, 0.11);
 }
 
 .thanks-check {
-    width: 72px;
-    height: 72px;
-    margin: 0 auto 24px;
+    position: relative;
+    width: 100px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-full);
     background: var(--gradient);
     color: var(--white);
-    box-shadow: 0 10px 30px rgba(99, 102, 241, 0.35);
+    box-shadow: 0 14px 34px rgba(124, 58, 237, 0.38);
     animation: thanksPop 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .thanks-check svg {
-    width: 34px;
-    height: 34px;
+    width: 46px;
+    height: 46px;
 }
 
 @keyframes thanksPop {
@@ -2538,46 +2563,105 @@ section[id],
     100% { transform: scale(1); opacity: 1; }
 }
 
+.thanks-sparkle {
+    position: absolute;
+    fill: currentColor;
+    animation: thanksTwinkle 3.2s ease-in-out infinite;
+}
+
+.thanks-sparkle.s1 { width: 15px; height: 15px; top: 20%;  left: 12%;  color: #8b5cf6; animation-delay: 0s;    }
+.thanks-sparkle.s2 { width: 9px;  height: 9px;  top: 46%;  left: 4%;   color: #f0abfc; animation-delay: 0.6s;  }
+.thanks-sparkle.s3 { width: 12px; height: 12px; top: 72%;  left: 16%;  color: #f472b6; animation-delay: 1.2s;  }
+.thanks-sparkle.s4 { width: 11px; height: 11px; top: 16%;  right: 13%; color: #a855f7; animation-delay: 0.9s;  }
+.thanks-sparkle.s5 { width: 8px;  height: 8px;  top: 42%;  right: 4%;  color: #c4b5fd; animation-delay: 1.8s;  }
+.thanks-sparkle.s6 { width: 14px; height: 14px; top: 70%;  right: 12%; color: #f472b6; animation-delay: 0.3s;  }
+
+@keyframes thanksTwinkle {
+    0%, 100% { opacity: 0.45; transform: scale(0.86); }
+    50%      { opacity: 1;    transform: scale(1.1);  }
+}
+
+/* ---------- Titre ---------- */
 .thanks-title {
     font-size: clamp(1.75rem, 5vw, 2.375rem);
     line-height: 1.15;
     letter-spacing: -0.02em;
-    margin-bottom: 14px;
+    margin-bottom: 0;
+}
+
+.thanks-accent {
+    width: 34px;
+    height: 3px;
+    border-radius: var(--radius-full);
+    background: var(--secondary);
+    margin: 20px auto 22px;
 }
 
 .thanks-subtitle {
-    color: var(--gray-600);
+    color: var(--gray-500);
     font-size: 1.0625rem;
     line-height: 1.65;
     max-width: 440px;
     margin: 0 auto;
 }
 
-.thanks-divider {
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gray-200), transparent);
-    margin: 36px 0 28px;
+/* ---------- Encadré WhatsApp ---------- */
+.thanks-note {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    text-align: left;
+    margin: 32px 0 26px;
+    padding: 18px 22px;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(139, 92, 246, 0.14);
+    background: rgba(139, 92, 246, 0.05);
 }
 
-.thanks-whatsapp-text {
-    color: var(--gray-600);
+.thanks-note-icon {
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    background: var(--white);
+    color: var(--secondary);
+    box-shadow: 0 4px 12px rgba(76, 29, 149, 0.12);
+}
+
+.thanks-note-icon svg {
+    width: 21px;
+    height: 21px;
+}
+
+.thanks-note-title {
+    font-weight: 700;
+    color: var(--gray-900);
     font-size: 0.9875rem;
-    line-height: 1.6;
-    max-width: 420px;
-    margin: 0 auto 22px;
+    margin: 0 0 4px;
 }
 
+.thanks-note-text {
+    color: var(--gray-500);
+    font-size: 0.9375rem;
+    line-height: 1.55;
+    margin: 0;
+}
+
+/* ---------- Bouton WhatsApp ---------- */
 .btn-whatsapp {
     background: #25D366;
     color: var(--white);
-    box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+    box-shadow: 0 8px 22px rgba(37, 211, 102, 0.38);
     text-decoration: none;
 }
 
 .btn-whatsapp:hover {
     background: #1ebe5b;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+    box-shadow: 0 10px 28px rgba(37, 211, 102, 0.46);
 }
 
 .whatsapp-icon {
@@ -2593,25 +2677,32 @@ section[id],
 }
 
 .thanks-phone a {
-    color: var(--gray-700);
+    color: var(--primary);
     font-weight: 600;
 }
 
 .thanks-phone a:hover {
-    color: var(--primary);
+    color: var(--primary-dark);
+}
+
+/* ---------- Pied de carte ---------- */
+.thanks-divider {
+    height: 1px;
+    background: var(--gray-200);
+    margin: 28px 0 0;
 }
 
 .thanks-back {
-    margin-top: 22px;
+    margin-top: 20px;
     font-size: 0.9375rem;
 }
 
 .thanks-back a {
-    color: var(--gray-500);
+    color: var(--primary);
 }
 
 .thanks-back a:hover {
-    color: var(--primary);
+    color: var(--primary-dark);
 }
 
 @media (max-width: 640px) {
@@ -2620,22 +2711,48 @@ section[id],
     }
 
     .thanks-card {
-        padding: 36px 24px 32px;
-        border-radius: var(--radius-lg);
+        padding: 34px 22px 28px;
+        border-radius: 22px;
     }
 
     .thanks-logo {
-        margin-bottom: 24px;
+        margin-bottom: 20px;
         font-size: 1.5rem;
     }
 
     .thanks-logo img {
-        width: 62px;
-        height: 62px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .thanks-check-wrap {
+        width: 220px;
+        height: 128px;
+        margin-bottom: 22px;
+    }
+
+    .thanks-check-wrap::before {
+        width: 118px;
+        height: 118px;
+    }
+
+    .thanks-check {
+        width: 84px;
+        height: 84px;
+    }
+
+    .thanks-check svg {
+        width: 38px;
+        height: 38px;
     }
 
     .thanks-subtitle {
         font-size: 1rem;
+    }
+
+    .thanks-note {
+        gap: 14px;
+        padding: 16px 16px;
     }
 
     .btn-whatsapp {
@@ -2645,6 +2762,7 @@ section[id],
 
 @media (prefers-reduced-motion: reduce) {
     .thanks-check,
+    .thanks-sparkle,
     .thanks-body::before {
         animation: none;
     }

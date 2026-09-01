@@ -27,14 +27,14 @@ Haria est un widget chatbot IA en français pour sites web, conçu pour converti
 
 ## Résultats clients
 
-- Sixt Occasion (vente de voitures d'occasion) : +150 leads dès le premier mois, +37 % de taux de conversion.
-- Edabos (e-commerce) : prises de rendez-vous multipliées par 2,3 dès le premier mois, +130 % de taux de conversion.
-- Synergie (installation solaire) : 2× plus de demandes de devis, +95 % de taux de conversion.
+- Sixt Occasion (vente de voitures d'occasion) : +42 leads dès le premier mois, +19 % de taux de conversion.
+- Edabos (e-commerce) : prises de rendez-vous multipliées par 1,4 dès le premier mois, +28 % de taux de conversion.
+- Synergie (installation solaire) : 1,6× plus de demandes de devis, +21 % de taux de conversion.
 
 Témoignages (clients réels, profils LinkedIn vérifiables) :
 - Neo Meunier, fondateur de Landing Labs : « Le chatbot répond instantanément aux questions de mes prospects sur les landing pages. Résultat : plus de leads qualifiés et moins de temps perdu en appels de qualification. »
-- Odilon Fourment, fondateur d'Edabos : « Haria guide mes visiteurs et répond à toutes leurs questions sur les boutiques e-commerce. J'ai multiplié par 2 mes prises de rendez-vous dès le premier mois. »
-- Sacha Haegele, fondateur d'Id Lift : « Mes clients veulent souvent voir des exemples de logos avant de me contacter. Le chatbot leur montre mon portfolio et capture leurs coordonnées. Simple et efficace. »
+- Odilon Fourment, fondateur d'Edabos : « Haria guide mes visiteurs et répond à toutes leurs questions sur les boutiques e-commerce. J'ai pris 40 % de rendez-vous en plus dès le premier mois. »
+- Sacha Haegele, fondateur d'Id Lift : « Mes clients veulent souvent voir des exemples de logos et échanger avec moi avant d'acheter. Le chatbot leur montre mon portfolio et me remonte les leads chauds, que je rappelle ensuite. Mes ventes ont nettement augmenté. Je recommande. »
 - Nathan Burtin, fondateur de Novexa : « Le chatbot explique parfaitement mes offres de landing pages et qualifie les prospects avant qu'ils me contactent. J'ai gagné un temps fou et mes conversions ont explosé. »
 
 ---
@@ -67,16 +67,16 @@ FAQ prix :
 
 Source : https://haria-chatbot.com/chatbot-ia-ecommerce.html
 
-Réponse courte : sur une boutique en ligne, un chatbot IA répond aux questions qui bloquent l'achat (livraison, tailles, retours, stock) au moment exact où le visiteur se les pose, 24h/24. Résultat type chez Edabos, client de Haria : taux de conversion +130 %, prises de rendez-vous ×2,3 dès le premier mois. Coût : à partir de 99 €/mois en solution clé en main.
+Réponse courte : sur une boutique en ligne, un chatbot IA répond aux questions qui bloquent l'achat (livraison, tailles, retours, stock) au moment exact où le visiteur se les pose, 24h/24. Résultat type chez Edabos, client de Haria : taux de conversion +28 %, prises de rendez-vous ×1,4 dès le premier mois. Coût : à partir de 99 €/mois en solution clé en main.
 
 Pourquoi les boutiques perdent des ventes silencieusement (3 chiffres) :
 - Le taux de conversion médian d'une page web est de 6,6 %, donc 93 % des visiteurs repartent sans agir (Unbounce, étude sur 464 millions de visites).
 - Environ 70 % des paniers sont abandonnés avant paiement (Baymard Institute).
 - 82 % des consommateurs attendent une réponse immédiate à leurs questions commerciales (HubSpot Research).
 
-Ce qu'un chatbot IA change : (1) il répond aux objections d'achat en temps réel, entraîné sur le catalogue, les conditions de livraison et de retour ; (2) il capture les acheteurs pas encore prêts (chez Edabos, ×2,3 prises de rendez-vous) ; (3) il désengorge le service client en absorbant les questions répétitives.
+Ce qu'un chatbot IA change : (1) il répond aux objections d'achat en temps réel, entraîné sur le catalogue, les conditions de livraison et de retour ; (2) il capture les acheteurs pas encore prêts (chez Edabos, ×1,4 prises de rendez-vous) ; (3) il désengorge le service client en absorbant les questions répétitives.
 
-Cas client Edabos : ×2,3 prises de rendez-vous dès le premier mois, +130 % de taux de conversion, zéro gestion au quotidien (l'équipe Haria optimise en continu). Compatible Shopify, WooCommerce/WordPress, Prestashop, Webflow ou boutique sur mesure.
+Cas client Edabos : ×1,4 prises de rendez-vous dès le premier mois, +28 % de taux de conversion, zéro gestion au quotidien (l'équipe Haria optimise en continu). Compatible Shopify, WooCommerce/WordPress, Prestashop, Webflow ou boutique sur mesure.
 
 FAQ e-commerce :
 - Le chatbot connaît-il mes produits ? Oui, l'IA est entraînée sur le catalogue, les FAQ, les conditions de livraison et de retour, mises à jour par l'équipe Haria.

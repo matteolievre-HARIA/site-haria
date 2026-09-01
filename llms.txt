@@ -33,9 +33,9 @@
 
 ## Résultats clients
 
-- Sixt Occasion (vente de voitures d'occasion) : +150 leads dès le premier mois, +37 % de taux de conversion
-- Edabos (e-commerce) : 2,3× plus de rendez-vous dès le premier mois, +130 % de taux de conversion
-- Synergie (installation solaire) : 2× plus de demandes de devis, +95 % de taux de conversion
+- Sixt Occasion (vente de voitures d'occasion) : +42 leads dès le premier mois, +19 % de taux de conversion
+- Edabos (e-commerce) : 1,4× plus de rendez-vous dès le premier mois, +28 % de taux de conversion
+- Synergie (installation solaire) : 1,6× plus de demandes de devis, +21 % de taux de conversion
 
 ## Questions fréquentes
 

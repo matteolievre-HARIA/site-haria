@@ -12,11 +12,14 @@
     <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="styles.css">
 
-    <!-- Pixel Meta + consentement (aucun traceur avant accord) -->
+    <!-- Meta Pixel Code -->
     <script src="meta-pixel.js"></script>
-    <script src="consent.js" defer></script>
+    <!-- End Meta Pixel Code -->
 </head>
 <body class="thanks-body">
+    <!-- Meta Pixel (fallback sans JavaScript) -->
+    <noscript><img height="1" width="1" style="display:none" alt=""
+    src="https://www.facebook.com/tr?id=1703498950762071&amp;ev=PageView&amp;noscript=1" /></noscript>
 
     <main class="thanks-main">
         <div class="thanks-card">
@@ -62,8 +65,6 @@
 
             <p class="thanks-back">
                 <a href="/">&#8592; Retour à l'accueil</a>
-                <span aria-hidden="true"> · </span>
-                <a href="#" class="consent-manage-link">Gérer mes cookies</a>
             </p>
 
         </div>
@@ -80,9 +81,7 @@
                                                           -> Purchase (99 EUR)
          ============================================ -->
     <script>
-        /* Ne se déclenche que si le visiteur a accepté les traceurs.
-           S'il accepte depuis la bannière pendant qu'il est sur cette page,
-           l'événement part à ce moment-là (onReady s'en charge). */
+        /* Le pixel est toujours actif : l'événement part au chargement. */
         window.HariaPixel && window.HariaPixel.onReady(function () {
             var params = new URLSearchParams(window.location.search);
             var conv = (params.get('conv') || 'lead').toLowerCase();

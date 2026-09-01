@@ -7,10 +7,9 @@
    ============================================ */
 window.HariaPixel = (function () {
 
-    /* >>> REMPLACE cette valeur par l'ID de ton pixel Meta <<<
-       Gestionnaire d'événements Meta > Sources de données > ton pixel.
+    /* ID du pixel Meta (Gestionnaire d'événements > Sources de données).
        Tant que l'ID n'est pas renseigné, aucun script Meta n'est chargé. */
-    var PIXEL_ID = 'TON_PIXEL_ID';
+    var PIXEL_ID = '1703498950762071';
 
     var loaded = false;
     var readyQueue = [];

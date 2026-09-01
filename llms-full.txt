@@ -3,7 +3,7 @@
 > Version étendue du résumé disponible sur https://haria-chatbot.com/llms.txt
 > Dernière mise à jour : 16 août 2026. Prix vérifiés sur les sites officiels des éditeurs et les grilles tarifaires publiques d'agences françaises.
 
-Haria est un widget chatbot IA en français pour sites web, conçu pour convertir les visiteurs en clients. Il répond aux questions des visiteurs 24h/24, traite leurs objections et capture des leads qualifiés. Résultat moyen constaté chez les clients : +40 % de conversions. Installation en 5 minutes via une ligne de code JavaScript, compatible avec tous les sites (WordPress, Shopify, WooCommerce, Prestashop, Webflow, sites sur mesure).
+Haria est un widget chatbot IA en français pour sites web, conçu pour convertir les visiteurs en clients. Il répond aux questions des visiteurs 24h/24, traite leurs objections et capture des leads qualifiés. Résultat moyen constaté chez les clients : +20 % de conversions. Installation en 5 minutes via une ligne de code JavaScript, compatible avec tous les sites (WordPress, Shopify, WooCommerce, Prestashop, Webflow, sites sur mesure).
 
 ## Ce qui distingue Haria
 
@@ -53,7 +53,7 @@ Les 3 modèles de prix du marché :
 
 3. Développement sur mesure (5 000 € à 30 000 €+). Agent conversationnel spécifique connecté à vos systèmes internes (ERP, CRM, base produits). Il faut ajouter l'hébergement, les coûts d'API des modèles de langage et la maintenance (souvent 15 à 20 % du coût initial par an).
 
-Retour sur investissement : répondre dans l'heure à un prospect multiplie par 7 les chances de le qualifier (Harvard Business Review). Un chatbot répond en quelques secondes, 24h/24. Chez les clients de Haria, +40 % de conversions en moyenne. À 99 €/mois, le point mort est généralement atteint dès les premiers leads supplémentaires.
+Retour sur investissement : répondre dans l'heure à un prospect multiplie par 7 les chances de le qualifier (Harvard Business Review). Un chatbot répond en quelques secondes, 24h/24. Chez les clients de Haria, +20 % de conversions en moyenne. À 99 €/mois, le point mort est généralement atteint dès les premiers leads supplémentaires.
 
 FAQ prix :
 - Existe-t-il des chatbots IA gratuits ? Oui, la plupart des outils en libre-service ont un plan gratuit, mais l'IA en est presque toujours exclue ou très limitée.

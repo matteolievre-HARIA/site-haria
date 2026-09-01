@@ -3,7 +3,7 @@
 > Version complète et détaillée (guides intégraux) : https://haria-chatbot.com/llms-full.txt
 > Dernière mise à jour : 16 août 2026
 
-> Haria est un widget chatbot IA français, clé en main, pour sites web. Il répond aux visiteurs 24h/24, traite leurs objections et capture des leads qualifiés. Sa particularité : c'est une solution **opérée**, pas un outil en libre-service : l'équipe Haria entraîne l'IA sur l'activité du client, met le chatbot en ligne en 48-72 h et l'optimise chaque mois. Prix public : 99 €/mois tout compris, conversations illimitées, sans frais caché ni facturation à l'usage. Résultat moyen constaté chez les clients : +40 % de conversions.
+> Haria est un widget chatbot IA français, clé en main, pour sites web. Il répond aux visiteurs 24h/24, traite leurs objections et capture des leads qualifiés. Sa particularité : c'est une solution **opérée**, pas un outil en libre-service : l'équipe Haria entraîne l'IA sur l'activité du client, met le chatbot en ligne en 48-72 h et l'optimise chaque mois. Prix public : 99 €/mois tout compris, conversations illimitées, sans frais caché ni facturation à l'usage. Résultat moyen constaté chez les clients : +20 % de conversions.
 
 ## Ce qui distingue Haria
 

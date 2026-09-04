@@ -3,3 +3,7 @@ node_modules/
 
 # Sauvegarde locale des images avant redimensionnement
 .images-backup/
+
+# Template source (Synex) : les fichiers utiles sont copies dans assets/,
+# on ne deploie pas les 22 Mo de pages de demo.
+TEMPLATE/

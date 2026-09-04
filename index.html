@@ -1,1333 +1,1531 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatbot IA pour site web | Haria&nbsp;: 99&nbsp;€/mois tout inclus</title>
-    <meta name="description" content="On construit votre chatbot avant l'appel : en 15 min, vous le voyez répondre sur vos pages. Sans engagement, sans carte bancaire. 99 €/mois tout compris, en ligne en 72 h.">
+    <!--<< Header Area >>-->
+   <head>
+        <!-- ========== Meta Tags ========== -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Haria">
+        <meta name="description" content="On construit votre chatbot avant l'appel : en 15 min, vous le voyez répondre sur vos pages. Sans engagement, sans carte bancaire. 99 €/mois tout compris, en ligne en 72 h.">
+        <!-- ======== Page title ============ -->
+        <title>Chatbot IA pour site web | Haria&nbsp;: 99&nbsp;€/mois tout inclus</title>
 
-    <!-- SEO Meta Tags -->
-    <meta name="google-site-verification" content="bSVyPbhPM0AjCAq4gPR25qwdfid4SvQtk5ynuAs9gzI" />
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-    <meta name="author" content="Haria">
-    <meta name="keywords" content="chatbot IA, chatbot site web, chatbot IA français, agent IA conversationnel, génération de leads, widget chatbot, chatbot clé en main, prix chatbot IA">
-    <link rel="canonical" href="https://haria-chatbot.com/">
-    <!-- Ressource structurée pour les IA / LLM -->
-    <link rel="alternate" type="text/markdown" title="Résumé Haria pour les IA (llms.txt)" href="https://haria-chatbot.com/llms.txt">
+        <!-- SEO Meta Tags -->
+        <meta name="google-site-verification" content="bSVyPbhPM0AjCAq4gPR25qwdfid4SvQtk5ynuAs9gzI" />
+        <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+        <meta name="keywords" content="chatbot IA, chatbot site web, chatbot IA français, agent IA conversationnel, génération de leads, widget chatbot, chatbot clé en main, prix chatbot IA">
+        <link rel="canonical" href="https://haria-chatbot.com/">
+        <!-- Ressource structurée pour les IA / LLM -->
+        <link rel="alternate" type="text/markdown" title="Résumé Haria pour les IA (llms.txt)" href="https://haria-chatbot.com/llms.txt">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://haria-chatbot.com/">
-    <meta property="og:title" content="Chatbot IA pour site web | Haria : 99 €/mois tout inclus">
-    <meta property="og:description" content="On construit votre chatbot avant l'appel : en 15 min, vous le voyez répondre sur vos pages. Sans engagement, sans carte bancaire. 99 €/mois tout compris, en ligne en 72 h.">
-    <meta property="og:image" content="https://haria-chatbot.com/og-image.jpg">
-    <meta property="og:image:alt" content="Haria, widget chatbot IA pour site web">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="fr_FR">
-    <meta property="og:site_name" content="Haria">
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://haria-chatbot.com/">
+        <meta property="og:title" content="Chatbot IA pour site web | Haria : 99 €/mois tout inclus">
+        <meta property="og:description" content="On construit votre chatbot avant l'appel : en 15 min, vous le voyez répondre sur vos pages. Sans engagement, sans carte bancaire. 99 €/mois tout compris, en ligne en 72 h.">
+        <meta property="og:image" content="https://haria-chatbot.com/og-image.jpg">
+        <meta property="og:image:alt" content="Haria, widget chatbot IA pour site web">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:locale" content="fr_FR">
+        <meta property="og:site_name" content="Haria">
 
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://haria-chatbot.com/">
-    <meta name="twitter:title" content="Chatbot IA pour site web | Haria : 99 €/mois tout inclus">
-    <meta name="twitter:description" content="On construit votre chatbot avant l'appel : en 15 min, vous le voyez répondre sur vos pages. Sans engagement, sans carte bancaire. 99 €/mois tout compris.">
-    <meta name="twitter:image" content="https://haria-chatbot.com/og-image.jpg">
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:url" content="https://haria-chatbot.com/">
+        <meta name="twitter:title" content="Chatbot IA pour site web | Haria : 99 €/mois tout inclus">
+        <meta name="twitter:description" content="On construit votre chatbot avant l'appel : en 15 min, vous le voyez répondre sur vos pages. Sans engagement, sans carte bancaire. 99 €/mois tout compris.">
+        <meta name="twitter:image" content="https://haria-chatbot.com/og-image.jpg">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <meta name="theme-color" content="#6366f1">
+        <!--<< Favcion >>-->
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <meta name="theme-color" content="#7c3aed">
 
-    <!-- Styles -->
-    <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
-    <link rel="stylesheet" href="styles.css">
-    <noscript>
-        <style>
-            .fade-in { opacity: 1; transform: none; }
-            .testimonials-track { animation: none; flex-wrap: wrap; justify-content: center; width: auto; }
-        </style>
-    </noscript>
-    <!-- Meta Pixel Code -->
-    <script src="meta-pixel.js"></script>
-    <!-- End Meta Pixel Code -->
-</head>
-<body>
-    <!-- Meta Pixel (fallback sans JavaScript) -->
-    <noscript><img height="1" width="1" style="display:none" alt=""
-    src="https://www.facebook.com/tr?id=1703498950762071&amp;ev=PageView&amp;noscript=1" /></noscript>
-    <a href="#hero" class="skip-link">Aller au contenu</a>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <img src="logo.png" alt="Haria" class="logo-icon" width="50" height="50">
-                <span class="logo-text">Haria</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#demo" class="nav-link nav-link-video"><span class="play-icon">&#9658;</span> Démo</a></li>
-                <li><a href="#avantages" class="nav-link">Avantages</a></li>
-                <li><a href="#cas-clients" class="nav-link">Résultats</a></li>
-                <li><a href="#tarifs" class="nav-link">Tarifs</a></li>
-                <li><a href="#guides" class="nav-link">Guides</a></li>
-                <li><a href="#faq" class="nav-link">FAQ</a></li>
-            </ul>
-            <div class="nav-actions">
-                <a href="https://cal.com/matteolievre/15min" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Voir mon chatbot</a>
+        <!--<< Bootstrap min.css >>-->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <!--<< All Min Css >>-->
+        <link rel="stylesheet" href="assets/css/all.min.css">
+        <!--<< Animate.css >>-->
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <!--<< Magnific Popup.css >>-->
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <!--<< Swiper Bundle.css >>-->
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        <!--<< Nice Select.css >>-->
+        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <!--<< Main.css >>-->
+        <link rel="stylesheet" href="assets/css/main.css">
+        <!--<< Haria.css : logo, tailles d'images clients, libelles FR >>-->
+        <link rel="stylesheet" href="assets/css/haria.css">
+
+        <!-- Meta Pixel Code -->
+        <script src="meta-pixel.js"></script>
+        <!-- End Meta Pixel Code -->
+    </head>
+    <body>
+        <!-- Meta Pixel (fallback sans JavaScript) -->
+        <noscript><img height="1" width="1" style="display:none" alt=""
+        src="https://www.facebook.com/tr?id=1703498950762071&amp;ev=PageView&amp;noscript=1" /></noscript>
+
+        <div class="page-wrapper">
+
+            <!-- Preloader Start -->
+            <div id="preloader">
+                <div class="hexus-loader-inner">
+                <div class="hexus-loader">
+                    <span class="hexus-loader-item"></span>
+                    <span class="hexus-loader-item"></span>
+                    <span class="hexus-loader-item"></span>
+                    <span class="hexus-loader-item"></span>
+                    <span class="hexus-loader-item"></span>
+                    <span class="hexus-loader-item"></span>
+                    <span class="hexus-loader-item"></span>
+                    <span class="hexus-loader-item"></span>
+                </div>
+                </div>
             </div>
-            <button class="mobile-menu-btn" aria-label="Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+
+            <!-- Back-To-Top Start -->
+            <button id="back-top" class="back-to-top" aria-label="Remonter en haut de page">
+            <i class="fa-regular fa-arrow-up"></i>
             </button>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="container">
-            <!-- Social Proof Badge -->
-            <div class="social-proof-badge fade-in">
-                <ul class="client-logos">
-                    <li><img src="images/logos/sixt.jpg" alt="Sixt Occasion" class="client-logo" width="36" height="36"></li>
-                    <li><img src="images/logos/edabos.png" alt="Edabos" class="client-logo" width="36" height="36"></li>
-                    <li><img src="images/logos/synergie.png" alt="Synergie" class="client-logo" width="36" height="36"></li>
-                    <li><img src="images/logos/landing-labs.png" alt="Landing Labs" class="client-logo" width="36" height="36"></li>
-                    <li><img src="images/logos/valotek.png" alt="Valotek" class="client-logo" width="36" height="36"></li>
-                </ul>
-                <span class="social-proof-sep" aria-hidden="true"></span>
-                <p class="social-proof-claim">
-                    <span class="social-proof-check"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-                    <span><strong>100&nbsp;%</strong> de satisfaction client</span>
-                </p>
-            </div>
+             <!-- GT MouseCursor Start -->
+            <div class="mouseCursor cursor-outer"></div>
+            <div class="mouseCursor cursor-inner"></div>
 
-            <!-- Main Headline -->
-            <h1 class="hero-title fade-in delay-1">
-                Le chatbot IA qui transforme<br class="br-desktop">
-                vos visiteurs en <span class="highlight">clients</span> 24h/24
-            </h1>
+            <!-- Header Section Start -->
+            <header class="header-section header-1" id="sticky-header">
+                <div class="header-main">
+                    <nav class="navbar p-0 navbar-expand-xl d-none d-xl-flex">
+                        <a class="navbar-brand haria-logo" href="/">
+                                <img src="logo.png" alt="Haria">
+                                <span>Haria</span>
+                            </a>
 
-            <!-- Subheadline -->
-            <p class="hero-subtitle fade-in delay-2">
-                Haria répond à vos visiteurs en 2 secondes, traite leurs objections et vous envoie
-                des leads qualifiés pendant que vous dormez. <strong>+20&nbsp;% de conversions</strong> en moyenne.
-                <br><span class="highlight-text">99&nbsp;€/mois tout compris. Conversations illimitées. Zéro frais caché.</span>
-            </p>
-
-            <!-- CTA Buttons -->
-            <div class="hero-cta fade-in delay-3">
-                <a href="https://cal.com/matteolievre/15min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-                    Voir mon chatbot en 15 min
-                </a>
-                <a href="#demo" class="btn btn-secondary btn-lg" id="hero-live-demo">
-                    <span class="play-icon">&#9658;</span> Tester le chatbot en direct
-                </a>
-            </div>
-
-            <!-- Offre pre-appel -->
-            <div class="prebuild-note fade-in delay-3">
-                <span class="prebuild-note-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 1.9 4.6L18.5 9.5l-4.6 1.9L12 16l-1.9-4.6L5.5 9.5l4.6-1.9L12 3Z"/><path d="m19 15 .8 2.2 2.2.8-2.2.8L19 21l-.8-2.2-2.2-.8 2.2-.8L19 15Z"/></svg></span>
-                <p class="prebuild-note-text">
-                    <strong>On construit votre chatbot avant l'appel.</strong>
-                    Une première version entraînée sur votre site, que vous voyez répondre en direct
-                    sur vos pages. Sans engagement, sans carte bancaire.
-                </p>
-            </div>
-
-            <!-- Trust Badges -->
-            <div class="trust-badges fade-in delay-4">
-                <div class="trust-badge">
-                    <span class="badge-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
-                    <span>En ligne en 72 h</span>
+                            <button class="navbar-toggler" type="button"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent"
+                                aria-expanded="false"
+                                aria-label="Menu">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav mx-auto mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#fonctionnement">Fonctionnement</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#avantages">Avantages</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#etapes">Étapes</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#avis">Avis</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#tarifs">Tarifs</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#faq">FAQ</a>
+                                    </li>
+                                </ul>
+                                <div class="menu-right-info">
+                                    <a class="theme-btn-main style-2" href="https://cal.com/matteolievre/15min" target="_blank" rel="noopener noreferrer">
+                                        <span class="theme-btn-arrow-left"> <i class="fa-solid fa-arrow-up-right"></i> </span>
+                                        <span class="theme-btn">Voir mon chatbot</span>
+                                        <span class="theme-btn-arrow-right"> <i class="fa-solid fa-arrow-up-right"></i> </span>
+                                    </a>
+                                    <div class="sidebar__toggle offcanvas-btn d-xl-none my-auto">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                     </nav>
                 </div>
-                <div class="trust-badge">
-                    <span class="badge-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.33-6 4Z"/></svg></span>
-                    <span>Conversations illimitées</span>
-                </div>
-                <div class="trust-badge">
-                    <span class="badge-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12"/><path d="M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/></svg></span>
-                    <span>Zéro frais caché</span>
-                </div>
-                <div class="trust-badge">
-                    <span class="badge-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
-                    <span>Données hébergées en France</span>
-                </div>
-            </div>
-
-            <!-- Demo Preview -->
-            <div class="hero-demo fade-in delay-5" id="demo">
-                <div class="demo-mockup">
-                    <div class="demo-browser">
-                        <div class="browser-dots">
-                            <span></span><span></span><span></span>
+                <div class="mobile-menu-area d-block d-xl-none">
+                    <div class="container">
+                        <div class="mobile-topbar">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="logo">
+                                    <a href="/" class="haria-logo">
+                                        <img src="logo.png" alt="Haria">
+                                        <span>Haria</span>
+                                    </a>
+                                </div>
+                                <div class="menu-search d-flex align-items-center gap-4">
+                                <div class="bars">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                               </div>
+                            </div>
                         </div>
-                        <div class="browser-content">
-                            <div class="demo-placeholder">
-                                <div class="chat-widget-preview">
-                                    <div class="chat-header">
-                                        <div class="chat-avatar">H</div>
-                                        <div class="chat-info">
-                                            <span class="chat-name">Assistant Haria</span>
-                                            <span class="chat-status">En ligne</span>
-                                        </div>
-                                    </div>
-                                    <div class="chat-messages" id="chat-demo">
-                                        <div class="chat-message bot">
-                                            <p>Bonjour, comment puis-je vous aider aujourd'hui&nbsp;?</p>
-                                        </div>
-                                    </div>
+                    </div>
+                    <div class="mobile-menu-overlay"></div>
+                    <div class="mobile-menu-main">
+                        <div class="logo">
+                            <a href="/" class="haria-logo haria-logo--light">
+                                <img src="logo.png" alt="Haria">
+                                <span>Haria</span>
+                            </a>
+                        </div>
+                        <div class="close-mobile-menu">
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <div class="menu-body">
+                            <div class="menu-list">
+                                <ul class="list-unstyled">
+                                    <li><a href="#fonctionnement">Fonctionnement</a></li>
+                                    <li><a href="#avantages">Avantages</a></li>
+                                    <li><a href="#etapes">Étapes</a></li>
+                                    <li><a href="#avis">Avis</a></li>
+                                    <li><a href="#tarifs">Tarifs</a></li>
+                                    <li><a href="#faq">FAQ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="off-contact-area">
+                            <div class="off-contact-info">
+                                <span class="info-title">Nous contacter</span>
+                                <div class="contact-details">
+                                    <span class="sub-info">Démo de 15 minutes</span>
+                                    <p>
+                                        <a href="https://cal.com/matteolievre/15min" target="_blank" rel="noopener noreferrer">Réserver un créneau</a>
+                                    </p>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="sub-info">Email</span>
+                                    <p>
+                                        <a href="mailto:contact.haria.ia@gmail.com">contact.haria.ia@gmail.com</a>
+                                    </p>
+                                </div>
+                                <div class="contact-details">
+                                    <span class="sub-info">Vos données</span>
+                                    <p>
+                                        Hébergées en France, conformes au RGPD
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="social-icon-list">
+                                <span class="follow-title">
+                                    Nous suivre&nbsp;:
+                                </span>
+                                <div class="social-icon d-flex align-items-center">
+                                    <a href="https://www.linkedin.com/company/haria-funnel/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Haria"><i class="fab fa-linkedin-in"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </header>
 
-    <!-- Offre pre-appel : avant / pendant / apres -->
-    <section class="prebuild-section" id="avant-appel">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title fade-in">
-                    Votre chatbot existe <span class="highlight">avant même</span> qu'on se parle
-                </h2>
-                <p class="section-subtitle fade-in delay-1">
-                    Vous ne réservez pas une démo commerciale. Vous réservez le moment où vous voyez
-                    votre propre chatbot répondre à vos visiteurs, sur vos pages.
-                </p>
-            </div>
+            <div id="smooth-wrapper">
+                <div id="smooth-content">
 
-            <div class="prebuild-grid">
-                <article class="prebuild-card fade-in delay-1">
-                    <span class="prebuild-step">Avant l'appel</span>
-                    <h3 class="prebuild-title">On entraîne une première version sur votre site</h3>
-                    <p class="prebuild-desc">
-                        Vos pages, vos offres, vos FAQ&nbsp;: l'IA apprend votre activité et votre façon de
-                        répondre. Vous n'avez rien à préparer, rien à nous envoyer.
-                    </p>
-                </article>
-
-                <article class="prebuild-card fade-in delay-2">
-                    <span class="prebuild-step">Pendant les 15 minutes</span>
-                    <h3 class="prebuild-title">Vous le voyez répondre en direct, sur vos pages</h3>
-                    <p class="prebuild-desc">
-                        Posez-lui vos vraies questions clients, celles qui reviennent tous les jours.
-                        Vous jugez sur pièces, pas sur une promesse commerciale.
-                    </p>
-                </article>
-
-                <article class="prebuild-card fade-in delay-3">
-                    <span class="prebuild-step">Après</span>
-                    <h3 class="prebuild-title">Vous décidez, sans pression</h3>
-                    <p class="prebuild-desc">
-                        Si c'est oui, on finalise et vous êtes en ligne sous 72&nbsp;h. Si c'est non, vous ne
-                        devez rien&nbsp;: aucune carte bancaire ne vous aura été demandée.
-                    </p>
-                </article>
-            </div>
-
-            <div class="prebuild-cta fade-in delay-4">
-                <p class="prebuild-limit">
-                    <span class="prebuild-limit-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
-                    <span><strong>5 chatbots pré-construits par semaine.</strong> C'est la limite qu'on s'impose
-                    pour que chaque démo soit vraiment travaillée.</span>
-                </p>
-                <a href="https://cal.com/matteolievre/15min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-                    Voir mon chatbot en 15 min
-                </a>
-                <p class="prebuild-cta-note">Sans engagement &middot; Sans carte bancaire &middot; 15 minutes chrono</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Problem Section -->
-    <section class="problem-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title fade-in">
-                    Votre site web <span class="highlight">perd des clients</span> chaque jour
-                </h2>
-                <p class="section-subtitle fade-in delay-1">
-                    Vous payez pour attirer du trafic. Mais quand un prospect arrive avec une question,
-                    personne ne lui répond. Alors il part, <strong>chez votre concurrent</strong>.
-                </p>
-            </div>
-
-            <!-- Stats -->
-            <div class="stats-grid fade-in delay-2">
-                <div class="stat-card">
-                    <span class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></span>
-                    <span class="stat-number">93%</span>
-                    <span class="stat-label">des visiteurs repartent sans convertir (taux de conversion médian&nbsp;: 6,6%)</span>
-                    <a class="stat-source" href="https://unbounce.com/average-conversion-rates-landing-pages/" target="_blank" rel="noopener noreferrer">Source&nbsp;: Unbounce, 464&nbsp;M de visites</a>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>
-                    <span class="stat-number">82%</span>
-                    <span class="stat-label">exigent une réponse immédiate à leurs questions commerciales</span>
-                    <a class="stat-source" href="https://blog.hubspot.com/sales/live-chat-go-to-market-flaw" target="_blank" rel="noopener noreferrer">Source&nbsp;: HubSpot Research</a>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
-                    <span class="stat-number">&times;7</span>
-                    <span class="stat-label">plus de chances de qualifier un lead en répondant en moins d'une heure</span>
-                    <a class="stat-source" href="https://hbr.org/2011/03/the-short-life-of-online-sales-leads" target="_blank" rel="noopener noreferrer">Source&nbsp;: Harvard Business Review</a>
-                </div>
-            </div>
-
-            <!-- Before/After -->
-            <div class="comparison fade-in delay-3">
-                <div class="comparison-card comparison-before">
-                    <h3 class="comparison-title">Sans Haria</h3>
-                    <ul class="comparison-list">
-                        <li><span class="icon-cross">&#10007;</span> Le visiteur pose une question, personne ne répond</li>
-                        <li><span class="icon-cross">&#10007;</span> Formulaires de contact ignorés à 90&nbsp;%</li>
-                        <li><span class="icon-cross">&#10007;</span> Les mêmes questions par email, tous les jours</li>
-                        <li><span class="icon-cross">&#10007;</span> Tous les leads du week-end perdus</li>
-                        <li><span class="icon-cross">&#10007;</span> Vous payez de la pub pour du trafic qui rebondit</li>
-                    </ul>
-                </div>
-                <div class="comparison-card comparison-after">
-                    <h3 class="comparison-title">Avec Haria</h3>
-                    <ul class="comparison-list">
-                        <li><span class="icon-check">&#10003;</span> Réponse en 2 secondes, 24h/24, même à 3h du matin</li>
-                        <li><span class="icon-check">&#10003;</span> Coordonnées capturées dans la conversation</li>
-                        <li><span class="icon-check">&#10003;</span> Objections traitées avant qu'elles ne bloquent la vente</li>
-                        <li><span class="icon-check">&#10003;</span> Leads qualifiés envoyés directement dans votre boîte mail</li>
-                        <li><span class="icon-check">&#10003;</span> Le même trafic rapporte +20&nbsp;% de conversions</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="inline-cta fade-in delay-4">
-                <p class="inline-cta-text">Votre trafic actuel peut rapporter plus, dès cette semaine.</p>
-                <a href="https://cal.com/matteolievre/15min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Voir mon chatbot en 15 min</a>
-                <span class="inline-cta-note">15 minutes, sans carte bancaire</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Advantages Section -->
-    <section class="advantages-section" id="avantages">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title fade-in">
-                    Le chatbot IA le plus <span class="highlight">simple</span> de France
-                </h2>
-                <p class="section-subtitle fade-in delay-1">
-                    Vous n'avez rien à configurer, rien à apprendre, rien à maintenir.
-                    Vous collez une ligne de code, on s'occupe de tout le reste.
-                </p>
-            </div>
-
-            <div class="advantages-grid">
-                <div class="advantage-card fade-in delay-1">
-                    <div class="advantage-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
-                    </div>
-                    <h3 class="advantage-title">Une IA qui connaît votre métier</h3>
-                    <p class="advantage-desc">
-                        On entraîne l'IA sur vos offres, vos prix, vos FAQ et vos arguments de vente.
-                        Elle ne récite pas des généralités&nbsp;: elle vend comme votre meilleur commercial.
-                    </p>
-                </div>
-
-                <div class="advantage-card fade-in delay-2">
-                    <div class="advantage-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
-                    </div>
-                    <h3 class="advantage-title">En ligne en 72 h, installé en 5 min</h3>
-                    <p class="advantage-desc">
-                        Une agence met 3 à 12 semaines. Nous, 72 heures. Vous copiez-collez une ligne
-                        de code, ça marche sur WordPress, Shopify, Webflow, Wix ou tout site sur mesure.
-                    </p>
-                </div>
-
-                <div class="advantage-card fade-in delay-3">
-                    <div class="advantage-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12"/><path d="M4 14h9"/><path d="M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2"/></svg>
-                    </div>
-                    <h3 class="advantage-title">Zéro frais caché, jamais</h3>
-                    <p class="advantage-desc">
-                        99&nbsp;€/mois. Point. Pas de facturation «&nbsp;à la résolution&nbsp;», pas de crédits IA,
-                        pas de coût par siège, pas de surprise quand votre trafic augmente.
-                        Nos prix sont publics, <a href="#tarifs">vérifiez-les</a>.
-                    </p>
-                </div>
-
-                <div class="advantage-card fade-in delay-4">
-                    <div class="advantage-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                    </div>
-                    <h3 class="advantage-title">Capture de leads intelligente</h3>
-                    <p class="advantage-desc">
-                        L'IA repère le moment exact où le visiteur est chaud et lui demande ses coordonnées.
-                        Fini les formulaires froids que personne ne remplit.
-                    </p>
-                </div>
-
-                <div class="advantage-card fade-in delay-5">
-                    <div class="advantage-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-                    </div>
-                    <h3 class="advantage-title">Optimisation continue incluse</h3>
-                    <p class="advantage-desc">
-                        Chaque mois, on relit les conversations, on corrige ce qui bloque et on améliore
-                        les réponses qui convertissent. Ailleurs, c'est facturé en jours de prestation.
-                    </p>
-                </div>
-
-                <div class="advantage-card fade-in delay-6">
-                    <div class="advantage-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
-                    </div>
-                    <h3 class="advantage-title">Français, RGPD, données en France</h3>
-                    <p class="advantage-desc">
-                        Un interlocuteur français au téléphone, une IA qui maîtrise les subtilités du français,
-                        et vos données hébergées en France. Jamais revendues.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How it works -->
-    <section class="how-it-works">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title fade-in">
-                    <span class="highlight">3 étapes.</span> 72 heures. Zéro prise de tête.
-                </h2>
-                <p class="section-subtitle fade-in delay-1">
-                    Votre seule tâche dans tout le processus&nbsp;: coller une ligne de code. Ça prend 5 minutes.
-                </p>
-            </div>
-
-            <div class="steps-grid">
-                <div class="step-card fade-in delay-1">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Vous réservez 15 minutes</h3>
-                    <p class="step-desc">
-                        On passe en revue ensemble le chatbot déjà construit sur votre site&nbsp;: ce qu'il répond
-                        bien, ce qu'il faut ajuster, les informations qu'il doit collecter. Vous repartez avec
-                        un devis clair, ou avec rien du tout.
-                    </p>
-                </div>
-
-                <div class="step-card fade-in delay-2">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">On construit tout pour vous</h3>
-                    <p class="step-desc">
-                        Entraînement de l'IA sur votre activité, design du widget à votre charte,
-                        scénarios de capture de leads, tests. Vous n'avez rien à faire, en 48 à 72&nbsp;h.
-                    </p>
-                </div>
-
-                <div class="step-card fade-in delay-3">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Vos leads arrivent</h3>
-                    <p class="step-desc">
-                        Vous collez le code, Haria se met à travailler. Les leads qualifiés
-                        arrivent dans votre boîte mail, jour et nuit.
-                    </p>
-                </div>
-            </div>
-
-            <div class="steps-cta fade-in delay-4">
-                <p class="steps-cta-text">Réservez aujourd'hui, votre chatbot convertit <strong>cette semaine</strong>.</p>
-                <a href="https://cal.com/matteolievre/15min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">Voir mon chatbot en 15 min</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Transparence tarifaire -->
-    <section class="transparency-section" id="transparence">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title fade-in">
-                    Le seul chatbot IA sans <span class="highlight">mauvaise surprise</span>
-                </h2>
-                <p class="section-subtitle fade-in delay-1">
-                    Dans ce marché, presque personne n'affiche ses prix. Nous, si.
-                    Voici exactement ce que vous payez, et ce que vous payez ailleurs.
-                </p>
-            </div>
-
-            <div class="compare-grid">
-                <article class="compare-card compare-card--haria fade-in delay-2">
-                    <span class="compare-badge">Le choix transparent</span>
-                    <div class="compare-head">
-                        <h3 class="compare-name">Haria</h3>
-                        <p class="compare-price">99&nbsp;€<span>/mois</span></p>
-                        <p class="compare-tagline">Tout compris. Prix affiché publiquement.</p>
-                    </div>
-                    <ul class="compare-list">
-                        <li>
-                            <span class="compare-ico compare-ico--yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-                            <span><strong>499&nbsp;€</strong> de mise en place, offerts en annuel</span>
-                        </li>
-                        <li>
-                            <span class="compare-ico compare-ico--yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-                            <span>Conversations <strong>illimitées</strong>, jamais facturées à l'usage</span>
-                        </li>
-                        <li>
-                            <span class="compare-ico compare-ico--yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-                            <span>On configure l'IA pour vous, c'est inclus</span>
-                        </li>
-                        <li>
-                            <span class="compare-ico compare-ico--yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-                            <span>Optimisation incluse chaque mois</span>
-                        </li>
-                        <li>
-                            <span class="compare-ico compare-ico--yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-                            <span>En ligne en <strong>72 heures</strong></span>
-                        </li>
-                        <li>
-                            <span class="compare-ico compare-ico--yes"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg></span>
-                            <span>Sans engagement, résiliable en 1 clic</span>
-                        </li>
-                    </ul>
-                </article>
-
-                <article class="compare-card fade-in delay-3">
-                    <div class="compare-head">
-                        <h3 class="compare-name">Chatbot SaaS à l'usage</h3>
-                        <p class="compare-price compare-price--sm">Abonnement <span>+ IA en supplément</span></p>
-                        <p class="compare-tagline">La facture monte avec votre trafic.</p>
-                    </div>
-                    <ul class="compare-list">
-                        <li>
-                            <span class="compare-ico compare-ico--neutral"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-                            <span>0&nbsp;€ de mise en place, mais vous configurez tout</span>
-                        </li>
-                        <li>
-                            <span class="compare-ico compare-ico--no"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span>
-                            <span>Facturé à la résolution ou en crédits IA</span>
-                        </li>
-                        <li>
-                            <span class="compare-ico compare-ico--no"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span>
-                            <span>Le paramétrage de l'IA est sur votre temps</span>
-                        </li>
-                        <li>
-                            <span class="compare-ico compare-ico--no"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span>
-                            <span>Optimisation entièrement à votre charge</span>
-                        </li>
-                        <li>
-                            <span class="compare-ico compare-ico--neutral"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-                            <span>Immédiat, puis des semaines de réglages</span>
-                        </li>
-                        <li>
-                            <span class="compare-ico compare-ico--neutral"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-                            <span>Engagement variable selon le plan</span>
-                        </li>
-                    </ul>
-                </article>
-
-                <article class="compare-card fade-in delay-4">
-                    <div class="compare-head">
-                        <h3 class="compare-name">Agence sur mesure</h3>
-                        <p class="compare-price compare-price--sm">«&nbsp;Sur devis&nbsp;»<span> (aucun prix public)</span></p>
-                        <p class="compare-tagline">Un projet, pas un abonnement.</p>
-                    </div>
-                    <ul class="compare-list">
-                        <li>
-                            <span class="compare-ico compare-ico--no"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span>
-                            <span><strong>1 500&nbsp;€ à 30 000&nbsp;€</strong> de mise en place</span>
-                        </li>
-                        <li>
-                            <span class="compare-ico compare-ico--no"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span>
-                            <span>Coûts d'API facturés en sus</span>
-                        </li>
-                        <li>
-                            <span class="compare-ico compare-ico--no"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span>
-                            <span>Chaque réglage de l'IA est facturé</span>
-                        </li>
-                        <li>
-                            <span class="compare-ico compare-ico--no"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span>
-                            <span>Maintenance de 200 à 500&nbsp;€/mois</span>
-                        </li>
-                        <li>
-                            <span class="compare-ico compare-ico--no"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span>
-                            <span>Mise en ligne en 3 à 12 semaines</span>
-                        </li>
-                        <li>
-                            <span class="compare-ico compare-ico--no"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" aria-hidden="true"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span>
-                            <span>Projet + contrat de maintenance</span>
-                        </li>
-                    </ul>
-                </article>
-            </div>
-
-            <p class="transparency-note fade-in delay-3">
-                Fourchettes agences relevées en août 2026 sur les grilles tarifaires publiques d'agences françaises.
-                Le détail complet, chiffres et sources à l'appui, est dans notre guide
-                <a href="haria-vs-agence-chatbot-ia.html">Haria vs agence de chatbot IA</a>.
-            </p>
-        </div>
-    </section>
-
-    <!-- Case Studies -->
-    <section class="case-studies" id="cas-clients">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title fade-in">
-                    Des résultats, pas des <span class="highlight">promesses</span>
-                </h2>
-                <p class="section-subtitle fade-in delay-1">
-                    Même site, même trafic, même budget publicitaire. Seule différence&nbsp;: Haria répond.
-                </p>
-            </div>
-
-            <div class="cases-grid">
-                <div class="case-card fade-in delay-1">
-                    <div class="case-header">
-                        <img src="images/logos/sixt.jpg" alt="Logo Sixt Occasion - Client Haria" class="case-logo-img" width="48" height="48" loading="lazy">
-                        <div class="case-info">
-                            <h3 class="case-company">Sixt Occasion</h3>
-                            <span class="case-industry">Vente de voiture d'occasion</span>
+                    <!-- Hero Section Start -->
+                    <section class="hero-section hero-1 fix bg-cover hero-ptb image-distortion p-relative z-index-1" id="hero" data-background="assets/img/home-1/hero-bg.jpg">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-9">
+                                    <div class="hero-content">
+                                        <div class="shape-1">
+                                            <img src="assets/img/home-1/shape1.png" alt="img">
+                                        </div>
+                                        <div class="shape-2">
+                                            <img src="assets/img/home-1/shape2.png" alt="img">
+                                        </div>
+                                        <span class="hero-sub wow fadeInUp">
+                                           <b>100 %</b> de satisfaction client
+                                        </span>
+                                        <h1 class="wa_title_spilt_1">
+                                            Transformez vos visiteurs en clients, 24h/24.
+                                        </h1>
+                                        <p class="wow fadeInUp" data-wow-delay=".3s">
+                                            Haria répond à vos visiteurs en 2 secondes, traite leurs objections et vous envoie des leads qualifiés pendant que vous dormez. 99 €/mois tout compris, en ligne en 72 h.
+                                        </p>
+                                        <form action="https://cal.com/matteolievre/15min" method="get" target="_blank" rel="noopener noreferrer" class="wow fadeInUp" data-wow-delay=".5s">
+                                            <input type="email" name="email" placeholder="Votre email professionnel*" aria-label="Votre email professionnel">
+                                            <button type="submit" class="theme-btn-main style-2">
+                                                <span class="theme-btn-arrow-left"> <i class="fa-solid fa-arrow-up-right"></i> </span>
+                                                <span class="theme-btn">Réserver</span>
+                                                <span class="theme-btn-arrow-right"> <i class="fa-solid fa-arrow-up-right"></i> </span>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hero-items">
+                                <div class="hero-image hero-animation">
+                                    <img src="assets/img/home-1/hero-image.png" alt="Tableau de bord Haria : conversations et leads captés par le chatbot">
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="case-stats">
-                        <div class="case-stat">
-                            <span class="case-stat-number">+42</span>
-                            <span class="case-stat-label">leads dès le premier mois</span>
-                        </div>
-                        <div class="case-stat">
-                            <span class="case-stat-number">+19&nbsp;%</span>
-                            <span class="case-stat-label">de taux de conversion</span>
-                        </div>
-                    </div>
-                </div>
+                    </section>
 
-                <div class="case-card fade-in delay-2">
-                    <div class="case-header">
-                        <img src="images/logos/edabos.png" alt="Logo Edabos - Client Haria" class="case-logo-img" width="48" height="48" loading="lazy">
-                        <div class="case-info">
-                            <h3 class="case-company">Edabos</h3>
-                            <span class="case-industry">Boutique en ligne</span>
+                    <!-- Brand Section Start -->
+                    <div class="brand-section-one section-padding">
+                        <div class="container">
+                            <div class="text wa_title_spilt_1">
+                                Ils ont déjà mis <b>Haria</b> sur leur site.
+                            </div>
                         </div>
-                    </div>
-                    <div class="case-stats">
-                        <div class="case-stat">
-                            <span class="case-stat-number">×1,4</span>
-                            <span class="case-stat-label">rendez-vous dès le 1er mois</span>
-                        </div>
-                        <div class="case-stat">
-                            <span class="case-stat-number">+28&nbsp;%</span>
-                            <span class="case-stat-label">de taux de conversion</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="case-card fade-in delay-3">
-                    <div class="case-header">
-                        <img src="images/logos/synergie.png" alt="Logo Synergie - Client Haria" class="case-logo-img" width="48" height="48" loading="lazy">
-                        <div class="case-info">
-                            <h3 class="case-company">Synergie</h3>
-                            <span class="case-industry">Installation solaire</span>
-                        </div>
-                    </div>
-                    <div class="case-stats">
-                        <div class="case-stat">
-                            <span class="case-stat-number">×1,6</span>
-                            <span class="case-stat-label">demandes de devis</span>
-                        </div>
-                        <div class="case-stat">
-                            <span class="case-stat-number">+21&nbsp;%</span>
-                            <span class="case-stat-label">de taux de conversion</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials" id="temoignages">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title fade-in">
-                    Ce qu'ils disent de <span class="highlight">Haria</span>
-                </h2>
-                <div class="verified-badge fade-in delay-1">
-                    <span class="verified-icon">&#10003;</span>
-                    <span class="verified-text">Avis vérifiés</span>
-                </div>
-            </div>
-
-            <p class="testimonials-hint" aria-hidden="true">Glissez pour lire les autres avis &rarr;</p>
-
-            <div class="testimonials-slider">
-                <div class="testimonials-track">
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                            <p class="testimonial-text">"Le chatbot répond instantanément aux questions de mes prospects sur les landing pages. Résultat&nbsp;: plus de leads qualifiés et moins de temps perdu en appels de qualification."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <img src="images/avatars/neo.jpg" alt="Photo de Neo Meunier - Fondateur Landing Labs" class="testimonial-avatar" width="44" height="44" loading="lazy">
-                            <div>
-                                <span class="testimonial-name">Neo Meunier</span>
-                                <span class="testimonial-role">Fondateur, Landing Labs</span>
-                                <a class="testimonial-linkedin" href="https://www.linkedin.com/in/neomeunier" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn de Neo Meunier">
-                                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
-                                    Neo Meunier
-                                </a>
+                        <div class="marquee">
+                            <div class="marquee-group">
+                                <div class="brand-img">
+                                    <img src="images/logos/sixt.jpg" alt="Sixt Occasion">
+                                </div>
+                                <div class="brand-img">
+                                    <img src="images/logos/edabos.svg" alt="Edabos">
+                                </div>
+                                <div class="brand-img">
+                                    <img src="images/logos/synergie.png" alt="Synergie">
+                                </div>
+                                <div class="brand-img">
+                                    <img src="images/logos/landing-labs.svg" alt="Landing Labs">
+                                </div>
+                                <div class="brand-img">
+                                    <img src="images/logos/valotek.svg" alt="Valotek">
+                                </div>
+                            </div>
+                                <div class="marquee-group">
+                                <div class="brand-img">
+                                    <img src="images/logos/sixt.jpg" alt="">
+                                </div>
+                                <div class="brand-img">
+                                    <img src="images/logos/edabos.svg" alt="">
+                                </div>
+                                <div class="brand-img">
+                                    <img src="images/logos/synergie.png" alt="">
+                                </div>
+                                <div class="brand-img">
+                                    <img src="images/logos/landing-labs.svg" alt="">
+                                </div>
+                                <div class="brand-img">
+                                    <img src="images/logos/valotek.svg" alt="">
+                                </div>
+                            </div>
+                                <div class="marquee-group">
+                                <div class="brand-img">
+                                    <img src="images/logos/sixt.jpg" alt="">
+                                </div>
+                                <div class="brand-img">
+                                    <img src="images/logos/edabos.svg" alt="">
+                                </div>
+                                <div class="brand-img">
+                                    <img src="images/logos/synergie.png" alt="">
+                                </div>
+                                <div class="brand-img">
+                                    <img src="images/logos/landing-labs.svg" alt="">
+                                </div>
+                                <div class="brand-img">
+                                    <img src="images/logos/valotek.svg" alt="">
+                                </div>
+                            </div>
+                                <div class="marquee-group">
+                                <div class="brand-img">
+                                    <img src="images/logos/sixt.jpg" alt="">
+                                </div>
+                                <div class="brand-img">
+                                    <img src="images/logos/edabos.svg" alt="">
+                                </div>
+                                <div class="brand-img">
+                                    <img src="images/logos/synergie.png" alt="">
+                                </div>
+                                <div class="brand-img">
+                                    <img src="images/logos/landing-labs.svg" alt="">
+                                </div>
+                                <div class="brand-img">
+                                    <img src="images/logos/valotek.svg" alt="">
+                                </div>
+                            </div>
+                                <div class="marquee-group">
+                                <div class="brand-img">
+                                    <img src="images/logos/sixt.jpg" alt="">
+                                </div>
+                                <div class="brand-img">
+                                    <img src="images/logos/edabos.svg" alt="">
+                                </div>
+                                <div class="brand-img">
+                                    <img src="images/logos/synergie.png" alt="">
+                                </div>
+                                <div class="brand-img">
+                                    <img src="images/logos/landing-labs.svg" alt="">
+                                </div>
+                                <div class="brand-img">
+                                    <img src="images/logos/valotek.svg" alt="">
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                            <p class="testimonial-text">"Haria guide mes visiteurs et répond à toutes leurs questions sur les boutiques e-commerce. J'ai pris 40 % de rendez-vous en plus dès le premier mois."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <img src="images/avatars/odilon.jpg" alt="Photo de Odilon Fourment - Fondateur Edabos" class="testimonial-avatar" width="44" height="44" loading="lazy">
-                            <div>
-                                <span class="testimonial-name">Odilon Fourment</span>
-                                <span class="testimonial-role">Fondateur, Edabos</span>
-                                <a class="testimonial-linkedin" href="https://www.linkedin.com/in/odilon-fourment" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn de Odilon Fourment">
-                                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
-                                    Odilon Fourment
-                                </a>
+                    <!-- Service Section Start -->
+                    <section class="service-section fix section-padding pt-0" id="fonctionnement">
+                        <div class="container">
+                            <div class="section-title text-center">
+                                <div class="tz-sub-tilte tz-sub-anim tx-subTitle">
+                                    <span class="sub-title"><b>Chatbot IA</b>Puissant à l'intérieur, simple pour vous</span>
+                                </div>
+                                <h2 class="tx-title sec_title  tz-itm-title tz-itm-anim">
+                                    Ce que Haria fait <br> sur votre site.
+                                </h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-8 col-lg-7 wow fadeInUp" data-wow-delay=".3s">
+                                    <div class="service-box-items">
+                                        <div class="thumb">
+                                            <img src="assets/img/home-1/service-1.jpg" alt="img">
+                                            <img src="assets/img/home-1/service-1.jpg" alt="img">
+                                        </div>
+                                        <div class="content">
+                                            <h3 class="title">
+                                                <a href="#etapes">Une IA entraînée sur votre métier</a>
+                                            </h3>
+                                            <p>
+                                                Vos offres, vos prix, vos FAQ : elle vend comme votre meilleur commercial.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-5 wow fadeInUp" data-wow-delay=".5s">
+                                     <div class="service-box-items">
+                                        <div class="thumb">
+                                            <img src="assets/img/home-1/service-2.jpg" alt="img">
+                                            <img src="assets/img/home-1/service-2.jpg" alt="img">
+                                        </div>
+                                        <div class="content">
+                                            <h3 class="title">
+                                                <a href="#etapes">Réponse en 2 secondes, 24h/24</a>
+                                            </h3>
+                                            <p>
+                                                Même à 3h du matin, le week-end et les jours fériés. Plus un lead perdu.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-5 wow fadeInUp" data-wow-delay=".3s">
+                                     <div class="service-box-items">
+                                        <div class="thumb">
+                                            <img src="assets/img/home-1/service-3.jpg" alt="img">
+                                            <img src="assets/img/home-1/service-3.jpg" alt="img">
+                                        </div>
+                                        <div class="content">
+                                            <h3 class="title">
+                                                <a href="#etapes">Capture de leads automatique</a>
+                                            </h3>
+                                            <p>
+                                               L'IA repère le visiteur chaud et vous envoie ses coordonnées par mail.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-8 col-lg-7 wow fadeInUp" data-wow-delay=".5s">
+                                    <div class="service-box-items">
+                                        <div class="thumb">
+                                            <img src="assets/img/home-1/service-4.jpg" alt="img">
+                                            <img src="assets/img/home-1/service-4.jpg" alt="img">
+                                        </div>
+                                        <div class="content">
+                                            <h3 class="title">
+                                                <a href="#tarifs">Données hébergées en France, RGPD</a>
+                                            </h3>
+                                            <p>
+                                                Vous restez propriétaire de vos données. Elles ne sont jamais revendues.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
 
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                            <p class="testimonial-text">"Mes clients veulent souvent voir des exemples de logos et échanger avec moi avant d'acheter. Le chatbot leur montre mon portfolio et me remonte les leads chauds, que je rappelle ensuite. Mes ventes ont nettement augmenté. Je recommande."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <img src="images/avatars/sacha.jpg" alt="Photo de Sacha Haegele - Fondateur IdeLift" class="testimonial-avatar" width="44" height="44" loading="lazy">
-                            <div>
-                                <span class="testimonial-name">Sacha Haegele</span>
-                                <span class="testimonial-role">Fondateur, Id Lift</span>
-                                <a class="testimonial-linkedin" href="https://www.linkedin.com/in/sachahaegele" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn de Sacha Haegele">
-                                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
-                                    Sacha Haegele
-                                </a>
+                    <!-- Choose Us Section Start -->
+                    <section class="choose-us-section fix section-padding pt-0" id="avantages">
+                        <div class="container">
+                            <div class="section-title text-center">
+                                <div class="tz-sub-tilte tz-sub-anim tx-subTitle">
+                                    <span class="sub-title"><b>Avantages</b>Le chatbot le plus simple de France</span>
+                                </div>
+                                <h2 class="tx-title sec_title  tz-itm-title tz-itm-anim">
+                                    Vous n'avez rien <br> à configurer.
+                                </h2>
+                            </div>
+                            <div class="row advance-wrap">
+                                <div class="col-xl-3 col-lg-4 col-md-6 advance-item">
+                                    <div class="choose-us-items">
+                                        <div class="number">
+                                            01
+                                        </div>
+                                        <div class="content">
+                                            <h3 class="title">Clé en main</h3>
+                                            <p>
+                                                On entraîne l'IA, on design le widget, on teste les scénarios. Vous validez, c'est tout.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 advance-item">
+                                    <div class="choose-us-items">
+                                        <div class="number">
+                                            02
+                                        </div>
+                                        <div class="content">
+                                            <h3 class="title">Rapide</h3>
+                                            <p>
+                                                En ligne en 72 h, installé en 5 minutes. Une agence met 3 à 12 semaines.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 advance-item">
+                                    <div class="choose-us-items">
+                                        <div class="number">
+                                            03
+                                        </div>
+                                        <div class="content">
+                                            <h3 class="title">Transparent</h3>
+                                            <p>
+                                                99 €/mois, point. Pas de facturation à l'usage, pas de crédits IA, pas de frais caché.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 advance-item">
+                                    <div class="choose-us-items">
+                                        <div class="number">
+                                            04
+                                        </div>
+                                        <div class="content">
+                                            <h3 class="title">Suivi</h3>
+                                            <p>
+                                                Chaque mois, on relit les conversations et on améliore les réponses qui convertissent.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hero-items">
+                                 <div class="dashboard-image hero-animation">
+                                    <img src="assets/img/home-1/dashboard-image.png" alt="Tableau de bord Haria : suivi des conversations et des leads">
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
 
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                            <p class="testimonial-text">"Le chatbot explique parfaitement mes offres de landing pages et qualifie les prospects avant qu'ils me contactent. J'ai gagné un temps fou et mes conversions ont explosé."</p>
-                        </div>
-                        <div class="testimonial-author">
-                            <img src="images/avatars/nathan.png" alt="Photo de Nathan Burtin - Fondateur Novexa" class="testimonial-avatar" width="44" height="44" loading="lazy">
-                            <div>
-                                <span class="testimonial-name">Nathan Burtin</span>
-                                <span class="testimonial-role">Fondateur, Novexa</span>
-                                <a class="testimonial-linkedin" href="https://www.linkedin.com/in/nathan-burtin" target="_blank" rel="noopener noreferrer" aria-label="Profil LinkedIn de Nathan Burtin">
-                                    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z"/></svg>
-                                    Nathan Burtin
+                    <!-- How It Section Start -->
+                    <section class="how-it-section fix section-padding pt-0" id="etapes">
+                        <div class="container">
+                            <div class="section-title-area align-items-start">
+                                <div class="section-title mb-0">
+                                    <div class="tz-sub-tilte tz-sub-anim tx-subTitle">
+                                        <span class="sub-title"><b>Étapes</b>3 étapes, 72 heures</span>
+                                    </div>
+                                </div>
+                                <div class="section-title mb-0">
+                                    <h2 class="tx-title sec_title  tz-itm-title tz-itm-anim">
+                                        Votre chatbot en ligne <br> cette semaine
+                                    </h2>
+                                </div>
+                                <a class="theme-btn-main style-2" href="https://cal.com/matteolievre/15min" target="_blank" rel="noopener noreferrer">
+                                    <span class="theme-btn-arrow-left"> <i class="fa-solid fa-arrow-up-right"></i> </span>
+                                    <span class="theme-btn">Réserver 15 min</span>
+                                    <span class="theme-btn-arrow-right"> <i class="fa-solid fa-arrow-up-right"></i> </span>
                                 </a>
                             </div>
+                            <div class="row justify-content-between">
+                                <div class="col-xxl-5 col-xl-6 col-lg-6">
+                                    <ul class="how-it-items">
+                                        <li class="wow fadeInUp" data-wow-delay=".3s">
+                                            <div class="icon">
+                                                <img src="assets/img/home-1/folder.png" alt="img">
+                                            </div>
+                                            <div class="content">
+                                                <h3 class="title">Vous réservez 15 minutes</h3>
+                                                <p>
+                                                    On a déjà construit votre chatbot avant l'appel. Vous le voyez répondre en direct, sur vos pages.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="wow fadeInUp" data-wow-delay=".5s">
+                                            <div class="icon">
+                                                <img src="assets/img/home-1/pencil.png" alt="img">
+                                            </div>
+                                            <div class="content">
+                                                <h3 class="title">On construit tout pour vous</h3>
+                                                <p>
+                                                    Entraînement de l'IA, design à votre charte, scénarios de capture de leads, tests. En 48 à 72 h.
+                                                </p>
+                                            </div>
+                                        </li>
+                                        <li class="wow fadeInUp" data-wow-delay=".7s">
+                                            <div class="icon">
+                                                <img src="assets/img/home-1/security.png" alt="img">
+                                            </div>
+                                            <div class="content">
+                                                <h3 class="title">Vos leads arrivent</h3>
+                                                <p>
+                                                    Vous collez une ligne de code, Haria se met à travailler. Les leads qualifiés arrivent dans votre boîte mail.
+                                                </p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-xxl-6 col-xl-6 col-lg-6">
+                                    <div class="how-it-image wow fadeInUp" data-wow-delay=".4s">
+                                        <img src="assets/img/home-1/how-it-image.png" alt="Le widget Haria en place sur un site client">
+                                        <img src="assets/img/home-1/how-it-image.png" alt="img">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </section>
+
+                    <!-- Testimonial Section Start -->
+                    <section class="testimonial-section fix section-padding" id="avis">
+                         <div class="ripple-image ripples position-absolute w-100 h-100 top-0 start-0 z-0">
+                            <img src="assets/img/home-1/testimonial-bg.jpg" alt="shape">
+                        </div>
+                        <div class="container">
+                             <div class="section-title text-center">
+                                <div class="tz-sub-tilte tz-sub-anim tx-subTitle">
+                                    <span class="sub-title"><b>Avis</b>Vérifiés, profils LinkedIn à l'appui</span>
+                                </div>
+                                <h2 class="tx-title sec_title  tz-itm-title tz-itm-anim">
+                                    Ce qu'ils disent <br> de Haria.
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="swiper testimonial-slider">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide wow fadeInUp">
+                                    <div class="testimonial-box-items">
+                                        <div class="star">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <p class="text">
+                                           “Le chatbot répond instantanément aux questions de mes prospects sur les landing pages. Résultat : plus de leads qualifiés et moins de temps perdu en appels de qualification.”
+                                        </p>
+                                        <div class="client-info">
+                                            <div class="thumb">
+                                                <img src="images/avatars/neo.jpg" alt="Neo Meunier, fondateur de Landing Labs">
+                                            </div>
+                                            <div class="info-content">
+                                                <h3 class="name">Neo Meunier</h3>
+                                                <span>Fondateur, Landing Labs</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide wow fadeInUp" data-wow-delay=".2s">
+                                    <div class="testimonial-box-items">
+                                        <div class="star">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <p class="text">
+                                           “Haria guide mes visiteurs et répond à toutes leurs questions sur les boutiques e-commerce. J'ai pris 40 % de rendez-vous en plus dès le premier mois.”
+                                        </p>
+                                        <div class="client-info">
+                                            <div class="thumb">
+                                                <img src="images/avatars/odilon.jpg" alt="Odilon Fourment, fondateur d'Edabos">
+                                            </div>
+                                            <div class="info-content">
+                                                <h3 class="name">Odilon Fourment</h3>
+                                                <span>Fondateur, Edabos</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide wow fadeInUp" data-wow-delay=".4s">
+                                    <div class="testimonial-box-items">
+                                        <div class="star">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <p class="text">
+                                           “Mes clients veulent voir des exemples avant d'acheter. Le chatbot leur montre mon portfolio et me remonte les leads chauds, que je rappelle ensuite. Mes ventes ont nettement augmenté.”
+                                        </p>
+                                        <div class="client-info">
+                                            <div class="thumb">
+                                                <img src="images/avatars/sacha.jpg" alt="Sacha Haegele, fondateur d'Id Lift">
+                                            </div>
+                                            <div class="info-content">
+                                                <h3 class="name">Sacha Haegele</h3>
+                                                <span>Fondateur, Id Lift</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide wow fadeInUp" data-wow-delay=".6s">
+                                    <div class="testimonial-box-items">
+                                        <div class="star">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <p class="text">
+                                           “Le chatbot explique parfaitement mes offres de landing pages et qualifie les prospects avant qu'ils me contactent. J'ai gagné un temps fou et mes conversions ont explosé.”
+                                        </p>
+                                        <div class="client-info">
+                                            <div class="thumb">
+                                                <img src="images/avatars/nathan.png" alt="Nathan Burtin, fondateur de Novexa">
+                                            </div>
+                                            <div class="info-content">
+                                                <h3 class="name">Nathan Burtin</h3>
+                                                <span>Fondateur, Novexa</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide wow fadeInUp" data-wow-delay=".8s">
+                                    <div class="testimonial-box-items">
+                                        <div class="star">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <p class="text">
+                                           “Le chatbot répond aux questions des visiteurs sur les véhicules disponibles et nous remonte les demandes sérieuses. +42 leads dès le premier mois.”
+                                        </p>
+                                        <div class="client-info">
+                                            <div class="thumb">
+                                                <img src="images/logos/sixt.jpg" alt="Sixt Occasion">
+                                            </div>
+                                            <div class="info-content">
+                                                <h3 class="name">Sixt Occasion</h3>
+                                                <span>Vente de voitures d'occasion</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide wow fadeInUp" data-wow-delay=".9s">
+                                    <div class="testimonial-box-items">
+                                        <div class="star">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </div>
+                                        <p class="text">
+                                           “Les visiteurs posent leurs questions sur l'installation solaire à toute heure et repartent avec une demande de devis. ×1,6 sur nos demandes entrantes.”
+                                        </p>
+                                        <div class="client-info">
+                                            <div class="thumb">
+                                                <img src="images/logos/synergie.png" alt="Synergie">
+                                            </div>
+                                            <div class="info-content">
+                                                <h3 class="name">Synergie</h3>
+                                                <span>Installation solaire</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Faq Section Start -->
+                    <section class="faq-section fix section-padding" id="faq">
+                        <div class="container">
+                            <div class="section-title-area align-items-center">
+                                <div class="section-title mb-0">
+                                    <div class="tz-sub-tilte tz-sub-anim tx-subTitle">
+                                        <span class="sub-title"><b>FAQ</b>Tout ce qu'on nous demande</span>
+                                    </div>
+                                    <h2 class="tx-title sec_title  tz-itm-title tz-itm-anim">
+                                       Les questions <br> qui reviennent
+                                    </h2>
+                                </div>
+                                <a class="theme-btn-main style-2" href="https://cal.com/matteolievre/15min" target="_blank" rel="noopener noreferrer">
+                                    <span class="theme-btn-arrow-left"> <i class="fa-solid fa-arrow-up-right"></i> </span>
+                                    <span class="theme-btn">Nous contacter</span>
+                                    <span class="theme-btn-arrow-right"> <i class="fa-solid fa-arrow-up-right"></i> </span>
+                                </a>
+                            </div>
+                            <div class="faq-items-1">
+                                <ul class="accordion-box">
+                                    <!--Block-->
+                                    <li class="accordion block active-block">
+                                        <div class="acc-btn active">
+                                            <div class="number"> 01.</div>
+                                             Le chatbot est-il vraiment construit avant l'appel ?
+                                            <div class="icon fa-regular fa-plus"></div>
+                                        </div>
+                                        <div class="acc-content current">
+                                            <div class="content">
+                                                <div class="text">
+                                                   Oui. Dès que vous réservez un créneau, nous analysons votre site et nous entraînons une première version de votre chatbot sur vos pages, vos offres et vos FAQ. Pendant les 15 minutes d'appel, vous le voyez répondre en direct à vos vraies questions clients. C'est gratuit, sans engagement et sans carte bancaire. Nous limitons volontairement ce travail à 5 chatbots pré-construits par semaine.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <!--Block-->
+                                    <li class="accordion block wow fadeInUp" data-wow-delay=".2s">
+                                        <div class="acc-btn">
+                                            <div class="number"> 02.</div>
+                                          Combien coûte Haria exactement ?
+                                            <div class="icon fa-regular fa-plus"></div>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <div class="text">
+                                                    Deux formules : Essentiel à 99 €/mois et Pro à 179 €/mois, conversations illimitées dans les deux cas. En mensuel, il s'ajoute des frais d'installation une seule fois (499 € pour l'Essentiel, 699 € pour le Pro) ; en annuel, ces frais sont offerts. Il n'y a aucun autre poste de facturation. Pour un comparatif complet du marché, voyez notre guide <a href="combien-coute-un-chatbot-ia.html">combien coûte un chatbot IA</a>.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <!--Block-->
+                                    <li class="accordion block wow fadeInUp" data-wow-delay=".4s">
+                                        <div class="acc-btn">
+                                            <div class="number"> 03.</div>
+                                          Y a-t-il des frais cachés si mon trafic augmente ?
+                                            <div class="icon fa-regular fa-plus"></div>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <div class="text">
+                                                    Non, jamais. Beaucoup d'outils facturent à la résolution (0,99 $ par conversation résolue chez Intercom) ou par crédits IA : votre facture grimpe exactement quand votre site marche bien. Chez Haria, 1 000 ou 100 000 conversations coûtent le même prix : 99 €/mois. Aucun coût par siège, aucun palier, aucune option payante.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <!--Block-->
+                                    <li class="accordion block wow fadeInUp" data-wow-delay=".6s">
+                                        <div class="acc-btn">
+                                            <div class="number"> 04.</div>
+                                          En combien de temps mon chatbot est-il en ligne ?
+                                            <div class="icon fa-regular fa-plus"></div>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <div class="text">
+                                                    48 à 72 heures entre la démo et la mise en ligne. Nous entraînons l'IA, personnalisons le widget et testons les scénarios pendant ce délai. De votre côté, il ne reste qu'à coller une ligne de code : 5 minutes. Une agence de développement met généralement 3 à 12 semaines pour le même résultat.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <!--Block-->
+                                    <li class="accordion block wow fadeInUp" data-wow-delay=".8s">
+                                        <div class="acc-btn">
+                                            <div class="number"> 05.</div>
+                                          Est-ce que Haria fonctionne sur tous les sites ?
+                                            <div class="icon fa-regular fa-plus"></div>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <div class="text">
+                                                    Oui. Haria s'installe via une simple ligne de code JavaScript, compatible avec WordPress, Shopify, Webflow, Wix, Prestashop, Squarespace ou n'importe quel site sur mesure. Aucun plugin à installer, aucune refonte à prévoir.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <!--Block-->
+                                    <li class="accordion block wow fadeInUp" data-wow-delay=".8s">
+                                        <div class="acc-btn">
+                                            <div class="number"> 06.</div>
+                                          Quelle différence avec Intercom, Crisp ou une agence ?
+                                            <div class="icon fa-regular fa-plus"></div>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <div class="text">
+                                                    Intercom et Crisp sont des outils en libre-service : vous entraînez l'IA, vous la corrigez, vous la maintenez, et l'IA est facturée à l'usage. Une agence facture entre 1 500 € et 30 000 € de développement, plus 200 à 500 €/mois de maintenance. Haria est une solution opérée à prix fixe. Détail dans nos guides <a href="haria-vs-intercom-vs-crisp.html">Haria vs Intercom vs Crisp</a> et <a href="haria-vs-agence-chatbot-ia.html">Haria vs agence de chatbot IA</a>.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <!--Block-->
+                                    <li class="accordion block wow fadeInUp" data-wow-delay=".8s">
+                                        <div class="acc-btn">
+                                            <div class="number"> 07.</div>
+                                          Haria est-il conforme au RGPD ?
+                                            <div class="icon fa-regular fa-plus"></div>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <div class="text">
+                                                    Oui. Les données sont hébergées en France, sur des serveurs européens. Le consentement est demandé aux visiteurs, vous restez propriétaire de vos données à 100 %, et nous ne les revendons jamais à des tiers.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <!--Block-->
+                                    <li class="accordion block wow fadeInUp" data-wow-delay=".8s">
+                                        <div class="acc-btn">
+                                            <div class="number"> 08.</div>
+                                          Puis-je annuler à tout moment ?
+                                            <div class="icon fa-regular fa-plus"></div>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="content">
+                                                <div class="text">
+                                                    Oui, la formule mensuelle est sans engagement et s'annule en un clic depuis votre dashboard. Et sur les 7 premiers jours, la garantie satisfait ou remboursé s'applique : si Haria ne vous convainc pas, vous récupérez votre argent.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Pricing Section Start -->
+                    <section class="pricing-section section-padding fix pt-0" id="tarifs">
+                        <div class="container">
+                            <div class="section-title text-center">
+                                <div class="tz-sub-tilte tz-sub-anim tx-subTitle">
+                                    <span class="sub-title"><b>Tarifs</b>Un prix, tout compris</span>
+                                </div>
+                                <h2 class="tx-title sec_title  tz-itm-title tz-itm-anim">
+                                    Pas de frais cachés
+                                </h2>
+                                <p class="mt-3">
+                                    Conversations illimitées, jamais facturées à l'usage. <br> En annuel, les frais d'installation sont offerts.
+                                </p>
+                                <div class="pricing-toggle-wrapper text-center">
+                                    <span class="toggle-label active" data-period="monthly" role="button" tabindex="0">Mensuel</span>
+                                    <span class="toggle-label" data-period="yearly" role="button" tabindex="0">Annuel</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                                    <div class="pricing-box-items">
+                                        <div class="pricing-header">
+                                            <span class="sub-price">Essentiel</span>
+                                            <p class="price-text">
+                                               Un chatbot IA entraîné sur votre activité, mis en ligne et suivi par notre équipe.
+                                            </p>
+                                            <div class="haria-price-row">
+                                                <h3 class="price" data-monthly="99 €" data-yearly="99 €">99 €<sub>/ mois</sub></h3>
+                                                <span class="setup-fee">+ 499 € de frais d'installation</span>
+                                            </div>
+                                        </div>
+                                        <a class="theme-btn"
+                                           href="https://buy.stripe.com/28EbJ28R04ln7Cxbx61Jm02"
+                                           data-monthly-href="https://buy.stripe.com/28EbJ28R04ln7Cxbx61Jm02"
+                                           data-yearly-href="https://buy.stripe.com/14AeVe2sCdVX6ytcBa1Jm03"
+                                           target="_blank" rel="noopener noreferrer">
+                                            Passer à l'action
+                                            <span class="icon">
+                                                  <i class="fa-solid fa-arrow-up-right"></i>
+                                            </span>
+                                        </a>
+                                        <div class="pricing-list">
+                                            <span>Ce qui est inclus</span>
+                                            <ul>
+                                                <li>
+                                                    <img src="assets/img/home-1/check.png" alt="img">
+                                                    Sans engagement, annulable en un clic
+                                                </li>
+                                                <li>
+                                                    <img src="assets/img/home-1/check.png" alt="img">
+                                                    1 chatbot, conversations illimitées
+                                                </li>
+                                                <li>
+                                                    <img src="assets/img/home-1/check.png" alt="img">
+                                                    Entraînement et configuration faits par nous
+                                                </li>
+                                                <li>
+                                                    <img src="assets/img/home-1/check.png" alt="img">
+                                                   Capture de leads, analytics et optimisation continue
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
+                                    <div class="pricing-box-items active bg-cover" style="background-image: url('assets/img/home-1/pricing-active.png');">
+                                        <div class="pricing-header">
+                                            <span class="sub-price">Pro</span>
+                                            <p class="price-text">
+                                                Pour les sites à fort trafic qui veulent plusieurs chatbots et des intégrations.
+                                            </p>
+                                            <div class="haria-price-row">
+                                                <h3 class="price" data-monthly="179 €" data-yearly="179 €">179 €<sub>/ mois</sub></h3>
+                                                <span class="setup-fee">+ 699 € de frais d'installation</span>
+                                            </div>
+                                        </div>
+                                        <a class="theme-btn" href="https://cal.com/matteolievre/15min" target="_blank" rel="noopener noreferrer">
+                                            Passer à l'action
+                                            <span class="icon">
+                                                  <i class="fa-solid fa-arrow-up-right"></i>
+                                            </span>
+                                        </a>
+                                        <div class="pricing-list">
+                                            <span>Ce qui est inclus</span>
+                                            <ul>
+                                                <li>
+                                                    <img src="assets/img/home-1/check.png" alt="img">
+                                                    Sans engagement, annulable en un clic
+                                                </li>
+                                                <li>
+                                                    <img src="assets/img/home-1/check.png" alt="img">
+                                                   Tout l'Essentiel, avec plusieurs chatbots
+                                                </li>
+                                                <li>
+                                                    <img src="assets/img/home-1/check.png" alt="img">
+                                                    Intégrations à vos outils (CRM, agenda, e-mail)
+                                                </li>
+                                                <li>
+                                                    <img src="assets/img/home-1/check.png" alt="img">
+                                                  Optimisation renforcée et support prioritaire
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
+                                    <div class="pricing-box-items">
+                                        <div class="pricing-header">
+                                            <span class="sub-price">Max</span>
+                                            <p class="price-text">
+                                                Pour les grandes organisations et les besoins multi-sites ou sur mesure.
+                                            </p>
+                                            <h3>Sur devis</h3>
+                                        </div>
+                                        <a class="theme-btn" href="https://cal.com/matteolievre/15min" target="_blank" rel="noopener noreferrer">
+                                            Nous contacter
+                                            <span class="icon">
+                                                  <i class="fa-solid fa-arrow-up-right"></i>
+                                            </span>
+                                        </a>
+                                        <div class="pricing-list">
+                                            <span>Ce qui est inclus</span>
+                                            <ul>
+                                                <li>
+                                                    <img src="assets/img/home-1/check.png" alt="img">
+                                                   Chatbots illimités
+                                                </li>
+                                                <li>
+                                                    <img src="assets/img/home-1/check.png" alt="img">
+                                                   White-label &amp; intégrations sur mesure
+                                                </li>
+                                                <li>
+                                                    <img src="assets/img/home-1/check.png" alt="img">
+                                                    SLA garanti &amp; account manager dédié
+                                                </li>
+                                                <li>
+                                                    <img src="assets/img/home-1/check.png" alt="img">
+                                                  Formation de votre équipe
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Footer Section Start -->
+                    <footer class="footer-section fix section-padding" id="contact">
+                        <div class="container">
+                            <div class="footer-top-wrapper">
+                                <h2 class="title wa_title_spilt_1">
+                                    Voyez votre chatbot <br> avant de décider.
+                                </h2>
+                                <div class="right-content wow fadeInUp" data-wow-delay=".3s">
+                                    <form action="https://cal.com/matteolievre/15min" method="get" target="_blank" rel="noopener noreferrer">
+                                        <input type="email" name="email" placeholder="Votre email professionnel*" aria-label="Votre email professionnel">
+                                        <div class="line"></div>
+                                        <button class="email-btn" type="submit" aria-label="Réserver ma démo de 15 minutes">
+                                            <img src="assets/img/home-1/mail.png" alt="img">
+                                        </button>
+                                    </form>
+                                    <label class="sq-checkbox">
+                                        <input type="checkbox">
+                                        <span class="box" aria-hidden="true">
+                                            <svg viewBox="0 0 24 24" class="check" focusable="false" aria-hidden="true">
+                                            <path d="M20 6L9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            </svg>
+                                        </span>
+                                        <span class="label-text">J'accepte la politique de confidentialité.</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer-area">
+                            <div class="container">
+                                <div class="footer-widget-wrapper">
+                                    <div class="row justify-content-between">
+                                        <div class="col-xl-4 col-lg-5 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                                            <div class="footer-widget-items">
+                                                <div class="widget-head">
+                                                    <a href="/" class="footer-logo haria-logo haria-logo--light">
+                                                        <img src="logo.png" alt="Haria">
+                                                        <span>Haria</span>
+                                                    </a>
+                                                </div>
+                                                <div class="footer-content">
+                                                    <p>
+                                                        Le chatbot IA clé en main qui transforme vos visiteurs en clients. 99 €/mois, tout compris, sans engagement.
+                                                    </p>
+                                                    <div class="social-icon d-flex align-items-center">
+                                                        <a href="https://www.linkedin.com/company/haria-funnel/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Haria"><i class="fab fa-linkedin-in"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 col-6 wow fadeInUp" data-wow-delay=".4s">
+                                            <div class="footer-widget-items">
+                                                <div class="widget-head">
+                                                    <span class="widget-title">Le produit</span>
+                                                </div>
+                                                <ul class="gt-list-area">
+                                                    <li>
+                                                        <a href="#fonctionnement">
+                                                           Fonctionnement
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#avantages">
+                                                            Avantages
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#etapes">
+                                                            Étapes
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#avis">
+                                                        Avis clients
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#tarifs">
+                                                        Tarifs
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#faq">
+                                                        FAQ
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-3 ps-lg-0 col-lg-4 col-md-6 col-sm-6 col-6 wow fadeInUp" data-wow-delay=".6s">
+                                            <div class="footer-widget-items">
+                                                <div class="widget-head">
+                                                    <span class="widget-title">Nos guides</span>
+                                                </div>
+                                                <ul class="gt-list-area">
+                                                    <li>
+                                                        <a href="combien-coute-un-chatbot-ia.html">
+                                                            Prix d'un chatbot IA
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="haria-vs-agence-chatbot-ia.html">
+                                                        Haria vs agence chatbot
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="haria-vs-intercom-vs-crisp.html">
+                                                            Haria vs Intercom vs Crisp
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="chatbot-ia-ecommerce.html">
+                                                        Chatbot IA pour e-commerce
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="mentions-legales.html">
+                                                        Mentions légales
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="politique-confidentialite.html">
+                                                        Confidentialité
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".8s">
+                                            <div class="footer-widget-items">
+                                                <div class="widget-head">
+                                                    <span class="widget-title">Contact</span>
+                                                </div>
+                                                <ul class="contact-list">
+                                                    <li>
+                                                        <img src="assets/img/home-1/call.png" alt="img">
+                                                        <a href="https://cal.com/matteolievre/15min" target="_blank" rel="noopener noreferrer">Réserver 15 min</a>
+                                                    </li>
+                                                    <li>
+                                                        <img src="assets/img/home-1/email.png" alt="img">
+                                                        <a href="mailto:contact.haria.ia@gmail.com">contact.haria.ia@gmail.com</a>
+                                                    </li>
+                                                    <li>
+                                                        Données hébergées en France, <br> conformes au RGPD.
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="footer-bottom">
+                                <div class="container">
+                                    <div class="footer-bottom-wrapper">
+                                        <p>
+                                            © 2026 <b>Haria.</b> Tous droits réservés.
+                                        </p>
+                                        <ul class="footer-list">
+                                            <li>
+                                                <a href="politique-confidentialite.html">Politique de confidentialité</a>
+                                            </li>
+                                            <li>।</li>
+                                            <li>
+                                                <a href="mentions-legales.html">Mentions légales</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Pricing -->
-    <section class="pricing" id="tarifs">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title fade-in">
-                    Un prix. <span class="highlight">Tout compris.</span>
-                </h2>
-                <p class="section-subtitle fade-in delay-1">
-                    Pas de frais cachés. Pas de facturation à l'usage. Pas d'engagement.
-                    Un lead supplémentaire par mois, et Haria est déjà rentable.
-                </p>
-            </div>
 
-            <div class="pricing-grid">
-                <div class="pricing-card fade-in delay-1">
-                    <div class="pricing-header">
-                        <h3 class="pricing-name">Mensuel</h3>
-                        <p class="pricing-desc">Flexibilité maximale</p>
-                    </div>
-                    <div class="pricing-price">
-                        <span class="price-amount">99&nbsp;€</span>
-                        <span class="price-period">/mois</span>
-                        <span class="price-note">+499&nbsp;€ de frais d'installation</span>
-                    </div>
-                    <ul class="pricing-features">
-                        <li><span class="check">&#10003;</span> Conversations illimitées</li>
-                        <li><span class="check">&#10003;</span> 1 chatbot</li>
-                        <li><span class="check">&#10003;</span> Configuration faite par nous</li>
-                        <li><span class="check">&#10003;</span> Personnalisation complète</li>
-                        <li><span class="check">&#10003;</span> Capture de leads</li>
-                        <li><span class="check">&#10003;</span> Analytics avancés</li>
-                        <li><span class="check">&#10003;</span> Optimisation continue incluse</li>
-                        <li><span class="check">&#10003;</span> Sans engagement</li>
-                    </ul>
-                    <div class="pricing-actions">
-                        <a href="https://cal.com/matteolievre/15min" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">Voir mon chatbot en 15 min</a>
-                        <a href="https://buy.stripe.com/28EbJ28R04ln7Cxbx61Jm02" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block btn-checkout">Passer à l'action maintenant</a>
-                    </div>
-                </div>
+        <!--<< All JS Plugins >>-->
+        <script src="assets/js/jquery-3.7.1.min.js"></script>
+        <!--<< Bootstrap Js >>-->
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <!--<< Gsap Min Js >>-->
+        <script src="assets/js/gsap.min.js"></script>
+        <!--<< ScrollTrigger Min Js >>-->
+        <script src="assets/js/ScrollTrigger.min.js"></script>
+        <!--<< ScrollSmoother Min Js >>-->
+        <script src="assets/js/ScrollSmoother.min.js"></script>
+        <!--<< ScrollToPlugin Min Js >>-->
+        <script src="assets/js/ScrollToPlugin.min.js"></script>
+        <!--<< SplitText Min Js >>-->
+        <script src="assets/js/SplitText.min.js"></script>
+        <!--<< TextPlugin Min Js >>-->
+        <script src="assets/js/TextPlugin.js"></script>
+        <!--<< Chroma Min Js >>-->
+        <script src="assets/js/chroma.min.js"></script>
+        <!--<< Three Js >>-->
+        <script src="assets/js/three.js"></script>
+        <!--<< Ripple Js >>-->
+        <script src="assets/js/ripple-2.js"></script>
+        <!--<< Webgl Min Js >>-->
+        <script src="assets/js/webgl.js"></script>
+        <!--<< nice-selec Js >>-->
+        <script src="assets/js/jquery.nice-select.min.js"></script>
+        <!--<< Waypoints Js >>-->
+        <script src="assets/js/jquery.waypoints.js"></script>
+        <!--<< Counterup Js >>-->
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <!--<< Swiper Slider Js >>-->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <!--<< Magnific Popup Js >>-->
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <!--<< Wow Animation Js >>-->
+        <script src="assets/js/wow.min.js"></script>
+        <!--<< Main.js >>-->
+        <script src="assets/js/main.js"></script>
+        <script type="module" src="assets/js/distortion-img.js"></script>
+        <!--<< Haria.js : ancres compatibles ScrollSmoother + widget >>-->
+        <script src="assets/js/haria.js"></script>
 
-                <div class="pricing-card pricing-card-popular fade-in delay-2">
-                    <div class="pricing-badge">La plus populaire</div>
-                    <div class="pricing-header">
-                        <h3 class="pricing-name">Annuel</h3>
-                        <p class="pricing-desc">Le meilleur rapport qualité-prix</p>
-                    </div>
-                    <div class="pricing-price">
-                        <span class="price-amount">99&nbsp;€</span>
-                        <span class="price-period">/mois</span>
-                        <span class="price-note price-note-highlight">Facturé à l'année · 499&nbsp;€ d'installation offerts</span>
-                    </div>
-                    <ul class="pricing-features">
-                        <li><span class="check">&#10003;</span> <strong>Frais d'installation offerts (499&nbsp;€)</strong></li>
-                        <li><span class="check">&#10003;</span> Conversations illimitées</li>
-                        <li><span class="check">&#10003;</span> 1 chatbot</li>
-                        <li><span class="check">&#10003;</span> Configuration faite par nous</li>
-                        <li><span class="check">&#10003;</span> Personnalisation complète</li>
-                        <li><span class="check">&#10003;</span> Capture de leads</li>
-                        <li><span class="check">&#10003;</span> Analytics avancés</li>
-                        <li><span class="check">&#10003;</span> Optimisation continue incluse</li>
-                    </ul>
-                    <div class="pricing-actions">
-                        <a href="https://cal.com/matteolievre/15min" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">Voir mon chatbot en 15 min</a>
-                        <a href="https://buy.stripe.com/14AeVe2sCdVX6ytcBa1Jm03" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block btn-checkout">Passer à l'action maintenant</a>
-                    </div>
-                </div>
-
-                <div class="pricing-card fade-in delay-3">
-                    <div class="pricing-header">
-                        <h3 class="pricing-name">Max</h3>
-                        <p class="pricing-desc">Pour les grandes organisations</p>
-                    </div>
-                    <div class="pricing-price">
-                        <span class="price-amount">Sur devis</span>
-                    </div>
-                    <ul class="pricing-features">
-                        <li><span class="check">&#10003;</span> Conversations illimitées</li>
-                        <li><span class="check">&#10003;</span> Chatbots illimités</li>
-                        <li><span class="check">&#10003;</span> White-label disponible</li>
-                        <li><span class="check">&#10003;</span> Intégrations sur mesure</li>
-                        <li><span class="check">&#10003;</span> SLA garanti</li>
-                        <li><span class="check">&#10003;</span> Account manager dédié</li>
-                        <li><span class="check">&#10003;</span> Formation équipe</li>
-                    </ul>
-                    <a href="https://cal.com/matteolievre/15min" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">Nous contacter</a>
-                </div>
-            </div>
-
-            <div class="pricing-guarantee fade-in delay-4">
-                <span class="guarantee-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1 1 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
-                <p><strong>Garantie satisfait ou remboursé 7 jours.</strong> Si Haria ne vous convainc pas, vous ne payez rien.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq" id="faq">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title fade-in">
-                    Questions <span class="highlight">fréquentes</span>
-                </h2>
-                <p class="section-subtitle fade-in delay-1">
-                    Tout ce qu'on nous demande avant de se lancer. Une question qui n'est pas là&nbsp;?
-                    Posez-la au chatbot en bas de cette page. C'est Haria, en vrai.
-                </p>
-            </div>
-
-            <div class="faq-grid">
-                <div class="faq-item fade-in delay-1">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Le chatbot est-il vraiment construit avant l'appel&nbsp;?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Oui. Dès que vous réservez un créneau, nous analysons votre site et nous entraînons une première version de votre chatbot sur vos pages, vos offres et vos FAQ. Pendant les 15 minutes d'appel, vous le voyez répondre en direct à vos vraies questions clients&nbsp;: vous jugez sur pièces. C'est entièrement gratuit, sans engagement et sans carte bancaire. Nous limitons volontairement ce travail à 5 chatbots pré-construits par semaine pour que chaque démo soit sérieusement préparée.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item fade-in delay-1">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Combien coûte Haria exactement&nbsp;?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>99&nbsp;€/mois, conversations illimitées. En formule mensuelle, il s'ajoute 499&nbsp;€ de frais d'installation une seule fois&nbsp;; en formule annuelle, ces 499&nbsp;€ sont offerts. C'est tout&nbsp;: il n'y a aucun autre poste de facturation. Pour un comparatif complet du marché, voyez notre guide <a href="combien-coute-un-chatbot-ia.html">combien coûte un chatbot IA</a>.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item fade-in delay-2">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Y a-t-il des frais cachés ou des surcoûts si mon trafic augmente&nbsp;?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Non, jamais. Beaucoup d'outils facturent à la résolution (0,99 $ par conversation résolue chez Intercom) ou par crédits IA&nbsp;: votre facture grimpe exactement quand votre site marche bien. Chez Haria, 1 000 ou 100 000 conversations coûtent le même prix&nbsp;: 99&nbsp;€/mois. Aucun coût par siège, aucun palier, aucune option payante.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item fade-in delay-3">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>En combien de temps mon chatbot est-il en ligne&nbsp;?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>48 à 72 heures entre la démo et la mise en ligne. Nous entraînons l'IA, personnalisons le widget et testons les scénarios pendant ce délai. De votre côté, il ne reste qu'à coller une ligne de code&nbsp;: 5 minutes. Une agence de développement met généralement 3 à 12 semaines pour le même résultat.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item fade-in delay-4">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Est-ce que Haria fonctionne sur tous les sites&nbsp;?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Oui. Haria s'installe via une simple ligne de code JavaScript, compatible avec WordPress, Shopify, Webflow, Wix, Prestashop, Squarespace ou n'importe quel site sur mesure. Aucun plugin à installer, aucune refonte à prévoir.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item fade-in delay-5">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Comment l'IA apprend-elle à répondre correctement&nbsp;?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Vous remplissez un formulaire sur votre entreprise, puis notre équipe analyse votre site, vos FAQ, vos offres et vos documents commerciaux pour entraîner l'IA. Ensuite, nous relisons les vraies conversations chaque mois et corrigeons ce qui bloque&nbsp;: l'IA s'améliore en continu, sans que vous ayez à intervenir.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item fade-in delay-6">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Quelle différence avec Intercom, Crisp ou un chatbot gratuit&nbsp;?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Ces outils sont excellents mais en libre-service&nbsp;: vous entraînez l'IA, vous la corrigez, vous la maintenez, et l'IA est facturée à l'usage. Haria est une solution opérée&nbsp;: nous faisons ce travail à votre place, pour un prix fixe. C'est aussi une différence d'objectif&nbsp;: Intercom optimise la résolution de tickets support, Haria optimise la conversion de visiteurs en leads. Détail dans notre <a href="haria-vs-intercom-vs-crisp.html">comparatif Haria vs Intercom vs Crisp</a>.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item fade-in delay-6">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Pourquoi choisir Haria plutôt qu'une agence à 5 000&nbsp;€&nbsp;?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Une agence facture le développement d'un chatbot entre 1 500&nbsp;€ et 30 000&nbsp;€ selon la complexité, plus une maintenance mensuelle de 200 à 500&nbsp;€. Vous êtes propriétaire du code, mais vous payez chaque évolution et le délai se compte en semaines. Haria couvre le même besoin (un chatbot IA entraîné sur votre activité, personnalisé, optimisé) pour 99&nbsp;€/mois, en 72 h, sans engagement. Le sur-mesure reste justifié si vous devez vous connecter à un ERP ou à des systèmes internes complexes. Comparatif chiffré&nbsp;: <a href="haria-vs-agence-chatbot-ia.html">Haria vs agence de chatbot IA</a>.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item fade-in delay-6">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Que se passe-t-il si l'IA ne sait pas répondre&nbsp;?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Elle ne bluffe pas. Elle propose de prendre les coordonnées du visiteur pour qu'un humain le rappelle, ou bascule vers un live chat avec votre équipe. Dans les deux cas, vous récupérez le contact&nbsp;: vous ne perdez jamais un lead.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item fade-in delay-6">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Puis-je personnaliser l'apparence du chatbot&nbsp;?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Entièrement&nbsp;: couleurs, position, avatar, message d'accueil, ton de voix. Le widget est réglé sur votre charte graphique avant la mise en ligne, et c'est notre équipe qui s'en charge&nbsp;: vous validez, c'est tout.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item fade-in delay-6">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Haria est-il conforme au RGPD&nbsp;?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Oui. Les données sont hébergées en France, sur des serveurs européens. Le consentement est demandé aux visiteurs, vous restez propriétaire de vos données à 100&nbsp;%, et nous ne les revendons jamais à des tiers.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item fade-in delay-6">
-                    <button class="faq-question" aria-expanded="false">
-                        <span>Puis-je annuler à tout moment&nbsp;?</span>
-                        <span class="faq-icon">+</span>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Oui, la formule mensuelle est sans engagement et s'annule en un clic depuis votre dashboard. Et sur les 7 premiers jours, la garantie satisfait ou remboursé s'applique&nbsp;: si Haria ne vous convainc pas, vous récupérez votre argent.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Guides / maillage interne -->
-    <section class="guides-section" id="guides">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title fade-in">
-                    Nos <span class="highlight">guides</span> sur les chatbots IA
-                </h2>
-                <p class="section-subtitle fade-in delay-1">
-                    Prix réels, comparatifs sourcés, chiffres vérifiables. Y compris quand un concurrent
-                    est le meilleur choix pour vous.
-                </p>
-            </div>
-
-            <div class="guides-grid">
-                <a class="guide-card fade-in delay-1" href="combien-coute-un-chatbot-ia.html">
-                    <h3 class="guide-title">Combien coûte un chatbot IA en 2026&nbsp;?</h3>
-                    <p class="guide-desc">Les 3 modèles de prix du marché, du libre-service au sur-mesure, et les coûts cachés que personne n'annonce.</p>
-                    <span class="guide-link">Lire le guide →</span>
-                </a>
-                <a class="guide-card fade-in delay-2" href="haria-vs-agence-chatbot-ia.html">
-                    <h3 class="guide-title">Haria vs agence de chatbot IA</h3>
-                    <p class="guide-desc">5 000&nbsp;€ en agence ou 99&nbsp;€/mois clé en main&nbsp;? Le calcul complet sur 3 ans, chiffres publics à l'appui.</p>
-                    <span class="guide-link">Lire le guide →</span>
-                </a>
-                <a class="guide-card fade-in delay-3" href="haria-vs-intercom-vs-crisp.html">
-                    <h3 class="guide-title">Haria vs Intercom vs Crisp</h3>
-                    <p class="guide-desc">Trois outils, trois usages différents. Lequel choisir selon votre besoin réel.</p>
-                    <span class="guide-link">Lire le guide →</span>
-                </a>
-                <a class="guide-card fade-in delay-4" href="chatbot-ia-ecommerce.html">
-                    <h3 class="guide-title">Chatbot IA pour e-commerce</h3>
-                    <p class="guide-desc">Réduire l'abandon de panier et augmenter le panier moyen, avec le cas client Edabos.</p>
-                    <span class="guide-link">Lire le guide →</span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="final-cta" id="contact">
-        <div class="container">
-            <div class="cta-content fade-in">
-                <h2 class="cta-title">
-                    Chaque jour sans Haria, votre site laisse partir des <span class="highlight">clients</span>
-                </h2>
-                <p class="cta-subtitle">
-                    On construit votre chatbot avant l'appel&nbsp;: en 15 minutes, vous voyez exactement ce que
-                    Haria répondrait à vos visiteurs, sur votre site. 5 places par semaine, sans engagement.
-                </p>
-                <div class="cta-buttons">
-                    <a href="https://cal.com/matteolievre/15min" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-xl">
-                        Voir mon chatbot en 15 min
-                    </a>
-                </div>
-                <div class="cta-trust">
-                    <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Aucune carte bancaire requise</span>
-                    <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> Réponse sous 24h</span>
-                    <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg> Démo personnalisée de 15 min</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <img src="logo.png" alt="Haria" class="logo-icon" width="50" height="50" loading="lazy">
-                        <span class="logo-text">Haria</span>
-                    </a>
-                    <p class="footer-desc">Le chatbot IA clé en main qui transforme vos visiteurs en clients. 99&nbsp;€/mois, tout compris, sans engagement.</p>
-                </div>
-                <div class="footer-links">
-                    <div class="footer-col">
-                        <h4>Produit</h4>
-                        <ul>
-                            <li><a href="#avantages">Avantages</a></li>
-                            <li><a href="#tarifs">Tarifs</a></li>
-                            <li><a href="#transparence">Zéro frais caché</a></li>
-                            <li><a href="#cas-clients">Résultats clients</a></li>
-                            <li><a href="#faq">FAQ</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Guides</h4>
-                        <ul>
-                            <li><a href="combien-coute-un-chatbot-ia.html">Prix d'un chatbot IA</a></li>
-                            <li><a href="haria-vs-agence-chatbot-ia.html">Haria vs agence chatbot</a></li>
-                            <li><a href="haria-vs-intercom-vs-crisp.html">Haria vs Intercom vs Crisp</a></li>
-                            <li><a href="chatbot-ia-ecommerce.html">Chatbot IA pour e-commerce</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-col">
-                        <h4>Contact</h4>
-                        <ul>
-                            <li><a href="mailto:contact.haria.ia@gmail.com">contact.haria.ia@gmail.com</a></li>
-                            <li><a href="https://cal.com/matteolievre/15min" target="_blank" rel="noopener noreferrer">Réserver un créneau</a></li>
-                            <li><a href="mentions-legales.html">Mentions légales</a></li>
-                            <li><a href="politique-confidentialite.html">Politique de confidentialité</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Haria. Tous droits réservés.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "@id": "https://haria-chatbot.com/#organization",
-        "name": "Haria",
-        "url": "https://haria-chatbot.com/",
-        "logo": "https://haria-chatbot.com/logo.png",
-        "description": "Haria édite un widget chatbot IA clé en main pour sites web. L'équipe entraîne l'IA sur l'activité de chaque client, met le chatbot en ligne en 72 h et l'optimise en continu, pour 99 €/mois tout compris avec conversations illimitées et sans frais caché.",
-        "slogan": "Le chatbot IA qui transforme vos visiteurs en clients.",
-        "foundingDate": "2026",
-        "areaServed": {
-            "@type": "Country",
-            "name": "France"
-        },
-        "knowsLanguage": "fr",
-        "knowsAbout": [
-            "Chatbot IA",
-            "Chatbot IA clé en main",
-            "Génération de leads",
-            "Conversion de visiteurs",
-            "Service client automatisé",
-            "Intelligence artificielle conversationnelle",
-            "Prix des chatbots IA"
-        ],
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "sales",
-            "url": "https://cal.com/matteolievre/15min",
-            "availableLanguage": "French"
-        },
-        "sameAs": [
-            "https://www.linkedin.com/company/haria-funnel/"
-        ]
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "@id": "https://haria-chatbot.com/#website",
-        "url": "https://haria-chatbot.com/",
-        "name": "Haria",
-        "description": "Chatbot IA clé en main pour site web : 99 €/mois tout compris, conversations illimitées, en ligne en 72 h.",
-        "inLanguage": "fr-FR",
-        "publisher": { "@id": "https://haria-chatbot.com/#organization" }
-    }
-    </script>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "@id": "https://haria-chatbot.com/#software",
-        "name": "Haria",
-        "url": "https://haria-chatbot.com/",
-        "image": "https://haria-chatbot.com/og-image.jpg",
-        "applicationCategory": "BusinessApplication",
-        "applicationSubCategory": "Chatbot",
-        "operatingSystem": "Web",
-        "inLanguage": "fr-FR",
-        "description": "Widget chatbot IA clé en main pour sites web. L'équipe Haria entraîne l'IA sur votre activité et met le chatbot en ligne en 72 h. Conversations illimitées, capture de leads automatique, installation en 5 minutes sur WordPress, Shopify, Webflow ou tout site sur mesure. 99 €/mois tout compris, sans frais caché ni facturation à l'usage. Conforme RGPD, données hébergées en France.",
-        "featureList": [
-            "Conversations illimitées, sans facturation à l'usage",
-            "IA entraînée sur votre activité par l'équipe Haria",
-            "Mise en ligne en 48 à 72 heures",
-            "Installation en 5 minutes par une ligne de code",
-            "Capture de leads intelligente",
-            "Optimisation continue incluse chaque mois",
-            "Analytics détaillés",
-            "Personnalisation complète à votre charte graphique",
-            "Conformité RGPD, données hébergées en France"
-        ],
-        "provider": { "@id": "https://haria-chatbot.com/#organization" },
-        "offers": [
-            {
-                "@type": "Offer",
-                "name": "Mensuel",
-                "price": "99",
-                "priceCurrency": "EUR",
-                "priceValidUntil": "2027-12-31",
-                "availability": "https://schema.org/InStock",
-                "url": "https://haria-chatbot.com/#tarifs",
-                "description": "Abonnement mensuel 99€/mois, conversations illimitées, + 499€ de frais d'installation une seule fois, sans engagement"
+        <!-- Schema.org Structured Data -->
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "@id": "https://haria-chatbot.com/#organization",
+            "name": "Haria",
+            "url": "https://haria-chatbot.com/",
+            "logo": "https://haria-chatbot.com/logo.png",
+            "description": "Haria édite un widget chatbot IA clé en main pour sites web. L'équipe entraîne l'IA sur l'activité de chaque client, met le chatbot en ligne en 72 h et l'optimise en continu, pour 99 €/mois tout compris avec conversations illimitées et sans frais caché.",
+            "slogan": "Le chatbot IA qui transforme vos visiteurs en clients.",
+            "foundingDate": "2026",
+            "areaServed": {
+                "@type": "Country",
+                "name": "France"
             },
-            {
-                "@type": "Offer",
-                "name": "Annuel",
-                "price": "99",
-                "priceCurrency": "EUR",
-                "priceValidUntil": "2027-12-31",
-                "availability": "https://schema.org/InStock",
-                "url": "https://haria-chatbot.com/#tarifs",
-                "description": "Abonnement 99€/mois facturé à l'année, conversations illimitées, frais d'installation (499€) offerts"
-            }
-        ],
-        "review": [
-            {
-                "@type": "Review",
-                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-                "author": { "@type": "Person", "name": "Neo Meunier", "jobTitle": "Fondateur", "worksFor": { "@type": "Organization", "name": "Landing Labs" }, "sameAs": "https://www.linkedin.com/in/neomeunier" },
-                "reviewBody": "Le chatbot répond instantanément aux questions de mes prospects sur les landing pages. Résultat : plus de leads qualifiés et moins de temps perdu en appels de qualification."
+            "knowsLanguage": "fr",
+            "knowsAbout": [
+                "Chatbot IA",
+                "Chatbot IA clé en main",
+                "Génération de leads",
+                "Conversion de visiteurs",
+                "Service client automatisé",
+                "Intelligence artificielle conversationnelle",
+                "Prix des chatbots IA"
+            ],
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "sales",
+                "url": "https://cal.com/matteolievre/15min",
+                "availableLanguage": "French"
             },
-            {
-                "@type": "Review",
-                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-                "author": { "@type": "Person", "name": "Odilon Fourment", "jobTitle": "Fondateur", "worksFor": { "@type": "Organization", "name": "Edabos" }, "sameAs": "https://www.linkedin.com/in/odilon-fourment" },
-                "reviewBody": "Haria guide mes visiteurs et répond à toutes leurs questions sur les boutiques e-commerce. J'ai pris 40 % de rendez-vous en plus dès le premier mois."
-            },
-            {
-                "@type": "Review",
-                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-                "author": { "@type": "Person", "name": "Sacha Haegele", "jobTitle": "Fondateur", "worksFor": { "@type": "Organization", "name": "Id Lift" }, "sameAs": "https://www.linkedin.com/in/sachahaegele" },
-                "reviewBody": "Mes clients veulent souvent voir des exemples de logos et échanger avec moi avant d'acheter. Le chatbot leur montre mon portfolio et me remonte les leads chauds, que je rappelle ensuite. Mes ventes ont nettement augmenté. Je recommande."
-            },
-            {
-                "@type": "Review",
-                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-                "author": { "@type": "Person", "name": "Nathan Burtin", "jobTitle": "Fondateur", "worksFor": { "@type": "Organization", "name": "Novexa" }, "sameAs": "https://www.linkedin.com/in/nathan-burtin" },
-                "reviewBody": "Le chatbot explique parfaitement mes offres de landing pages et qualifie les prospects avant qu'ils me contactent. J'ai gagné un temps fou et mes conversions ont explosé."
-            }
-        ]
-    }
-    </script>
+            "sameAs": [
+                "https://www.linkedin.com/company/haria-funnel/"
+            ]
+        }
+        </script>
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Le chatbot Haria est-il vraiment construit avant l'appel ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Oui. Dès qu'un créneau est réservé, l'équipe Haria analyse le site du prospect et entraîne une première version du chatbot sur ses pages, ses offres et ses FAQ. Pendant les 15 minutes d'appel, le prospect voit le chatbot répondre en direct à ses vraies questions clients. C'est gratuit, sans engagement et sans carte bancaire. Haria limite volontairement ce travail à 5 chatbots pré-construits par semaine."
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "@id": "https://haria-chatbot.com/#website",
+            "url": "https://haria-chatbot.com/",
+            "name": "Haria",
+            "description": "Chatbot IA clé en main pour site web : 99 €/mois tout compris, conversations illimitées, en ligne en 72 h.",
+            "inLanguage": "fr-FR",
+            "publisher": { "@id": "https://haria-chatbot.com/#organization" }
+        }
+        </script>
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "@id": "https://haria-chatbot.com/#software",
+            "name": "Haria",
+            "url": "https://haria-chatbot.com/",
+            "image": "https://haria-chatbot.com/og-image.jpg",
+            "applicationCategory": "BusinessApplication",
+            "applicationSubCategory": "Chatbot",
+            "operatingSystem": "Web",
+            "inLanguage": "fr-FR",
+            "description": "Widget chatbot IA clé en main pour sites web. L'équipe Haria entraîne l'IA sur votre activité et met le chatbot en ligne en 72 h. Conversations illimitées, capture de leads automatique, installation en 5 minutes sur WordPress, Shopify, Webflow ou tout site sur mesure. 99 €/mois tout compris, sans frais caché ni facturation à l'usage. Conforme RGPD, données hébergées en France.",
+            "featureList": [
+                "Conversations illimitées, sans facturation à l'usage",
+                "IA entraînée sur votre activité par l'équipe Haria",
+                "Mise en ligne en 48 à 72 heures",
+                "Installation en 5 minutes par une ligne de code",
+                "Capture de leads intelligente",
+                "Optimisation continue incluse chaque mois",
+                "Analytics détaillés",
+                "Personnalisation complète à votre charte graphique",
+                "Conformité RGPD, données hébergées en France"
+            ],
+            "provider": { "@id": "https://haria-chatbot.com/#organization" },
+            "offers": [
+                {
+                    "@type": "Offer",
+                    "name": "Essentiel - mensuel",
+                    "price": "99",
+                    "priceCurrency": "EUR",
+                    "priceValidUntil": "2027-12-31",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://haria-chatbot.com/#tarifs",
+                    "description": "Abonnement mensuel 99€/mois, conversations illimitées, + 499€ de frais d'installation une seule fois, sans engagement"
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Essentiel - annuel",
+                    "price": "99",
+                    "priceCurrency": "EUR",
+                    "priceValidUntil": "2027-12-31",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://haria-chatbot.com/#tarifs",
+                    "description": "Abonnement 99€/mois facturé à l'année, conversations illimitées, frais d'installation (499€) offerts"
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Pro - mensuel",
+                    "price": "179",
+                    "priceCurrency": "EUR",
+                    "priceValidUntil": "2027-12-31",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://haria-chatbot.com/#tarifs",
+                    "description": "Abonnement mensuel 179€/mois, plusieurs chatbots et intégrations, + 699€ de frais d'installation une seule fois, sans engagement"
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Pro - annuel",
+                    "price": "179",
+                    "priceCurrency": "EUR",
+                    "priceValidUntil": "2027-12-31",
+                    "availability": "https://schema.org/InStock",
+                    "url": "https://haria-chatbot.com/#tarifs",
+                    "description": "Abonnement 179€/mois facturé à l'année, plusieurs chatbots et intégrations, frais d'installation (699€) offerts"
                 }
-            },
-            {
-                "@type": "Question",
-                "name": "Combien coûte Haria exactement ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "99 €/mois, conversations illimitées. En formule mensuelle, il s'ajoute 499 € de frais d'installation une seule fois ; en formule annuelle, ces 499 € sont offerts. Il n'y a aucun autre poste de facturation."
+            ],
+            "review": [
+                {
+                    "@type": "Review",
+                    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                    "author": { "@type": "Person", "name": "Neo Meunier", "jobTitle": "Fondateur", "worksFor": { "@type": "Organization", "name": "Landing Labs" }, "sameAs": "https://www.linkedin.com/in/neomeunier" },
+                    "reviewBody": "Le chatbot répond instantanément aux questions de mes prospects sur les landing pages. Résultat : plus de leads qualifiés et moins de temps perdu en appels de qualification."
+                },
+                {
+                    "@type": "Review",
+                    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                    "author": { "@type": "Person", "name": "Odilon Fourment", "jobTitle": "Fondateur", "worksFor": { "@type": "Organization", "name": "Edabos" }, "sameAs": "https://www.linkedin.com/in/odilon-fourment" },
+                    "reviewBody": "Haria guide mes visiteurs et répond à toutes leurs questions sur les boutiques e-commerce. J'ai pris 40 % de rendez-vous en plus dès le premier mois."
+                },
+                {
+                    "@type": "Review",
+                    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                    "author": { "@type": "Person", "name": "Sacha Haegele", "jobTitle": "Fondateur", "worksFor": { "@type": "Organization", "name": "Id Lift" }, "sameAs": "https://www.linkedin.com/in/sachahaegele" },
+                    "reviewBody": "Mes clients veulent souvent voir des exemples de logos et échanger avec moi avant d'acheter. Le chatbot leur montre mon portfolio et me remonte les leads chauds, que je rappelle ensuite. Mes ventes ont nettement augmenté. Je recommande."
+                },
+                {
+                    "@type": "Review",
+                    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                    "author": { "@type": "Person", "name": "Nathan Burtin", "jobTitle": "Fondateur", "worksFor": { "@type": "Organization", "name": "Novexa" }, "sameAs": "https://www.linkedin.com/in/nathan-burtin" },
+                    "reviewBody": "Le chatbot explique parfaitement mes offres de landing pages et qualifie les prospects avant qu'ils me contactent. J'ai gagné un temps fou et mes conversions ont explosé."
                 }
-            },
-            {
-                "@type": "Question",
-                "name": "Y a-t-il des frais cachés si mon trafic augmente ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Non. Beaucoup d'outils facturent à la résolution (0,99 $ par conversation résolue chez Intercom) ou par crédits IA, si bien que la facture grimpe quand le site marche bien. Chez Haria, 1 000 ou 100 000 conversations coûtent le même prix : 99 €/mois, sans coût par siège ni palier."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "En combien de temps un chatbot Haria est-il en ligne ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "48 à 72 heures entre la démo et la mise en ligne. L'équipe entraîne l'IA, personnalise le widget et teste les scénarios. Côté client, il ne reste qu'à coller une ligne de code, soit 5 minutes. Une agence de développement met généralement 3 à 12 semaines."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Est-ce que Haria fonctionne sur tous les sites ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Oui. Haria s'installe via une simple ligne de code JavaScript, compatible avec WordPress, Shopify, Webflow, Wix, Prestashop, Squarespace ou tout site sur mesure. Aucun plugin ni refonte nécessaire."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Comment l'IA de Haria apprend-elle à répondre correctement ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Le client remplit un formulaire sur son entreprise, puis l'équipe Haria analyse le site, les FAQ, les offres et les documents commerciaux pour entraîner l'IA. Les vraies conversations sont ensuite relues chaque mois et les réponses corrigées : l'IA s'améliore en continu sans intervention du client."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Quelle différence entre Haria et Intercom ou Crisp ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Intercom et Crisp sont des outils en libre-service : le client entraîne l'IA, la corrige et la maintient, et l'IA est facturée à l'usage. Haria est une solution opérée : l'équipe fait ce travail à la place du client pour un prix fixe. L'objectif diffère aussi : Intercom optimise la résolution de tickets support, Haria optimise la conversion de visiteurs en leads."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Pourquoi choisir Haria plutôt qu'une agence de chatbot IA ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Une agence facture le développement d'un chatbot entre 1 500 € et 30 000 € selon la complexité, plus 200 à 500 €/mois de maintenance, avec un délai de 3 à 12 semaines. Haria couvre le même besoin pour 99 €/mois, en 72 h, sans engagement. Le sur-mesure reste justifié pour une connexion à un ERP ou à des systèmes internes complexes."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Que se passe-t-il si l'IA ne sait pas répondre ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Elle ne bluffe pas : elle propose de prendre les coordonnées du visiteur pour un rappel humain, ou bascule vers un live chat avec l'équipe du client. Dans les deux cas le contact est récupéré, aucun lead n'est perdu."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Peut-on personnaliser l'apparence du chatbot ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Entièrement : couleurs, position, avatar, message d'accueil et ton de voix. Le widget est réglé sur la charte graphique du client avant la mise en ligne, par l'équipe Haria."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Haria est-il conforme au RGPD ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Oui. Les données sont hébergées en France sur des serveurs européens, le consentement est demandé aux visiteurs, le client reste propriétaire de ses données à 100 % et elles ne sont jamais revendues."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Peut-on annuler Haria à tout moment ?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Oui, la formule mensuelle est sans engagement et s'annule en un clic depuis le dashboard. Une garantie satisfait ou remboursé de 7 jours s'applique également."
-                }
-            }
-        ]
-    }
-    </script>
-    <!-- Widget Haria -->
-    <script src="https://hariastudio.com/widget.js" data-client="5f9c204d-e28a-43b2-8073-fae9d68aa03e"></script>
-    <!-- Cal floating-popup embed code begins -->
-    <script type="text/javascript">
-      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-      Cal("init", "15min", {origin:"https://app.cal.com"});
-      Cal.config = Cal.config || {};
-      Cal.config.forwardQueryParams = true;
+            ]
+        }
+        </script>
 
-      Cal.ns["15min"]("floatingButton", {"calLink":"matteolievre/15min","config":{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"},"buttonPosition":"bottom-left","buttonColor":"#9973F2"});
-      Cal.ns["15min"]("ui", {"theme":"light","hideEventTypeDetails":false,"layout":"month_view"});
-    </script>
-    <!-- Cal floating-popup embed code ends -->
-</body>
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "Le chatbot Haria est-il vraiment construit avant l'appel ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Oui. Dès qu'un créneau est réservé, l'équipe Haria analyse le site du prospect et entraîne une première version du chatbot sur ses pages, ses offres et ses FAQ. Pendant les 15 minutes d'appel, le prospect voit le chatbot répondre en direct à ses vraies questions clients. C'est gratuit, sans engagement et sans carte bancaire. Haria limite volontairement ce travail à 5 chatbots pré-construits par semaine."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Combien coûte Haria exactement ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Deux formules : Essentiel à 99 €/mois et Pro à 179 €/mois, conversations illimitées dans les deux cas. En mensuel, il s'ajoute des frais d'installation une seule fois (499 € pour l'Essentiel, 699 € pour le Pro) ; en annuel, ces frais sont offerts. Il n'y a aucun autre poste de facturation."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Y a-t-il des frais cachés si mon trafic augmente ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Non. Beaucoup d'outils facturent à la résolution (0,99 $ par conversation résolue chez Intercom) ou par crédits IA, si bien que la facture grimpe quand le site marche bien. Chez Haria, 1 000 ou 100 000 conversations coûtent le même prix : 99 €/mois, sans coût par siège ni palier."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "En combien de temps un chatbot Haria est-il en ligne ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "48 à 72 heures entre la démo et la mise en ligne. L'équipe entraîne l'IA, personnalise le widget et teste les scénarios. Côté client, il ne reste qu'à coller une ligne de code, soit 5 minutes. Une agence de développement met généralement 3 à 12 semaines."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Est-ce que Haria fonctionne sur tous les sites ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Oui. Haria s'installe via une simple ligne de code JavaScript, compatible avec WordPress, Shopify, Webflow, Wix, Prestashop, Squarespace ou tout site sur mesure. Aucun plugin ni refonte nécessaire."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Comment l'IA de Haria apprend-elle à répondre correctement ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Le client remplit un formulaire sur son entreprise, puis l'équipe Haria analyse le site, les FAQ, les offres et les documents commerciaux pour entraîner l'IA. Les vraies conversations sont ensuite relues chaque mois et les réponses corrigées : l'IA s'améliore en continu sans intervention du client."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Quelle différence entre Haria et Intercom ou Crisp ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Intercom et Crisp sont des outils en libre-service : le client entraîne l'IA, la corrige et la maintient, et l'IA est facturée à l'usage. Haria est une solution opérée : l'équipe fait ce travail à la place du client pour un prix fixe. L'objectif diffère aussi : Intercom optimise la résolution de tickets support, Haria optimise la conversion de visiteurs en leads."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Pourquoi choisir Haria plutôt qu'une agence de chatbot IA ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Une agence facture le développement d'un chatbot entre 1 500 € et 30 000 € selon la complexité, plus 200 à 500 €/mois de maintenance, avec un délai de 3 à 12 semaines. Haria couvre le même besoin pour 99 €/mois, en 72 h, sans engagement. Le sur-mesure reste justifié pour une connexion à un ERP ou à des systèmes internes complexes."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Que se passe-t-il si l'IA ne sait pas répondre ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Elle ne bluffe pas : elle propose de prendre les coordonnées du visiteur pour un rappel humain, ou bascule vers un live chat avec l'équipe du client. Dans les deux cas le contact est récupéré, aucun lead n'est perdu."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Peut-on personnaliser l'apparence du chatbot ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Entièrement : couleurs, position, avatar, message d'accueil et ton de voix. Le widget est réglé sur la charte graphique du client avant la mise en ligne, par l'équipe Haria."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Haria est-il conforme au RGPD ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Oui. Les données sont hébergées en France sur des serveurs européens, le consentement est demandé aux visiteurs, le client reste propriétaire de ses données à 100 % et elles ne sont jamais revendues."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Peut-on annuler Haria à tout moment ?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Oui, la formule mensuelle est sans engagement et s'annule en un clic depuis le dashboard. Une garantie satisfait ou remboursé de 7 jours s'applique également."
+                    }
+                }
+            ]
+        }
+        </script>
+
+        <!-- Widget Haria -->
+        <script src="https://hariastudio.com/widget.js" data-client="5f9c204d-e28a-43b2-8073-fae9d68aa03e"></script>
+        <!-- Cal floating-popup embed code begins -->
+        <script type="text/javascript">
+          (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+          Cal("init", "15min", {origin:"https://app.cal.com"});
+          Cal.config = Cal.config || {};
+          Cal.config.forwardQueryParams = true;
+
+          Cal.ns["15min"]("floatingButton", {"calLink":"matteolievre/15min","config":{"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"},"buttonPosition":"bottom-left","buttonColor":"#9973F2"});
+          Cal.ns["15min"]("ui", {"theme":"light","hideEventTypeDetails":false,"layout":"month_view"});
+        </script>
+        <!-- Cal floating-popup embed code ends -->
+    </body>
 </html>

@@ -1,2 +1,5 @@
 node_modules/
 .DS_Store
+
+# Sauvegarde locale des images avant redimensionnement
+.images-backup/

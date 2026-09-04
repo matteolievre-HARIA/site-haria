@@ -74,23 +74,48 @@ function initNavbar() {
    ============================================ */
 function initFAQ() {
     const faqItems = document.querySelectorAll('.faq-item');
-    
+
+    /* La hauteur d'ouverture est mesuree sur le contenu reel plutot que plafonnee
+       a une valeur fixe : une reponse longue ne peut plus etre tronquee, quelle
+       que soit la largeur de l'ecran. */
+    function openItem(item) {
+        const answer = item.querySelector('.faq-answer');
+        item.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        item.querySelector('.faq-question').setAttribute('aria-expanded', 'true');
+    }
+
+    function closeItem(item) {
+        const answer = item.querySelector('.faq-answer');
+        item.classList.remove('active');
+        answer.style.maxHeight = '';
+        item.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+    }
+
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
-        
-        question.addEventListener('click', () => {
-            // Close other items
-            faqItems.forEach(otherItem => {
-                if (otherItem !== item && otherItem.classList.contains('active')) {
-                    otherItem.classList.remove('active');
-                    otherItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-                }
-            });
 
-            // Toggle current item
-            const isOpen = item.classList.toggle('active');
-            question.setAttribute('aria-expanded', String(isOpen));
+        question.addEventListener('click', () => {
+            const wasOpen = item.classList.contains('active');
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) closeItem(otherItem);
+            });
+            if (wasOpen) { closeItem(item); } else { openItem(item); }
         });
+    });
+
+    /* Rotation de l'ecran ou redimensionnement : le texte se recompose,
+       donc on remesure la reponse ouverte. */
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            faqItems.forEach(item => {
+                if (!item.classList.contains('active')) return;
+                const answer = item.querySelector('.faq-answer');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            });
+        }, 150);
     });
 }
 

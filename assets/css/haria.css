@@ -568,22 +568,38 @@ body { color: var(--hp-ink-soft); }
   .hero-1 .hero-items { margin-top: 32px; }
 
   /* ---------- Pastilles de section ----------
-     Hauteur fixe + texte long = le libelle sortait de la pastille. */
+     Hauteur fixe + texte long = le libelle sortait de la pastille. En
+     hauteur auto il rentrait, mais sur deux lignes calees a gauche. On
+     resserre la typo et les marges internes pour que les sept pastilles
+     tiennent sur UNE ligne a partir de 360 px, et on centre le contenu
+     pour les cas ou ca passe quand meme a la ligne (tres petits ecrans). */
   .section-title .sub-title,
   .hero-1 .hero-content .hero-sub {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 7px;
     height: auto;
     min-height: 38px;
     line-height: 1.25;
-    padding: 5px 16px 5px 5px;
+    padding: 5px 14px 5px 5px;
     max-width: 100%;
-    text-align: left;
+    text-align: center;
   }
+  .section-title .sub-title { font-size: 13px; }
+  /* Les sections « Etapes » et « FAQ » utilisent un en-tete en deux colonnes
+     (titre a gauche, CTA a droite). Empile sur telephone, il restait cale a
+     gauche alors que toutes les autres sections sont centrees : on aligne
+     tout le monde. */
+  .section-title-area {
+    justify-content: center;
+    text-align: center;
+  }
+  .section-title-area .section-title { width: 100%; }
   .section-title .sub-title b,
   .hero-1 .hero-content .hero-sub b { margin-right: 0; }
+  .section-title .sub-title b { font-size: 13px; padding: 0 9px; }
 
   /* ---------- Bandeau de logos : format telephone ----------
      Des pastilles de 285 px sur un ecran de 390, on n'en voyait qu'une et demie. */
@@ -613,6 +629,14 @@ body { color: var(--hp-ink-soft); }
   .footer-area { margin: 0 12px; }
 }
 
+/* Sous 375 px (petits Android, iPhone mini), un cran de plus pour garder
+   les pastilles sur une seule ligne. */
+@media (max-width: 374px) {
+  .section-title .sub-title,
+  .section-title .sub-title b { font-size: 12px; }
+  .section-title .sub-title { padding-right: 12px; gap: 6px; }
+}
+
 @media (max-width: 575px) {
   /* ---------- Boutons pleine largeur : une seule cible, large, par ecran ----------
      Sur telephone deux boutons cote a cote deviennent illisibles ; empiles et
@@ -623,6 +647,11 @@ body { color: var(--hp-ink-soft); }
     width: 100%;
     min-width: 0;
     justify-content: space-between;
+  }
+  /* Libelle centre dans le bouton, comme au hero : la fleche reste a droite. */
+  .section-title-area .theme-btn-main .theme-btn {
+    flex: 1;
+    justify-content: center;
   }
   .haria-final-cta { flex-direction: column; gap: 12px; }
 

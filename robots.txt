@@ -5,6 +5,8 @@
 User-agent: *
 Allow: /
 Disallow: /node_modules/
+# Sauvegardes de sections retirees du site : pas du contenu publie
+Disallow: /backup/
 
 # --- Crawlers IA : explicitement autorisés ---
 # OpenAI (entraînement + recherche ChatGPT + navigation utilisateur)

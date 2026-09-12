@@ -13,12 +13,12 @@
   text-decoration: none;
 }
 .haria-logo img {
-  width: 42px;
-  height: 42px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
 }
 .haria-logo span {
-  font-size: 24px;
+  font-size: 32px;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1;
@@ -31,13 +31,17 @@
 /* ---------- Logos clients dans le marquee ----------
    Le template etait calibre pour des logos larges ; ceux des clients
    Haria sont carres. */
+/* Mur de logos : on normalise la hauteur d'encre, pas la boite. Toutes les
+   signatures sont calees sur la meme hauteur de casse ; SIXT, tres compact,
+   a droit a un peu plus de hauteur pour peser autant que les autres. */
 .brand-section-one .brand-img img {
-  max-width: 150px;
-  max-height: 60px;
+  max-width: 200px;
+  max-height: 30px;
   width: auto;
   height: auto;
   object-fit: contain;
 }
+.brand-section-one .brand-img img[src*="sixt"] { max-height: 36px; }
 
 /* ---------- Photos des temoignages ---------- */
 .testimonial-box-items .client-info .thumb img {
@@ -59,50 +63,572 @@
 }
 
 /* ---------- Avis clients : cartes de hauteur egale ----------
-   Les temoignages Haria sont plus longs que ceux du template, donc les
-   cartes se decalaient. On etire les slides a la meme hauteur et on
-   pousse le bloc photo + nom en bas, pour qu'ils s'alignent tous. */
-.testimonial-slider .swiper-wrapper {
-  align-items: stretch;
-}
-.testimonial-slider .swiper-slide {
-  height: auto;
-}
+   Les temoignages Haria sont plus longs que ceux du template. Les cartes
+   s'etirent a la hauteur de la plus haute (align-items: stretch sur la
+   rangee, hauteur auto ici) et la signature est poussee en bas. */
 .testimonial-box-items {
   display: flex;
   flex-direction: column;
-  height: calc(100% - 30px);
-}
-.testimonial-box-items .text {
-  flex: 1 1 auto;
 }
 .testimonial-box-items .client-info {
   align-items: center;
+  margin-top: auto;
 }
 
-/* ---------- Tarifs : frais d'installation a droite du prix ----------
-   Ils ne concernent que la formule mensuelle : en annuel la ligne est
-   barree pour montrer qu'ils sautent. */
+/* ---------- Tarifs : prix, equivalent annuel et alignement ---------- */
+/* Description : hauteur reservee (3 lignes) pour aligner les prix des 4 cartes */
+.pricing-box-items .pricing-header .price-text {
+  min-height: 84px;
+  margin-bottom: 20px;
+}
+/* Le bouton de la formule Gratuit tient sur deux lignes : on reserve la
+   meme hauteur partout, sinon la liste « Ce qui est inclus » se decale. */
+.pricing-box-items .theme-btn {
+  min-height: 68px;
+}
+/* Prix et note s'empilent proprement, quel que soit le montant */
 .pricing-box-items .haria-price-row {
-  display: flex;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  gap: 4px 14px;
+  display: block;
   margin-bottom: 25px;
 }
 .pricing-box-items .haria-price-row h3 {
   margin-bottom: 0;
+  font-size: 48px;
+  letter-spacing: -1.5px;
+  white-space: nowrap;
 }
+.pricing-box-items .price sub {
+  font-size: 15px;
+  letter-spacing: 0;
+  font-weight: 600;
+  vertical-align: baseline;
+  margin-left: 2px;
+}
+/* Note sous le prix : vide en mensuel, facturation annuelle sinon.
+   Hauteur reservee (2 lignes) pour que les CTA restent alignes. */
 .pricing-box-items .setup-fee {
-  max-width: 135px;
-  padding-bottom: 8px;
+  display: block;
+  max-width: none;
+  margin-top: 8px;
+  padding-bottom: 0;
+  min-height: 36px;
   font-size: 13px;
   font-weight: 500;
   line-height: 1.35;
   color: var(--text);
-  transition: opacity 0.3s ease;
 }
-.pricing-box-items .setup-fee.is-struck {
-  text-decoration: line-through;
-  opacity: 0.5;
+@media (min-width: 1200px) {
+  .pricing-box-items .haria-price-row h3 {
+    font-size: 40px;
+    letter-spacing: -1px;
+  }
+}
+
+/* ---------- Hero : titre long, equilibre sur deux lignes ----------
+   Le titre est plus long que celui du template : sa colonne prend toute la
+   largeur du conteneur (le paragraphe et les CTA gardent la leur, ils sont
+   deja bornes) et text-wrap: balance repartit les mots en lignes de meme
+   longueur au lieu d'une derniere ligne orpheline. */
+.hero-1 .hero-content h1 {
+  text-wrap: balance;
+}
+
+/* ---------- Hero : deux CTA plus longs, espaces et centrer ---------- */
+.hero-1 .hero-content form {
+  justify-content: center;
+  gap: 18px;
+}
+.hero-1 .hero-content form .theme-btn-main,
+.haria-final-cta .theme-btn-main {
+  max-width: none;
+  width: auto;
+  min-width: 240px;
+  justify-content: center;
+}
+.hero-1 .hero-content form .theme-btn-main .theme-btn,
+.haria-final-cta .theme-btn-main .theme-btn {
+  flex: 1;
+  justify-content: center;
+  white-space: nowrap;
+}
+/* Derniers CTA avant le pied de page : centrés sur le fond clair, même
+   écart entre les deux boutons qu'au hero. L'air au-dessus vient du
+   padding bas de la FAQ, celui du dessous du padding haut du pied de page. */
+.haria-final-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+}
+@media (max-width: 575px) {
+  .hero-1 .hero-content form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .hero-1 .hero-content form .theme-btn-main {
+    margin-top: 0;
+  }
+}
+
+/* ---------- Tarifs : le prix ne se coupe jamais sur deux lignes ---------- */
+.pricing-box-items .haria-price-row .price {
+  white-space: nowrap;
+}
+
+/* =====================================================================
+   SURFACES ET TEXTES — la vitrine n'a qu'un seul thème, le clair.
+   (Le mode sombre a été retiré : plus de data-theme, plus de bouton de
+   bascule, plus de jeu de couleurs en double.) Les jetons --hp-* restent
+   le point unique où changer une surface ou une encre.
+   ===================================================================== */
+:root {
+  --accent: var(--theme);
+  --hp-ink: #15171A;
+  --hp-ink-soft: rgba(21, 23, 26, 0.8);
+  --hp-card: #ffffff;
+  --hp-card-2: #F8FAFC;
+  --hp-line: rgba(21, 23, 26, 0.1);
+}
+
+body { color: var(--hp-ink-soft); }
+.page-wrapper :is(h1, h2, h3, h4, h5, h6) { color: var(--hp-ink); }
+/* Sauf dans le pied de page, qui est sombre : sinon titre noir sur noir. */
+.footer-section :is(h1, h2, h3, h4, h5, h6) { color: var(--white); }
+.section-title .sub-title { color: var(--hp-ink); }
+.header-section { background: var(--hp-card); }
+.header-section .nav-link { color: var(--hp-ink); }
+.mobile-menu-main { background: var(--hp-card); }
+.service-box-items { background-color: var(--hp-card); border-color: var(--hp-line); }
+.choose-us-items { background: var(--hp-card-2); }
+.pricing-box-items { background-color: var(--hp-card); }
+.testimonial-box-items { background: var(--hp-card); }
+.faq-items-1 .accordion-box .block { background: var(--hp-card); }
+.faq-items-1 .accordion-box .block .acc-btn { color: var(--hp-ink); }
+.faq-items-1 .accordion-box .block .acc-content .text { color: var(--hp-ink-soft); }
+.brand-section-one .text { color: var(--hp-ink); }
+.pricing-section .pricing-toggle-wrapper .toggle-label { color: var(--hp-ink); background-color: var(--hp-card-2); }
+/* La remise annuelle : une pastille sur le bouton « Annuel », visible en
+   permanence et tout en haut de la section, au lieu d'une parenthèse noyée
+   dans la note sous le prix. Elle s'inverse quand le bouton devient violet. */
+.pricing-section .pricing-toggle-wrapper .haria-save {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 0 10px;
+  height: 26px;
+  line-height: 26px;
+  border-radius: 999px;
+  background: var(--theme);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0;
+  vertical-align: middle;
+  transition: background 0.3s, color 0.3s;
+}
+.pricing-section .pricing-toggle-wrapper .toggle-label.active .haria-save {
+  background: #fff;
+  color: var(--theme);
+}
+
+/* En-tête : liens, logo, burger — sélecteurs exacts du template (ce
+   fichier est chargé après main.css : à spécificité égale, il gagne). */
+.header-main .navbar .navbar-nav .nav-item .nav-link { color: var(--hp-ink); }
+.mobile-topbar .bars span { background: var(--hp-ink); }
+.close-mobile-menu { color: var(--hp-ink); }
+.mobile-menu-main :is(a, p, .info-title) { color: var(--hp-ink); }
+
+/* Textes secondaires grisés en dur dans le template */
+.hero-section .hero-content p { color: var(--hp-ink-soft); }
+.pricing-list span, .pricing-list li { color: var(--hp-ink-soft); }
+.testimonial-box-items .text, .testimonial-box-items .info-content span { color: var(--hp-ink-soft); }
+.choose-us-items p, .service-box-items p, .how-it-items p { color: var(--hp-ink-soft); }
+
+/* Cartes services : une rangée = des cartes de même hauteur, bords bas
+   alignés. La colonne Bootstrap est déjà étirée ; la carte la remplit,
+   marge haute du template (30 px) déduite pour ne pas déborder. */
+.service-box-items { height: calc(100% - 30px); }
+
+/* Cartes tarifs : même principe, les quatre formules font la même hauteur. */
+.pricing-box-items { height: calc(100% - 30px); }
+
+/* Cartes « Avantages » (01 à 04) : même hauteur, bords bas alignés. */
+.choose-us-items { height: calc(100% - 30px); }
+
+/* En-tête de section (titre à gauche, CTA à droite) : le template ne prévoit
+   aucun écart entre les deux. Nos titres français sont plus longs que ceux
+   d'origine et venaient toucher le bouton — on réserve la gouttière. */
+.section-title-area { gap: 30px 48px; }
+
+/* =====================================================================
+   GLOBE — embarqué dans la carte « Réponse en 2 secondes ».
+   CSS repris de portal.css 2789-2945, restreint à ce qui sert ici.
+   ===================================================================== */
+.haria-thumb-globe { height: 370px; }
+@media (max-width: 991px) {
+  .service-box-items .haria-thumb-globe { height: 340px; }
+}
+/* Le fond fumé des cartes voisines vient d'images qui portent aussi un
+   graphique : il fallait les flouter, donc les lisser. Ici on prend la
+   fumée seule (hero-bg.jpg, la même texture, sans interface dessus) : elle
+   reste NETTE, avec ses volutes et son contraste, exactement comme sur les
+   cartes d'à côté. Le survol de la carte est neutralisé : sinon le template
+   dévoile l'image d'origine en grand derrière le globe. */
+.service-box-items .haria-thumb-globe img.haria-globe-bg,
+.service-box-items:hover .haria-thumb-globe img.haria-globe-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transform: scale(1.6);
+  opacity: 1;
+  filter: none;
+}
+.haria-thumb-globe .globe-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  --gl-sea-light: #f6f7f9;
+  --gl-sea: #e8eaef;
+  --gl-land: #b4bac6;
+  --gl-active: #7c3aed;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.haria-thumb-globe .globe-stage.ready { opacity: 1; }
+.gl-canvas { display: block; width: 100%; height: 100%; cursor: grab; touch-action: none; }
+.globe-stage.dragging .gl-canvas { cursor: grabbing; }
+.globe-stage.pointing .gl-canvas { cursor: pointer; }
+.gl-tip {
+  position: absolute;
+  transform: translate(-50%, calc(-100% - 14px));
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 7px 11px;
+  border-radius: 12px;
+  background: var(--wm-pin, #241d4d);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  white-space: nowrap;
+  box-shadow: 0 12px 28px rgba(12, 8, 32, 0.34);
+  pointer-events: none;
+  z-index: 3;
+}
+.gl-tip[hidden] { display: none; }
+.gl-tip.below { transform: translate(-50%, 14px); }
+.gl-tip.flip { transform: translate(-88%, calc(-100% - 14px)); }
+.gl-tip.below.flip { transform: translate(-88%, 14px); }
+.gl-tip-title { font-size: 0.82rem; font-weight: 600; }
+.gl-tip-sub { font-size: 0.68rem; color: rgba(255, 255, 255, 0.66); }
+.gl-tip-sub:empty { display: none; }
+.gl-tip-val { font-size: 0.72rem; color: rgba(255, 255, 255, 0.9); margin-top: 2px; }
+.gl-tip-val:empty { display: none; }
+.gl-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 0.5rem;
+  transform: translateX(-50%);
+  font-size: 0.73rem;
+  color: var(--hp-ink-soft);
+  pointer-events: none;
+  transition: opacity 0.25s;
+}
+.globe-stage.dragging .gl-hint, .globe-stage.pointing .gl-hint { opacity: 0; }
+.gl-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 0.85rem;
+  color: var(--hp-ink-soft);
+}
+/* Tactile : rotation seule — le scroll vertical de la page passe sur le globe. */
+@media (pointer: coarse) {
+  .haria-thumb-globe .gl-canvas { touch-action: pan-y; }
+  .haria-thumb-globe .gl-hint { display: none; }
+}
+@media print {
+  .haria-thumb-globe .globe-stage { display: none; }
+}
+
+/* ---------- Pied de page : la carte, sans le grand aplat noir ----------
+   Le template peint tout le <footer> en #15171A et y pose une carte
+   translucide. On rend le <footer> transparent (le fond clair de la page
+   reprend sa place) et on donne à la carte le fond opaque qu'elle avait
+   par transparence : même gris foncé, plus d'aplat noir autour. */
+.footer-section {
+  background: transparent;
+}
+.footer-area {
+  position: relative;
+  overflow: hidden;
+  margin-top: 0;
+  /* Deux lueurs violettes très basses en opacité, posées en diagonale sous le
+     dégradé d'origine : elles donnent de la profondeur à la carte sans
+     colorer le texte ni entrer en concurrence avec les CTA. */
+  background:
+    radial-gradient(62% 78% at 88% 0%, rgba(124, 58, 237, 0.16), transparent 68%),
+    radial-gradient(52% 68% at 2% 100%, rgba(124, 58, 237, 0.10), transparent 70%),
+    linear-gradient(94.68deg, rgba(255, 255, 255, 0.04) 7.02%, rgba(255, 255, 255, 0.09) 90.21%),
+    #15171A;
+}
+/* Filet lumineux sur l'arête haute de la carte : 1 px, violet au centre,
+   éteint aux deux bouts. C'est ce qui « allume » le pied de page. */
+.footer-area::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.55) 30%, rgba(124, 58, 237, 0.75) 55%, transparent);
+  pointer-events: none;
+}
+/* Les pictos Contact étaient violets sur fond sombre : blancs au repos, ils
+   reprennent leur violet au survol, en même temps que le texte de la ligne. */
+.footer-widget-wrapper .footer-widget-items .contact-list li img {
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease;
+}
+.footer-widget-wrapper .footer-widget-items .contact-list li:hover img {
+  filter: none;
+}
+/* Séparateur du bas teinté de violet plutôt que gris neutre. */
+.footer-area .footer-bottom {
+  border-top-color: rgba(124, 58, 237, 0.28);
+}
+
+/* =====================================================================
+   AJUSTEMENTS D'INTERFACE
+   ===================================================================== */
+
+/* ---------- En-tete : menu centre sur la page ----------
+   Le template centre le menu dans ce qui reste apres le logo, pas dans
+   l'en-tete : le bouton de droite etant plus large que le logo, le menu
+   penchait vers la gauche. On aplatit le conteneur .navbar-collapse
+   (display: contents) pour que logo / menu / bouton soient trois vrais
+   elements flex, et on donne aux deux cotes le meme poids : le menu tombe
+   alors exactement au centre. */
+@media (min-width: 1200px) {
+  /* Bootstrap impose display:flex !important sur ce conteneur a partir de
+     xl : on ne peut l'aplatir qu'avec la meme arme. */
+  .header-1 .navbar-expand-xl .navbar-collapse { display: contents !important; }
+  .header-1 .navbar .navbar-brand { flex: 1 1 0; margin-right: 0; }
+  .header-1 .menu-right-info { flex: 1 1 0; justify-content: flex-end; }
+  .header-1 .navbar .navbar-nav { margin: 0 auto; }
+}
+
+/* ---------- Pastille du hero : on voit que c'est un bloc ----------
+   Bordure blanche sur fond clair = invisible. On la passe en gris tres
+   doux, avec un fond franchement blanc et une ombre un peu plus marquee. */
+.hero-1 .hero-content .hero-sub {
+  background: #fff;
+  border: 1px solid rgba(21, 23, 26, 0.12);
+  box-shadow: 0 2px 10px rgba(21, 23, 26, 0.06);
+}
+
+/* ---------- Tous les boutons : l'animation des boutons de tarifs ----------
+   Le template faisait sauter la fleche de droite a gauche. On garde la
+   fleche en place et on reprend exactement le comportement des boutons
+   d'offres : leger soulevement, ombre violette, reflet qui balaie et
+   fleche qui pivote. */
+.theme-btn-main.style-2:hover {
+  padding-right: 7px;
+  padding-left: 25px;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(124, 58, 237, 0.25);
+}
+.theme-btn-main:hover .theme-btn-arrow-left {
+  transform: translateX(-15px) scale(0);
+  opacity: 0;
+}
+/* Le template faisait aussi glisser le libelle de 57 px vers la droite pour
+   laisser passer la fleche : sans le va-et-vient, le texte passait sous le
+   rond. On le laisse en place. */
+.theme-btn-main:hover .theme-btn {
+  transform: none;
+  background-color: transparent;
+}
+.theme-btn-main:hover .theme-btn-arrow-right {
+  transform: rotate(-45deg) scale(1.08);
+  opacity: 1;
+  background: linear-gradient(129.97deg, #3A4048 16.23%, #1B1E22 84.69%);
+}
+/* Le reflet : ::after de style-2 ne servait qu'a un flou d'arriere-plan
+   invisible derriere un fond opaque, on le reaffecte. */
+.theme-btn-main.style-2::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: auto;
+  left: -75%;
+  right: auto;
+  width: 50%;
+  height: 100%;
+  border-radius: 0;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 100%);
+  transform: skewX(-25deg);
+  transition: all 0.75s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+.theme-btn-main.style-2:hover::after { left: 130%; }
+
+/* ---------- Cartes tarifs : plus de saut au survol ---------- */
+.pricing-box-items:hover { transform: none; }
+
+/* ---------- Etapes : pictos figes au survol ---------- */
+.how-it-items li:hover .icon img { animation: none; }
+
+/* ---------- Avis : defilement continu, comme le bandeau de logos ----------
+   Meme mecanique (.marquee / .marquee-group), seules la duree et la
+   largeur des cartes changent. */
+.testimonial-marquee {
+  --duration: 60s;
+  gap: 30px;
+}
+.testimonial-marquee .marquee-group {
+  gap: 30px;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.testimonial-marquee .testimonial-box-items {
+  flex: 0 0 auto;
+  width: 420px;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 575px) {
+  .testimonial-marquee .testimonial-box-items { width: 300px; }
+}
+
+/* =====================================================================
+   TELEPHONE — l'essentiel du trafic arrive ici.
+   Trois objectifs : rien qui deborde, moins de vide (le CTA doit rester
+   a portee de pouce), et un appel a l'action visible en permanence.
+   ===================================================================== */
+
+/* ---------- CTA toujours accessible ----------
+   Le bouton de l'en-tete est reserve au bureau : sur telephone il n'y
+   avait aucun appel a l'action visible tant qu'on n'ouvrait pas le menu. */
+.haria-cta-mobile {
+  display: none;
+  align-items: center;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 50px;
+  background: linear-gradient(103.71deg, #A78BFA 17.96%, #7C3AED 66.13%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.25);
+}
+.haria-cta-mobile:hover { color: #fff; transform: translateY(-2px); }
+.haria-menu-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 28px;
+  padding: 14px 22px;
+  border-radius: 50px;
+  background: linear-gradient(103.71deg, #A78BFA 17.96%, #7C3AED 66.13%);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+.haria-menu-cta:hover { color: #fff; }
+@media (max-width: 1199px) {
+  .haria-cta-mobile { display: inline-flex; }
+}
+@media (max-width: 400px) {
+  .haria-cta-mobile { padding: 0 14px; font-size: 13px; }
+}
+/* Le template etire la marque a 130 px dans le menu deroulant : elle est
+   carree, elle restait plantee au milieu d'une boite vide. */
+.mobile-menu-area .mobile-menu-main .logo .haria-logo img { width: 30px; }
+/* Le bloc contact du menu etait masque par le template : sur telephone il
+   donne un second chemin de conversion (demo, e-mail) sans quitter la page. */
+.mobile-menu-area .mobile-menu-main .off-contact-area { display: block; }
+
+@media (max-width: 991px) {
+  /* ---------- Rythme vertical ----------
+     100 px de respiration entre chaque section, c'est un ecran entier de
+     defilement sur un telephone : on resserre. */
+  .section-padding { padding: 70px 0; }
+
+  /* ---------- Hero : le titre ET les deux boutons dans le premier ecran ---------- */
+  .hero-1 { padding-top: 90px; padding-bottom: 40px; }
+  .hero-1 .hero-content .hero-sub { margin-bottom: 16px; }
+  .hero-1 .hero-content p { margin-top: 18px; }
+  .hero-1 .hero-content form { margin-top: 28px; gap: 12px; flex-wrap: wrap; }
+  .hero-1 .hero-items { margin-top: 32px; }
+
+  /* ---------- Pastilles de section ----------
+     Hauteur fixe + texte long = le libelle sortait de la pastille. */
+  .section-title .sub-title,
+  .hero-1 .hero-content .hero-sub {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    height: auto;
+    min-height: 38px;
+    line-height: 1.25;
+    padding: 5px 16px 5px 5px;
+    max-width: 100%;
+    text-align: left;
+  }
+  .section-title .sub-title b,
+  .hero-1 .hero-content .hero-sub b { margin-right: 0; }
+
+  /* ---------- Bandeau de logos : format telephone ----------
+     Des pastilles de 285 px sur un ecran de 390, on n'en voyait qu'une et demie. */
+  .brand-section-one .brand-img { width: 190px; height: 84px; }
+  .brand-section-one .marquee { --duration: 24s; gap: 14px; }
+  .brand-section-one .marquee .marquee-group { gap: 14px; }
+  .brand-section-one .brand-img img { max-width: 130px; max-height: 26px; }
+  .brand-section-one .brand-img img[src*="sixt"] { max-height: 30px; }
+
+  /* ---------- Avis : cartes calibrees pour l'ecran ---------- */
+  .testimonial-marquee { --duration: 45s; gap: 16px; }
+  .testimonial-marquee .marquee-group { gap: 16px; }
+  .testimonial-marquee .testimonial-box-items { width: 300px; padding: 30px 24px; }
+  .testimonial-marquee .testimonial-box-items .text { font-size: 15px; }
+
+  /* ---------- Globe : un peu moins haut, on gagne un demi-ecran ---------- */
+  .service-box-items .haria-thumb-globe { height: 300px; }
+
+  /* ---------- Pied de page : la ligne legale ne deborde plus ---------- */
+  .footer-bottom .footer-bottom-wrapper { gap: 16px; }
+  .footer-bottom .footer-bottom-wrapper .footer-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 16px;
+  }
+  .footer-bottom .footer-bottom-wrapper .footer-list li { font-size: 14px; }
+  .footer-area { margin: 0 12px; }
+}
+
+@media (max-width: 575px) {
+  /* ---------- Boutons pleine largeur : une seule cible, large, par ecran ----------
+     Sur telephone deux boutons cote a cote deviennent illisibles ; empiles et
+     pleine largeur, ils font des cibles de pouce evidentes. */
+  .hero-1 .hero-content form .theme-btn-main,
+  .section-title-area .theme-btn-main,
+  .haria-final-cta .theme-btn-main {
+    width: 100%;
+    min-width: 0;
+    justify-content: space-between;
+  }
+  .haria-final-cta { flex-direction: column; gap: 12px; }
+
+  .hero-1 { padding-top: 80px; }
+  .section-padding { padding: 60px 0; }
+  .testimonial-marquee .testimonial-box-items { width: 280px; }
+  .pricing-box-items { padding: 32px 24px; }
+  .how-it-items li { gap: 14px; }
 }

@@ -919,7 +919,9 @@
         });
     });
 
-    if (window.innerWidth > 1199) {
+    // Meme piege que le hero : sans matchMedia, les cartes restaient decalees
+    // et pivotees si la fenetre passait sous 1200 px apres le chargement.
+    gsap.matchMedia().add("(min-width: 1200px)", () => {
 			const items = document.querySelectorAll(".advance-wrap .advance-item");
 			if (items.length < 4) return;
 
@@ -940,7 +942,7 @@
 				.from(items[1], { xPercent: 30, rotate: 4.13 }, "<")
 				.from(items[2], { xPercent: -30, rotate: -6.42 }, "<")
 				.from(items[3], { xPercent: -60, rotate: -12.15 }, "<");
-		}
+		});
 
         
         /* ================================
@@ -980,30 +982,37 @@
 
       if ($(".hero-animation").length) {
 
-        $(".hero-animation").each(function () {
+        // gsap.matchMedia() plutot qu'un simple `if (innerWidth <= 1199) return`.
+        // Avec le garde simple, une page ouverte en large puis retrecie (mode
+        // responsive, rotation d'une tablette) gardait l'etat de depart du
+        // .from() : l'image restait remontee de 180 px et venait se poser sur
+        // les boutons du hero. matchMedia defait l'animation en sortant de la
+        // plage, et la rejoue en y revenant.
+        gsap.matchMedia().add("(min-width: 1200px)", () => {
 
-            let $this = $(this);
+            $(".hero-animation").each(function () {
 
-            // 1199px and below disable
-            if (window.innerWidth <= 1199) return;
+                let $this = $(this);
 
-            gsap.timeline({
-                scrollTrigger: {
-                    trigger: $this[0],
-                    start: "top 60%",
-                    end: "top 10%",
-                    scrub: true,
-                    markers: false,
-                }
-            })
+                gsap.timeline({
+                    scrollTrigger: {
+                        trigger: $this[0],
+                        start: "top 60%",
+                        end: "top 10%",
+                        scrub: true,
+                        markers: false,
+                    }
+                })
 
-            .from($this[0], {
-                rotateX: 40,
-                y: -180,
-                duration: 2,
-                ease: "power2.out",
-                transformOrigin: "bottom center",
-                force3D: true,
+                .from($this[0], {
+                    rotateX: 40,
+                    y: -180,
+                    duration: 2,
+                    ease: "power2.out",
+                    transformOrigin: "bottom center",
+                    force3D: true,
+                });
+
             });
 
         });

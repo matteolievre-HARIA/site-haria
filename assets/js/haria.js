@@ -60,10 +60,11 @@
                 }, 300);
             });
 
-            // Les frais d'installation ne concernent que le mensuel :
-            // en annuel on les barre au lieu de les retirer.
-            document.querySelectorAll('.pricing-section .setup-fee').forEach(function (el) {
-                el.classList.toggle('is-struck', period === 'yearly');
+            // La note sous le prix : vide en mensuel, detail de la facturation annuelle sinon
+            document.querySelectorAll('.pricing-section .setup-fee[data-yearly-text]').forEach(function (el) {
+                el.textContent = period === 'yearly'
+                    ? el.getAttribute('data-yearly-text')
+                    : (el.getAttribute('data-monthly-text') || '');
             });
 
             // Le lien de paiement correspondant a la periode

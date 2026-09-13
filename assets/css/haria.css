@@ -823,6 +823,49 @@ body { color: var(--hp-ink-soft); }
   .how-it-items li { gap: 14px; }
 }
 
+/* ---------- Hero : description courte sur telephone ----------
+   Le paragraphe porte deux versions ; la courte n'existe que sous 768 px. */
+.haria-desc-short { display: none; }
+@media (max-width: 767px) {
+  .hero-1 .hero-content .haria-desc-long { display: none; }
+  .hero-1 .hero-content .haria-desc-short { display: inline; }
+}
+
+@media (max-width: 575px) {
+  /* ---------- Hero : la pastille decollee de l'en-tete ----------
+     L'en-tete fixe fait 76 px : a 80 px de padding, la pastille le touchait. */
+  .hero-1 { padding-top: 104px; }
+
+  /* ---------- Hero : titre plus gros ----------
+     34 px du template, c'etait quatre lignes serrees et un titre qui ne
+     portait plus. */
+  .hero-1 .hero-content h1 {
+    font-size: 40px;
+    line-height: 1.1 !important;
+  }
+
+  /* ---------- Bandeau de logos : pastilles plus petites ----------
+     Les logos gardent leur taille ; seule la pastille se resserre. IDLIFT,
+     plus massif que les autres, perd un peu de hauteur. */
+  .brand-section-one .brand-img { width: 165px; height: 70px; }
+  .brand-section-one .brand-img img[src*="idlift"] { max-height: 22px; }
+
+  /* ---------- Etapes : picto a gauche du titre ----------
+     Le template empile picto, titre et texte (display: grid) : trois
+     etages par carte. Le picto passe a gauche du titre, en plus petit. */
+  .how-it-items li {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    column-gap: 14px;
+    row-gap: 0;
+    align-items: center;
+  }
+  .how-it-items li .icon img { width: 44px; height: 44px; object-fit: contain; }
+  .how-it-items li .content { display: contents; }
+  .how-it-items li .content .title { margin-bottom: 0; }
+  .how-it-items li .content p { grid-column: 1 / -1; margin-top: 12px; }
+}
+
 /* Ecrans tres etroits (iPhone SE, vieux Android). Le CTA n'a plus besoin de
    traitement special : son libelle passe a la ligne. Reste la carte de
    tarif, ou « gratuitement » est insecable et poussait le rond hors du

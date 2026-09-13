@@ -738,6 +738,7 @@ body { color: var(--hp-ink-soft); }
   .hero-1 .hero-content form,
   .haria-final-cta {
     flex-wrap: nowrap;
+    align-items: stretch;
     gap: 10px;
   }
   .hero-1 .hero-content form .theme-btn-main,
@@ -753,9 +754,15 @@ body { color: var(--hp-ink-soft); }
     flex: 1;
     min-width: 0;
     justify-content: center;
-    font-size: 11px;
+    /* Le libelle porte le bouton : a 11 px sur une pastille de 178 px, il
+       faisait rachitique, et les libelles longs se faisaient rogner par
+       l'overflow du bouton. A 14 px avec passage a la ligne autorise, le
+       texte remplit le bouton et rien n'est coupe, jusqu'a 320 px. */
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: center;
+    white-space: normal;
     margin-right: 4px;
-    white-space: nowrap;
   }
   /* Bouton seul d'une section (Etapes, FAQ) : meme gabarit, centre. */
   .section-title-area .theme-btn-main {
@@ -790,26 +797,12 @@ body { color: var(--hp-ink-soft); }
   .how-it-items li { gap: 14px; }
 }
 
-/* Ecrans etroits (Galaxy S8, iPhone SE) : le libelle du CTA descend d'un
-   cran pour ne pas venir buter sur le rond de la fleche. Ces deux blocs
-   viennent apres celui de 575 px : a specificite egale, c'est l'ordre qui
-   tranche. */
-@media (max-width: 389px) {
-  .hero-1 .hero-content form .theme-btn-main .theme-btn,
-  .haria-final-cta .theme-btn-main .theme-btn { font-size: 11px; }
-}
-/* Vraiment petit (320 px) : on retire le rond, le libelle a besoin de la
-   place. Le bouton reste une pastille pleine, centree. */
+/* Ecrans tres etroits (iPhone SE, vieux Android). Le CTA n'a plus besoin de
+   traitement special : son libelle passe a la ligne. Reste la carte de
+   tarif, ou « gratuitement » est insecable et poussait le rond hors du
+   bouton a 18 px. Ce bloc vient apres celui de 575 px : a specificite
+   egale, c'est l'ordre qui tranche. */
 @media (max-width: 344px) {
-  .hero-1 .hero-content form .theme-btn-main,
-  .haria-final-cta .theme-btn-main { padding: 10px 12px; }
-  .hero-1 .hero-content form .theme-btn-main .theme-btn-arrow-right,
-  .haria-final-cta .theme-btn-main .theme-btn-arrow-right { display: none; }
-  .hero-1 .hero-content form .theme-btn-main .theme-btn,
-  .haria-final-cta .theme-btn-main .theme-btn { margin-right: 0; font-size: 10.5px; }
-  /* Carte de tarif tres etroite : « gratuitement » ne peut pas se couper, et
-     a 18 px il poussait le rond hors du bouton. Libelle et rond d'un cran
-     en dessous, tout rentre. */
   .pricing-box-items .theme-btn { font-size: 15px; }
   .pricing-box-items .theme-btn .icon {
     flex: 0 0 40px;

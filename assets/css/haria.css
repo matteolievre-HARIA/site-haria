@@ -854,7 +854,7 @@ body { color: var(--hp-ink-soft); }
      34 px du template, c'etait quatre lignes serrees et un titre qui ne
      portait plus. */
   .hero-1 .hero-content h1 {
-    font-size: 40px;
+    font-size: 37px;
     line-height: 1.1 !important;
   }
 

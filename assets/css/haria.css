@@ -259,6 +259,25 @@ body { color: var(--hp-ink-soft); }
    d'origine et venaient toucher le bouton — on réserve la gouttière. */
 .section-title-area { gap: 30px 48px; }
 
+/* ---------- Vignettes : plus de fondu au survol ----------
+   Le template duplique chaque image et fait passer la copie par un
+   translate + scaleX(2) + flou au survol. On fige les deux etats sur leur
+   position de repos : l'image ne bouge plus. `:not(.haria-thumb-globe)`
+   met la carte du globe hors de portee de cette regle, elle a son propre
+   traitement juste en dessous. */
+.service-box-items:hover .thumb:not(.haria-thumb-globe) img:first-child,
+.how-it-image:hover img:first-child {
+  transform: translateX(50%) scaleX(2);
+  opacity: 0;
+  filter: blur(10px);
+}
+.service-box-items:hover .thumb:not(.haria-thumb-globe) img:nth-child(2),
+.how-it-image:hover img:nth-child(2) {
+  transform: none;
+  opacity: 1;
+  filter: none;
+}
+
 /* =====================================================================
    GLOBE — embarqué dans la carte « Réponse en 2 secondes ».
    CSS repris de portal.css 2789-2945, restreint à ce qui sert ici.

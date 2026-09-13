@@ -140,9 +140,53 @@
         setTimeout(function () { observer.disconnect(); }, 20000);
     }
 
+    /* ---------- Pastilles du carrousel de tarifs (telephone) ----------
+       Sur telephone, la rangee des quatre formules defile lateralement
+       (scroll-snap, voir haria.css). Les pastilles disent ou on en est et
+       permettent de sauter d'une formule a l'autre. Elles sont creees ici
+       quelle que soit la largeur ; le CSS ne les affiche qu'en dessous de
+       992 px, ou le carrousel existe. */
+    function initPricingCarousel() {
+        var rangee = document.querySelector('.pricing-section .row');
+        if (!rangee || !('IntersectionObserver' in window)) return;
+
+        var cartes = Array.prototype.slice.call(rangee.children);
+        if (cartes.length < 2) return;
+
+        var pastilles = document.createElement('div');
+        pastilles.className = 'haria-carousel-dots';
+
+        cartes.forEach(function (carte, i) {
+            var nom = carte.querySelector('.sub-price');
+            var bouton = document.createElement('button');
+            bouton.type = 'button';
+            bouton.setAttribute('aria-label', 'Voir la formule ' + (nom ? nom.textContent.trim() : i + 1));
+            bouton.addEventListener('click', function () {
+                // block: 'nearest' : on glisse sur le cote sans faire sauter la page.
+                carte.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+            });
+            pastilles.appendChild(bouton);
+        });
+
+        rangee.parentNode.insertBefore(pastilles, rangee.nextSibling);
+
+        var observateur = new IntersectionObserver(function (entrees) {
+            entrees.forEach(function (entree) {
+                if (entree.intersectionRatio < 0.6) return;
+                var index = cartes.indexOf(entree.target);
+                Array.prototype.forEach.call(pastilles.children, function (p, j) {
+                    p.classList.toggle('active', j === index);
+                });
+            });
+        }, { root: rangee, threshold: [0.6] });
+
+        cartes.forEach(function (carte) { observateur.observe(carte); });
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
         initAnchors();
         initPricingToggle();
+        initPricingCarousel();
         initWidgetPolish();
     });
 })();

@@ -593,7 +593,9 @@ body { color: var(--hp-ink-soft); }
   .section-padding { padding: 70px 0; }
 
   /* ---------- Hero : le titre ET les deux boutons dans le premier ecran ---------- */
-  .hero-1 { padding-top: 90px; padding-bottom: 40px; }
+  /* Pas de marge basse : le dashboard doit finir pile sur la limite entre
+     le fond violet du hero et la section suivante, comme en bureau. */
+  .hero-1 { padding-top: 90px; padding-bottom: 0; }
   .hero-1 .hero-content .hero-sub { margin-bottom: 16px; }
   .hero-1 .hero-content p { margin-top: 18px; }
   .hero-1 .hero-content form { margin-top: 28px; gap: 12px; flex-wrap: wrap; }

@@ -407,6 +407,9 @@ body { color: var(--hp-ink-soft); }
   background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.55) 30%, rgba(124, 58, 237, 0.75) 55%, transparent);
   pointer-events: none;
 }
+/* Garde-fou : aucune adresse ne doit pouvoir sortir de la carte, meme plus
+   longue que celle d'aujourd'hui. */
+.footer-widget-wrapper .footer-widget-items .contact-list li a { overflow-wrap: anywhere; }
 /* Les pictos Contact étaient violets sur fond sombre : blancs au repos, ils
    reprennent leur violet au survol, en même temps que le texte de la ligne. */
 .footer-widget-wrapper .footer-widget-items .contact-list li img {

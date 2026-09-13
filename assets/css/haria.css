@@ -909,3 +909,183 @@ body { color: var(--hp-ink-soft); }
     height: 40px;
   }
 }
+
+/* =====================================================================
+   TARIFS SUR TELEPHONE ET TABLETTE — cartes epurees
+   Sous 992 px (la ou le carrousel existe). Inspire d'une grille de prix
+   sobre : carte blanche a fin liseré et grands arrondis, nom de la formule
+   precede d'une etoile, prix leger avec « / mois » dessous, bouton plein
+   largeur sans fleche, filet de separation bord a bord, puis la liste avec
+   de simples coches. Le carrousel lateral ne change pas.
+   Place en fin de fichier : a specificite egale, ces regles passent apres
+   les ajustements telephone plus haut.
+   ===================================================================== */
+@media (max-width: 991px) {
+  /* ---------- Bascule Mensuel / Annuel : controle segmente ---------- */
+  .pricing-section .pricing-toggle-wrapper {
+    height: auto;
+    line-height: normal;
+    gap: 4px;
+    padding: 4px;
+    border: 1px solid rgba(21, 23, 26, 0.1);
+    border-radius: 14px;
+    background: rgba(21, 23, 26, 0.04);
+    box-shadow: none;
+  }
+  .pricing-section .pricing-toggle-wrapper .toggle-label {
+    display: inline-flex;
+    align-items: center;
+    height: 44px;
+    line-height: 1;
+    padding: 0 22px;
+    border-radius: 10px;
+    background: transparent;
+    color: rgba(21, 23, 26, 0.6);
+    font-weight: 500;
+  }
+  .pricing-section .pricing-toggle-wrapper .toggle-label.active {
+    background: #fff;
+    color: var(--hp-ink);
+    box-shadow: 0 1px 3px rgba(21, 23, 26, 0.12);
+  }
+  .pricing-section .pricing-toggle-wrapper .haria-save,
+  .pricing-section .pricing-toggle-wrapper .toggle-label.active .haria-save {
+    height: 22px;
+    line-height: 22px;
+    padding: 0 8px;
+    font-size: 12px;
+    background: rgba(124, 58, 237, 0.12);
+    color: var(--theme);
+  }
+
+  /* ---------- Carte ----------
+     La carte Smart perdait son fond violet (image en style en ligne, d'ou
+     le !important) : elle se distingue par un liseré violet et le seul
+     bouton plein. */
+  .pricing-box-items,
+  .pricing-box-items.active {
+    background: #fff !important;
+    border: 1px solid rgba(21, 23, 26, 0.12);
+    border-radius: 24px;
+    padding: 28px 24px;
+    box-shadow: none;
+  }
+  .pricing-box-items.active {
+    border-color: var(--theme);
+    box-shadow: 0 0 0 1px var(--theme);
+  }
+  .pricing-box-items .pricing-header { margin-bottom: 0; }
+
+  /* Nom de la formule, precede d'une etoile a quatre branches */
+  .pricing-box-items .pricing-header .sub-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .pricing-box-items .pricing-header .sub-price::before {
+    content: "";
+    flex: 0 0 20px;
+    height: 20px;
+    background: var(--theme);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0c.8 6.4 5.6 11.2 12 12-6.4.8-11.2 5.6-12 12-.8-6.4-5.6-11.2-12-12C6.4 11.2 11.2 6.4 12 0z'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0c.8 6.4 5.6 11.2 12 12-6.4.8-11.2 5.6-12 12-.8-6.4-5.6-11.2-12-12C6.4 11.2 11.2 6.4 12 0z'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+  .pricing-box-items .pricing-header .price-text {
+    min-height: 63px;
+    margin-bottom: 28px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(21, 23, 26, 0.6);
+  }
+
+  /* Prix leger, « / mois » dessous. Hauteur reservee : la formule Gratuit
+     n'a pas de « / mois », les boutons restent quand meme alignes. */
+  .pricing-box-items .haria-price-row {
+    min-height: 118px;
+    margin-bottom: 20px;
+  }
+  .pricing-box-items .haria-price-row h3 {
+    font-size: 48px;
+    font-weight: 500;
+    letter-spacing: -1.5px;
+    line-height: 1;
+  }
+  .pricing-box-items .pricing-header .price sub {
+    display: block;
+    margin: 8px 0 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: rgba(21, 23, 26, 0.6);
+  }
+  .pricing-box-items .setup-fee {
+    min-height: 36px; /* la note annuelle passe sur deux lignes a 360 px */
+    margin-top: 4px;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(21, 23, 26, 0.6);
+  }
+  /* « Sans carte bancaire » tient la place du « / mois » */
+  .pricing-box-items .haria-price-row h3:not(:has(sub)) + .setup-fee {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+
+  /* ---------- Bouton : plein largeur, contour fin, sans fleche ---------- */
+  .pricing-box-items .theme-btn {
+    min-height: 0;
+    height: 48px;
+    padding: 0 16px;
+    gap: 0;
+    justify-content: center;
+    border: 1px solid rgba(21, 23, 26, 0.15);
+    border-radius: 12px;
+    background: #fff;
+    color: var(--hp-ink);
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .pricing-box-items .theme-btn .icon { display: none; }
+  .pricing-box-items .theme-btn:hover {
+    color: var(--hp-ink);
+    transform: none;
+    box-shadow: none;
+  }
+  .pricing-box-items.active .theme-btn,
+  .pricing-box-items.active .theme-btn:hover {
+    border-color: transparent;
+    background: linear-gradient(103.71deg, #A78BFA 17.96%, #7C3AED 66.13%);
+    color: #fff;
+  }
+
+  /* ---------- Liste : filet bord a bord, coches simples ---------- */
+  .pricing-box-items .pricing-list {
+    margin: 28px -24px 0;
+    padding: 24px 24px 0;
+    border-top: 1px solid rgba(21, 23, 26, 0.1);
+  }
+  .pricing-box-items .pricing-list > span { display: none; }
+  .pricing-box-items .pricing-list ul { margin-top: 0; }
+  .pricing-box-items .pricing-list ul li {
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 15px;
+    line-height: 1.45;
+    letter-spacing: 0;
+    color: var(--hp-ink);
+  }
+  .pricing-box-items .pricing-list ul li:not(:last-child) { margin-bottom: 14px; }
+  .pricing-box-items .pricing-list ul li img { display: none; }
+  .pricing-box-items .pricing-list ul li::before {
+    content: "";
+    flex: 0 0 18px;
+    height: 18px;
+    margin-top: 2px;
+    background: var(--hp-ink);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12.5l5 5L19.5 7'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12.5l5 5L19.5 7'/%3E%3C/svg%3E") center / contain no-repeat;
+  }
+}

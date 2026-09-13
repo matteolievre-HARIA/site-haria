@@ -1017,6 +1017,51 @@
 
         });
 
+        // Version telephone et tablette : meme idee, amplitude reduite.
+        // Pas de `y` : sur un petit ecran, decaler l'image vers le haut la
+        // ferait mordre sur les boutons. L'inclinaison seule, avec un leger
+        // rapprochement, suffit a donner la profondeur. La plage de
+        // declenchement est plus longue parce que l'image est deja dans le
+        // premier ecran au chargement.
+        gsap.matchMedia().add(
+            "(max-width: 1199px) and (prefers-reduced-motion: no-preference)",
+            () => {
+
+                $(".hero-animation").each(function () {
+
+                    let $this = $(this);
+
+                    gsap.timeline({
+                        scrollTrigger: {
+                            // On accroche la section, pas l'image : sur
+                            // telephone l'image est deja visible au
+                            // chargement, donc un declenchement relatif a
+                            // elle demarrait l'animation deja a moitie
+                            // jouee. Depuis le haut de la page, l'etat de
+                            // depart est garanti, quelle que soit la
+                            // hauteur de l'ecran.
+                            trigger: ".hero-1",
+                            start: "top top",
+                            end: "+=400",
+                            scrub: true,
+                            markers: false,
+                        }
+                    })
+
+                    .from($this[0], {
+                        rotateX: 26,
+                        scale: 0.94,
+                        duration: 2,
+                        ease: "power2.out",
+                        transformOrigin: "bottom center",
+                        force3D: true,
+                    });
+
+                });
+
+            }
+        );
+
     }
 
    

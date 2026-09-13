@@ -597,7 +597,15 @@ body { color: var(--hp-ink-soft); }
   .hero-1 .hero-content .hero-sub { margin-bottom: 16px; }
   .hero-1 .hero-content p { margin-top: 18px; }
   .hero-1 .hero-content form { margin-top: 28px; gap: 12px; flex-wrap: wrap; }
-  .hero-1 .hero-items { margin-top: 32px; }
+  /* Le template coupe la perspective sous 1200 px ; on la retablit, sinon
+     l'inclinaison du dashboard serait plate (une rotation sans profondeur).
+     Valeur plus courte qu'en bureau : l'ecran est plus petit, donc l'oeil
+     est plus pres. */
+  .hero-1 .hero-items {
+    margin-top: 26px;
+    perspective: 900px;
+    transform-style: preserve-3d;
+  }
 
   /* ---------- Pastilles de section ----------
      Hauteur fixe + texte long = le libelle sortait de la pastille. En

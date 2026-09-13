@@ -734,17 +734,41 @@ body { color: var(--hp-ink-soft); }
 }
 
 @media (max-width: 575px) {
-  /* ---------- CTA compacts, cote a cote ----------
-     Les paires de boutons (hero et CTA final) restent sur une ligne, de
-     largeur strictement egale, avec une typo et un rond de fleche reduits
-     pour que les deux libelles tiennent sans passer a la ligne. */
-  .hero-1 .hero-content form,
+  /* ---------- Hero : un seul CTA ----------
+     Deux boutons cote a cote sur un telephone, c'est deux libelles ecrases
+     et une hesitation de plus avant le clic. On ne garde que le principal,
+     centre et lisible ; la demo reste accessible par le CTA final et par le
+     menu. */
+  .hero-1 .hero-content form .theme-btn-main + .theme-btn-main { display: none; }
+  .hero-1 .hero-content form { justify-content: center; }
+  .hero-1 .hero-content form .theme-btn-main {
+    flex: 0 1 auto;
+    width: auto;
+    max-width: 100%;
+    padding: 6px 6px 6px 22px;
+  }
+  .hero-1 .hero-content form .theme-btn-main .theme-btn {
+    flex: 0 1 auto;
+    font-size: 17px;
+    line-height: 1.2;
+    white-space: nowrap;
+    margin-right: 10px;
+  }
+  .hero-1 .hero-content form .theme-btn-main .theme-btn-arrow-right {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+  }
+  .hero-1 .hero-content form .theme-btn-main .theme-btn-arrow-right i { font-size: 13px; }
+
+  /* ---------- CTA final : les deux boutons, cote a cote ----------
+     Ici le visiteur a lu la page : lui laisser le choix a du sens. Largeur
+     strictement egale, typo et rond reduits pour que les deux tiennent. */
   .haria-final-cta {
     flex-wrap: nowrap;
     align-items: stretch;
     gap: 10px;
   }
-  .hero-1 .hero-content form .theme-btn-main,
   .haria-final-cta .theme-btn-main {
     flex: 1 1 0;
     width: auto;
@@ -752,7 +776,6 @@ body { color: var(--hp-ink-soft); }
     padding: 4px 4px 4px 12px;
     justify-content: space-between;
   }
-  .hero-1 .hero-content form .theme-btn-main .theme-btn,
   .haria-final-cta .theme-btn-main .theme-btn {
     flex: 1;
     min-width: 0;

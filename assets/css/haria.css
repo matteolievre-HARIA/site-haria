@@ -373,12 +373,17 @@ body { color: var(--hp-ink-soft); }
   position: relative;
   overflow: hidden;
   margin-top: 0;
-  /* Deux lueurs violettes très basses en opacité, posées en diagonale sous le
-     dégradé d'origine : elles donnent de la profondeur à la carte sans
-     colorer le texte ni entrer en concurrence avec les CTA. */
+  /* Quatre lueurs violettes réparties sur la carte (coin haut droit, bas
+     gauche, haut gauche, bas droit) sous le dégradé d'origine : elles donnent
+     de la profondeur et « allument » le pied de page, en restant assez
+     diffuses pour ne pas gêner la lecture du texte blanc. Tailles en px et
+     non en % : sur telephone la carte est tres haute, des ellipses en %
+     s'etiraient en bandes verticales. */
   background:
-    radial-gradient(62% 78% at 88% 0%, rgba(124, 58, 237, 0.16), transparent 68%),
-    radial-gradient(52% 68% at 2% 100%, rgba(124, 58, 237, 0.10), transparent 70%),
+    radial-gradient(640px 360px at 90% 0%, rgba(139, 92, 246, 0.38), transparent 70%),
+    radial-gradient(560px 320px at 0% 100%, rgba(124, 58, 237, 0.30), transparent 70%),
+    radial-gradient(420px 240px at 22% 0%, rgba(167, 139, 250, 0.20), transparent 70%),
+    radial-gradient(420px 240px at 80% 100%, rgba(124, 58, 237, 0.18), transparent 70%),
     linear-gradient(94.68deg, rgba(255, 255, 255, 0.04) 7.02%, rgba(255, 255, 255, 0.09) 90.21%),
     #15171A;
 }
@@ -390,8 +395,22 @@ body { color: var(--hp-ink-soft); }
   top: 0;
   left: 0;
   right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.9) 30%, rgba(139, 92, 246, 1) 55%, transparent);
+  box-shadow: 0 0 18px 2px rgba(139, 92, 246, 0.55);
+  pointer-events: none;
+}
+/* Même filet, plus discret, sur l'arête basse : la carte est cadrée des
+   deux côtés. */
+.footer-area::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(167, 139, 250, 0.55) 30%, rgba(124, 58, 237, 0.75) 55%, transparent);
+  background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.7) 45%, rgba(167, 139, 250, 0.6) 70%, transparent);
+  box-shadow: 0 0 14px 1px rgba(139, 92, 246, 0.4);
   pointer-events: none;
 }
 /* Garde-fou : aucune adresse ne doit pouvoir sortir de la carte, meme plus

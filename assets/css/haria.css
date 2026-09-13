@@ -444,6 +444,20 @@ body { color: var(--hp-ink-soft); }
   .header-1 .navbar .navbar-nav { margin: 0 auto; }
 }
 
+/* ---------- En-tete : fixe des le premier pixel ----------
+   Le template le pose en absolute, puis main.js le passe en fixed a 120 px
+   de defilement avec un fadeInDown : entre 0 et 120 px il partait avec la
+   page, disparaissait, puis redescendait. On le fixe d'emblee et on coupe
+   l'animation ; la classe sticky-menu ne fait plus qu'ajouter l'ombre.
+   Meme padding vertical que l'etat de repos (20 px, contre 18 px dans
+   sticky-menu) pour que le logo ne saute pas de 2 px. */
+.header-1 { position: fixed; }
+.header-1.sticky-menu {
+  animation: none;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 /* ---------- Pastille du hero : on voit que c'est un bloc ----------
    Bordure blanche sur fond clair = invisible. On la passe en gris tres
    doux, avec un fond franchement blanc et une ombre un peu plus marquee. */
@@ -849,6 +863,22 @@ body { color: var(--hp-ink-soft); }
      plus massif que les autres, perd un peu de hauteur. */
   .brand-section-one .brand-img { width: 165px; height: 70px; }
   .brand-section-one .brand-img img[src*="idlift"] { max-height: 22px; }
+
+  /* ---------- Avis : meme air au-dessus et au-dessous des cartes ----------
+     Titre -> cartes : 34 px ; cartes -> bas de section : 60 px. On aligne
+     les deux sur 40 px. */
+  .testimonial-section { padding-bottom: 40px; }
+  .testimonial-section .section-title { margin-bottom: 40px; }
+  /* ---------- Avis : fond violet du haut en bas ----------
+     L'image est blanche sur son tiers haut. En cover sur un ecran etroit et
+     haut, on la voyait en entier : haut blanc, bas violet. On l'agrandit et
+     on la cale en bas pour ne garder que la partie violette. Le plugin
+     ripples lit ces deux proprietes ; main.js les pose en style en ligne,
+     d'ou le !important. */
+  .testimonial-section .ripple-image {
+    background-size: auto 220% !important;
+    background-position: center bottom !important;
+  }
 
   /* ---------- Etapes : picto a gauche du titre ----------
      Le template empile picto, titre et texte (display: grid) : trois

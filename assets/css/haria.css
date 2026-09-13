@@ -212,26 +212,13 @@ body { color: var(--hp-ink-soft); }
 .faq-items-1 .accordion-box .block .acc-content .text { color: var(--hp-ink-soft); }
 .brand-section-one .text { color: var(--hp-ink); }
 .pricing-section .pricing-toggle-wrapper .toggle-label { color: var(--hp-ink); background-color: var(--hp-card-2); }
-/* La remise annuelle : une pastille sur le bouton « Annuel », visible en
-   permanence et tout en haut de la section, au lieu d'une parenthèse noyée
-   dans la note sous le prix. Elle s'inverse quand le bouton devient violet. */
-.pricing-section .pricing-toggle-wrapper .haria-save {
-  display: inline-block;
-  margin-left: 8px;
-  padding: 0 10px;
-  height: 26px;
-  line-height: 26px;
-  border-radius: 999px;
-  background: var(--theme);
-  color: #fff;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0;
-  vertical-align: middle;
-  transition: background 0.3s, color 0.3s;
-}
-.pricing-section .pricing-toggle-wrapper .toggle-label.active .haria-save {
-  background: #fff;
+/* La remise annuelle : un petit texte violet juste sous la bascule, au lieu
+   d'une pastille dans le bouton « Annuel ». */
+.pricing-section .haria-save-note {
+  margin: 10px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
   color: var(--theme);
 }
 
@@ -911,17 +898,16 @@ body { color: var(--hp-ink-soft); }
 }
 
 /* =====================================================================
-   TARIFS SUR TELEPHONE ET TABLETTE — cartes epurees
-   Sous 992 px (la ou le carrousel existe). Inspire d'une grille de prix
+   TARIFS — cartes epurees, sur toutes les largeurs
+   D'abord concu pour le carrousel telephone, puis etendu au bureau. Inspire d'une grille de prix
    sobre : carte blanche a fin liseré et grands arrondis, nom de la formule
    precede d'une etoile, prix leger avec « / mois » dessous, bouton plein
    largeur sans fleche, filet de separation bord a bord, puis la liste avec
-   de simples coches. Le carrousel lateral ne change pas.
+   de simples coches. Le carrousel lateral (sous 992 px) ne change pas.
    Place en fin de fichier : a specificite egale, ces regles passent apres
    les ajustements telephone plus haut.
    ===================================================================== */
-@media (max-width: 991px) {
-  /* ---------- Bascule Mensuel / Annuel : controle segmente ---------- */
+/* ---------- Bascule Mensuel / Annuel : controle segmente ---------- */
   .pricing-section .pricing-toggle-wrapper {
     height: auto;
     line-height: normal;
@@ -947,15 +933,6 @@ body { color: var(--hp-ink-soft); }
     background: #fff;
     color: var(--hp-ink);
     box-shadow: 0 1px 3px rgba(21, 23, 26, 0.12);
-  }
-  .pricing-section .pricing-toggle-wrapper .haria-save,
-  .pricing-section .pricing-toggle-wrapper .toggle-label.active .haria-save {
-    height: 22px;
-    line-height: 22px;
-    padding: 0 8px;
-    font-size: 12px;
-    background: rgba(124, 58, 237, 0.12);
-    color: var(--theme);
   }
 
   /* ---------- Carte ----------
@@ -1088,4 +1065,3 @@ body { color: var(--hp-ink-soft); }
     -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12.5l5 5L19.5 7'/%3E%3C/svg%3E") center / contain no-repeat;
     mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4.5 12.5l5 5L19.5 7'/%3E%3C/svg%3E") center / contain no-repeat;
   }
-}

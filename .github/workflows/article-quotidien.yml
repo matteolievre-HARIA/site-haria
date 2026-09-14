@@ -1,0 +1,48 @@
+# Publie un article SEO par jour depuis la file d'attente _articles/file/.
+# Le plus ancien fichier AAAA-MM-JJ_slug.html part à la racine du site, le
+# sitemap et la liste « Nos guides » de l'accueil sont mis à jour, puis le
+# tout est commité et poussé : Render redéploie automatiquement.
+# Sans article en attente, le workflow se termine sans commit vide.
+# Déclenchement manuel possible (onglet Actions → « Article quotidien »).
+
+name: Article quotidien
+
+on:
+  schedule:
+    - cron: "30 9 * * *" # 09:30 UTC = 11h30, tous les jours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: article-quotidien
+  cancel-in-progress: false
+
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publier l'article en tête de file
+        id: publication
+        run: |
+          SORTIE=$(node scripts/publier-article.mjs)
+          echo "$SORTIE"
+          if echo "$SORTIE" | grep -q "^RIEN_A_PUBLIER"; then
+            echo "rien=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "rien=false" >> "$GITHUB_OUTPUT"
+            TITRE=$(echo "$SORTIE" | grep "^TITRE=" | cut -d= -f2-)
+            echo "titre=$TITRE" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commiter et pousser
+        if: steps.publication.outputs.rien == 'false'
+        run: |
+          git config user.name "haria-bot"
+          git config user.email "bot@haria-chatbot.com"
+          git add -A
+          git commit -m "Article SEO : ${{ steps.publication.outputs.titre }}"
+          git push

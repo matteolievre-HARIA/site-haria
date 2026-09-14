@@ -20,7 +20,8 @@ import { fileURLToPath } from "node:url";
 const racine = join(dirname(fileURLToPath(import.meta.url)), "..");
 const dry = process.argv.includes("--test");
 const aujourdhui = new Date().toISOString().slice(0, 10);
-const MODELE_API = process.env.OPENAI_MODEL || "gpt-4o-mini";
+const MODELE_API = process.env.OPENAI_MODEL || "gpt-5.6-terra";
+const MODELE_SECOURS = "gpt-4o-mini";
 
 // ---- 1. Sujet en tête de liste ---------------------------------------------
 const cheminSujets = join(racine, "_articles", "sujets.json");
@@ -86,7 +87,7 @@ Schéma JSON attendu :
 }
 Contraintes : 4 questions FAQ minimum, réponses de 30 à 60 mots, sources = pages officielles vérifiables (cnil.fr, etc.), jamais de URL inventée.`;
 
-async function appelAPI(retours = []) {
+async function appelAPI(retours = [], modele = MODELE_API) {
   const cle = process.env.OPENAI_API_KEY;
   if (!cle) {
     console.error("ERREUR : OPENAI_API_KEY manquant (secret GitHub ou variable d'environnement).");
@@ -99,7 +100,7 @@ async function appelAPI(retours = []) {
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${cle}` },
     body: JSON.stringify({
-      model: MODELE_API,
+      model: modele,
       temperature: 0.6,
       response_format: { type: "json_object" },
       messages: [
@@ -109,7 +110,13 @@ async function appelAPI(retours = []) {
     }),
   });
   if (!reponse.ok) {
-    console.error(`ERREUR API OpenAI ${reponse.status} : ${(await reponse.text()).slice(0, 300)}`);
+    const texte = await reponse.text();
+    // Modèle indisponible sur cette clé : repli sur le modèle de secours.
+    if (modele !== MODELE_SECOURS && (reponse.status === 404 || /model/i.test(texte))) {
+      console.warn(`Modèle ${modele} indisponible, repli sur ${MODELE_SECOURS}.`);
+      return appelAPI(retours, MODELE_SECOURS);
+    }
+    console.error(`ERREUR API OpenAI ${reponse.status} : ${texte.slice(0, 300)}`);
     process.exit(1);
   }
   const data = await reponse.json();

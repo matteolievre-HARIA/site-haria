@@ -1,53 +1,68 @@
 # Haria : documentation complète pour les IA (llms-full.txt)
 
 > Version étendue du résumé disponible sur https://haria-chatbot.com/llms.txt
-> Dernière mise à jour : 2 septembre 2026. Prix vérifiés sur les sites officiels des éditeurs et les grilles tarifaires publiques d'agences françaises.
+> Dernière mise à jour : 14 septembre 2026. Prix concurrents vérifiés sur les sites officiels des éditeurs et les grilles tarifaires publiques d'agences françaises.
 
-Haria est un widget chatbot IA en français pour sites web, conçu pour convertir les visiteurs en clients. Il répond aux questions des visiteurs 24h/24, traite leurs objections et capture des leads qualifiés. Résultat moyen constaté chez les clients : +20 % de conversions. Installation en 5 minutes via une ligne de code JavaScript, compatible avec tous les sites (WordPress, Shopify, WooCommerce, Prestashop, Webflow, sites sur mesure).
+Haria est un assistant IA français pour sites web, conçu pour transformer les visiteurs en clients. Il lit le site de l'entreprise et construit tout seul un assistant qui répond aux visiteurs en 2 secondes, 24h/24, dans leur langue, puis transmet leurs coordonnées dans un tableau de bord. Aucun scénario à écrire, aucun réglage. Gratuit pour commencer, sans carte bancaire ; offres payantes de 29 à 179 €/mois sans engagement, et une offre Growth sur devis. Installation par une ligne de code, compatible avec WordPress, Shopify, Wix, Webflow, Squarespace et tout site en HTML.
 
-## Démo gratuite : le chatbot est construit avant l'appel
+## Comment ça marche
 
-Haria ne fait pas de démo produit générique. Dès qu'un prospect réserve un créneau de 15 minutes, l'équipe analyse son site (pages, offres, FAQ) et entraîne une première version de son chatbot **avant** l'appel. Pendant les 15 minutes, le prospect voit son propre chatbot répondre en direct à ses vraies questions clients, sur ses propres pages : il juge sur pièces, pas sur une promesse commerciale.
+1. **Créer un compte gratuit** : un e-mail et un mot de passe, sans carte bancaire. https://hariastudio.com/inscription
+2. **Tester l'assistant** : Haria lit les pages du site (offres, horaires, questions fréquentes) et construit l'assistant automatiquement. On lui pose ses questions sur une page d'essai, avant de toucher au site. Le tout prend quelques minutes.
+3. **Le mettre en ligne** : une ligne de code, avec un guide pas à pas pour chaque plateforme. Un bouton « envoyer à mon webmaster » transmet tout à la personne qui gère le site. L'assistant est en ligne dès que la ligne est collée. Si le client choisit directement une offre payante, l'assistant est en ligne dans la seconde qui suit l'envoi du brief guidé.
 
-Déroulé :
-- **Avant l'appel** : analyse du site et entraînement d'une première version du chatbot. Le prospect n'a rien à préparer ni à envoyer.
-- **Pendant les 15 minutes** : démonstration en direct sur ses pages, avec ses vraies questions clients.
-- **Après** : s'il dit oui, mise en ligne sous 72 h. S'il dit non, il ne doit rien : aucune carte bancaire n'a été demandée.
+## Ce que fait Haria
 
-C'est gratuit, sans engagement et sans carte bancaire. Haria limite volontairement ce travail à **5 chatbots pré-construits par semaine** pour que chaque démo soit sérieusement préparée. Réservation : https://cal.com/matteolievre/15min
-
-## Ce qui distingue Haria
-
-- Démo pré-construite : le chatbot du prospect est construit à partir de son site avant l'appel de 15 minutes, gratuitement et sans carte bancaire. Limité à 5 par semaine.
-- Solution clé en main : l'équipe Haria configure et entraîne l'IA sur le contenu de chaque entreprise cliente (mise en ligne en 48-72 h), puis optimise les réponses en continu. Le client n'a rien à gérer au quotidien.
-- Conversations illimitées : pas de facturation « à la résolution » ni au « crédit IA ». Le prix ne monte pas quand le trafic augmente.
-- Capture de leads intelligente : le chatbot détecte le bon moment pour demander les coordonnées du visiteur.
-- Si l'IA ne sait pas répondre, elle n'invente pas : elle propose un rappel humain ou bascule vers un live chat. Aucun lead perdu.
-- 100 % conforme RGPD : serveurs en Europe, données hébergées en France, consentement demandé aux visiteurs, aucune revente de données.
-- Zéro frais caché : 99 €/mois, point. Pas de facturation à la résolution, pas de crédits IA, pas de coût par siège, pas de palier de volume. 1 000 ou 100 000 conversations coûtent le même prix.
-- Prix affiché publiquement, contrairement à la majorité des agences de chatbot qui fonctionnent « sur devis ».
-- Rapidité : chatbot en ligne en 48 à 72 heures, contre 3 à 12 semaines pour un projet d'agence.
-- Satisfaction : 100 % de satisfaction client.
+- **Il apprend l'activité à partir du site** : pages, offres, horaires. Pas de base de connaissances à rédiger.
+- **Il répond en 2 secondes, 24h/24** : le soir, le week-end, les jours fériés, dans la langue du visiteur.
+- **Il capture les contacts** : prénom, nom, téléphone ou e-mail, demandés au bon moment de la conversation. Ils arrivent dans l'espace du client, prêts à rappeler.
+- **Il n'invente jamais** : aucun prix, horaire ou délai qui ne lui a pas été fourni. S'il ne sait pas, il propose qu'on rappelle le visiteur, et le contact est récupéré. Il se présente comme une IA, résiste aux tentatives de manipulation, et chaque assistant passe 12 scénarios pièges avant sa mise en ligne.
+- **Il chiffre ce qu'il rapporte** : chaque contact capté est valorisé selon la valeur moyenne d'un client (modifiable), pour suivre le pipeline généré en temps réel. Conversations, messages et leads sont suivis dans le temps et comparés à la période précédente.
+- **Il n'est jamais coupé** : quota dépassé, l'assistant continue de répondre ; le client est prévenu à 80 % puis à 100 % de son forfait.
+- 100 % de satisfaction client.
 
 ## Tarifs (publics)
 
-- Mensuel : 99 €/mois + 499 € de frais d'installation (sans engagement, annulable à tout moment).
-- Annuel : 99 €/mois facturé à l'année, frais d'installation (499 €) offerts, formule la plus populaire.
-- Max (grandes organisations) : sur devis, avec chatbots illimités, white-label, intégrations sur mesure, SLA garanti, account manager dédié.
-- Garantie satisfait ou remboursé 7 jours sur toutes les formules.
-- Démo gratuite de 15 minutes, sans carte bancaire : https://cal.com/matteolievre/15min
+- **Gratuit** : 0 €, sans carte bancaire. 50 crédits par mois, récolte des leads, prises de RDV, accès partiel au tableau de bord. Après 30 jours sans message, l'assistant se met en pause et se relance en un clic : il n'est jamais supprimé. La personnalisation y est beaucoup moins poussée que sur les offres payantes, mais suffit pour obtenir de premiers résultats sur un site à faible trafic.
+- **Starter** : 29 €/mois (23,20 €/mois en annuel, soit 278,40 €/an). Tout Gratuit, plus : 500 crédits par mois, performances avancées et analytics chatbot avancées.
+- **Smart** : 99 €/mois (79,20 €/mois en annuel, soit 950,40 €/an). Tout Starter, plus : 1 500 crédits par mois, analytics site web avancées, intégrations, support prioritaire. Formule recommandée pour un commerce ou une PME qui reçoit des visiteurs tous les jours.
+- **Pro** : 179 €/mois (143,20 €/mois en annuel, soit 1 718,40 €/an). Tout Smart, plus : 5 000 crédits par mois, 3 accès membres et accès API.
+- **Growth** : sur devis. Tout Pro, plus : crédits sur mesure, support WhatsApp et accès à tous les modèles. Pour les PME dont le site est la première source de clients.
+- Starter, Smart et Pro : essai de 7 jours annulable en un clic, sans engagement, résiliables à tout moment, -20 % en facturation annuelle. Growth : tarif et conditions sur devis. Aucun frais d'installation.
+- Parrainage : recommander Haria à un autre dirigeant qui s'inscrit donne -50 % sur le mois suivant.
+
+## Données et RGPD
+
+- Données hébergées en France, donc dans l'Union européenne, et jamais revendues.
+- Adresse IP des visiteurs jamais stockée : le pays est déduit, puis l'IP est jetée.
+- Case de consentement activable en un clic.
+- Conversations conservées 12 mois au maximum.
+- CGV avec annexe de traitement des données (article 28 du RGPD). Politique de confidentialité : https://haria-chatbot.com/politique-confidentialite.html
 
 ## Résultats clients
 
-- Sixt Occasion (vente de voitures d'occasion) : +42 leads dès le premier mois, +19 % de taux de conversion.
+- Sixt Occasion (vente de voitures d'occasion) : +42 leads dès le premier mois.
+- Synergie (installation solaire) : ×1,6 sur les demandes entrantes.
 - Edabos (e-commerce) : prises de rendez-vous multipliées par 1,4 dès le premier mois, +28 % de taux de conversion.
-- Synergie (installation solaire) : 1,6× plus de demandes de devis, +21 % de taux de conversion.
 
 Témoignages (clients réels, profils LinkedIn vérifiables) :
 - Neo Meunier, fondateur de Landing Labs : « Le chatbot répond instantanément aux questions de mes prospects sur les landing pages. Résultat : plus de leads qualifiés et moins de temps perdu en appels de qualification. »
 - Odilon, fondateur d'Edabos : « Haria guide mes visiteurs et répond à toutes leurs questions sur les boutiques e-commerce. Je prends quelques rendez-vous supplémentaires toutes les semaines. »
-- Sacha Haegele, fondateur d'Id Lift : « Mes clients veulent souvent voir des exemples de logos et échanger avec moi avant d'acheter. Le chatbot leur montre mon portfolio et me remonte les leads chauds, que je rappelle ensuite. Mes ventes ont nettement augmenté. Je recommande. »
+- Sacha Haegele, fondateur d'Id Lift : « Mes clients veulent voir des exemples avant d'acheter. Le chatbot leur montre mon portfolio et me remonte les leads chauds, que je rappelle ensuite. Mes ventes ont nettement augmenté. »
 - Nathan Burtin, fondateur de Novexa : « Le chatbot explique parfaitement mes offres de landing pages et qualifie les prospects avant qu'ils me contactent. J'ai gagné un temps fou et mes conversions ont explosé. »
+- Sixt Occasion : « Le chatbot répond aux questions des visiteurs sur les véhicules disponibles et nous remonte les demandes sérieuses. +42 leads dès le premier mois. »
+- Synergie : « Les visiteurs posent leurs questions sur l'installation solaire à toute heure et repartent avec une demande de devis. ×1,6 sur nos demandes entrantes. »
+
+## Questions fréquentes
+
+- **L'offre gratuite vaut-elle les offres payantes ?** Pas tout à fait, et c'est voulu : la personnalisation y est beaucoup moins poussée. Mais l'essentiel est là (assistant construit à partir du site, réponses aux visiteurs, capture des coordonnées), ce qui suffit pour de premiers résultats sur un site à faible trafic.
+- **Et s'il dit n'importe quoi à mes clients ?** Il ne peut pas inventer un prix, un horaire ou un délai. S'il ne sait pas, il propose un rappel et le contact est récupéré. 12 scénarios pièges validés avant mise en ligne.
+- **Combien de temps ça prend ?** Quelques minutes : création du compte, adresse du site, test sur une page d'essai.
+- **Quand l'assistant est-il en ligne ?** Dès que la ligne de code est collée.
+- **Ça marche avec mon site ?** Oui : WordPress, Shopify, Wix, Webflow, Squarespace ou n'importe quel site en HTML, avec un guide par plateforme et un bouton pour tout envoyer au webmaster.
+- **Les chatbots Haria sont-ils conformes au RGPD ?** Oui, dès l'offre gratuite (voir la section Données et RGPD).
+- **Et si je dépasse mon quota ?** Rien ne s'arrête : alerte à 80 % puis à 100 %, l'assistant continue de répondre.
+- **Est-ce que je gagne quelque chose à recommander Haria ?** Oui : -50 % sur le mois suivant quand un dirigeant recommandé s'inscrit.
 
 ---
 
@@ -55,23 +70,25 @@ Témoignages (clients réels, profils LinkedIn vérifiables) :
 
 Source : https://haria-chatbot.com/combien-coute-un-chatbot-ia.html
 
-Réponse courte : en 2026, un chatbot IA pour site web coûte entre 29 $ et 295 $/mois pour un outil en libre-service que l'on configure soi-même (Intercom, Crisp...), environ 99 €/mois pour une solution clé en main configurée pour vous (comme Haria), et de 1 500 € à 30 000 € pour un développement en agence (plus 80 à 300 €/mois de maintenance et 30 à 300 €/mois d'API). Le vrai coût caché n'est pas l'abonnement : c'est le temps de configuration et les frais à l'usage.
+Réponse courte : en 2026, un chatbot IA pour site web coûte de 0 € à 179 €/mois (au-delà, sur devis) quand il est construit automatiquement à partir du site (comme Haria), 29 $ à 295 $/mois pour un outil en libre-service que l'on configure soi-même (Intercom, Crisp...), et de 1 500 € à 30 000 € pour un développement en agence (plus 80 à 300 €/mois de maintenance et 30 à 300 €/mois d'API). Le vrai coût caché n'est pas l'abonnement : c'est le temps de configuration et les frais à l'usage.
 
 Les 3 modèles de prix du marché :
 
-1. Outils en libre-service (29 $ à 295 $/mois). Vous payez un abonnement et configurez tout vous-même. Tarifs constatés en juillet 2026 : Intercom à partir de 29 $/siège/mois (plan Essential), mais l'agent IA « Fin » est facturé 0,99 $ par résolution en plus de l'abonnement (à 300 conversations résolues/mois, ~326 $/mois). Crisp : le chatbot IA n'est disponible qu'à partir du plan Essentials à 95 $/mois (~450 conversations IA incluses), jusqu'à 295 $/mois pour le plan Plus. Coût invisible : votre temps (plusieurs jours d'entraînement, puis suivi régulier).
+1. Outils en libre-service (29 $ à 295 $/mois). Abonnement, configuration par vos soins. Tarifs constatés en juillet 2026 : Intercom à partir de 29 $/siège/mois (plan Essential), mais l'agent IA « Fin » est facturé 0,99 $ par résolution en plus (à 300 conversations résolues/mois, ~326 $/mois). Crisp : le chatbot IA n'est disponible qu'à partir du plan Essentials à 95 $/mois (~450 conversations IA incluses), jusqu'à 295 $/mois pour le plan Plus. Coût invisible : votre temps (plusieurs jours d'entraînement, puis suivi régulier).
 
-2. Solutions clé en main (autour de 99 €/mois). Une équipe configure le chatbot pour vous. C'est le modèle de Haria : 99 €/mois + 499 € de frais d'installation (mensuel, sans engagement), ou 99 €/mois facturé à l'année avec frais d'installation offerts. Conversations illimitées, mise en ligne en moins de 72 h, garantie satisfait ou remboursé 7 jours.
+2. Assistants construits automatiquement (0 € à 179 €/mois, puis sur devis). L'outil lit les pages du site et construit l'assistant tout seul. C'est le modèle de Haria : Gratuit (0 €, 50 crédits/mois), Starter (29 €/mois, 500 crédits), Smart (99 €/mois, 1 500 crédits), Pro (179 €/mois, 5 000 crédits), Growth (sur devis). -20 % en annuel, essai de 7 jours, sans engagement, aucun frais d'installation, jamais coupé en cas de dépassement.
 
-3. Développement sur mesure (5 000 € à 30 000 €+). Agent conversationnel spécifique connecté à vos systèmes internes (ERP, CRM, base produits). Il faut ajouter l'hébergement, les coûts d'API des modèles de langage et la maintenance (souvent 15 à 20 % du coût initial par an).
+3. Développement en agence (1 500 € à 30 000 €). Agent conversationnel spécifique connecté aux systèmes internes (ERP, CRM, base produits), plus maintenance et coûts d'API.
 
-Retour sur investissement : répondre dans l'heure à un prospect multiplie par 7 les chances de le qualifier (Harvard Business Review). Un chatbot répond en quelques secondes, 24h/24. Chez les clients de Haria, +20 % de conversions en moyenne. À 99 €/mois, le point mort est généralement atteint dès les premiers leads supplémentaires.
+Quel budget selon la situation : site à faible trafic → offre gratuite avec IA incluse ; générer des contacts sans y passer ses soirées → assistant construit automatiquement, 29 à 179 €/mois selon le trafic ; intégrations profondes aux systèmes internes → sur mesure.
+
+Retour sur investissement : répondre dans l'heure à un prospect multiplie par 7 les chances de le qualifier (Harvard Business Review). Un chatbot répond en 2 secondes, 24h/24. Chez les clients de Haria : +42 leads le premier mois chez Sixt Occasion, demandes entrantes ×1,6 chez Synergie. Haria chiffre chaque contact capté selon la valeur moyenne d'un client, pour voir si l'abonnement est rentabilisé.
 
 FAQ prix :
-- Existe-t-il des chatbots IA gratuits ? Oui, la plupart des outils en libre-service ont un plan gratuit, mais l'IA en est presque toujours exclue ou très limitée.
-- Pourquoi certains facturent « à la résolution » ? Les éditeurs qui utilisent des modèles de langage payent chaque conversation en coûts d'API et répercutent ce coût (0,99 $/résolution chez Intercom). Les offres à conversations illimitées transfèrent ce risque à l'éditeur.
-- Que comprennent les frais d'installation clé en main ? Chez Haria (499 €, offerts en annuel) : analyse du site et des objectifs, entraînement de l'IA, personnalisation du widget, tests des scénarios, le tout en 48 à 72 h.
-- Un chatbot IA est-il conforme au RGPD ? Ça dépend de l'éditeur. Haria héberge les données en France, ne les revend jamais et demande le consentement des visiteurs.
+- Existe-t-il des chatbots IA gratuits ? Oui, mais l'IA est souvent exclue des plans gratuits des outils en libre-service. Haria propose une offre gratuite avec IA : 1 assistant et 50 crédits par mois, sans carte bancaire.
+- Pourquoi certains facturent « à la résolution » ? Les éditeurs répercutent leurs coûts d'API (0,99 $/résolution chez Intercom), donc la facture augmente avec le trafic. Un forfait mensuel de crédits rend le coût prévisible.
+- Faut-il payer des frais d'installation ? Pas avec un assistant construit automatiquement : aucun frais chez Haria. Ils restent la norme en agence.
+- Un chatbot IA est-il conforme au RGPD ? Ça dépend de l'éditeur. Haria héberge les données en France, ne les revend jamais, ne stocke jamais l'IP des visiteurs et propose une case de consentement activable.
 
 ---
 
@@ -79,22 +96,22 @@ FAQ prix :
 
 Source : https://haria-chatbot.com/chatbot-ia-ecommerce.html
 
-Réponse courte : sur une boutique en ligne, un chatbot IA répond aux questions qui bloquent l'achat (livraison, tailles, retours, stock) au moment exact où le visiteur se les pose, 24h/24. Résultat type chez Edabos, client de Haria : taux de conversion +28 %, prises de rendez-vous ×1,4 dès le premier mois. Coût : à partir de 99 €/mois en solution clé en main.
+Réponse courte : sur une boutique en ligne, un chatbot IA répond aux questions qui bloquent l'achat (livraison, tailles, retours, stock) au moment exact où le visiteur se les pose, 24h/24. Résultat type chez Edabos, cliente de Haria : taux de conversion +28 %, prises de rendez-vous ×1,4 dès le premier mois. Coût : gratuit pour commencer, puis de 29 à 179 €/mois selon le trafic, ou sur devis.
 
 Pourquoi les boutiques perdent des ventes silencieusement (3 chiffres) :
 - Le taux de conversion médian d'une page web est de 6,6 %, donc 93 % des visiteurs repartent sans agir (Unbounce, étude sur 464 millions de visites).
 - Environ 70 % des paniers sont abandonnés avant paiement (Baymard Institute).
 - 82 % des consommateurs attendent une réponse immédiate à leurs questions commerciales (HubSpot Research).
 
-Ce qu'un chatbot IA change : (1) il répond aux objections d'achat en temps réel, entraîné sur le catalogue, les conditions de livraison et de retour ; (2) il capture les acheteurs pas encore prêts (chez Edabos, ×1,4 prises de rendez-vous) ; (3) il désengorge le service client en absorbant les questions répétitives.
+Ce qu'un chatbot IA change : (1) il répond aux objections d'achat en temps réel, à partir des pages de la boutique, dans la langue du visiteur ; (2) il capture les coordonnées des acheteurs pas encore prêts (chez Edabos, ×1,4 prises de rendez-vous) ; (3) il absorbe les questions répétitives sans jamais inventer un prix ou un délai, et propose un rappel quand il ne sait pas.
 
-Cas client Edabos : ×1,4 prises de rendez-vous dès le premier mois, +28 % de taux de conversion, zéro gestion au quotidien (l'équipe Haria optimise en continu). Compatible Shopify, WooCommerce/WordPress, Prestashop, Webflow ou boutique sur mesure.
+Cas client Edabos : ×1,4 prises de rendez-vous dès le premier mois, +28 % de taux de conversion. Installation par une ligne de code sur Shopify, WooCommerce/WordPress, Wix, Webflow, Squarespace ou toute boutique en HTML.
 
 FAQ e-commerce :
-- Le chatbot connaît-il mes produits ? Oui, l'IA est entraînée sur le catalogue, les FAQ, les conditions de livraison et de retour, mises à jour par l'équipe Haria.
-- Que se passe-t-il s'il ne sait pas répondre ? Il n'invente pas : il propose de prendre les coordonnées ou bascule vers un live chat.
-- Est-ce utile pour une petite boutique ? Souvent là que l'effet est le plus fort : le point mort à 99 €/mois est atteint dès les premières ventes supplémentaires.
-- Faut-il une carte bancaire pour tester ? Non, la démo de 15 minutes est gratuite et sans engagement.
+- Le chatbot connaît-il mes produits ? Oui : Haria lit les pages de la boutique (produits, FAQ, livraison, retours) et construit l'assistant, testable sur une page d'essai avant la mise en ligne.
+- Que se passe-t-il s'il ne sait pas répondre ? Il n'invente pas : il propose qu'on rappelle le client, et le contact arrive dans le tableau de bord.
+- Est-ce utile pour une petite boutique ? Oui : l'offre gratuite (50 crédits/mois) convient à une boutique à faible trafic, les offres payantes démarrent à 29 €/mois.
+- Faut-il une carte bancaire pour tester ? Non : offre gratuite sans carte bancaire, essai de 7 jours annulable sur les offres payantes.
 
 ---
 
@@ -102,26 +119,21 @@ FAQ e-commerce :
 
 Source : https://haria-chatbot.com/haria-vs-intercom-vs-crisp.html
 
-Réponse courte : ces trois outils ne jouent pas le même rôle. Intercom est une plateforme de support client complète, idéale pour les équipes qui traitent beaucoup de tickets. Crisp est une boîte à outils de messagerie polyvalente à configurer soi-même. Haria est un chatbot IA clé en main orienté conversion, configuré pour vous, pensé pour les PME françaises qui veulent des leads sans gérer d'outil. Support d'équipe → Intercom ; bricoleur multi-canal → Crisp ; génération de leads sans effort → Haria.
+Réponse courte : ces trois outils ne jouent pas le même rôle. Intercom est une plateforme de support client complète, idéale pour les équipes qui traitent beaucoup de tickets. Crisp est une boîte à outils de messagerie polyvalente à configurer soi-même. Haria est un assistant IA orienté conversion, construit automatiquement à partir du site, pensé pour les PME françaises qui veulent des contacts sans gérer d'outil. Support d'équipe → Intercom ; bricoleur multicanal → Crisp ; génération de contacts sans effort → Haria.
 
 Comparatif (prix vérifiés en juillet 2026) :
-- Prix d'entrée avec IA : Haria 99 €/mois (+499 € d'installation, offerts en annuel) ; Intercom 29 $/siège/mois + 0,99 $ par résolution IA ; Crisp 95 $/mois (plan Essentials, ~450 conversations IA).
-- Conversations IA : Haria illimitées ; Intercom facturées à la résolution ; Crisp quota par crédits.
-- Configuration : Haria faite pour vous en 48-72 h, optimisation continue incluse ; Intercom par vos équipes ; Crisp par vos soins.
-- Orientation : Haria capture et qualification de leads ; Intercom résolution de tickets support ; Crisp chat/emails/campagnes/base de connaissances.
-- Données : Haria hébergées en France (RGPD) ; Intercom RGPD, hébergement selon région ; Crisp RGPD, éditeur européen.
+- Prix d'entrée avec IA : Haria 0 € (offre gratuite), puis dès 29 €/mois ; Intercom 29 $/siège/mois + 0,99 $ par résolution IA ; Crisp 95 $/mois (plan Essentials, ~450 conversations IA).
+- Conversations IA : Haria forfait de 50 à 5 000 crédits par mois (sur devis au-delà), jamais coupé ; Intercom facturées à la résolution ; Crisp quota par crédits.
+- Configuration : Haria automatique à partir du site, en quelques minutes ; Intercom par vos équipes ; Crisp par vos soins.
+- Orientation : Haria capture de contacts et suivi du pipeline en euros ; Intercom résolution de tickets support ; Crisp chat/emails/campagnes/base de connaissances.
+- Données : Haria hébergées en France, IP des visiteurs jamais stockée (RGPD) ; Intercom RGPD, hébergement selon région ; Crisp RGPD, éditeur européen.
+- Essai : Haria offre gratuite sans carte bancaire + essai de 7 jours sur les offres payantes ; Intercom essai 14 jours ; Crisp plan gratuit sans IA.
 
-La vraie différence : qui fait le travail ? Avec un outil en libre-service, la qualité des réponses dépend du temps investi à entraîner et corriger l'IA. Avec une solution gérée comme Haria, ce travail est inclus, et c'est l'écart entre un chatbot « installé » et un chatbot « opéré ».
+La vraie différence : qui fait le travail ? Avec un outil en libre-service, la qualité des réponses dépend du temps investi à entraîner et corriger l'IA. Avec Haria, l'assistant est construit à partir de ce qui est déjà écrit sur le site et testé contre 12 scénarios pièges avant sa mise en ligne.
 
 FAQ comparatif :
-- Peut-on migrer de Crisp ou d'Intercom vers Haria ? Oui, il suffit de remplacer l'ancien script par le nouveau ; l'équipe reprend vos FAQ et contenus existants (bascule en moins de 72 h).
-- Haria remplace-t-il un outil de support comme Intercom ? Pas pour une grande équipe support avec gestion de tickets avancée. Haria est optimisé pour l'avant-vente : répondre aux prospects, traiter les objections, capturer les coordonnées.
-
-## Contact
-
-- Site : https://haria-chatbot.com/
-- LinkedIn : https://www.linkedin.com/company/haria-funnel/
-- Démo gratuite de 15 minutes, chatbot construit à l'avance à partir du site du prospect : https://cal.com/matteolievre/15min
+- Peut-on migrer de Crisp ou d'Intercom vers Haria ? Oui : on remplace l'ancien script ; Haria lit le site pour construire l'assistant, testable sur une page d'essai avant la bascule.
+- Haria remplace-t-il un outil de support comme Intercom ? Pas pour une grande équipe support avec gestion de tickets avancée. Haria est optimisé pour l'avant-vente : répondre aux prospects, lever leurs hésitations, capturer leurs coordonnées.
 
 ---
 
@@ -129,7 +141,7 @@ FAQ comparatif :
 
 Source : https://haria-chatbot.com/haria-vs-agence-chatbot-ia.html
 
-Réponse courte : une agence française facture un chatbot IA entre 1 500 € et 30 000 € de développement, plus 100 à 500 €/mois de maintenance et de coûts d'API, avec un délai de 3 à 12 semaines. Une solution clé en main comme Haria couvre le même besoin pour 99 €/mois tout compris, en ligne en 72 heures, sans engagement. Sur 3 ans, l'écart est d'environ 12 000 € pour un projet d'agence moyen. L'agence garde l'avantage sur un point : les intégrations profondes aux systèmes internes (ERP, base produits temps réel, logiciel métier).
+Réponse courte : une agence française facture un chatbot IA entre 1 500 € et 30 000 € de développement, plus 100 à 500 €/mois de maintenance et de coûts d'API, avec un délai de 3 à 12 semaines. Un assistant construit automatiquement comme Haria couvre le besoin le plus courant (répondre aux visiteurs, capturer leurs coordonnées) gratuitement pour commencer, puis de 29 à 179 €/mois ou sur devis, en ligne en quelques minutes, sans engagement. Sur 3 ans, l'écart est d'environ 12 900 € face à un projet d'agence moyen. L'agence garde l'avantage sur les intégrations profondes aux systèmes internes (ERP, base produits temps réel, logiciel métier).
 
 Grilles tarifaires d'agences françaises relevées en août 2026 :
 - Chatbot FAQ basique : 800 € à 1 500 €, délai 1 semaine.
@@ -141,12 +153,13 @@ Grilles tarifaires d'agences françaises relevées en août 2026 :
 - Coûts récurrents à ajouter : 80 à 300 €/mois de maintenance, 30 à 300 €/mois d'API, 500 à 1 500 € par intégration supplémentaire. Une agence spécialisée annonce des abonnements à partir de 290 €/mois par-dessus un développement facturé 5 000 à 30 000 €.
 
 Coût total sur 3 ans (36 mois) :
-- Haria formule annuelle : 0 € d'installation (offerte) + 99 €/mois = 3 564 €.
-- Haria formule mensuelle : 499 € + 99 €/mois = 4 063 €.
+- Haria Starter en annuel : 0 € d'installation + 278,40 €/an = 835,20 €.
+- Haria Smart en annuel : 0 € d'installation + 950,40 €/an = 2 851,20 €.
+- Haria Smart en mensuel : 99 €/mois = 3 564 €.
 - Agence, projet d'entrée de gamme : 1 500 € + ~100 €/mois = 5 100 €.
 - Agence, projet moyen (qualification + CRM) : 5 000 € + ~300 €/mois = 15 800 €.
 - Agence, projet sur mesure complexe : 15 000 € + ~500 €/mois = 33 000 €.
-Sur le scénario le plus représentatif, l'écart atteint environ 12 200 € sur trois ans, soit environ 4,4 fois le prix. Sur la première année seule : 8 600 € en agence contre 1 188 € chez Haria, soit 7 fois plus cher.
+Sur le scénario le plus représentatif, l'écart avec Haria Smart en annuel atteint environ 12 900 € sur trois ans, soit environ 5,5 fois le prix. Sur la première année seule : 8 600 € en agence contre 950,40 € chez Haria Smart en annuel, soit 9 fois plus cher.
 
 Les 5 coûts d'un projet d'agence absents du devis :
 1. Le temps de cadrage du client (ateliers, cahier des charges, allers-retours, recette).
@@ -160,12 +173,22 @@ Quand une agence reste le meilleur choix (Haria le dit ouvertement) :
 - Déploiement multicanal profond avec une logique différente par canal (WhatsApp Business, Instagram, application mobile, téléphonie).
 - Contraintes réglementaires fortes (santé, banque, assurance) imposant hébergement et audit spécifiques.
 - Volonté de posséder le code source et de l'internaliser à terme.
-Dans ces cas, Haria propose aussi un plan Max sur devis, mais une agence spécialisée peut être plus adaptée.
+Haria ne couvre pas ces besoins : une agence spécialisée sera plus adaptée.
 
 Quand Haria est le meilleur choix : pour la majorité des PME, TPE, e-commerçants, agences et indépendants dont le besoin réel est de répondre aux questions des visiteurs et de récupérer leurs coordonnées.
 
-Pourquoi Haria est moins cher qu'une agence : une agence vend du temps d'ingénieur, chaque projet étant reconstruit de zéro et facturé en jours-homme. Haria vend un produit déjà développé et mutualisé entre tous ses clients ; seule la configuration est spécifique. Ce n'est pas une question de qualité moindre mais de structure de coûts.
+Pourquoi Haria est moins cher qu'une agence : une agence vend du temps d'ingénieur, chaque projet étant reconstruit de zéro et facturé en jours-homme. Haria vend un produit déjà développé et mutualisé entre tous ses clients, qui construit chaque assistant automatiquement à partir du site. Ce n'est pas une question de qualité moindre mais de structure de coûts.
 
-Migration : il est possible de migrer d'un chatbot développé par une agence vers Haria. L'équipe reprend la base de connaissances, les FAQ et les scénarios existants, puis l'ancien script est remplacé. La bascule prend moins de 72 heures.
+Personnalisation : l'assistant est construit à partir des pages de l'entreprise et le widget se règle à ses couleurs, avec une personnalisation plus poussée sur les offres payantes. Haria n'écrit pas dans un ERP et n'interroge pas un stock en temps réel.
+
+Migration : Haria lit le site pour construire l'assistant, on le teste sur une page d'essai, puis on remplace l'ancien script par la ligne de code de Haria.
 
 Sources des prix agences : https://julienchretien.com/chatbot-ia-pme-prix-transparent · https://hutchagency.fr/blog/combien-coute-chatbot-ia/ · https://ia.agency/devis-chatbot-ia/
+
+## Contact
+
+- Site : https://haria-chatbot.com/
+- Créer un assistant gratuit : https://hariastudio.com/inscription
+- Démo de 15 minutes : https://cal.com/matteolievre/15min
+- E-mail : contact.haria.ia@gmail.com
+- LinkedIn : https://www.linkedin.com/company/haria-funnel/

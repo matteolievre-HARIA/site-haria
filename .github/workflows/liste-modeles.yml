@@ -1,0 +1,16 @@
+name: Liste des modèles (jetable)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  lister:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lister les modèles OpenAI disponibles
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          curl -s https://api.openai.com/v1/models \
+            -H "Authorization: Bearer $OPENAI_API_KEY" \
+            | node -e "let d='';process.stdin.on('data',c=>d+=c).on('end',()=>{const j=JSON.parse(d);console.log((j.data||[]).map(m=>m.id).filter(id=>/gpt|o[0-9]|terra/i.test(id)).sort().join('\n')||JSON.stringify(j).slice(0,400))})"

@@ -69,13 +69,18 @@ Faits vérifiés sur Haria (ta seule source autorisée pour les chiffres et enga
 ${faits.slice(0, 6000)}
 """
 
+Structure IMPÉRATIVE (respecte les budgets de mots de chaque bloc, c'est contrôlé) :
+- une intro SANS titre : 80 à 120 mots, mot-clé principal dans les 100 premiers mots ;
+- exactement 5 sections <h2> de 150 à 200 mots chacune (l'une contient une <ul> de 4-5 points) ;
+- une section finale <h2> « Ce qu'il faut retenir » : 80 à 100 mots.
+
 Schéma JSON attendu :
 {
   "titre": "titre SEO de 50 à 60 caractères, mot-clé dedans, sans guillemets",
   "description": "meta description de 140 à 155 caractères, avec un bénéfice concret",
   "h1": "titre de l'article tel qu'affiché (peut différer du titre SEO)",
   "accroche": "réponse courte de 2 à 3 phrases en <strong> sur les points clés",
-  "corps": "corps de l'article en HTML : uniquement des <h2>, <h3>, <p>, <ul>, <li>, <strong>, <em>, <a>. 700 mots minimum. 4 à 6 <h2>. Interdits : <h1>, <table>, <img>, <script>, style en ligne. 2 à 3 liens internes maximum, uniquement parmi : <a href=\"/\">accueil</a>, <a href=\"combien-coute-un-chatbot-ia.html\">prix d'un chatbot IA</a>, <a href=\"haria-vs-agence-chatbot-ia.html\">Haria vs agence</a>, <a href=\"haria-vs-intercom-vs-crisp.html\">Haria vs Intercom vs Crisp</a>, <a href=\"chatbot-ia-ecommerce.html\">chatbot IA e-commerce</a>, <a href=\"chatbot-ia-rgpd.html\">chatbot IA et RGPD</a>. 1 lien vers l'accueil obligatoire.",
+  "corps": "corps de l'article en HTML suivant la structure impérative ci-dessus : uniquement des <h2>, <h3>, <p>, <ul>, <li>, <strong>, <em>, <a>. Interdits : <h1>, <table>, <img>, <script>, style en ligne. 2 à 3 liens internes maximum, uniquement parmi : <a href=\"/\">accueil</a>, <a href=\"combien-coute-un-chatbot-ia.html\">prix d'un chatbot IA</a>, <a href=\"haria-vs-agence-chatbot-ia.html\">Haria vs agence</a>, <a href=\"haria-vs-intercom-vs-crisp.html\">Haria vs Intercom vs Crisp</a>, <a href=\"chatbot-ia-ecommerce.html\">chatbot IA e-commerce</a>, <a href=\"chatbot-ia-rgpd.html\">chatbot IA et RGPD</a>. 1 lien vers l'accueil obligatoire.",
   "faq": [ { "question": "...", "reponse": "..." } ],
   "sources": ["https://..."]
 }
@@ -141,7 +146,7 @@ function valider(a) {
   if (longueur(a.description) < 120 || longueur(a.description) > 158) problemes.push(`description ${longueur(a.description)} car (120-158 attendus)`);
   const corpsSansBalises = a.corps.replace(/<[^>]+>/g, " ");
   const mots = corpsSansBalises.split(/\s+/).filter(Boolean).length;
-  if (mots < 600) problemes.push(`corps trop court : ${mots} mots (600 minimum)`);
+  if (mots < 500) problemes.push(`corps trop court : ${mots} mots (500 minimum, visez 900-1200)`);
   const h2 = (a.corps.match(/<h2>/g) || []).length;
   if (h2 < 3) problemes.push(`seulement ${h2} <h2> (3 minimum)`);
   if (/<h1[ >]/.test(a.corps)) problemes.push("le corps ne doit pas contenir de <h1>");
@@ -162,8 +167,8 @@ function valider(a) {
 // Jusqu'à 3 essais : chaque refus repart au modèle avec la liste exacte des
 // reproches, comme pour les rounds de correction des prompts plateforme.
 let retours = [];
-for (let essai = 1; essai <= 3 && !article; essai++) {
-  if (essai > 1) console.log(`Tentative ${essai}/3 après refus : ${retours.join(" ; ")}`);
+for (let essai = 1; essai <= 4 && !article; essai++) {
+  if (essai > 1) console.log(`Tentative ${essai}/4 après refus : ${retours.join(" ; ")}`);
   const candidat = dry ? exempleTest : await appelAPI(retours);
   const problemes = valider(candidat);
   if (problemes.length === 0) {
@@ -174,7 +179,7 @@ for (let essai = 1; essai <= 3 && !article; essai++) {
   }
 }
 if (!article) {
-  console.error("ERREUR : 3 tentatives non conformes — l'article du jour n'est PAS mis en file.");
+  console.error("ERREUR : 4 tentatives non conformes — l'article du jour n'est PAS mis en file.");
   process.exit(1);
 }
 

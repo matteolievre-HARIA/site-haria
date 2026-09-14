@@ -101,7 +101,6 @@ async function appelAPI(retours = [], modele = MODELE_API) {
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${cle}` },
     body: JSON.stringify({
       model: modele,
-      temperature: 0.6,
       response_format: { type: "json_object" },
       messages: [
         { role: "system", content: systeme },
@@ -113,7 +112,7 @@ async function appelAPI(retours = [], modele = MODELE_API) {
     const texte = await reponse.text();
     // Modèle indisponible sur cette clé : repli sur le modèle de secours.
     if (modele !== MODELE_SECOURS && (reponse.status === 404 || /model/i.test(texte))) {
-      console.warn(`Modèle ${modele} indisponible, repli sur ${MODELE_SECOURS}.`);
+      console.warn(`Appel ${modele} refusé (${reponse.status}) : ${texte.slice(0, 200)} — repli sur ${MODELE_SECOURS}.`);
       return appelAPI(retours, MODELE_SECOURS);
     }
     console.error(`ERREUR API OpenAI ${reponse.status} : ${texte.slice(0, 300)}`);

@@ -42,44 +42,57 @@
         var labels = document.querySelectorAll('.pricing-toggle-wrapper .toggle-label');
         if (!labels.length) return;
 
-        var animating = false;
+        // Cliquer vite dans tous les sens ne doit jamais désynchroniser les
+        // libellés et les prix. Chaque changement ANNULE donc les transitions
+        // en vol et applique la dernière période demandée (l'ancienne garde
+        // `animating` abandonnait le clic : le toggle disait « Mensuel »
+        // avec les prix annuels à l'écran).
+        var minuteries = [];
+        var periodeAffichee = null;
 
-        function apply(period) {
-            if (animating) return;
-            animating = true;
+        function applique(period) {
+            minuteries.splice(0).forEach(clearTimeout);
+            periodeAffichee = period;
 
-            // Le prix affiche : fondu comme dans le template
-            var prices = document.querySelectorAll('.pricing-section .price[data-monthly]');
-            prices.forEach(function (el) {
+            // Le prix affiché : fondu comme dans le template
+            document.querySelectorAll('.pricing-section .price[data-monthly]').forEach(function (el) {
                 var value = el.getAttribute('data-' + period);
                 if (!value) return;
-                el.classList.add('fade-out');
-                setTimeout(function () {
-                    el.innerHTML = value + '<sub>/ mois</sub>';
+                var cible = value + '<sub>/ mois</sub>';
+                if (el.classList.contains('fade-out')) {
+                    // Un fondu était en vol : on pose le résultat direct,
+                    // il réapparaît en fondant sur la bonne valeur.
+                    el.innerHTML = cible;
                     el.classList.remove('fade-out');
-                }, 300);
+                    return;
+                }
+                el.classList.add('fade-out');
+                minuteries.push(setTimeout(function () {
+                    el.innerHTML = cible;
+                    el.classList.remove('fade-out');
+                }, 300));
             });
 
-            // La note sous le prix : vide en mensuel, detail de la facturation annuelle sinon
+            // La note sous le prix : vide en mensuel, détail de la facturation annuelle sinon
             document.querySelectorAll('.pricing-section .setup-fee[data-yearly-text]').forEach(function (el) {
                 el.textContent = period === 'yearly'
                     ? el.getAttribute('data-yearly-text')
                     : (el.getAttribute('data-monthly-text') || '');
             });
 
-            // Le lien de paiement correspondant a la periode
+            // Le lien de paiement correspondant à la période
             document.querySelectorAll('.pricing-section [data-' + period + '-href]').forEach(function (el) {
                 el.setAttribute('href', el.getAttribute('data-' + period + '-href'));
             });
-
-            setTimeout(function () { animating = false; }, 600);
         }
 
         function select(label) {
-            if (label.classList.contains('active')) return;
+            var period = label.getAttribute('data-period');
+            // Déjà à l'écran (et sa transition éventuelle en cours) : rien à faire.
+            if (label.classList.contains('active') && period === periodeAffichee) return;
             labels.forEach(function (l) { l.classList.remove('active'); });
             label.classList.add('active');
-            apply(label.getAttribute('data-period'));
+            applique(period);
         }
 
         labels.forEach(function (label) {

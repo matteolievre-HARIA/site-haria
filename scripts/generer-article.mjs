@@ -13,7 +13,7 @@
 // Requis : OPENAI_API_KEY (et optionnellement OPENAI_MODEL, défaut
 // gpt-4o-mini). En cas d'échec : code 1, le workflow échoue visiblement.
 
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 

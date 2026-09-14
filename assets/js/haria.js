@@ -183,24 +183,22 @@
         cartes.forEach(function (carte) { observateur.observe(carte); });
     }
 
-    /* ---------- FAQ : la question ouverte part au chatbot ----------
-       Le widget expose window.Haria.open(texte) (côté plateforme,
-       widget.js). L'ordre des écouteurs compte : le gestionnaire du
-       template (jQuery, délégué sur .accordion-box, chargé avant) ne
-       court qu'À LA FIN de la propagation — vu d'ici, active-block
-       décrit donc l'état AVANT le clic : présent = le clic REFERME la
-       question, absent = le clic l'OUVRE, et seul ce cas envoie.
-       Widget ancien en cache, sans l'API : on ne fait rien, l'accordéon
-       garde son comportement normal. */
+    /* ---------- FAQ : cliquer une question l'envoie au chatbot ----------
+       Ici les questions ne se déplient pas : un clic pose l'intitulé à
+       l'assistant (window.Haria.open, côté plateforme widget.js).
+       stopPropagation neutralise l'accordéon du template (main.js,
+       délégué sur .accordion-box) : le clic ne lui monte jamais dessus.
+       Si l'API manque (widget.js ancien encore en cache), on ne coupe
+       RIEN et l'accordéon reprend son rôle : jamais de bouton mort. */
     function initFaqChat() {
         var boutons = document.querySelectorAll('.faq-items-1 .accordion-box .acc-btn');
         if (!boutons.length) return;
 
         boutons.forEach(function (btn) {
-            btn.addEventListener('click', function () {
-                var bloc = btn.closest('.accordion');
-                if (!bloc || bloc.classList.contains('active-block')) return;
+            btn.addEventListener('click', function (e) {
                 if (!window.Haria || typeof window.Haria.open !== 'function') return;
+
+                e.stopPropagation();
 
                 var texte = btn.textContent.replace(/\s+/g, ' ').trim();
                 // Le numéro (« 01. ») n'a pas sa place dans le message.

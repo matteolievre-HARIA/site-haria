@@ -42,6 +42,11 @@
   object-fit: contain;
 }
 .brand-section-one .brand-img img[src*="sixt"] { max-height: 36px; }
+/* Pastille du bandeau : celle du template (123 px de haut) depleassait sur
+   ordinateur, les logos de 30 px se noyaient au centre. On resserre a 88 px,
+   meme ratio qu'au telephone (70 px de pastille pour 26 px de logo).
+   Telephone et tablette re-servent leurs tailles plus bas dans ce fichier. */
+.brand-section-one .brand-img { height: 88px; }
 
 /* ---------- Photos des temoignages ---------- */
 .testimonial-box-items .client-info .thumb img {
@@ -228,6 +233,18 @@ body { color: var(--hp-ink-soft); }
 .mobile-topbar .bars span { background: var(--hp-ink); }
 .close-mobile-menu { color: var(--hp-ink); }
 .mobile-menu-main :is(a, p, .info-title) { color: var(--hp-ink); }
+
+/* ---------- Bouton « Créer mon assistant gratuit » de l'en-tête ----------
+   Calibré comme les CTA du hero (ronds de 46 px, ~60 px de haut), il
+   écrasait la barre fixe de 76 px. Rond, padding et texte réduits,
+   uniquement dans l'en-tête : les autres boutons de la page gardent
+   leur taille. Le survol de style-2 (plus haut dans ce fichier) remet
+   25/7 : on le réaligne ici à spécificité supérieure. */
+.header-1 .menu-right-info .theme-btn-main.style-2 { padding: 5px 5px 5px 18px; }
+.header-1 .menu-right-info .theme-btn-main.style-2:hover { padding: 5px 5px 5px 18px; }
+.header-1 .menu-right-info .theme-btn-main.style-2 .theme-btn { margin-right: 10px; font-size: 15px; }
+.header-1 .menu-right-info .theme-btn-main.style-2 .theme-btn-arrow-left,
+.header-1 .menu-right-info .theme-btn-main.style-2 .theme-btn-arrow-right { width: 36px; height: 36px; }
 
 /* Textes secondaires grisés en dur dans le template */
 .hero-section .hero-content p { color: var(--hp-ink-soft); }
@@ -1063,7 +1080,14 @@ body { color: var(--hp-ink-soft); }
     padding: 24px 24px 0;
     border-top: 1px solid rgba(21, 23, 26, 0.1);
   }
-  .pricing-box-items .pricing-list > span { display: none; }
+  /* « Tout Starter, plus : » : l'offre dit ce qu'elle ajoute a la precedente. */
+  .pricing-box-items .pricing-list > span {
+    display: block;
+    margin-bottom: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--hp-ink);
+  }
   .pricing-box-items .pricing-list ul { margin-top: 0; }
   .pricing-box-items .pricing-list ul li {
     align-items: flex-start;

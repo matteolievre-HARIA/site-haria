@@ -81,12 +81,15 @@ Schéma JSON attendu :
 }
 Contraintes : 4 questions FAQ minimum, réponses de 30 à 60 mots, sources = pages officielles vérifiables (cnil.fr, etc.), jamais de URL inventée.`;
 
-async function appelAPI() {
+async function appelAPI(retours = []) {
   const cle = process.env.OPENAI_API_KEY;
   if (!cle) {
     console.error("ERREUR : OPENAI_API_KEY manquant (secret GitHub ou variable d'environnement).");
     process.exit(1);
   }
+  const correctif = retours.length
+    ? `\n\nTON ARTICLE PRÉCÉDENT A ÉTÉ REFUSÉ pour ces raisons exactes :\n- ${retours.join("\n- ")}\nCorrige impérativement chaque point et rends le JSON complet à nouveau.`
+    : "";
   const reponse = await fetch("https://api.openai.com/v1/chat/completions", {
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${cle}` },
@@ -96,7 +99,7 @@ async function appelAPI() {
       response_format: { type: "json_object" },
       messages: [
         { role: "system", content: systeme },
-        { role: "user", content: consigne },
+        { role: "user", content: consigne + correctif },
       ],
     }),
   });
@@ -129,38 +132,49 @@ const exempleTest = {
   sources: ["https://www.cnil.fr/"],
 };
 
-let article;
-if (dry) {
-  article = exempleTest;
-  console.log("[test] réponse API simulée");
-} else {
-  article = await appelAPI();
+let article = null;
+
+function valider(a) {
+  const problemes = [];
+  const longueur = (t) => t.length;
+  if (longueur(a.titre) < 30 || longueur(a.titre) > 65) problemes.push(`titre ${longueur(a.titre)} car (30-65 attendus)`);
+  if (longueur(a.description) < 120 || longueur(a.description) > 158) problemes.push(`description ${longueur(a.description)} car (120-158 attendus)`);
+  const corpsSansBalises = a.corps.replace(/<[^>]+>/g, " ");
+  const mots = corpsSansBalises.split(/\s+/).filter(Boolean).length;
+  if (mots < 600) problemes.push(`corps trop court : ${mots} mots (600 minimum)`);
+  const h2 = (a.corps.match(/<h2>/g) || []).length;
+  if (h2 < 3) problemes.push(`seulement ${h2} <h2> (3 minimum)`);
+  if (/<h1[ >]/.test(a.corps)) problemes.push("le corps ne doit pas contenir de <h1>");
+  if (/<(script|img|table|iframe|style)[ >]/.test(a.corps)) problemes.push("balise interdite dans le corps (script/img/table/iframe/style)");
+  if (!/<a href="\//.test(a.corps)) problemes.push("lien vers l'accueil manquant dans le corps (ajoute <a href=\"/\">...</a>)");
+  const liens = [...a.corps.matchAll(/<a href="([^"]*)"/g)].map((m) => m[1]);
+  const autorises = ["/", "combien-coute-un-chatbot-ia.html", "haria-vs-agence-chatbot-ia.html", "haria-vs-intercom-vs-crisp.html", "chatbot-ia-ecommerce.html", "chatbot-ia-rgpd.html"];
+  for (const l of liens) {
+    if (!l.startsWith("/") && !autorises.includes(l) && !l.startsWith("#")) problemes.push(`lien non autorisé : ${l}`);
+  }
+  if (!Array.isArray(a.faq) || a.faq.length < 4) problemes.push("FAQ : 4 questions minimum");
+  for (const u of a.sources || []) {
+    if (!/^https:\/\/[a-z0-9.-]+([\/?#].*)?$/i.test(u)) problemes.push(`source invalide (URL https complète attendue) : ${u}`);
+  }
+  return problemes;
 }
 
-// ---- 4. Validation stricte --------------------------------------------------
-const problemes = [];
-const longueur = (t) => t.length;
-if (longueur(article.titre) < 30 || longueur(article.titre) > 65) problemes.push(`titre ${longueur(article.titre)} car (30-65 attendus)`);
-if (longueur(article.description) < 120 || longueur(article.description) > 158) problemes.push(`description ${longueur(article.description)} car (120-158 attendus)`);
-const corpsSansBalises = article.corps.replace(/<[^>]+>/g, " ");
-const mots = corpsSansBalises.split(/\s+/).filter(Boolean).length;
-if (mots < 600) problemes.push(`corps trop court : ${mots} mots (600 minimum)`);
-const h2 = (article.corps.match(/<h2>/g) || []).length;
-if (h2 < 3) problemes.push(`seulement ${h2} <h2> (3 minimum)`);
-if (/<h1[ >]/.test(article.corps)) problemes.push("le corps ne doit pas contenir de <h1>");
-if (/<(script|img|table|iframe|style)[ >]/.test(article.corps)) problemes.push("balise interdite dans le corps (script/img/table/iframe/style)");
-if (!/<a href="\//.test(article.corps)) problemes.push("lien vers l'accueil manquant dans le corps");
-const liens = [...article.corps.matchAll(/<a href="([^"]*)"/g)].map((m) => m[1]);
-const autorises = ["/", "combien-coute-un-chatbot-ia.html", "haria-vs-agence-chatbot-ia.html", "haria-vs-intercom-vs-crisp.html", "chatbot-ia-ecommerce.html", "chatbot-ia-rgpd.html"];
-for (const l of liens) {
-  if (!l.startsWith("/") && !autorises.includes(l) && !l.startsWith("#")) problemes.push(`lien non autorisé : ${l}`);
+// Jusqu'à 3 essais : chaque refus repart au modèle avec la liste exacte des
+// reproches, comme pour les rounds de correction des prompts plateforme.
+let retours = [];
+for (let essai = 1; essai <= 3 && !article; essai++) {
+  if (essai > 1) console.log(`Tentative ${essai}/3 après refus : ${retours.join(" ; ")}`);
+  const candidat = dry ? exempleTest : await appelAPI(retours);
+  const problemes = valider(candidat);
+  if (problemes.length === 0) {
+    article = candidat;
+  } else {
+    console.error(`Refus de la tentative ${essai} —\n  ` + problemes.join("\n  "));
+    retours = problemes;
+  }
 }
-if (!Array.isArray(article.faq) || article.faq.length < 4) problemes.push("FAQ : 4 questions minimum");
-for (const u of article.sources || []) {
-  if (!/^https:\/\/[a-z0-9.-]+\//.test(u)) problemes.push(`source invalide : ${u}`);
-}
-if (problemes.length) {
-  console.error("ERREUR : article non conforme —\n  " + problemes.join("\n  "));
+if (!article) {
+  console.error("ERREUR : 3 tentatives non conformes — l'article du jour n'est PAS mis en file.");
   process.exit(1);
 }
 
@@ -314,5 +328,7 @@ if (!dry) {
   writeFileSync(cheminSujets, JSON.stringify(sujets, null, 2) + "\n");
 }
 
-console.log(`Article mis en file : _articles/file/${nomFile} (${mots} mots, ${h2} h2, FAQ ${article.faq.length})`);
+const motsFinaux = article.corps.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length;
+const h2Finaux = (article.corps.match(/<h2>/g) || []).length;
+console.log(`Article mis en file : _articles/file/${nomFile} (${motsFinaux} mots, ${h2Finaux} h2, FAQ ${article.faq.length})`);
 console.log(`TITRE=${article.titre.split(/\s+[|—·]\s+/)[0].trim()}`);

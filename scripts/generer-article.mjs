@@ -331,6 +331,7 @@ ${faqJson}
 `;
 
 const nomFile = `${aujourdhui}_${slug}.html`;
+mkdirSync(join(racine, "_articles", "file"), { recursive: true });
 writeFileSync(join(racine, "_articles", "file", nomFile), page);
 
 // ---- 6. Consommer le sujet --------------------------------------------------

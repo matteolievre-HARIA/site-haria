@@ -1,9 +1,15 @@
-# Publie un article SEO par jour depuis la file d'attente _articles/file/.
-# Le plus ancien fichier AAAA-MM-JJ_slug.html part à la racine du site, le
-# sitemap et la liste « Nos guides » de l'accueil sont mis à jour, puis le
-# tout est commité et poussé : Render redéploie automatiquement.
-# Sans article en attente, le workflow se termine sans commit vide.
-# Déclenchement manuel possible (onglet Actions → « Article quotidien »).
+# Chaque jour : un nouvel article SEO rédigé puis publié.
+#
+# 1. Si la file _articles/file/ est vide, l'article du jour est RÉDIGÉ par
+#    l'API OpenAI à partir du prochain sujet de _articles/sujets.json
+#    (faits produit issus de llms.txt, validation stricte à la sortie).
+# 2. Le plus ancien article de la file est publié : déplacement à la racine,
+#    ajout à la liste « Nos guides » de l'accueil et au sitemap, commit,
+#    push — Render redéploie automatiquement.
+# 3. File ET sujets vides : échec visible (pensez à alimenter sujets.json).
+#
+# Prérequis : secret OPENAI_API_KEY (dépôt → Settings → Secrets and
+# variables → Actions). Déclenchement manuel possible ici même.
 
 name: Article quotidien
 
@@ -24,6 +30,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Générer l'article du jour si la file est vide
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          if [ -z "$(ls -A _articles/file 2>/dev/null)" ]; then
+            echo "File vide : génération de l'article du jour."
+            node scripts/generer-article.mjs
+          else
+            echo "Un article attend déjà dans la file : publication seule."
+          fi
 
       - name: Publier l'article en tête de file
         id: publication

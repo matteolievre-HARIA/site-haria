@@ -183,10 +183,38 @@
         cartes.forEach(function (carte) { observateur.observe(carte); });
     }
 
+    /* ---------- FAQ : la question ouverte part au chatbot ----------
+       Le widget expose window.Haria.open(texte) (côté plateforme,
+       widget.js). L'ordre des écouteurs compte : le gestionnaire du
+       template (jQuery, délégué sur .accordion-box, chargé avant) ne
+       court qu'À LA FIN de la propagation — vu d'ici, active-block
+       décrit donc l'état AVANT le clic : présent = le clic REFERME la
+       question, absent = le clic l'OUVRE, et seul ce cas envoie.
+       Widget ancien en cache, sans l'API : on ne fait rien, l'accordéon
+       garde son comportement normal. */
+    function initFaqChat() {
+        var boutons = document.querySelectorAll('.faq-items-1 .accordion-box .acc-btn');
+        if (!boutons.length) return;
+
+        boutons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var bloc = btn.closest('.accordion');
+                if (!bloc || bloc.classList.contains('active-block')) return;
+                if (!window.Haria || typeof window.Haria.open !== 'function') return;
+
+                var texte = btn.textContent.replace(/\s+/g, ' ').trim();
+                // Le numéro (« 01. ») n'a pas sa place dans le message.
+                texte = texte.replace(/^\d+\.\s*/, '');
+                if (texte) window.Haria.open(texte);
+            });
+        });
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
         initAnchors();
         initPricingToggle();
         initPricingCarousel();
         initWidgetPolish();
+        initFaqChat();
     });
 })();

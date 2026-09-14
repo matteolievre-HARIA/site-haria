@@ -147,6 +147,9 @@
 .hero-1 .hero-content form {
   justify-content: center;
   gap: 18px;
+  /* Les deux boutons demandent ~640 px : la borne du template (630 px)
+     les squeezait et aplatissait les ronds de flèche en ovale. */
+  max-width: 680px;
 }
 .hero-1 .hero-content form .theme-btn-main,
 .haria-final-cta .theme-btn-main {
@@ -154,6 +157,7 @@
   width: auto;
   min-width: 240px;
   justify-content: center;
+  flex-shrink: 0;
 }
 .hero-1 .hero-content form .theme-btn-main .theme-btn,
 .haria-final-cta .theme-btn-main .theme-btn {
@@ -539,6 +543,16 @@ body { color: var(--hp-ink-soft); }
 }
 .theme-btn-main.style-2:hover::after { left: 130%; }
 
+/* ---------- Ronds de flèche : jamais écrasés ----------
+   Enfants flex avec flex-shrink: 1, les cercles s'aplatissaient en ovale
+   dès que le libellé manquait de place (39x46 sur les CTA du hero). Leur
+   emprise est verrouillée sur TOUS les boutons : un déficit de largeur
+   touche désormais le libellé, jamais le rond. */
+.theme-btn-main .theme-btn-arrow-left,
+.theme-btn-main .theme-btn-arrow-right {
+  flex: 0 0 auto;
+}
+
 /* ---------- Cartes tarifs : plus de saut au survol ---------- */
 .pricing-box-items:hover { transform: none; }
 
@@ -710,6 +724,12 @@ body { color: var(--hp-ink-soft); }
   .pricing-section .row {
     display: flex;
     flex-wrap: nowrap;
+    /* La classe Bootstrap justify-content-center centre les items qui
+       debordent DES DEUX cotes : au chargement, Gratuit et Starter se
+       retrouvaient hors champ a gauche et c'etait Smart (la 3e carte)
+       qui apparaissait. L'offre gratuite doit etre la premiere vue.
+       (!important : la classe utilitaire Bootstrap en porte un aussi.) */
+    justify-content: flex-start !important;
     overflow-x: auto;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;

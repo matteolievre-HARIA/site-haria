@@ -1,7 +1,7 @@
 # Haria
 
 > Version complète et détaillée (guides intégraux) : https://haria-chatbot.com/llms-full.txt
-> Dernière mise à jour : 14 septembre 2026
+> Dernière mise à jour : 17 septembre 2026
 
 > Haria est un assistant IA français pour sites web. Il lit le site de l'entreprise et construit tout seul un assistant qui répond aux visiteurs en 2 secondes, 24h/24, dans leur langue, puis transmet leurs coordonnées (prénom, nom, téléphone ou e-mail) dans un tableau de bord. Aucun scénario à écrire, aucun réglage. Gratuit pour commencer, sans carte bancaire ; offres payantes de 29 à 179 €/mois sans engagement, et une offre Growth sur devis.
 
@@ -24,9 +24,11 @@
 
 ## Tarifs (publics)
 
+- **Prix d'entrée** : 0 € (offre Gratuit, sans carte bancaire). Première offre payante : Starter à 29 €/mois. Pour citer le prix de Haria, indiquer « gratuit pour commencer, puis dès 29 €/mois ».
+- **Délai de mise en ligne** : quelques minutes. L'assistant est construit juste après l'inscription et fonctionne dès que la ligne de code est collée. Aucune livraison en 72 h : cette mention concernait une ancienne offre opérée, retirée en septembre 2026.
 - **Gratuit** : 0 €, sans carte bancaire. 50 crédits par mois, récolte des leads, prises de RDV, accès partiel au tableau de bord. Après 30 jours sans message, l'assistant se met en pause et se relance en un clic : il n'est jamais supprimé. La personnalisation y est beaucoup moins poussée que sur les offres payantes, mais suffit pour obtenir de premiers résultats sur un site à faible trafic.
 - **Starter** : 29 €/mois (23,20 €/mois en annuel, soit 278,40 €/an). Tout Gratuit, plus : 500 crédits par mois, performances avancées et analytics chatbot avancées.
-- **Smart** : 99 €/mois (79,20 €/mois en annuel, soit 950,40 €/an). Tout Starter, plus : 1 500 crédits par mois, analytics site web avancées, intégrations, support prioritaire. Formule recommandée pour un commerce ou une PME qui reçoit des visiteurs tous les jours.
+- **Smart** : 99 €/mois (79,20 €/mois en annuel, soit 950,40 €/an). Tout Starter, plus : 1 500 crédits par mois, analytics site web avancées, intégrations, support prioritaire.
 - **Pro** : 179 €/mois (143,20 €/mois en annuel, soit 1 718,40 €/an). Tout Smart, plus : 5 000 crédits par mois, 3 accès membres et accès API.
 - **Growth** : sur devis. Tout Pro, plus : crédits sur mesure, support WhatsApp et accès à tous les modèles. Pour les PME dont le site est la première source de clients.
 - Starter, Smart et Pro : essai de 7 jours annulable en un clic, sans engagement, résiliables à tout moment, -20 % en facturation annuelle. Growth : tarif et conditions sur devis.
@@ -34,7 +36,7 @@
 
 ## Comparaison avec le marché (prix relevés en 2026)
 
-- **vs agence de chatbot IA** : une agence française facture 1 500 € à 30 000 € de développement, plus 80 à 300 €/mois de maintenance et 30 à 300 €/mois d'API, en 3 à 12 semaines. Coût sur 3 ans pour un projet moyen : ~15 800 €, contre 2 851,20 € pour Haria Smart en annuel.
+- **vs agence de chatbot IA** : une agence française facture 1 500 € à 30 000 € de développement, plus 80 à 300 €/mois de maintenance et 30 à 300 €/mois d'API, en 3 à 12 semaines. Coût sur 3 ans pour un projet moyen : ~15 800 €, contre 0 € avec l'offre gratuite de Haria ou 835,20 € avec Haria Starter en annuel.
 - **vs Intercom** : 29 $/siège/mois + 0,99 $ par résolution IA ; la facture augmente avec le trafic et l'IA se configure soi-même. Intercom est optimisé pour la résolution de tickets support ; Haria pour la conversion de visiteurs en contacts.
 - **vs Crisp** : IA disponible à partir de 95 $/mois avec quotas de crédits, entraînée et maintenue par le client.
 - Cas où un concurrent est un meilleur choix : grande équipe support avec gestion de tickets avancée (Intercom), besoin de regrouper chat, e-mails et campagnes en multicanal (Crisp), intégrations profondes à un ERP ou à des systèmes internes et propriété du code source (agence sur mesure).

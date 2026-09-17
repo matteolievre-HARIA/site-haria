@@ -265,7 +265,11 @@
                             </div>
                             <div class="hero-items">
                                 <div class="hero-image hero-animation">
-                                    <img src="assets/img/home-1/hero-image.png" alt="Tableau de bord Haria : conversations et leads captés par le chatbot">
+                                    <!-- WebP (87 Ko, 59 Ko sur téléphone) au lieu du PNG de 169 Ko, gardé en repli -->
+                                    <picture>
+                                        <source type="image/webp" srcset="assets/img/home-1/hero-image-800.webp 800w, assets/img/home-1/hero-image.webp 1320w" sizes="(max-width: 1320px) 100vw, 1320px">
+                                        <img src="assets/img/home-1/hero-image.png" width="1320" height="570" fetchpriority="high" alt="Tableau de bord Haria : conversations et leads captés par le chatbot">
+                                    </picture>
                                 </div>
                             </div>
                         </div>
@@ -360,7 +364,7 @@
                                     <span class="sub-title"><b>Le produit</b>Un commercial qui ne dort jamais</span>
                                 </div>
                                 <h2 class="tx-title sec_title  tz-itm-title tz-itm-anim">
-                                    Plus aucun visiteur <br> ne repart sans réponse.
+                                    Votre site produit <br> plus de résultats
                                 </h2>
                             </div>
                             <div class="row">
@@ -372,10 +376,10 @@
                                         </div>
                                         <div class="content">
                                             <h3 class="title">
-                                                <a href="#tarifs">Voyez ce qu'il vous rapporte, en euros</a>
+                                                <a href="#tarifs">Elle ne répond jamais au hasard</a>
                                             </h3>
                                             <p>
-                                                Chaque contact capté est chiffré selon la valeur moyenne d'un de vos clients. Vous voyez en temps réel combien votre assistant a mis dans votre pipeline.
+                                                Formée sur plus de 5 000 € de formations en setting, elle tire chaque réponse de votre site et des informations que vous lui donnez. Rien n'est inventé, tout est pensé pour l'expérience de vos visiteurs.
                                             </p>
                                         </div>
                                     </div>
@@ -506,7 +510,7 @@
                         <div class="container">
                              <div class="section-title text-center">
                                 <div class="tz-sub-tilte tz-sub-anim tx-subTitle">
-                                    <span class="sub-title"><b>Résultats</b>Des clients vérifiables sur LinkedIn</span>
+                                    <span class="sub-title"><b>Résultats</b>Des clients qui nous ont fait confiance</span>
                                 </div>
                                 <h2 class="tx-title sec_title  tz-itm-title tz-itm-anim">
                                     Ils ont essayé. <br> Voici ce que ça a changé.
@@ -588,27 +592,6 @@
                                         <i class="fa-solid fa-star"></i>
                                     </div>
                                     <p class="text">
-                                       “Le chatbot explique parfaitement mes offres de landing pages et qualifie les prospects avant qu'ils me contactent. J'ai gagné un temps fou et mes conversions ont explosé.”
-                                    </p>
-                                    <div class="client-info">
-                                        <div class="thumb">
-                                            <img loading="lazy" src="images/avatars/nathan.png" alt="Nathan Burtin, fondateur de Novexa">
-                                        </div>
-                                        <div class="info-content">
-                                            <h3 class="name">Nathan Burtin</h3>
-                                            <span>Fondateur, Novexa</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="testimonial-box-items">
-                                    <div class="star">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                    <p class="text">
                                        “Le chatbot répond aux questions des visiteurs sur les véhicules disponibles et nous remonte les demandes sérieuses. +42 leads dès le premier mois.”
                                     </p>
                                     <div class="client-info">
@@ -630,7 +613,7 @@
                                         <i class="fa-solid fa-star"></i>
                                     </div>
                                     <p class="text">
-                                       “Les visiteurs posent des questions sur leur projet solaire à toute heure et repartent avec une demande de devis. ×1,6 sur nos demandes entrantes malgré notre traffic modeste”
+                                       “Les visiteurs posent des questions sur leur projet solaire à toute heure et repartent avec une demande de devis. ×1,6 sur nos demandes entrantes malgré notre trafic modeste.”
                                     </p>
                                     <div class="client-info">
                                         <div class="thumb">
@@ -716,27 +699,6 @@
                                         <i class="fa-solid fa-star"></i>
                                     </div>
                                     <p class="text">
-                                       “Le chatbot explique parfaitement mes offres de landing pages et qualifie les prospects avant qu'ils me contactent. J'ai gagné un temps fou et mes conversions ont explosé.”
-                                    </p>
-                                    <div class="client-info">
-                                        <div class="thumb">
-                                            <img loading="lazy" src="images/avatars/nathan.png" alt="Nathan Burtin, fondateur de Novexa">
-                                        </div>
-                                        <div class="info-content">
-                                            <h3 class="name">Nathan Burtin</h3>
-                                            <span>Fondateur, Novexa</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="testimonial-box-items">
-                                    <div class="star">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                    <p class="text">
                                        “Le chatbot répond aux questions des visiteurs sur les véhicules disponibles et nous remonte les demandes sérieuses. +42 leads dès le premier mois.”
                                     </p>
                                     <div class="client-info">
@@ -758,7 +720,7 @@
                                         <i class="fa-solid fa-star"></i>
                                     </div>
                                     <p class="text">
-                                       “Les visiteurs posent leurs questions sur l'installation solaire à toute heure et repartent avec une demande de devis. ×1,6 sur nos demandes entrantes.”
+                                       “Les visiteurs posent des questions sur leur projet solaire à toute heure et repartent avec une demande de devis. ×1,6 sur nos demandes entrantes malgré notre trafic modeste.”
                                     </p>
                                     <div class="client-info">
                                         <div class="thumb">
@@ -799,7 +761,7 @@
                                         <div class="pricing-header">
                                             <span class="sub-price">Gratuit</span>
                                             <p class="price-text">
-                                                Pour tester Haria sur votre site et voir les premiers contacts arriver.
+                                                Pour tester Haria et voir arriver vos premiers contacts.
                                             </p>
                                             <div class="haria-price-row">
                                                 <h3 class="price">0 €</h3>
@@ -819,40 +781,40 @@
                                                 <li>
                                                     <img loading="lazy" src="assets/img/home-1/check.png" alt="">
                                                     <span class="haria-tip">
-                                                        50 crédits par mois
+                                                        50 <span class="haria-tip-fin">crédits/mois
                                                         <button type="button" class="haria-tip-icon" aria-label="En savoir plus sur les crédits" aria-describedby="tip-credits-gratuit">
                                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-                                                        </button>
+                                                        </button></span>
                                                         <span class="haria-tip-pop" id="tip-credits-gratuit" role="tooltip">1 message du chatbot = 1 crédit. Une récolte de leads ou une prise de RDV = 2 crédits.</span>
                                                     </span>
                                                 </li>
                                                 <li>
                                                     <img loading="lazy" src="assets/img/home-1/check.png" alt="">
                                                     <span class="haria-tip">
-                                                        Récolte des leads
+                                                        Récolte des <span class="haria-tip-fin">leads
                                                         <button type="button" class="haria-tip-icon" aria-label="En savoir plus sur la récolte des leads" aria-describedby="tip-leads-gratuit">
                                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-                                                        </button>
+                                                        </button></span>
                                                         <span class="haria-tip-pop" id="tip-leads-gratuit" role="tooltip">Le chatbot récupère les coordonnées de vos visiteurs : elles atterrissent directement dans votre dashboard, prêtes à être rappelées.</span>
                                                     </span>
                                                 </li>
                                                 <li>
                                                     <img loading="lazy" src="assets/img/home-1/check.png" alt="">
                                                     <span class="haria-tip">
-                                                        Prises de RDV
+                                                        Prises de <span class="haria-tip-fin">RDV
                                                         <button type="button" class="haria-tip-icon" aria-label="En savoir plus sur les prises de RDV" aria-describedby="tip-rdv-gratuit">
                                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-                                                        </button>
+                                                        </button></span>
                                                         <span class="haria-tip-pop" id="tip-rdv-gratuit" role="tooltip">Le chatbot propose vos créneaux et confirme le rendez-vous tout seul : vous n'avez rien à gérer.</span>
                                                     </span>
                                                 </li>
                                                 <li>
                                                     <img loading="lazy" src="assets/img/home-1/check.png" alt="">
                                                     <span class="haria-tip">
-                                                        Accès partiel au dashboard
+                                                        Dashboard <span class="haria-tip-fin">partiel
                                                         <button type="button" class="haria-tip-icon" aria-label="En savoir plus sur l'accès au dashboard" aria-describedby="tip-dashboard-gratuit">
                                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-                                                        </button>
+                                                        </button></span>
                                                         <span class="haria-tip-pop" id="tip-dashboard-gratuit" role="tooltip">Les essentiels pour démarrer : vos leads, vos conversations et les KPI de base.</span>
                                                     </span>
                                                 </li>
@@ -865,11 +827,11 @@
                                         <div class="pricing-header">
                                             <span class="sub-price">Starter</span>
                                             <p class="price-text">
-                                                Pour les indépendants et petits sites qui veulent suivre leurs résultats de près.
+                                                Pour les indépendants qui suivent leurs résultats de près.
                                             </p>
                                             <div class="haria-price-row" data-nosnippet>
                                                 <h3 class="price" data-monthly="29 €" data-yearly="23,20 €">29 €<sub>/ mois</sub></h3>
-                                                <span class="setup-fee" data-monthly-text="" data-yearly-text="Soit 278,40 € facturé annuellement"></span>
+                                                <span class="setup-fee" data-monthly-text="" data-yearly-text="Soit 278,40 € par an"></span>
                                             </div>
                                         </div>
                                         <a class="theme-btn"
@@ -887,30 +849,30 @@
                                                 <li>
                                                     <img loading="lazy" src="assets/img/home-1/check.png" alt="">
                                                     <span class="haria-tip">
-                                                        500 crédits par mois
+                                                        500 <span class="haria-tip-fin">crédits/mois
                                                         <button type="button" class="haria-tip-icon" aria-label="En savoir plus sur les crédits" aria-describedby="tip-credits-starter">
                                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-                                                        </button>
+                                                        </button></span>
                                                         <span class="haria-tip-pop" id="tip-credits-starter" role="tooltip">1 message du chatbot = 1 crédit. Une récolte de leads ou une prise de RDV = 2 crédits.</span>
                                                     </span>
                                                 </li>
                                                 <li>
                                                     <img loading="lazy" src="assets/img/home-1/check.png" alt="">
                                                     <span class="haria-tip">
-                                                        Performances avancées
+                                                        Performances <span class="haria-tip-fin">avancées
                                                         <button type="button" class="haria-tip-icon" aria-label="En savoir plus sur les performances avancées" aria-describedby="tip-perf-starter">
                                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-                                                        </button>
+                                                        </button></span>
                                                         <span class="haria-tip-pop" id="tip-perf-starter" role="tooltip">Un widget plus performant, qui met en avant plus d'informations sur votre activité pour augmenter drastiquement vos résultats.</span>
                                                     </span>
                                                 </li>
                                                 <li>
                                                     <img loading="lazy" src="assets/img/home-1/check.png" alt="">
                                                     <span class="haria-tip">
-                                                        Analytics Chatbot avancées
+                                                        Analytics chatbot <span class="haria-tip-fin">avancées
                                                         <button type="button" class="haria-tip-icon" aria-label="En savoir plus sur les analytics chatbot avancées" aria-describedby="tip-analytics-starter">
                                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-                                                        </button>
+                                                        </button></span>
                                                         <span class="haria-tip-pop" id="tip-analytics-starter" role="tooltip">Toutes les données du chatbot en un coup d'œil : vous voyez où partent les visiteurs et améliorez ses performances au fil du temps.</span>
                                                     </span>
                                                 </li>
@@ -923,11 +885,11 @@
                                         <div class="pricing-header">
                                             <span class="sub-price">Smart</span>
                                             <p class="price-text">
-                                                Pour un commerce ou une PME qui reçoit des visiteurs tous les jours.
+                                                Pour les PME qui reçoivent des visiteurs chaque jour.
                                             </p>
                                             <div class="haria-price-row" data-nosnippet>
                                                 <h3 class="price" data-monthly="99 €" data-yearly="79,20 €">99 €<sub>/ mois</sub></h3>
-                                                <span class="setup-fee" data-monthly-text="" data-yearly-text="Soit 950,40 € facturé annuellement"></span>
+                                                <span class="setup-fee" data-monthly-text="" data-yearly-text="Soit 950,40 € par an"></span>
                                             </div>
                                         </div>
                                         <a class="theme-btn"
@@ -945,40 +907,40 @@
                                                 <li>
                                                     <img loading="lazy" src="assets/img/home-1/check.png" alt="">
                                                     <span class="haria-tip">
-                                                        1 500 crédits par mois
+                                                        1 500 <span class="haria-tip-fin">crédits/mois
                                                         <button type="button" class="haria-tip-icon" aria-label="En savoir plus sur les crédits" aria-describedby="tip-credits-smart">
                                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-                                                        </button>
+                                                        </button></span>
                                                         <span class="haria-tip-pop" id="tip-credits-smart" role="tooltip">1 message du chatbot = 1 crédit. Une récolte de leads ou une prise de RDV = 2 crédits.</span>
                                                     </span>
                                                 </li>
                                                 <li>
                                                     <img loading="lazy" src="assets/img/home-1/check.png" alt="">
                                                     <span class="haria-tip">
-                                                        Analytics site web avancées
+                                                        Analytics site web <span class="haria-tip-fin">avancées
                                                         <button type="button" class="haria-tip-icon" aria-label="En savoir plus sur les analytics site web avancées" aria-describedby="tip-analytics-smart">
                                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-                                                        </button>
+                                                        </button></span>
                                                         <span class="haria-tip-pop" id="tip-analytics-smart" role="tooltip">Heat map, suivi des boutons, parcours de chaque visiteur, origine du trafic… Vous voyez exactement ce qui bloque et savez quoi optimiser pour convertir plus.</span>
                                                     </span>
                                                 </li>
                                                 <li>
                                                     <img loading="lazy" src="assets/img/home-1/check.png" alt="">
                                                     <span class="haria-tip">
-                                                        Intégrations
+                                                        <span class="haria-tip-fin">Intégrations
                                                         <button type="button" class="haria-tip-icon" aria-label="En savoir plus sur les intégrations" aria-describedby="tip-integrations-smart">
                                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-                                                        </button>
+                                                        </button></span>
                                                         <span class="haria-tip-pop" id="tip-integrations-smart" role="tooltip">Connectez Haria à vos outils : Webhook, Zapier, Make, HubSpot, Google Analytics, Meta, WhatsApp, SMS, Slack et Teams. Vos leads et RDV arrivent directement là où vous travaillez.</span>
                                                     </span>
                                                 </li>
                                                 <li>
                                                     <img loading="lazy" src="assets/img/home-1/check.png" alt="">
                                                     <span class="haria-tip">
-                                                        Support prioritaire
+                                                        Support <span class="haria-tip-fin">prioritaire
                                                         <button type="button" class="haria-tip-icon" aria-label="En savoir plus sur le support prioritaire" aria-describedby="tip-support-smart">
                                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-                                                        </button>
+                                                        </button></span>
                                                         <span class="haria-tip-pop" id="tip-support-smart" role="tooltip">Vos demandes et questions passent en priorité : des réponses plus rapides, à chaque fois.</span>
                                                     </span>
                                                 </li>
@@ -991,11 +953,11 @@
                                         <div class="pricing-header">
                                             <span class="sub-price">Pro</span>
                                             <p class="price-text">
-                                                Pour les sites à fort trafic, où chaque visiteur perdu coûte cher.
+                                                Pour les sites à fort trafic, où chaque visiteur compte.
                                             </p>
                                             <div class="haria-price-row" data-nosnippet>
                                                 <h3 class="price" data-monthly="179 €" data-yearly="143,20 €">179 €<sub>/ mois</sub></h3>
-                                                <span class="setup-fee" data-monthly-text="" data-yearly-text="Soit 1 718,40 € facturé annuellement"></span>
+                                                <span class="setup-fee" data-monthly-text="" data-yearly-text="Soit 1 718,40 € par an"></span>
                                             </div>
                                         </div>
                                         <a class="theme-btn"
@@ -1013,30 +975,30 @@
                                                 <li>
                                                     <img loading="lazy" src="assets/img/home-1/check.png" alt="">
                                                     <span class="haria-tip">
-                                                        5 000 crédits par mois
+                                                        5 000 <span class="haria-tip-fin">crédits/mois
                                                         <button type="button" class="haria-tip-icon" aria-label="En savoir plus sur les crédits" aria-describedby="tip-credits-pro">
                                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-                                                        </button>
+                                                        </button></span>
                                                         <span class="haria-tip-pop" id="tip-credits-pro" role="tooltip">1 message du chatbot = 1 crédit. Une récolte de leads ou une prise de RDV = 2 crédits.</span>
                                                     </span>
                                                 </li>
                                                 <li>
                                                     <img loading="lazy" src="assets/img/home-1/check.png" alt="">
                                                     <span class="haria-tip">
-                                                        3 accès membres
+                                                        3 accès <span class="haria-tip-fin">membres
                                                         <button type="button" class="haria-tip-icon" aria-label="En savoir plus sur les accès membres" aria-describedby="tip-membres-pro">
                                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-                                                        </button>
+                                                        </button></span>
                                                         <span class="haria-tip-pop" id="tip-membres-pro" role="tooltip">Créez jusqu'à 3 comptes d'analytics distincts, chacun avec son propre accès au dashboard.</span>
                                                     </span>
                                                 </li>
                                                 <li>
                                                     <img loading="lazy" src="assets/img/home-1/check.png" alt="">
                                                     <span class="haria-tip">
-                                                        Accès API
+                                                        Accès <span class="haria-tip-fin">API
                                                         <button type="button" class="haria-tip-icon" aria-label="En savoir plus sur l'accès API" aria-describedby="tip-api-pro">
                                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-                                                        </button>
+                                                        </button></span>
                                                         <span class="haria-tip-pop" id="tip-api-pro" role="tooltip">Branchez Haria sur vos outils internes via notre API et automatisez vos workflows sur mesure.</span>
                                                     </span>
                                                 </li>
@@ -1069,30 +1031,30 @@
                                                 <li>
                                                     <img loading="lazy" src="assets/img/home-1/check.png" alt="">
                                                     <span class="haria-tip">
-                                                        Crédits sur mesure
+                                                        Crédits sur <span class="haria-tip-fin">mesure
                                                         <button type="button" class="haria-tip-icon" aria-label="En savoir plus sur les crédits sur mesure" aria-describedby="tip-credits-growth">
                                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-                                                        </button>
+                                                        </button></span>
                                                         <span class="haria-tip-pop" id="tip-credits-growth" role="tooltip">Un volume adapté à votre trafic, sur devis. 1 message du chatbot = 1 crédit ; une récolte de leads ou une prise de RDV = 2 crédits.</span>
                                                     </span>
                                                 </li>
                                                 <li>
                                                     <img loading="lazy" src="assets/img/home-1/check.png" alt="">
                                                     <span class="haria-tip">
-                                                        Support WhatsApp
+                                                        Support <span class="haria-tip-fin">WhatsApp
                                                         <button type="button" class="haria-tip-icon" aria-label="En savoir plus sur le support WhatsApp" aria-describedby="tip-whatsapp-growth">
                                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-                                                        </button>
+                                                        </button></span>
                                                         <span class="haria-tip-pop" id="tip-whatsapp-growth" role="tooltip">Une question ? Une ligne directe avec notre équipe sur WhatsApp, avec des réponses rapides.</span>
                                                     </span>
                                                 </li>
                                                 <li>
                                                     <img loading="lazy" src="assets/img/home-1/check.png" alt="">
                                                     <span class="haria-tip">
-                                                        Accès à tous les modèles
+                                                        Tous les modèles <span class="haria-tip-fin">IA
                                                         <button type="button" class="haria-tip-icon" aria-label="En savoir plus sur l'accès à tous les modèles" aria-describedby="tip-modeles-growth">
                                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
-                                                        </button>
+                                                        </button></span>
                                                         <span class="haria-tip-pop" id="tip-modeles-growth" role="tooltip">Profitez du meilleur de l'IA : tous les modèles sont disponibles, pour des réponses toujours plus pertinentes.</span>
                                                     </span>
                                                 </li>
@@ -1672,6 +1634,7 @@
         </script>
 
         <!-- Widget Haria -->
-        <script src="https://hariastudio.com/widget.js" data-client="5f9c204d-e28a-43b2-8073-fae9d68aa03e"></script>
+        <!-- async : le widget ne retarde plus l'affichage de la page -->
+        <script async src="https://hariastudio.com/widget.js" data-client="5f9c204d-e28a-43b2-8073-fae9d68aa03e"></script>
     </body>
 </html>

@@ -260,6 +260,19 @@ body { color: var(--hp-ink-soft); }
    alignés. La colonne Bootstrap est déjà étirée ; la carte la remplit,
    marge haute du template (30 px) déduite pour ne pas déborder. */
 .service-box-items { height: calc(100% - 30px); }
+/* Le template borne les paragraphes à 360 px : sur les grandes cartes, le
+   texte s'arrêtait au tiers de la largeur. Il occupe désormais toute la carte. */
+.service-box-items .content p { max-width: none; }
+/* Quand une carte est étirée par sa voisine plus haute, le texte restait
+   collé sous l'image avec un vide en bas : il est centré dans l'espace libre. */
+.service-box-items { display: flex; flex-direction: column; }
+.service-box-items .thumb { flex-shrink: 0; }
+.service-box-items .content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 /* Cartes tarifs : même principe, les quatre formules font la même hauteur. */
 .pricing-box-items { height: calc(100% - 30px); }
@@ -1034,36 +1047,47 @@ body { color: var(--hp-ink-soft); }
     mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 0c.8 6.4 5.6 11.2 12 12-6.4.8-11.2 5.6-12 12-.8-6.4-5.6-11.2-12-12C6.4 11.2 11.2 6.4 12 0z'/%3E%3C/svg%3E") center / contain no-repeat;
   }
   .pricing-box-items .pricing-header .price-text {
-    min-height: 63px;
+    min-height: 42px; /* deux lignes : les descriptions sont calibrees pour */
     margin-bottom: 28px;
     font-size: 14px;
     line-height: 1.5;
     color: rgba(21, 23, 26, 0.6);
   }
 
-  /* Prix leger, « / mois » dessous. Hauteur reservee : la formule Gratuit
-     n'a pas de « / mois », les boutons restent quand meme alignes. */
+  /* Prix leger, « / mois » colle au chiffre. Hauteur reservee au prix et a
+     sa note d'une ligne (annuel, « Sans carte bancaire », « Tarif selon
+     votre volume ») : les boutons restent alignes d'une carte a l'autre. */
   .pricing-box-items .haria-price-row {
-    min-height: 118px;
+    min-height: 76px;
     margin-bottom: 20px;
+    container-type: inline-size;
   }
+  /* Le prix suit la largeur de la carte (au plus 48 px) : « 143,20 € / mois »,
+     le plus long, tient toujours sur une ligne. Filet de securite : si
+     « / mois » ne tient quand meme pas, il passe dessous sans deborder. */
   .pricing-box-items .haria-price-row h3 {
-    font-size: 48px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    font-size: min(48px, calc((100cqi - 52px) / 4));
     font-weight: 500;
     letter-spacing: -1.5px;
     line-height: 1;
   }
   .pricing-box-items .pricing-header .price sub {
-    display: block;
-    margin: 8px 0 0;
+    display: inline;
+    margin: 0 0 0 6px;
+    vertical-align: baseline;
+    letter-spacing: 0;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.4;
     color: rgba(21, 23, 26, 0.6);
   }
   .pricing-box-items .setup-fee {
-    min-height: 36px; /* la note annuelle passe sur deux lignes a 360 px */
-    margin-top: 4px;
+    min-height: 20px;
+    margin-top: 8px;
+    white-space: nowrap;
     font-size: 13px;
     font-weight: 400;
     color: rgba(21, 23, 26, 0.6);
@@ -1179,11 +1203,15 @@ body { color: var(--hp-ink-soft); }
     text-align: center;
   }
 }
-/* Entre 1200 et 1399 px, les colonnes font ~190 px : « 143,20 € » (annuel)
-   touchait le bord a 48 px. */
+/* Entre 1200 et 1299 px, deux descriptions passent sur trois lignes :
+   on reserve la troisieme partout pour garder les boutons alignes. */
+@media (min-width: 1200px) and (max-width: 1299px) {
+  .pricing-box-items .pricing-header .price-text { min-height: 63px; }
+}
+/* Entre 1200 et 1399 px, les colonnes sont etroites : lettres un peu moins
+   serrees, la taille du prix suit deja la largeur de la carte. */
 @media (min-width: 1200px) and (max-width: 1399px) {
   .pricing-box-items .haria-price-row h3 {
-    font-size: 42px;
     letter-spacing: -1px;
   }
 }
@@ -1193,14 +1221,18 @@ body { color: var(--hp-ink-soft); }
    focus, pour le clavier et le tactile) une bulle explique la ligne.
    La bulle est centree sur la ligne ; sous 1200 px, on l'aligne a gauche
    pour ne pas deborder de la carte. */
+/* Le « ? » suit le dernier mot, meme quand la ligne passe a la ligne :
+   en inline-flex, il partait au bord droit de la colonne. */
 .haria-tip {
   position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
+  display: block;
 }
+/* Dernier mot et « ? » insecables : l'icone ne part jamais seule a la ligne. */
+.haria-tip-fin { white-space: nowrap; }
 .haria-tip-icon {
   display: inline-flex;
+  vertical-align: -3px;
+  margin-left: 2px;
   align-items: center;
   justify-content: center;
   width: 17px;
@@ -1273,3 +1305,8 @@ body { color: var(--hp-ink-soft); }
   .haria-tip:hover .haria-tip-pop,
   .haria-tip:focus-within .haria-tip-pop { transform: translateY(0); }
 }
+
+/* ---------- Hero : image servie en WebP via <picture> ----------
+   L'enveloppe <picture> ne doit pas compter dans la mise en page : l'image
+   garde exactement le rendu du template. */
+.hero-1 .hero-items .hero-image picture { display: contents; }

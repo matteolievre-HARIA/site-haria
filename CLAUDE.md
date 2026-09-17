@@ -26,26 +26,23 @@ racine du dépôt publiée telle quelle. En ligne : https://haria-chatbot.com
   (Chrome headless + CDP : mesures de positions, comparaison avant/après,
   captures aux largeurs 1440 / 768 / 390 / 360).
 
-## À faire : nettoyage niveau 2 (Font Awesome)
+## Poids de la page (état au 17/09/2026)
 
-Le niveau 1 est fait : `three.js`, `webgl.js`, `chroma.min.js` et `swiper`
-étaient chargés sans être appelés nulle part ; supprimés, le JS est passé de
-2 440 Ko à 465 Ko.
-
-Reste le plus gros morceau de CSS :
-
-- `assets/css/all.min.css` — **465 Ko**, plus jusqu'à **765 Ko de polices**
-  (`assets/webfonts/fa-solid-900.woff2`, `fa-regular-400.woff2`,
-  `fa-brands-400.woff2`).
-- Pour **6 icônes seulement** : l'étoile des avis (`fa-star`), la flèche des
-  boutons (`fa-arrow-up-right`), le `+` de la FAQ (`fa-plus`), LinkedIn
-  (`fa-linkedin-in`), la croix du menu (`fa-times`), la flèche `fa-arrow-up`.
-
-**Méthode prévue** : remplacer chaque icône par du SVG en ligne, une par une,
-avec comparaison visuelle avant/après à chaque étape, puis retirer le CSS et
-les trois `woff2`. Gain attendu : environ 1,2 Mo, soit un site sous 200 Ko de
-JS + CSS. **Ça touche au DOM** (contrairement au niveau 1) : Matteo a demandé
-de ne pas le faire pour l'instant, à ne lancer que sur sa validation.
+- Niveau 1 : `three.js`, `webgl.js`, `chroma.min.js` et `swiper` supprimés
+  (JS de 2 440 Ko à 465 Ko).
+- Polices Font Awesome : les trois `woff2` de `assets/webfonts/` sont des
+  **sous-ensembles** ne gardant que les glyphes utilisés (U+2B, F005, E09F,
+  F077, F078, F0E1, F00D, F062, F068) : 766 Ko → 2 Ko, HTML et CSS
+  inchangés. **Toute nouvelle icône Font Awesome n'apparaîtra pas** : il
+  faut refaire le sous-ensemble depuis les polices d'origine (historique
+  git) en ajoutant son code.
+- Préchargeur : masqué au DOMContentLoaded par `haria.js` (le template
+  attendait `load` + 1 s). Widget chargé en `async`. Image du hero en WebP
+  via `<picture>` (PNG en repli).
+- Reste possible : `all.min.css` (455 Ko brut, 78 Ko compressé) pour
+  6 icônes, à remplacer par du SVG en ligne (touche au DOM, sur validation
+  de Matteo). Les en-têtes de cache de `render.yaml` ne sont pas appliqués
+  en ligne (`max-age=0`) : à régler dans le dashboard Render.
 
 ## Autres chantiers identifiés (pas encore arbitrés)
 

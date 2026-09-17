@@ -6,6 +6,8 @@
       dur en dollars et en anglais ; on la neutralise en n'utilisant pas
       ses classes .monthly-label / .yearly-label, et on la refait ici.
    3. Retouches d'affichage du widget de chat charge a distance.
+   4. Le prechargeur disparait des que la page est prete, sans attendre
+      images, polices et pixel Meta (main.js attend l'evenement load).
    ===================================================================== */
 (function () {
     'use strict';
@@ -221,7 +223,19 @@
         });
     }
 
+    /* ---------- Prechargeur ----------
+       Meme fondu que le template (500 ms), mais des que le DOM est pret.
+       Le handler de main.js (load + 500 ms) s'applique ensuite a un
+       element deja cache : sans effet. */
+    function hidePreloader() {
+        var preloader = document.getElementById('preloader');
+        if (!preloader) return;
+        if (window.jQuery) window.jQuery(preloader).fadeOut(500);
+        else preloader.style.display = 'none';
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
+        hidePreloader();
         initAnchors();
         initPricingToggle();
         initPricingCarousel();

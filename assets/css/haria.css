@@ -494,6 +494,13 @@ body { color: var(--hp-ink-soft); }
   box-shadow: 0 2px 10px rgba(21, 23, 26, 0.06);
 }
 
+/* ---------- Icones flottantes du hero ----------
+   Le template les colle hors ecran (left -6% / right -11%) : elles sortent
+   coupees des deux cotes du titre. On les remet entierement visibles,
+   le long des marges du conteneur. */
+.hero-1 .hero-content .shape-1 { left: 4px; }
+.hero-1 .hero-content .shape-2 { right: 4px; }
+
 /* ---------- Tous les boutons : l'animation des boutons de tarifs ----------
    Le template faisait sauter la fleche de droite a gauche. On garde la
    fleche en place et on reprend exactement le comportement des boutons
@@ -1179,4 +1186,90 @@ body { color: var(--hp-ink-soft); }
     font-size: 42px;
     letter-spacing: -1px;
   }
+}
+
+/* ---------- Info-bulles des tarifs ----------
+   Un petit « ? » après chaque ligne du plan Gratuit ; au survol (ou au
+   focus, pour le clavier et le tactile) une bulle explique la ligne.
+   La bulle est centree sur la ligne ; sous 1200 px, on l'aligne a gauche
+   pour ne pas deborder de la carte. */
+.haria-tip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.haria-tip-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: #c2c2ce;
+  font-size: inherit;
+  cursor: help;
+  transition: color .2s ease;
+}
+.haria-tip-icon svg { width: 15px; height: 15px; }
+.haria-tip-icon:hover,
+.haria-tip-icon:focus-visible,
+.haria-tip:hover .haria-tip-icon { color: var(--theme); }
+.haria-tip-icon:focus-visible { outline: 2px solid var(--theme); outline-offset: 2px; }
+/* La regle du template .pricing-box-items .pricing-list span (couleur,
+   graisse, taille) gagne a specificite egale : on cible la bulle avec
+   trois classes pour reprendre la main. */
+.pricing-box-items .pricing-list .haria-tip-pop {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  width: max-content;
+  max-width: 230px;
+  padding: 10px 13px;
+  border-radius: 10px;
+  background: var(--hp-ink);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-align: left;
+  white-space: normal;
+  box-shadow: 0 10px 24px rgba(16, 16, 32, .18);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .18s ease, transform .18s ease, visibility .18s;
+  z-index: 10;
+}
+.pricing-box-items .pricing-list .haria-tip-pop::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: var(--hp-ink);
+}
+.haria-tip:hover .haria-tip-pop,
+.haria-tip:focus-within .haria-tip-pop {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+/* Sur telephone, la bulle est alignee sur le bord gauche de la ligne et
+   plus etroite, sinon elle sort de la carte. */
+@media (max-width: 1199px) {
+  .pricing-box-items .pricing-list .haria-tip-pop {
+    left: 0;
+    transform: translateY(4px);
+    max-width: min(230px, calc(100vw - 175px));
+  }
+  .pricing-box-items .pricing-list .haria-tip-pop::after { left: 22px; }
+  .haria-tip:hover .haria-tip-pop,
+  .haria-tip:focus-within .haria-tip-pop { transform: translateY(0); }
 }

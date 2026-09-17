@@ -52,5 +52,65 @@
     "titre": "Chatbot IA : 5 craintes légitimes et leurs réponses",
     "mot_cle": "chatbot ia fiabilité",
     "angle": "il va dire n'importe quoi, c'est cold, c'est compliqué, c'est cher, c'est risqué légalement : reprendre chaque objection avec les garde-fous concrets (12 scénarios pièges, RGPD, tarif public)"
+  },
+  {
+    "slug": "chatbot-gratuit-site-web",
+    "titre": "Chatbot gratuit pour site web",
+    "mot_cle": "chatbot gratuit pour site web",
+    "angle": "panorama honnête des options gratuites : la plupart excluent l'IA de leur plan gratuit, Haria inclut l'IA, la construction automatique et la récolte de leads dès 0 € sans carte bancaire"
+  },
+  {
+    "slug": "creer-chatbot-site-web-sans-code",
+    "titre": "Créer un chatbot pour son site sans coder",
+    "mot_cle": "créer un chatbot pour son site web",
+    "angle": "les 3 approches possibles (constructeur de scénarios, assistant construit automatiquement à partir du site, développement sur mesure) avec temps réel passé et limites de chacune"
+  },
+  {
+    "slug": "meilleur-chatbot-ia-francais",
+    "titre": "Meilleur chatbot IA français : critères",
+    "mot_cle": "meilleur chatbot IA français",
+    "angle": "grille de choix objective : hébergement en France, construction automatique, langue, récolte de leads, prix public, essai sans carte bancaire — et comment évaluer un éditeur en 10 minutes"
+  },
+  {
+    "slug": "chatbot-wordpress",
+    "titre": "Chatbot WordPress",
+    "mot_cle": "chatbot WordPress",
+    "angle": "installer un chatbot sur WordPress : plugin dédié vs une seule ligne de code dans le footer, pièges du cache et des thèmes, compatibilité Elementor et autres constructeurs"
+  },
+  {
+    "slug": "chatbot-taux-de-conversion",
+    "titre": "Chatbot et taux de conversion",
+    "mot_cle": "chatbot taux de conversion",
+    "angle": "les mécanismes par lesquels un chatbot fait monter la conversion : réponse immédiate, qualification avant le contact, capture des visiteurs hésitants, RDV en automatique"
+  },
+  {
+    "slug": "combien-de-leads-genere-un-chatbot",
+    "titre": "Combien de leads génère un chatbot ?",
+    "mot_cle": "leads chatbot site web",
+    "angle": "la math simple : trafic × part de visiteurs intéressés × taux de capture ; attentes réalistes par niveau de trafic et exemples clients vérifiables"
+  },
+  {
+    "slug": "chatbot-shopify",
+    "titre": "Chatbot Shopify",
+    "mot_cle": "chatbot Shopify",
+    "angle": "répondre aux questions bloquantes de l'achat (livraison, tailles, retours, stock) au moment où elles se posent, installation sur un thème Shopify, cas client Edabos +28 % de conversion"
+  },
+  {
+    "slug": "chatbot-wix-webflow-squarespace",
+    "titre": "Chatbot sur Wix, Webflow ou Squarespace",
+    "mot_cle": "chatbot Wix",
+    "angle": "chaque plateforme a sa méthode d'installation : ce qui change, ce qui ne change pas, et pourquoi une seule ligne de code couvre les trois"
+  },
+  {
+    "slug": "assistant-virtuel-chatbot-difference",
+    "titre": "Assistant virtuel ou chatbot : différences",
+    "mot_cle": "assistant virtuel site web",
+    "angle": "chatbot à scénarios, assistant IA, agent conversationnel : définir clairement les termes et aider le lecteur à choisir selon son site et son budget"
+  },
+  {
+    "slug": "chatbot-multilingue",
+    "titre": "Chatbot multilingue : parler à tous vos visiteurs",
+    "mot_cle": "chatbot multilingue site web",
+    "angle": "les visiteurs étrangers partent faute de réponse dans leur langue : détection automatique, limites des traductions manuelles, opportunité commerciale"
   }
 ]

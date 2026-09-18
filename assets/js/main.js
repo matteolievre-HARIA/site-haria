@@ -168,26 +168,35 @@
        Video & Image Popup Js Start
     ================================ */
 
-      $(".img-popup").magnificPopup({
-        type: "image",
-        gallery: {
-          enabled: true,
-        },
-      });
+      // magnific-popup n'est plus charge (aucune galerie ni video sur la
+      // page, voir index.html). Le test evite l'erreur qui, sans lui,
+      // interromprait tout le reste de ce bloc, WOW compris.
+      if ($.fn.magnificPopup) {
+        $(".img-popup").magnificPopup({
+          type: "image",
+          gallery: {
+            enabled: true,
+          },
+        });
 
-      $(".video-popup").magnificPopup({
-        type: "iframe",
-        callbacks: {},
-      });
+        $(".video-popup").magnificPopup({
+          type: "iframe",
+          callbacks: {},
+        });
+      }
   
       /* ================================
        Counterup Js Start
     ================================ */
 
-      $(".count").counterUp({
-        delay: 15,
-        time: 4000,
-      });
+      // counterUp (et waypoints dont il depend) ne sont plus charges :
+      // aucun compteur .count sur la page. Meme garde que ci-dessus.
+      if ($.fn.counterUp) {
+        $(".count").counterUp({
+          delay: 15,
+          time: 4000,
+        });
+      }
   
       /* ================================
        Wow Animation Js Start
@@ -1006,7 +1015,12 @@
 
                 .from($this[0], {
                     rotateX: 40,
-                    y: -180,
+                    // 130 px et non 180 : l'image du hero est detouree au ras
+                    // du dashboard et ne dispose que de 172 px de debord sous
+                    // la section (voir haria.css) avant que la bordure basse
+                    // du cadre n'apparaisse. Au-dela, la remontee laissait un
+                    // vide visible entre l'image et la section suivante.
+                    y: -130,
                     duration: 2,
                     ease: "power2.out",
                     transformOrigin: "bottom center",

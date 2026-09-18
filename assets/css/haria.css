@@ -1310,3 +1310,89 @@ body { color: var(--hp-ink-soft); }
    L'enveloppe <picture> ne doit pas compter dans la mise en page : l'image
    garde exactement le rendu du template. */
 .hero-1 .hero-items .hero-image picture { display: contents; }
+
+/* ---------- Hero : l'image deborde sous la section ----------
+   L'animation d'entree (main.js) remonte l'image au debut du defilement.
+   Le dashboard etant detoure au ras du bas, ce decalage laissait
+   apparaitre une bande de fond entre l'image et la section suivante.
+   L'image porte donc 13 % de dashboard en plus, ramenes sous la section
+   par cette marge negative : la section est en overflow hidden (.fix), le
+   debord est masque au repos et comble le vide pendant l'animation.
+   Le pourcentage se calcule sur la largeur : le debord suit l'echelle de
+   l'image, contrairement a une valeur en pixels qui rognerait presque
+   toute l'image sur telephone. Hauteur occupee inchangee (554 px a 1320
+   de large), et la coupe reste au-dessus de la bordure basse du cadre. */
+.hero-1 .hero-items .hero-image { margin-bottom: -13%; }
+
+/* ---------- Installation : image et liste centrees l'une sur l'autre ----------
+   Les deux colonnes partaient du meme haut : l'image du widget, plus haute
+   que les trois etapes, debordait donc vers le bas. Un decalage fixe ne
+   convient pas, le rapport des hauteurs s'inverse selon la largeur (image
+   plus haute a 1440, plus courte a 1200). Le centrage de la rangee s'en
+   charge a toutes les largeurs. */
+.how-it-section .row { align-items: center; }
+
+/* =====================================================================
+   Zones tactiles : on agrandit la cible, jamais le dessin
+   ---------------------------------------------------------------------
+   Sur telephone, plusieurs commandes tombaient sous les 24 px que
+   demande l'accessibilite (info-bulles des tarifs a 17 px, pastilles du
+   carrousel a 8 px). Plutot que de grossir les elements, ce qui
+   deformerait la grille des tarifs, on etend la surface cliquable avec
+   un pseudo-element transparent centre sur l'element : le rendu ne
+   bouge pas d'un pixel, le doigt a de la marge.
+   ===================================================================== */
+.haria-tip-icon { position: relative; }
+.haria-tip-icon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 26px;
+  height: 26px;
+  transform: translate(-50%, -50%);
+  /* Sous l'info-bulle, qui doit rester cliquable et lisible. */
+  z-index: 0;
+}
+
+@media (max-width: 991px) {
+  /* Pastilles du carrousel de tarifs : 8 px de dessin, 20 x 24 de cible.
+     L'ecart passe de 8 a 12 px pour que deux cibles voisines ne se
+     chevauchent pas — sans quoi le doigt tomberait sur la mauvaise. */
+  .haria-carousel-dots { gap: 12px; }
+  .haria-carousel-dots button { position: relative; }
+  .haria-carousel-dots button::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 24px;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Liens du pied de page : 18 a 21 px de haut, on passe a 28-31 sans
+     changer le texte ni son interligne. Les listes du pied de page
+     (gt-list-area) et la ligne legale (footer-list) sont concernees. */
+  .footer-bottom .footer-list a,
+  .footer-bottom .footer-bottom-wrapper a,
+  .footer-widget-items .gt-list-area a,
+  .off-contact-info a { padding-block: 5px; display: inline-block; }
+
+  /* Boutons d'action : 40-42 px selon l'endroit, cale a 44. L'ecart se
+     joue sur 2 a 4 px, invisible a l'oeil, sous le seuil au doigt. */
+  .theme-btn-main .theme-btn { min-height: 44px; }
+}
+
+/* ---------- Telephone : les descriptions passent de 14 a 15 px ----------
+   Le texte courant se repartissait entre 14, 15 et 16 px sur telephone.
+   Les descriptions des cartes produit et des trois etapes etaient les
+   plus petites, et ce sont elles qui portent l'argumentaire. A 15 px
+   elles rejoignent la taille deja majoritaire ; l'interligne reste fixe
+   en pixels, donc la hauteur des blocs ne bouge pas tant que le texte ne
+   gagne pas de ligne. Les cartes de tarifs gardent leurs 14 px : leur
+   hauteur est calibree a la ligne pres (voir plus haut). */
+@media (max-width: 991px) {
+  .service-box-items .content p,
+  .how-it-items li .content p { font-size: 15px; }
+}

@@ -1,0 +1,30 @@
+/* =====================================================================
+   Font Awesome, reduit aux icones de la page
+   ---------------------------------------------------------------------
+   all.min.css declare les 16 000 icones de Font Awesome Pro : 455 Ko
+   (74 Ko compresses) pour les six que la page utilise reellement. Les
+   regles ci-dessous sont recopiees telles quelles depuis all.min.css
+   (@font-face, regles de base, regles des six icones) : le rendu est
+   identique au pixel pres, seules disparaissent les 15 994 autres.
+
+   Les .woff2 de assets/webfonts/ sont deja des sous-ensembles (voir
+   CLAUDE.md). AJOUTER UNE ICONE demande donc deux gestes : refaire le
+   sous-ensemble de la police avec son code, et ajouter ici sa regle
+   .fa-xxx:before, reprise depuis all.min.css (conserve dans l'historique
+   git).
+   ===================================================================== */
+
+@font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:block;src:url(../webfonts/fa-brands-400.woff2) format("woff2")}
+@font-face{font-family:"Font Awesome 6 Pro";font-style:normal;font-weight:400;font-display:block;src:url(../webfonts/fa-regular-400.woff2) format("woff2")}
+@font-face{font-family:"Font Awesome 6 Pro";font-style:normal;font-weight:900;font-display:block;src:url(../webfonts/fa-solid-900.woff2) format("woff2")}
+.fa,.fa-brands,.fa-duotone,.fa-light,.fa-regular,.fa-solid,.fa-thin,.fab,.fad,.fal,.far,.fas,.fat{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:var(--fa-display,inline-block);font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}
+.fa{font-family:var(--fa-style-family,"Font Awesome 6 Pro");font-weight:var(--fa-style,900)}
+.fa-solid,.fas{font-family:"Font Awesome 6 Pro";font-weight:900}
+.fa-regular,.far{font-family:"Font Awesome 6 Pro";font-weight:400}
+.fa-brands,.fab{font-family:"Font Awesome 6 Brands";font-weight:400}
+.fa-star:before{content:"\f005"}
+.fa-arrow-up-right:before{content:"\e09f"}
+.fa-add:before,.fa-plus:before{content:"\2b"}
+.fa-arrow-up:before{content:"\f062"}
+.fa-linkedin-in:before{content:"\f0e1"}
+.fa-close:before,.fa-multiply:before,.fa-remove:before,.fa-times:before,.fa-xmark:before{content:"\f00d"}

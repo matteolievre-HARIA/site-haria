@@ -325,7 +325,8 @@ ${faqJson}
         ]
     }
     </script>
-    <script src="https://hariastudio.com/widget.js" data-client="5f9c204d-e28a-43b2-8073-fae9d68aa03e"></script>
+    <!-- async : le widget ne retarde plus l'affichage de la page -->
+    <script async src="https://hariastudio.com/widget.js" data-client="5f9c204d-e28a-43b2-8073-fae9d68aa03e"></script>
 </body>
 </html>
 `;

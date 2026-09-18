@@ -7,3 +7,7 @@ node_modules/
 # Template source (Synex) : les fichiers utiles sont copies dans assets/,
 # on ne deploie pas les 22 Mo de pages de demo.
 TEMPLATE/
+
+# Images sources fournies par Matteo, avant recadrage : utiles en local,
+# inutiles en ligne (voir Archive/LISEZMOI.md).
+Archive/

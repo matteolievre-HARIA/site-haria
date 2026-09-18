@@ -510,9 +510,20 @@ body { color: var(--hp-ink-soft); }
 /* ---------- Icones flottantes du hero ----------
    Le template les colle hors ecran (left -6% / right -11%) : elles sortent
    coupees des deux cotes du titre. On les remet entierement visibles,
-   le long des marges du conteneur. */
-.hero-1 .hero-content .shape-1 { left: 4px; }
-.hero-1 .hero-content .shape-2 { right: 4px; }
+   le long des marges du conteneur, et assez ecartees pour ne pas toucher
+   la derniere ligne du titre : a 4 px du conteneur, celle de droite
+   mordait de 32 px sur « 24h/24 ». Elles debordent donc du conteneur, ce
+   que la marge de page permet a partir de 1200 px, largeur en dessous de
+   laquelle le template les masque. */
+.hero-1 .hero-content .shape-1 { left: -36px; }
+.hero-1 .hero-content .shape-2 { right: -44px; }
+/* Entre 1200 et 1399 px, le titre occupe presque toute la largeur et la
+   marge de page ne permet plus d'ecarter davantage : l'icone de droite
+   remonte le long de la premiere ligne, plus courte, ou elle retrouve de
+   l'air sans sortir de l'ecran. */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .hero-1 .hero-content .shape-2 { right: -28px; top: 14%; }
+}
 
 /* ---------- Tous les boutons : l'animation des boutons de tarifs ----------
    Le template faisait sauter la fleche de droite a gauche. On garde la
@@ -1395,4 +1406,25 @@ body { color: var(--hp-ink-soft); }
 @media (max-width: 991px) {
   .service-box-items .content p,
   .how-it-items li .content p { font-size: 15px; }
+}
+
+/* =====================================================================
+   Telephone : la section Installation est retiree
+   ---------------------------------------------------------------------
+   Sur petit ecran, les trois etapes et le widget occupaient un ecran et
+   demi entre les cartes produit et les avis : la preuve client et les
+   tarifs arrivaient d'autant plus tard. La section reste servie dans le
+   HTML (elle compte donc pour l'indexation, meme si Google pondere moins
+   ce qui est masque) et reste entiere sur ordinateur.
+
+   Tout ce qui pointait vers #etapes est neutralise en meme temps, sinon
+   le clic emmenait en haut de page : la cible masquee est mesuree a 0.
+   Les deux titres de cartes concernes gardent leur texte, seul le lien
+   est desactive.
+   ===================================================================== */
+@media (max-width: 991px) {
+  #etapes { display: none; }
+  .mobile-menu-main .list-unstyled li:has(> a[href="#etapes"]),
+  .footer-widget-items .gt-list-area li:has(> a[href="#etapes"]) { display: none; }
+  .service-box-items .content .title a[href="#etapes"] { pointer-events: none; }
 }

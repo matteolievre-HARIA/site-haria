@@ -110,7 +110,23 @@ document.querySelectorAll(".image-distortion").forEach((background)=>{
         flowmap.update();
         renderer.render({ scene: mesh });
 
+        // Mise en pause hors champ : sans ce test, la boucle calculait une
+        // image WebGL 60 fois par seconde meme quand le hero etait sorti de
+        // l'ecran, pour rien. L'observateur ci-dessous relance la boucle
+        // quand il revient. Meme principe que le globe (globe.js).
+        if (!visible) { enPause = true; return; }
+
         requestAnimationFrame(update);
+    }
+
+    var visible = true, enPause = false;
+    if ("IntersectionObserver" in window) {
+        new IntersectionObserver(function (entrees) {
+            entrees.forEach(function (e) {
+                visible = e.isIntersecting;
+                if (visible && enPause) { enPause = false; requestAnimationFrame(update); }
+            });
+        }, { rootMargin: "200px" }).observe(background);
     }
 
     requestAnimationFrame(update);

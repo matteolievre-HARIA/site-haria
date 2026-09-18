@@ -661,7 +661,9 @@
         let smoother = ScrollSmoother.create({
             wrapper: "#smooth-wrapper",
             content: "#smooth-content",
-            smooth: 2,
+            // 1.5 et non 2 : le template mettait deux secondes a rattraper la
+            // molette, ce qui donnait une impression de page pateuse.
+            smooth: 1.5,
             effects: true,
             smoothTouch: 0.1,
             normalizeScroll: false,

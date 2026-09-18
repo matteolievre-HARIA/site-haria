@@ -179,8 +179,24 @@
 		this.initShaders();
 		
 		// Init animation
+		// Ajout Haria : la boucle ne tourne que lorsque l'element est a
+		// l'ecran. Sans ce garde-fou elle calculait une image WebGL 60 fois
+		// par seconde en permanence, y compris quand la section des avis
+		// etait hors champ. L'observateur relance la boucle au retour.
+		that.visible = true;
+		that.enPause = false;
+		if (typeof IntersectionObserver !== 'undefined') {
+			new IntersectionObserver(function (entrees) {
+				entrees.forEach(function (e) {
+					that.visible = e.isIntersecting;
+					if (that.visible && that.enPause) { that.enPause = false; requestAnimationFrame(step); }
+				});
+			}, { rootMargin: '200px' }).observe(that.$el[0]);
+		}
+
 		function step() {
 			that.update();
+			if (!that.visible) { that.enPause = true; return; }
 			requestAnimationFrame(step);
 		}
 		

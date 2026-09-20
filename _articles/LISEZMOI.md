@@ -15,8 +15,7 @@
      minimum, 3 h2 minimum, pas de balise interdite, liens internes
      autorisés uniquement, 4 questions FAQ minimum ;
    - le plus ancien article de la file est publié : déplacement à la racine,
-     ajout à la liste « Nos guides » de l'accueil, ajout au `sitemap.xml`,
-     rafraîchissement de la date de l'accueil ;
+     ajout au `sitemap.xml`, sans modifier l'accueil ni son pied de page ;
    - commit (`Article SEO : <titre>`) + push — Render redéploie.
 3. Échec de génération ou file et sujets vides = échec **visible** du
    workflow (mail GitHub), jamais de page à moitié générée.
@@ -75,9 +74,9 @@ node scripts/generer-article.mjs --test  # génération (sans API)
 ```
 
 
-## Ajouter un autre point d'insertion de liens
+## Liens vers les nouveaux guides
 
-Le script insère à la place du repère
-`<li hidden data-haria-guide-auto></li>` (et le repose derrière le nouveau
-lien). Pour insérer ailleurs, dupliquer la logique dans
-`scripts/publier-article.mjs` (section « Liste Nos guides »).
+Les nouveaux guides sont publiés à la racine et ajoutés au sitemap.
+La publication quotidienne n'ajoute aucun lien dans le pied de page de
+l'accueil et ne modifie pas sa date de dernière modification.
+Les articles déjà publiés restent accessibles à leur URL.

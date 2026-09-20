@@ -2,8 +2,7 @@
 //
 // Convention de nommage : AAAA-MM-JJ_slug.html (la date fixe l'ordre de
 // publication). Le fichier est déplacé à la racine du site sous `slug.html`,
-// le guide est ajouté à la liste « Nos guides » de l'accueil et au sitemap,
-// et la date de dernière modification de l'accueil est rafraîchie.
+// puis ajouté au sitemap. L'accueil et son pied de page restent inchangés.
 //
 // Usage :
 //   node scripts/publier-article.mjs          → publie un article
@@ -13,7 +12,7 @@
 // Sans article en attente : « RIEN_A_PUBLIER » et code 0 (le workflow
 // s'arrête proprement sans commit vide).
 
-import { readdirSync, readFileSync, writeFileSync, renameSync, existsSync, mkdirSync } from "node:fs";
+import { readdirSync, readFileSync, writeFileSync, renameSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -77,24 +76,7 @@ const titreCourt = titre.split(/\s+[|—·]\s+/)[0].trim();
 console.log(dry ? "[dry] déplacerait" : "Déplacement de", `_articles/file/${nomFichier} → ${slug}.html`);
 if (!dry) renameSync(join(file, nomFichier), join(racine, slug + ".html"));
 
-// ---- 4. Liste « Nos guides » de l'accueil ----------------------------------
-let index = lire("index.html");
-const placeHolder = '<li hidden data-haria-guide-auto></li>';
-if (!index.includes(placeHolder)) {
-  console.error("ERREUR : repère <li hidden data-haria-guide-auto></li> introuvable dans index.html.");
-  process.exit(1);
-}
-const nouveauLi = `<li>
-                                                        <a href="${slug}.html">
-                                                            ${titreCourt}
-                                                        </a>
-                                                    </li>
-                                                    ` + placeHolder;
-index = index.replace(placeHolder, nouveauLi);
-ecrire("index.html", index);
-console.log(`Guide ajouté à l'accueil : ${titreCourt}`);
-
-// ---- 5. Sitemap -------------------------------------------------------------
+// ---- 4. Sitemap (sans insertion de lien dans l'accueil) ---------------------
 let sitemap = lire("sitemap.xml");
 const entree = `  <url>
     <loc>${url}</loc>
@@ -108,12 +90,7 @@ if (sitemap.includes(`<loc>${url}</loc>`)) {
   process.exit(1);
 }
 sitemap = sitemap.replace("</urlset>", entree + "</urlset>");
-// Fraîcheur de l'accueil : il vient de changer (nouveau lien).
-sitemap = sitemap.replace(
-  /(<loc>https:\/\/haria-chatbot\.com\/<\/loc>\s*<lastmod>)([^<]+)(<\/lastmod>)/,
-  `$1${aujourdhui}$3`
-);
 ecrire("sitemap.xml", sitemap);
-console.log(`Sitemap : ${url} ajouté, accueil daté du ${aujourdhui}`);
+console.log(`Sitemap : ${url} ajouté`);
 
 console.log(`TITRE=${titreCourt}`);

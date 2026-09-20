@@ -11,3 +11,8 @@ TEMPLATE/
 # Images sources fournies par Matteo, avant recadrage : utiles en local,
 # inutiles en ligne (voir Archive/LISEZMOI.md).
 Archive/
+
+# Visuels du site exportes pour retraitement Figma : utiles en local,
+# ils ne doivent pas etre deployes ni versions (les originaux sont
+# deja dans assets/img/ et images/).
+visu/

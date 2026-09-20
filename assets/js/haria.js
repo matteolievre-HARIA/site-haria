@@ -234,6 +234,16 @@
         else preloader.style.display = 'none';
     }
 
+    /* ---------- Telephone : suppression du lazyload ----------
+       Sur petit ecran, les images differees apparraissent en blanc pendant
+       le defilement (marquees, carrousel des tarifs). On charge tout
+       immediatement : les visuels sont legeres (JPG optimises). */
+    function initEagerImages() {
+        document.querySelectorAll('img[loading="lazy"]').forEach(function (img) {
+            img.loading = 'eager';
+        });
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
         hidePreloader();
         initAnchors();
@@ -241,5 +251,8 @@
         initPricingCarousel();
         initWidgetPolish();
         initFaqChat();
+        if (window.matchMedia('(max-width: 575px)').matches) {
+            initEagerImages();
+        }
     });
 })();

@@ -5,6 +5,22 @@
    Le violet est applique directement dans main.css.
    ===================================================================== */
 
+/* ---------- Apparitions courtes : léger mouvement, sans attente ----------
+   WOW injecte ses délais en ligne : !important les ramène à 60 ms.
+   La règle ne s'applique que pendant l'animation, pour éviter de la
+   relancer lorsque WOW retire la classe animated à la fin. */
+#smooth-wrapper .wow.fadeInUp.animated {
+  animation-name: haria-apparition !important;
+  animation-duration: .35s !important;
+  animation-delay: .06s !important;
+  animation-timing-function: cubic-bezier(.22, 1, .36, 1);
+}
+
+@keyframes haria-apparition {
+  from { opacity: 0; transform: translate3d(0, 16px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
 /* ---------- Logo Haria (le template livrait un SVG "Synex") ---------- */
 .haria-logo {
   display: inline-flex;
@@ -50,8 +66,8 @@
 
 /* ---------- Photos des temoignages ---------- */
 .testimonial-box-items .client-info .thumb img {
-  width: 60px;
-  height: 60px;
+  width: 48px;
+  height: 48px;
   object-fit: cover;
 }
 
@@ -143,13 +159,20 @@
   text-wrap: balance;
 }
 
-/* ---------- Hero : deux CTA plus longs, espaces et centrer ---------- */
+/* ---------- Hero : deux CTA compacts, espacés et centrés ---------- */
 .hero-1 .hero-content form {
   justify-content: center;
-  gap: 18px;
-  /* Les deux boutons demandent ~640 px : la borne du template (630 px)
-     les squeezait et aplatissait les ronds de flèche en ovale. */
-  max-width: 680px;
+  gap: 14px;
+  /* Réduction de la taille d'origine (60 px de haut, 18 px) : la paire
+     tient désormais dans ~540 px et reste centrée à toutes les largeurs. */
+  max-width: 600px;
+  /* Boutons descendus sous le paragraphe (35 px dans le template). */
+  margin-top: 48px;
+}
+/* Le template laissait 120 px au-dessus du tableau de bord : avec les
+   boutons descendus, l'écran creusait un vide entre les deux. */
+.hero-1 .hero-items {
+  margin-top: 56px;
 }
 .hero-1 .hero-content form .theme-btn-main,
 .haria-final-cta .theme-btn-main {
@@ -164,6 +187,31 @@
   flex: 1;
   justify-content: center;
   white-space: nowrap;
+}
+/* Le duo du hero seul : libellé 15 px, rond de flèche 38 px. Le CTA final
+   garde les proportions d'origine du template. */
+.hero-1 .hero-content form .theme-btn-main {
+  min-width: 0;
+  padding: 5px 5px 5px 18px;
+}
+.hero-1 .hero-content form .theme-btn-main .theme-btn {
+  font-size: 15px;
+  margin-right: 12px;
+}
+.hero-1 .hero-content form .theme-btn-main .theme-btn-arrow-left,
+.hero-1 .hero-content form .theme-btn-main .theme-btn-arrow-right {
+  width: 38px;
+  height: 38px;
+}
+.hero-1 .hero-content form .theme-btn-main .theme-btn-arrow-left i,
+.hero-1 .hero-content form .theme-btn-main .theme-btn-arrow-right i {
+  font-size: 13px;
+}
+/* La règle « cible tactile » (min-height 44 px sur le libellé, ≤991 px)
+   gonflait la pilule à 54 px sur tablette. Au hero, la pilule entière est
+   cliquable et fait déjà 48 px : on cale le libellé sur le rond. */
+@media (max-width: 991px) {
+  .hero-1 .hero-content form .theme-btn-main .theme-btn { min-height: 38px; }
 }
 /* Derniers CTA avant le pied de page : centrés sur le fond clair, même
    écart entre les deux boutons qu'au hero. L'air au-dessus vient du
@@ -184,9 +232,77 @@
   }
 }
 
+/* ---------- CTA à côté des titres de section ----------
+   Installation et FAQ : le template laissait ces boutons en 18 px avec
+   des ronds de 46 px, plus gros que tous les autres. Même gabarit que
+   les CTA du hero (48 px de haut). */
+.section-title-area .theme-btn-main {
+  padding: 5px 5px 5px 18px;
+  /* Les centres sont alignes, mais la masse des capitales du titre situe
+     son centre visuel un peu plus bas : legere correction optique. */
+  position: relative;
+  top: 3px;
+}
+.section-title-area .theme-btn-main .theme-btn {
+  font-size: 15px;
+  margin-right: 12px;
+}
+.section-title-area .theme-btn-main .theme-btn-arrow-left,
+.section-title-area .theme-btn-main .theme-btn-arrow-right {
+  width: 38px;
+  height: 38px;
+}
+.section-title-area .theme-btn-main .theme-btn-arrow-left i,
+.section-title-area .theme-btn-main .theme-btn-arrow-right i {
+  font-size: 13px;
+}
+
 /* ---------- Tarifs : le prix ne se coupe jamais sur deux lignes ---------- */
 .pricing-box-items .haria-price-row .price {
   white-space: nowrap;
+}
+
+/* ---------- Titres de section sur une ligne ----------
+   « Plus de contacts à trafic égal » (#fonctionnement) et « Testez avant
+   de l'installer » (#etapes) : tenue sur une seule ligne demandée. C'est
+   le cas d'office à 60/40/36 px ; la tranche 576-767 px montait à 42 px
+   et repliait : alignée sur les 36 px du bureau tablette. Sous 576 px, on
+   garde 28 px et un repli naturel — une ligne exigerait 24 px, trop
+   maigre à côté des autres titres de section. */
+@media (min-width: 576px) and (max-width: 767px) {
+  .service-section .tx-title,
+  .how-it-section .tx-title {
+    font-size: 32px;
+  }
+}
+/* « Testez avant de l'installer » partage sa ligne avec le bouton CTA :
+   son conteneur est étroit (688 px à 1440, 454 px à 1024) et le titre
+   y repliait. On descend d'un cran sur les deux tranches larges. */
+@media (min-width: 1200px) {
+  .how-it-section .tx-title {
+    font-size: 50px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .how-it-section .tx-title {
+    font-size: 31px;
+  }
+}
+/* « Donnez à votre trafic les moyens de convertir » (#tarifs) : 45
+   caractères, 1285 px à 60 px — ça passait de justesse à 1440, sans
+   marge. 56 px aligne la marge sur celle d'Installation ; à 768-991 px,
+   les 36 px du template repliaient : 30 px tient sur une ligne. En
+   dessous de 768 px, une ligne exigerait 22 px : on garde le repli
+   naturel sur deux lignes. */
+@media (min-width: 1200px) {
+  .pricing-section .tx-title {
+    font-size: 50px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .pricing-section .tx-title {
+    font-size: 28px;
+  }
 }
 
 /* =====================================================================
@@ -263,15 +379,15 @@ body { color: var(--hp-ink-soft); }
 /* Le template borne les paragraphes à 360 px : sur les grandes cartes, le
    texte s'arrêtait au tiers de la largeur. Il occupe désormais toute la carte. */
 .service-box-items .content p { max-width: none; }
-/* Quand une carte est étirée par sa voisine plus haute, le texte restait
-   collé sous l'image avec un vide en bas : il est centré dans l'espace libre. */
+/* Les textes commencent au même niveau sous les visuels, même quand
+   une carte est étirée par le paragraphe plus long de sa voisine. */
 .service-box-items { display: flex; flex-direction: column; }
 .service-box-items .thumb { flex-shrink: 0; }
 .service-box-items .content {
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 /* Cartes tarifs : même principe, les quatre formules font la même hauteur. */
@@ -302,97 +418,6 @@ body { color: var(--hp-ink-soft); }
   transform: none;
   opacity: 1;
   filter: none;
-}
-
-/* =====================================================================
-   GLOBE — embarqué dans la carte « Réponse en 2 secondes ».
-   CSS repris de portal.css 2789-2945, restreint à ce qui sert ici.
-   ===================================================================== */
-.haria-thumb-globe { height: 370px; }
-@media (max-width: 991px) {
-  .service-box-items .haria-thumb-globe { height: 340px; }
-}
-/* Le fond fumé des cartes voisines vient d'images qui portent aussi un
-   graphique : il fallait les flouter, donc les lisser. Ici on prend la
-   fumée seule (hero-bg.jpg, la même texture, sans interface dessus) : elle
-   reste NETTE, avec ses volutes et son contraste, exactement comme sur les
-   cartes d'à côté. Le survol de la carte est neutralisé : sinon le template
-   dévoile l'image d'origine en grand derrière le globe. */
-.service-box-items .haria-thumb-globe img.haria-globe-bg,
-.service-box-items:hover .haria-thumb-globe img.haria-globe-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  transform: scale(1.6);
-  opacity: 1;
-  filter: none;
-}
-.haria-thumb-globe .globe-stage {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  --gl-sea-light: #f6f7f9;
-  --gl-sea: #e8eaef;
-  --gl-land: #b4bac6;
-  --gl-active: #7c3aed;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-.haria-thumb-globe .globe-stage.ready { opacity: 1; }
-.gl-canvas { display: block; width: 100%; height: 100%; cursor: grab; touch-action: none; }
-.globe-stage.dragging .gl-canvas { cursor: grabbing; }
-.globe-stage.pointing .gl-canvas { cursor: pointer; }
-.gl-tip {
-  position: absolute;
-  transform: translate(-50%, calc(-100% - 14px));
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-  padding: 7px 11px;
-  border-radius: 12px;
-  background: var(--wm-pin, #241d4d);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #fff;
-  white-space: nowrap;
-  box-shadow: 0 12px 28px rgba(12, 8, 32, 0.34);
-  pointer-events: none;
-  z-index: 3;
-}
-.gl-tip[hidden] { display: none; }
-.gl-tip.below { transform: translate(-50%, 14px); }
-.gl-tip.flip { transform: translate(-88%, calc(-100% - 14px)); }
-.gl-tip.below.flip { transform: translate(-88%, 14px); }
-.gl-tip-title { font-size: 0.82rem; font-weight: 600; }
-.gl-tip-sub { font-size: 0.68rem; color: rgba(255, 255, 255, 0.66); }
-.gl-tip-sub:empty { display: none; }
-.gl-tip-val { font-size: 0.72rem; color: rgba(255, 255, 255, 0.9); margin-top: 2px; }
-.gl-tip-val:empty { display: none; }
-.gl-hint {
-  position: absolute;
-  left: 50%;
-  bottom: 0.5rem;
-  transform: translateX(-50%);
-  font-size: 0.73rem;
-  color: var(--hp-ink-soft);
-  pointer-events: none;
-  transition: opacity 0.25s;
-}
-.globe-stage.dragging .gl-hint, .globe-stage.pointing .gl-hint { opacity: 0; }
-.gl-empty {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  font-size: 0.85rem;
-  color: var(--hp-ink-soft);
-}
-/* Tactile : rotation seule — le scroll vertical de la page passe sur le globe. */
-@media (pointer: coarse) {
-  .haria-thumb-globe .gl-canvas { touch-action: pan-y; }
-  .haria-thumb-globe .gl-hint { display: none; }
-}
-@media print {
-  .haria-thumb-globe .globe-stage { display: none; }
 }
 
 /* ---------- Pied de page : la carte, sans le grand aplat noir ----------
@@ -590,6 +615,21 @@ body { color: var(--hp-ink-soft); }
 /* ---------- Etapes : pictos figes au survol ---------- */
 .how-it-items li:hover .icon img { animation: none; }
 
+/* ---------- Avis : fond fumee fondu aux bords ----------
+   La texture se coupait net au bas de la section : bande sombre tronquee
+   juste avant le gris des tarifs, avec 120 px de vide au-dessous des
+   cartes. On fond l'image en haut et en bas (le masque s'applique aussi
+   au canvas du plugin ripples), on resserre le vide a 60 px et on remonte
+   le titre (120 px de padding haut du template). */
+.testimonial-section {
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+.testimonial-section .ripple-image {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 10%, #000 90%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 10%, #000 90%, transparent 100%);
+}
+
 /* ---------- Avis : defilement continu, comme le bandeau de logos ----------
    Meme mecanique (.marquee / .marquee-group), seules la duree et la
    largeur des cartes changent. */
@@ -612,6 +652,14 @@ body { color: var(--hp-ink-soft); }
      detacher : on delimite chaque avis. */
   border: 1px solid rgba(21, 23, 26, 0.14);
   box-shadow: 0 4px 16px rgba(21, 23, 26, 0.07);
+}
+/* La signature est poussee en bas par un margin-top:auto : sur l'avis le
+   plus long, cette marge s'annule et le texte colle au nom. Une marge
+   fixe sous le texte garantit un ecart minimum sur toutes les cartes ;
+   les avis plus courts gardent leur grand espace (auto). Les etoiles
+   supprimees liberaient 20 px : on en rejette 2 sous le texte. */
+.testimonial-marquee .testimonial-box-items .text {
+  margin-bottom: 22px;
 }
 @media (max-width: 575px) {
   .testimonial-marquee .testimonial-box-items { width: 300px; }
@@ -700,20 +748,23 @@ body { color: var(--hp-ink-soft); }
      resserre la typo et les marges internes pour que les sept pastilles
      tiennent sur UNE ligne a partir de 360 px, et on centre le contenu
      pour les cas ou ca passe quand meme a la ligne (tres petits ecrans). */
-  .section-title .sub-title,
-  .hero-1 .hero-content .hero-sub {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 7px;
-    height: auto;
-    min-height: 38px;
-    line-height: 1.25;
-    padding: 5px 14px 5px 5px;
-    max-width: 100%;
-    text-align: center;
-  }
+   .section-title .sub-title,
+   .hero-1 .hero-content .hero-sub {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     flex-wrap: wrap;
+     gap: 4px;
+     height: auto;
+     min-height: 22px;
+     line-height: 1.25;
+     padding: 3px 9px 3px 3px;
+     max-width: 100%;
+     text-align: center;
+   }
+   /* La pastille du hero ecrasait le titre : typo et badge reduits. */
+   .hero-1 .hero-content .hero-sub { font-size: 10px; }
+   .hero-1 .hero-content .hero-sub b { font-size: 10px; height: 16px; line-height: 16px; padding: 0 7px; }
   .section-title .sub-title { font-size: 13px; }
   /* Les sections « Etapes » et « FAQ » utilisent un en-tete en deux colonnes
      (titre a gauche, CTA a droite). Empile sur telephone, il restait cale a
@@ -730,10 +781,10 @@ body { color: var(--hp-ink-soft); }
 
   /* ---------- Bandeau de logos : format telephone ----------
      Des pastilles de 285 px sur un ecran de 390, on n'en voyait qu'une et demie. */
-  .brand-section-one .brand-img { width: 190px; height: 84px; }
+  .brand-section-one .brand-img { width: 140px; height: 60px; }
   .brand-section-one .marquee { --duration: 24s; gap: 14px; }
   .brand-section-one .marquee .marquee-group { gap: 14px; }
-  .brand-section-one .brand-img img { max-width: 130px; max-height: 26px; }
+  .brand-section-one .brand-img img { max-width: 105px; max-height: 21px; }
   .brand-section-one .brand-img img[src*="sixt"] { max-height: 30px; }
 
   /* ---------- Avis : titre decolle ----------
@@ -741,11 +792,16 @@ body { color: var(--hp-ink-soft); }
      767 px : les avis venaient se coller dessous. */
   .testimonial-section .section-title { margin-bottom: 34px; }
 
-  /* ---------- Avis : cartes calibrees pour l'ecran ---------- */
-  .testimonial-marquee { --duration: 45s; gap: 16px; }
-  .testimonial-marquee .marquee-group { gap: 16px; }
-  .testimonial-marquee .testimonial-box-items { width: 300px; padding: 30px 24px; }
-  .testimonial-marquee .testimonial-box-items .text { font-size: 15px; }
+  /* ---------- Avis : cartes calibrees pour l'ecran ----------
+     Plus compactes : on en voit davantage pendant le defilement. */
+  .testimonial-marquee { --duration: 45s; gap: 12px; }
+  .testimonial-marquee .marquee-group { gap: 12px; }
+  .testimonial-marquee .testimonial-box-items { width: 258px; padding: 22px 20px; }
+  .testimonial-marquee .testimonial-box-items .text { font-size: 14px; }
+  .testimonial-marquee .testimonial-box-items .client-info { gap: 12px; }
+  .testimonial-marquee .testimonial-box-items .client-info .thumb img { width: 40px; height: 40px; }
+  .testimonial-marquee .testimonial-box-items .client-info .info-content .name { font-size: 16px; }
+  .testimonial-marquee .testimonial-box-items .client-info .info-content span { font-size: 13px; }
 
   /* ---------- Tarifs : un carrousel qui defile sur le cote ----------
      Quatre formules empilees, c'etait quatre ecrans de defilement et aucune
@@ -833,21 +889,24 @@ body { color: var(--hp-ink-soft); }
     flex: 0 1 auto;
     width: auto;
     max-width: 100%;
-    padding: 6px 6px 6px 22px;
+    min-width: 0;
+    padding: 4px 4px 4px 16px;
   }
   .hero-1 .hero-content form .theme-btn-main .theme-btn {
     flex: 0 1 auto;
-    font-size: 17px;
+    font-size: 15px;
     line-height: 1.2;
     white-space: nowrap;
     margin-right: 10px;
+    /* même logique que ≤991 px : le libellé suit le rond (34 px) */
+    min-height: 34px;
   }
   .hero-1 .hero-content form .theme-btn-main .theme-btn-arrow-right {
-    flex: 0 0 40px;
-    width: 40px;
-    height: 40px;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
   }
-  .hero-1 .hero-content form .theme-btn-main .theme-btn-arrow-right i { font-size: 13px; }
+  .hero-1 .hero-content form .theme-btn-main .theme-btn-arrow-right i { font-size: 12px; }
 
   /* ---------- CTA final : les deux boutons, cote a cote ----------
      Ici le visiteur a lu la page : lui laisser le choix a du sens. Largeur
@@ -935,8 +994,8 @@ body { color: var(--hp-ink-soft); }
   /* ---------- Bandeau de logos : pastilles plus petites ----------
      Les logos gardent leur taille ; seule la pastille se resserre. IDLIFT,
      plus massif que les autres, perd un peu de hauteur. */
-  .brand-section-one .brand-img { width: 165px; height: 70px; }
-  .brand-section-one .brand-img img[src*="idlift"] { max-height: 22px; }
+  .brand-section-one .brand-img { width: 140px; height: 60px; }
+  .brand-section-one .brand-img img[src*="idlift"] { max-height: 19px; }
 
   /* ---------- Avis : meme air au-dessus et au-dessous des cartes ----------
      Titre -> cartes : 34 px ; cartes -> bas de section : 60 px. On aligne
@@ -1195,8 +1254,13 @@ body { color: var(--hp-ink-soft); }
     padding-left: 22px;
     padding-right: 22px;
   }
-  /* La carte mise en avant passe au-dessus de ses voisines, sinon leur
-     filet gris recouvre son liseré violet. */
+  /* La colonne aussi passe au-dessus : les animations des colonnes créent
+     leur propre contexte d'empilement. Le z-index de la carte seule ne
+     protège donc pas son bord droit du filet gris de la formule Pro. */
+  .pricing-section .row > [class*="col-"]:has(.pricing-box-items.active) {
+    position: relative;
+    z-index: 2;
+  }
   .pricing-box-items.active { z-index: 1; }
   .pricing-box-items.active::before {
     content: "Recommandé";
@@ -1427,4 +1491,68 @@ body { color: var(--hp-ink-soft); }
   .mobile-menu-main .list-unstyled li:has(> a[href="#etapes"]),
   .footer-widget-items .gt-list-area li:has(> a[href="#etapes"]) { display: none; }
   .service-box-items .content .title a[href="#etapes"] { pointer-events: none; }
+}
+
+/* =====================================================================
+   ECHELLE GENERALE — un cran plus sobre au bureau
+   Le template affichait 80 px de hero, 60 px de titres de section,
+   18 px de texte courant et 20 px d'avis : on descend d'environ 10 %
+   les titres, de 2 px les textes, et les respirations de section passent
+   de 120 a 100 px. Le telephone garde ses tailles deja serrees
+   (14-15 px), les regles specifiques ci-dessus restent prioritaires.
+   ===================================================================== */
+@media (min-width: 992px) {
+  body { font-size: 16px; }
+  .hero-1 .hero-content h1 { font-size: 72px; }
+  .tx-title { font-size: 54px; }
+  .hero-1 .hero-content p { font-size: 16px; }
+  .section-title p { font-size: 16px; }
+  .service-box-items .content .title,
+  .how-it-items .content .title { font-size: 24px; }
+  .service-box-items .content p,
+  .how-it-items li .content p { font-size: 16px; }
+  .testimonial-box-items .text { font-size: 17px; }
+  /* signature proportionnee au texte (17 px) : photo 48 px, nom 18 px ;
+     la regle du template (20 px, specificite plus forte) est reprise ici */
+  .testimonial-marquee .testimonial-box-items { padding: 34px 28px 30px; }
+  .testimonial-marquee .testimonial-box-items .client-info .info-content .name { font-size: 18px; }
+  .testimonial-marquee .testimonial-box-items .client-info .info-content span { font-size: 14px; }
+  .pricing-box-items .haria-price-row .price { font-size: 38px; }
+  .section-padding { padding-top: 100px; padding-bottom: 100px; }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .pricing-section .tx-title { font-size: 37px; }
+}
+/* ---------- Installation -> Avis : vide resserré ----------
+   Le bas de la section Installation (100 px) s'ajoutait aux 80 px du
+   haut de la section Avis : un demi-écran de gris entre les deux. */
+@media (min-width: 992px) {
+  .how-it-section.section-padding { padding-bottom: 40px; }
+}
+/* ---------- FAQ : titre sur une ligne ----------
+   Le titre partage sa ligne avec le bouton CTA : 50 px à partir de
+   1200 px, 36 px en dessous (le conteneur tombe à 684 px). */
+@media (min-width: 1200px) {
+  .faq-section .tx-title { font-size: 50px; }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .faq-section .tx-title { font-size: 36px; }
+}
+/* ---------- Avis : titre remonté et réduit ---------- */
+@media (min-width: 992px) {
+  .testimonial-section { padding-top: 60px; }
+  .testimonial-section .tx-title { font-size: 48px; }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .hero-1 .hero-content h1 { font-size: 60px; }
+  .tx-title { font-size: 33px; }
+  .section-padding { padding-top: 90px; padding-bottom: 90px; }
+}
+
+/* ---------- Telephone : liens du pied de page plus serres ----------
+   Marge de 15 px du template + 10 px de cible tactile = 25 px entre
+   chaque lien : la colonne prenait tout l'ecran. */
+@media (max-width: 575px) {
+  .footer-widget-wrapper .footer-widget-items .gt-list-area li:not(:last-child) { margin-bottom: 7px; }
+  .footer-widget-items .gt-list-area a { padding-block: 2px; }
 }

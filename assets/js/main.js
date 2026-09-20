@@ -737,13 +737,13 @@
                   scrollTrigger: {
                   trigger: el,
                   start: "top 90%",
-                  end: "top 60%",
-                  scrub: 1
+                  // Apparition courte à l'entrée, sans attendre le défilement.
+                  toggleActions: "play none none none"
                   },
                   x: 0,
                   opacity: 1,
-                  duration: 0.7,
-                  stagger: 0.2
+                  duration: 0.32,
+                  stagger: { amount: 0.12 }
               });
               });
 
@@ -766,13 +766,12 @@
                   scrollTrigger: {
                   trigger: el,
                   start: "top 92%",
-                  end: "top 60%",
-                  scrub: 1
+                  toggleActions: "play none none none"
                   },
                   x: 0,
                   opacity: 1,
-                  duration: 0.7,
-                  stagger: 0.2
+                  duration: 0.32,
+                  stagger: { amount: 0.12 }
               });
               });
 
@@ -800,7 +799,7 @@
             charsClass: "char",
         });
 
-        let atDuration = parseFloat(atEl.getAttribute("data-speed")) || 0.6; 
+        let atDuration = parseFloat(atEl.getAttribute("data-speed")) || 0.35;
         let atDelay = parseFloat(atEl.getAttribute("data-delay")) || 0;
 
         if (window.innerWidth <= 768) {
@@ -836,7 +835,8 @@
             delay: atDelay,
             ease: "power2.out", 
             stagger: {
-                each: 0.025, 
+                // Durée totale fixe : un titre long ne ralentit plus l'entrée.
+                amount: 0.12,
                 from: "center",
             },
         });
@@ -1236,4 +1236,3 @@
 
   
   })(jQuery); // End jQuery
-

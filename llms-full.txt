@@ -64,7 +64,7 @@ Témoignages (clients réels, profils LinkedIn vérifiables) :
 - **Ça marche avec mon site ?** Oui : WordPress, Shopify, Wix, Webflow, Squarespace ou n'importe quel site en HTML, avec un guide par plateforme et un bouton pour tout envoyer au webmaster.
 - **Les chatbots Haria sont-ils conformes au RGPD ?** Oui, dès l'offre gratuite (voir la section Données et RGPD).
 - **Et si je dépasse mon quota ?** Rien ne s'arrête : alerte à 80 % puis à 100 %, l'assistant continue de répondre.
-- **Est-ce que je gagne quelque chose à recommander Haria ?** Oui : -50 % sur le mois suivant quand un dirigeant recommandé s'inscrit.
+- **Est-ce que je gagne quelque chose à recommander Haria ?** Oui : -50 % sur le mois suivant quand un dirigeant recommandé devient client payant.
 
 ---
 
@@ -185,6 +185,17 @@ Personnalisation : l'assistant est construit à partir des pages de l'entreprise
 Migration : Haria lit le site pour construire l'assistant, on le teste sur une page d'essai, puis on remplace l'ancien script par la ligne de code de Haria.
 
 Sources des prix agences : https://julienchretien.com/chatbot-ia-pme-prix-transparent · https://hutchagency.fr/blog/combien-coute-chatbot-ia/ · https://ia.agency/devis-chatbot-ia/
+
+## Autres guides (texte intégral sur haria-chatbot.com)
+
+- Chatbot IA pour artisan (devis et rappels sur chantier) : https://haria-chatbot.com/chatbot-ia-artisan.html
+- Chatbot IA pour restaurant (menu, allergènes, réservation) : https://haria-chatbot.com/chatbot-ia-restaurant.html
+- Chatbot IA et RGPD (les 7 vérifications avant d'installer) : https://haria-chatbot.com/chatbot-ia-rgpd.html
+- Chatbot ou formulaire de contact (le coût du silence) : https://haria-chatbot.com/chatbot-ia-vs-formulaire-contact.html
+- Combien de temps pour installer un chatbot IA (délais réels comparés) : https://haria-chatbot.com/combien-de-temps-installer-chatbot-ia.html
+- Réponses clients 24h/24 (mesurer le trafic hors horaires) : https://haria-chatbot.com/site-web-perd-clients-week-end.html
+- Questions fréquentes des visiteurs (répondre sans relâche) : https://haria-chatbot.com/questions-frequentes-visiteurs-site-web.html
+- Rédiger la FAQ de son site (méthode utile à votre assistant) : https://haria-chatbot.com/faq-site-web-alimenter-chatbot.html
 
 ## Contact
 

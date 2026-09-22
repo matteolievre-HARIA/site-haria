@@ -3,8 +3,18 @@
 //
 // Le sujet est pris en tête de _articles/sujets.json puis CONSOMMÉ (retiré
 // de la liste) : chaque jour un sujet différent, jamais deux fois le même.
-// Les faits produit viennent de llms.txt : l'IA ne peut pas inventer les
-// prix ni les engagements Haria.
+// Chaque sujet est un BRIEF complet : requête, intention, problème,
+// requêtes secondaires, questions, notions, page cible, apport concret.
+//
+// Garde-fous avant rédaction :
+// - comparaison du sujet avec l'inventaire réel du site (scripts/lib-site.mjs)
+//   pour refuser un sujet qui ferait doublon avec une page publiée ;
+// - les faits produit viennent de llms.txt : l'IA ne peut pas inventer les
+//   prix ni les engagements Haria ;
+// - les liens internes autorisés sont dérivés des pages réellement publiées ;
+// - les liens externes du corps doivent figurer dans « sources », et chaque
+//   source est vérifiée par requête HTTP (une source injoignable est retirée,
+//   jamais publiée telle quelle).
 //
 // Usage :
 //   node scripts/generer-article.mjs          → génère et met en file
@@ -16,13 +26,13 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { listerPages, lireAnnotations, rechercherConflits } from "./lib-site.mjs";
 
 const racine = join(dirname(fileURLToPath(import.meta.url)), "..");
 const dry = process.argv.includes("--test");
 const aujourdhui = new Date().toISOString().slice(0, 10);
-const MODELE_API = process.env.OPENAI_MODEL || "gpt-5.6-terra";
+const MODELE_API = process.env.OPENAI_MODEL || "gpt-4o-mini";
 const MODELE_SECOURS = "gpt-4o-mini";
-
 // ---- 1. Sujet en tête de liste ---------------------------------------------
 const cheminSujets = join(racine, "_articles", "sujets.json");
 if (!existsSync(cheminSujets)) {
@@ -36,8 +46,13 @@ if (!sujets.length) {
 }
 const sujet = sujets[0];
 const slug = sujet.slug;
+const requete = sujet.requete || sujet.mot_cle; // mot_cle = ancien format
 if (!/^[a-z0-9-]+$/.test(slug)) {
   console.error(`ERREUR : slug invalide (${slug}) — minuscules et tirets uniquement.`);
+  process.exit(1);
+}
+if (!requete) {
+  console.error(`ERREUR : le sujet ${slug} n'a pas de « requete » — complétez le brief.`);
   process.exit(1);
 }
 if (existsSync(join(racine, slug + ".html"))) {
@@ -45,47 +60,97 @@ if (existsSync(join(racine, slug + ".html"))) {
   process.exit(1);
 }
 
-// ---- 2. Les faits produit : jamais inventés --------------------------------
+// ---- 2. Anti-cannibalisation : le sujet recouvre-t-il une page publiée ? ----
+const pages = listerPages(racine);
+const annotations = lireAnnotations(racine);
+const conflits = rechercherConflits(requete, pages, annotations);
+if (conflits.length && conflits[0].score >= 0.99) {
+  console.error(
+    `SUJET REFUSÉ : la requête « ${requete} » est déjà couverte par ${conflits[0].fichier} ` +
+    `(recouvrement ${Math.round(conflits[0].score * 100)} %).\n` +
+    `Enrichissez cette page existante plutôt que d'en créer une nouvelle,\n` +
+    `ou resserrez l'angle du sujet dans _articles/sujets.json.`
+  );
+  process.exit(1);
+}
+if (conflits.length && conflits[0].score >= 0.85) {
+  console.warn(
+    `ATTENTION : recouvrement partiel (${Math.round(conflits[0].score * 100)} %) avec ` +
+    `${conflits[0].fichier} — l'article doit traiter un angle distinct, jamais la même intention.`
+  );
+}
+
+// ---- 3. Les faits produit : jamais inventés --------------------------------
 const faits = readFileSync(join(racine, "llms.txt"), "utf8");
 
-// ---- 3. Rédaction -----------------------------------------------------------
-const systeme = `Tu es rédacteur SEO senior francophone pour Haria, un chatbot IA pour sites web.
+// ---- 4. Le brief du sujet ----------------------------------------------------
+function construireBrief(s) {
+  const lignes = [];
+  lignes.push(`- Requête principale : ${s.requete || s.mot_cle}`);
+  if (s.intention) lignes.push(`- Intention de recherche : ${s.intention}`);
+  if (s.probleme) lignes.push(`- Problème concret du lecteur : ${s.probleme}`);
+  if (s.requetes_secondaires?.length) lignes.push(`- Requêtes secondaires et variantes naturelles : ${s.requetes_secondaires.join(" ; ")}`);
+  if (s.questions?.length) lignes.push(`- Questions associées (à traiter si elles restent utiles après le corps) : ${s.questions.join(" ; ")}`);
+  if (s.notions?.length) lignes.push(`- Notions indispensables à expliquer : ${s.notions.join(" ; ")}`);
+  if (s.angle) lignes.push(`- Angle imposé : ${s.angle}`);
+  if (s.apport) lignes.push(`- Apport concret attendu (obligatoire, l'article est refusé sans lui) : ${s.apport}`);
+  if (s.page_cible) lignes.push(`- Page vers laquelle conduire naturellement le lecteur (lien interne obligatoire dans le corps) : ${s.page_cible}`);
+  if (s.recherche) lignes.push(`- Notes de recherche web vérifiées par l'équipe (fiables, tu peux t'appuyer dessus) : ${s.recherche}`);
+  return lignes.join("\n");
+}
+
+// Inventaire réel du site : le modèle connaît les pages existantes et la
+// liste des liens internes autorisés (les fichiers publiés à la racine).
+const liensInternes = pages
+  .map((p) => `  - ${p.url} — ${p.titre || "(titre absent)"}`)
+  .join("\n");
+
+// ---- 5. Rédaction -----------------------------------------------------------
+const systeme = `Tu es rédacteur SEO senior francophone pour Haria, un assistant IA pour sites web (haria-chatbot.com).
 Règles impératives :
 - Français impeccable, tutoiement interdit : vous.
 - Chiffres de prix et engagements produit : UNIQUEMENT ceux des faits ci-dessous, jamais d'autres.
-- Aucun chiffre de résultat client inventé. Pas de superlatifs creux.
-- Ne cite pas la concurrence avec des prix précis (sauf si le fait est dans les données).
-- Style concret, phrases courtes, zéro remplissage, zéro formule creuse d'intro.
-- Le mot-clé principal apparaît dans les 100 premiers mots et dans un h2.
+- Aucun chiffre de résultat client inventé, aucun témoignage, aucune statistique externe sans source listée dans « sources ». Pas de superlatif creux.
+- Ne cite pas la concurrence avec des prix précis (sauf si le fait figure dans les données).
+- Style concret, phrases courtes, zéro remplissage, zéro formule d'introduction passe-partout.
+- La requête principale apparaît naturellement dans les 100 premiers mots et dans un titre de section, sans être rabachue dans chaque intertitre.
 Tu réponds UNIQUEMENT en JSON valide conforme au schéma demandé.`;
 
-const consigne = `Rédige un article de blog SEO.
+const consigne = `Rédige un article de blog SEO qui résout le problème du lecteur.
 
-Sujet : ${sujet.sujet}
-Mot-clé principal : ${sujet.mot_cle}
-Angle imposé : ${sujet.angle}
+${construireBrief(sujet)}
 
 Faits vérifiés sur Haria (ta seule source autorisée pour les chiffres et engagements) :
 """
 ${faits.slice(0, 6000)}
 """
 
-Structure IMPÉRATIVE (respecte les budgets de mots de chaque bloc, c'est contrôlé) :
-- une intro SANS titre : 80 à 120 mots, mot-clé principal dans les 100 premiers mots ;
-- exactement 5 sections <h2> de 150 à 200 mots chacune (l'une contient une <ul> de 4-5 points) ;
-- une section finale <h2> « Ce qu'il faut retenir » : 80 à 100 mots.
+Pages déjà publiées sur le site — n'écris JAMAIS un article qui répond à la même intention que l'une d'elles ; renvoie-y le lecteur plutôt que de répéter :
+${liensInternes}
+
+Règles de structure (adapte la longueur à la question, aucun minimum de mots imposé) :
+- une introduction SANS titre : 60 à 120 mots, la requête principale dans les 100 premiers mots ;
+- l'accroche du schéma donne la réponse courte dès l'ouverture de la page ;
+- ensuite des sections <h2>/<h3> au nombre et à la longueur NÉCESSAIRES (généralement 3 à 6 h2) : chaque titre introduit une vraie réponse, pas un remplissage ;
+- utilise une liste <ul> ou un tableau quand une comparaison aide. Tableau uniquement au format exact : <div class="table-scroll"><table class="article-table">...</table></div> avec <thead> et <tbody> ;
+- expliquer les étapes, conditions, limites et erreurs pertinentes ; un exemple concret quand il aide ;
+- pas de conclusion générique : termine le corps par une prochaine étape utile adaptée à l'intention du lecteur (une phrase, pas un paragraphe de vente) ;
+- FAQ : uniquement les questions listées au brief qui RESTENT sans réponse dans le corps. Si tout est déjà traité, rends « faq » vide. 0 à 5 questions, jamais de question déjà répondue plus haut ;
+- si tu cites un fait externe, place le lien de sa source juste après l'affirmation (ancre descriptive), et liste l'URL dans « sources ». N'invente aucune URL.
+
+Liens internes : 1 à 4 liens <a> vers des pages de la liste ci-dessus (href relatifs exactement comme listés, « / » pour l'accueil), ancres descriptives et variées. Le lien vers la page cible du brief est obligatoire dans le corps. Aucun lien interne hors de cette liste.
 
 Schéma JSON attendu :
 {
-  "titre": "titre SEO de 50 à 60 caractères, mot-clé dedans, sans guillemets",
-  "description": "meta description de 140 à 155 caractères, avec un bénéfice concret",
-  "h1": "titre de l'article tel qu'affiché (peut différer du titre SEO)",
-  "accroche": "réponse courte de 2 à 3 phrases en <strong> sur les points clés",
-  "corps": "corps de l'article en HTML suivant la structure impérative ci-dessus : uniquement des <h2>, <h3>, <p>, <ul>, <li>, <strong>, <em>, <a>. Interdits : <h1>, <table>, <img>, <script>, style en ligne. 2 à 3 liens internes maximum, uniquement parmi : <a href=\"/\">accueil</a>, <a href=\"combien-coute-un-chatbot-ia.html\">prix d'un chatbot IA</a>, <a href=\"haria-vs-agence-chatbot-ia.html\">Haria vs agence</a>, <a href=\"haria-vs-intercom-vs-crisp.html\">Haria vs Intercom vs Crisp</a>, <a href=\"chatbot-ia-ecommerce.html\">chatbot IA e-commerce</a>, <a href=\"chatbot-ia-rgpd.html\">chatbot IA et RGPD</a>. 1 lien vers l'accueil obligatoire.",
+  "titre": "title SEO de 50 à 60 caractères, avec la requête ou une formulation proche, sans guillemets",
+  "description": "meta description de 140 à 155 caractères expliquant l'intérêt concret de la page",
+  "h1": "titre affiché (peut différer du title)",
+  "accroche": "réponse courte de 2 à 4 phrases en <strong>",
+  "corps": "corps en HTML : uniquement <h2>, <h3>, <p>, <ul>, <li>, <strong>, <em>, <a>, et le format exact de tableau décrit plus haut. Interdits : <h1>, <img>, <script>, style en ligne, markdown (**, ##).",
   "faq": [ { "question": "...", "reponse": "..." } ],
   "sources": ["https://..."]
 }
-Contraintes : 4 questions FAQ minimum, réponses de 30 à 60 mots, sources = pages officielles vérifiables (cnil.fr, etc.), jamais de URL inventée.`;
+Contraintes : sources = pages officielles vérifiables uniquement (cnil.fr, developers.google.com, etc.), jamais d'URL inventée ; « sources » peut être vide si l'article ne s'appuie sur aucun fait externe.`;
 
 async function appelAPI(retours = [], modele = MODELE_API) {
   const cle = process.env.OPENAI_API_KEY;
@@ -122,11 +187,38 @@ async function appelAPI(retours = [], modele = MODELE_API) {
   return JSON.parse(data.choices[0].message.content);
 }
 
+// Vérifie chaque source par HTTP : une source injoignable ne sera pas
+// publiée (retirée du bas de page ET du corps, l'ancre redevenant du texte).
+async function verifierSources(urls) {
+  const resultats = await Promise.allSettled(
+    urls.map(async (u) => {
+      const ctrl = new AbortController();
+      const t = setTimeout(() => ctrl.abort(), 10000);
+      try {
+        const r = await fetch(u, {
+          signal: ctrl.signal,
+          redirect: "follow",
+          headers: { "User-Agent": "Mozilla/5.0 (compatible; verification-sources-haria)" },
+        });
+        return r.status;
+      } finally {
+        clearTimeout(t);
+      }
+    })
+  );
+  return urls.map((u, i) => {
+    const r = resultats[i];
+    const statut = r.status === "fulfilled" ? r.value : (r.reason?.name === "AbortError" ? "timeout" : "erreur reseau");
+    return { url: u, ok: r.status === "fulfilled" && r.value < 400, statut };
+  });
+}
+
 // Mode --test : réponse figée pour valider l'assemblage sans dépenser d'API.
 const corpsTest =
-  [1, 2, 3, 4, 5, 6, 7].map((n) =>
-    `<h2>Section de contrôle numéro ${n}</h2><p>Ce paragraphe de test numéro ${n} vérifie l'assemblage automatique de l'article : le comptage des mots hors balises HTML, l'exigence de trois titres de niveau deux minimum, la présence du lien vers la page d'accueil et la conformité générale de la structure aux gabarits des guides rédigés par l'équipe. Il répète volontairement un vocabulaire de contrôle pour atteindre le seuil de six cents mots que le validateur impose avant toute mise en file d'un vrai article rédigé par l'API, afin qu'aucune page trop légère ne puisse un jour rejoindre le sitemap du site et nuire à la qualité perçue par les moteurs de recherche.</p>`
-  ).join("") + `<p>Retour vers <a href="/">l'accueil</a> et le guide <a href="chatbot-ia-rgpd.html">Chatbot IA et RGPD</a>.</p>`;
+  [1, 2, 3, 4].map((n) =>
+    `<h2>Section de contrôle numéro ${n}</h2><p>Ce paragraphe de test numéro ${n} vérifie l'assemblage automatique de l'article : le comptage des mots hors balises HTML, la présence du lien vers la page d'accueil, la conformité des liens internes à l'inventaire réel du site et la structure générale de la page. Il répète volontairement un vocabulaire de contrôle pour franchir le garde anti-troncature qui bloque toute page manifestement coupée avant la mise en file d'un vrai article rédigé par l'API.</p>`
+  ).join("") +
+  `<h2>Un exemple de tableau de contrôle</h2><div class="table-scroll"><table class="article-table"><thead><tr><th>Colonne A</th><th>Colonne B</th></tr></thead><tbody><tr><td>Valeur 1</td><td>Valeur 2</td></tr></tbody></table></div><p>Retour vers <a href="/">l'accueil</a> et le guide <a href="chatbot-ia-rgpd.html">Chatbot IA et RGPD</a>.</p>`;
 
 const exempleTest = {
   titre: "Article de test : la chaîne de génération fonctionne",
@@ -136,47 +228,100 @@ const exempleTest = {
   corps: corpsTest,
   faq: [
     { question: "Que teste cette page ?", reponse: "L'assemblage automatique des articles générés : structure, JSON-LD, sitemap et liens internes du site Haria." },
-    { question: "Combien de temps reste-t-elle en ligne ?", reponse: "Elle est remplacée dès la prochaine publication quotidienne d'un vrai sujet rédigé." },
-    { question: "Qui rédige les vrais articles ?", reponse: "L'API OpenAI, à partir d'une liste de sujets validés et des faits produit du site Haria." },
-    { question: "Où poser une question sur cette page ?", reponse: "Auprès de l'équipe Haria, par le chat du site ou le formulaire de démonstration de quinze minutes." },
+    { question: "Qui rédige les vrais articles ?", reponse: "L'API OpenAI, à partir des briefs de _articles/sujets.json et des faits produit du site Haria." },
   ],
   sources: ["https://www.cnil.fr/"],
 };
 
 let article = null;
+const journalTentatives = [];
 
 function valider(a) {
   const problemes = [];
-  const longueur = (t) => t.length;
-  if (longueur(a.titre) < 30 || longueur(a.titre) > 65) problemes.push(`titre ${longueur(a.titre)} car (30-65 attendus)`);
-  if (longueur(a.description) < 120 || longueur(a.description) > 158) problemes.push(`description ${longueur(a.description)} car (120-158 attendus)`);
-  const corpsSansBalises = a.corps.replace(/<[^>]+>/g, " ");
-  const mots = corpsSansBalises.split(/\s+/).filter(Boolean).length;
-  if (mots < 500) problemes.push(`corps trop court : ${mots} mots (500 minimum, visez 900-1200)`);
-  const h2 = (a.corps.match(/<h2>/g) || []).length;
-  if (h2 < 3) problemes.push(`seulement ${h2} <h2> (3 minimum)`);
-  if (/<h1[ >]/.test(a.corps)) problemes.push("le corps ne doit pas contenir de <h1>");
-  if (/<(script|img|table|iframe|style)[ >]/.test(a.corps)) problemes.push("balise interdite dans le corps (script/img/table/iframe/style)");
-  if (!/<a href="\//.test(a.corps)) problemes.push("lien vers l'accueil manquant dans le corps (ajoute <a href=\"/\">...</a>)");
-  const liens = [...a.corps.matchAll(/<a href="([^"]*)"/g)].map((m) => m[1]);
-  const autorises = ["/", "combien-coute-un-chatbot-ia.html", "haria-vs-agence-chatbot-ia.html", "haria-vs-intercom-vs-crisp.html", "chatbot-ia-ecommerce.html", "chatbot-ia-rgpd.html"];
-  for (const l of liens) {
-    if (!l.startsWith("/") && !autorises.includes(l) && !l.startsWith("#")) problemes.push(`lien non autorisé : ${l}`);
+  const L = (t) => (t || "").length;
+  if (L(a.titre) < 30 || L(a.titre) > 65) problemes.push(`titre ${L(a.titre)} car (30-65 attendus)`);
+  if (L(a.description) < 120 || L(a.description) > 158) problemes.push(`description ${L(a.description)} car (120-158 attendus)`);
+  if (!a.accroche || a.accroche.length < 40) problemes.push("accroche absente ou trop courte");
+
+  const corps = a.corps || "";
+  const corpsSansBalises = corps.replace(/<[^>]+>/g, " ");
+  const motsCorps = corpsSansBalises.split(/\s+/).filter(Boolean).length;
+  // Garde anti-troncature, pas un objectif SEO : la longueur reste adaptée à la question.
+  if (motsCorps < 250) problemes.push(`corps trop court : ${motsCorps} mots (garde anti-troncature : 250 minimum)`);
+  if (/\*\*|^#{1,6} /m.test(corps)) problemes.push("markdown détecté dans le corps (HTML uniquement)");
+  if (/<h1[ >]/.test(corps)) problemes.push("le corps ne doit pas contenir de <h1>");
+  if (!corps.includes("<h2>")) problemes.push("aucun <h2> dans le corps");
+  if (/<(script|img|iframe|style)[ >]/.test(corps)) problemes.push("balise interdite dans le corps (script/img/iframe/style)");
+  // Tableau : uniquement le format stylé par styles.css (.table-scroll > .article-table).
+  if (/<table/.test(corps)) {
+    const sansTableauxValides = corps.replace(/<div class="table-scroll"><table class="article-table">[\s\S]*?<\/table><\/div>/g, "");
+    if (/<table/.test(sansTableauxValides)) problemes.push("tableau hors du format imposé <div class=\"table-scroll\"><table class=\"article-table\">");
   }
-  if (!Array.isArray(a.faq) || a.faq.length < 4) problemes.push("FAQ : 4 questions minimum");
-  for (const u of a.sources || []) {
+
+  // Liens internes : uniquement des pages réellement publiées.
+  const fichiersPublies = new Set(pages.map((p) => p.fichier));
+  const liens = [...corps.matchAll(/<a href="([^"]*)"/g)].map((m) => m[1]);
+  const liensExternes = [];
+  let lienAccueil = false;
+  let lienCible = false;
+  for (const l of liens) {
+    if (l.startsWith("#")) continue;
+    if (l === "/") { lienAccueil = true; continue; }
+    if (l.startsWith("http")) { liensExternes.push(l); continue; }
+    if (!fichiersPublies.has(l)) problemes.push(`lien interne non autorisé : ${l}`);
+    if (sujet.page_cible && l === sujet.page_cible) lienCible = true;
+  }
+  if (!liens.length) problemes.push("aucun lien dans le corps");
+  if (sujet.page_cible && sujet.page_cible !== "/" && !lienCible) {
+    problemes.push(`lien vers la page cible du brief manquant : ${sujet.page_cible}`);
+  }
+
+  // Liens externes du corps : obligatoirement listés dans « sources ».
+  const sources = [...new Set(a.sources || [])];
+  for (const l of liensExternes) {
+    if (!sources.includes(l)) problemes.push(`lien externe non déclaré dans sources : ${l}`);
+  }
+  for (const u of sources) {
     if (!/^https:\/\/[a-z0-9.-]+([\/?#].*)?$/i.test(u)) problemes.push(`source invalide (URL https complète attendue) : ${u}`);
+  }
+
+  // FAQ : 0 à 5 questions, seulement ce qui reste sans réponse dans le corps.
+  if (!Array.isArray(a.faq)) problemes.push("faq absente du schéma (peut être vide)");
+  else if (a.faq.length > 5) problemes.push(`faq : ${a.faq.length} questions (5 maximum — les vraies questions seulement)`);
+  else {
+    const texteCorps = corpsSansBalises.toLowerCase();
+    for (const q of a.faq) {
+      if (!q.question || q.question.length < 10) problemes.push("question FAQ trop courte");
+      if (!q.reponse || q.reponse.length < 20) problemes.push(`réponse FAQ trop courte : ${q.question || "?"}`);
+      const debutQuestion = (q.question || "").toLowerCase().replace(/[?!.'’]/g, "").split(/\s+/).slice(0, 5).join(" ");
+      if (debutQuestion && texteCorps.includes(debutQuestion)) {
+        // Pas forcément une erreur (le corps peut mentionner la question),
+        // on ne bloque que si la réponse entière figure déjà mot pour mot.
+        const reponseNue = q.reponse.replace(/<[^>]+>/g, "").toLowerCase().slice(0, 80);
+        if (reponseNue.length > 40 && texteCorps.includes(reponseNue)) {
+          problemes.push(`FAQ déjà répondue dans le corps : ${q.question}`);
+        }
+      }
+    }
+  }
+
+  // Aucun placeholder ni commentaire interne.
+  const tout = JSON.stringify(a);
+  if (/TODO|FIXME|LOREM|IPSUM|AAAA-MM-JJ|\[nom\]|\[description\]|\[titre\]|à compléter|à remplacer/i.test(tout)) {
+    problemes.push("placeholder ou commentaire interne détecté");
   }
   return problemes;
 }
 
-// Jusqu'à 3 essais : chaque refus repart au modèle avec la liste exacte des
-// reproches, comme pour les rounds de correction des prompts plateforme.
+// Jusqu'à 4 essais : chaque refus repart au modèle avec la liste exacte des
+// reproches. Au-delà, échec explicite — la cadence quotidienne ne publie
+// jamais une page insuffisante.
 let retours = [];
 for (let essai = 1; essai <= 4 && !article; essai++) {
   if (essai > 1) console.log(`Tentative ${essai}/4 après refus : ${retours.join(" ; ")}`);
   const candidat = dry ? exempleTest : await appelAPI(retours);
   const problemes = valider(candidat);
+  journalTentatives.push({ essai, problemes });
   if (problemes.length === 0) {
     article = candidat;
   } else {
@@ -185,20 +330,86 @@ for (let essai = 1; essai <= 4 && !article; essai++) {
   }
 }
 if (!article) {
-  console.error("ERREUR : 4 tentatives non conformes — l'article du jour n'est PAS mis en file.");
+  console.error("ERREUR : 4 tentatives non conformes — l'article du jour n'est PAS mis en file (état d'échec explicite).");
   process.exit(1);
 }
 
-// ---- 5. Assemblage de la page ----------------------------------------------
-function echapper(t) {
-  return t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+// ---- 6. Vérification des sources (jamais en --test) -------------------------
+const liensExternesCorps = [...article.corps.matchAll(/<a href="(https:[^"]*)"/g)].map((m) => m[1]);
+const verifications = dry
+  ? (article.sources || []).map((u) => ({ url: u, ok: true, statut: "mode test" }))
+  : await verifierSources([...new Set(article.sources || [])]);
+const sourcesValides = verifications.filter((v) => v.ok).map((v) => v.url);
+const sourcesRejetees = verifications.filter((v) => !v.ok);
+for (const v of sourcesRejetees) {
+  console.warn(`Source retirée (${v.statut}) : ${v.url}`);
+  // Une source liée dans le corps mais injoignable : l'ancre redevient du texte.
+  article.corps = article.corps.replace(
+    new RegExp(`<a href="${v.url.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"[^>]*>([\\s\\S]*?)</a>`, "g"),
+    "$1"
+  );
 }
-const faqJson = article.faq.map((q) => `            {
+article.sources = sourcesValides;
+
+// ---- 7. Assemblage de la page ----------------------------------------------
+function echapper(t) {
+  return (t || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+const faqJson = article.faq
+  .map((q) => `            {
                 "@type": "Question",
                 "name": ${JSON.stringify(q.question)},
                 "acceptedAnswer": { "@type": "Answer", "text": ${JSON.stringify(q.reponse)} }
-            }`).join(",\n");
-const sourcesHtml = (article.sources || []).map((u) => `<a href="${echapper(u)}" target="_blank" rel="noopener noreferrer">${echapper(u.replace(/^https?:\/\//, "").replace(/\/$/, ""))}</a>`).join(" ·\n                ");
+            }`)
+  .join(",\n");
+
+// Bloc « Voir aussi » : la page cible du brief + les liens internes déjà
+// présents dans le corps. Déduit du contenu, jamais une liste figée.
+const pagesLiees = [...new Set(
+  [...article.corps.matchAll(/<a href="([a-z0-9-]+\.html)"/g)].map((m) => m[1])
+)];
+const voirAussi = [];
+if (sujet.page_cible && sujet.page_cible !== "/" && !pagesLiees.includes(sujet.page_cible)) {
+  voirAussi.push(sujet.page_cible);
+}
+for (const f of pagesLiees) {
+  if (voirAussi.length >= 3) break;
+  if (!voirAussi.includes(f)) voirAussi.push(f);
+}
+const voirAussiHtml = voirAussi
+  .map((f) => {
+    const p = pages.find((x) => x.fichier === f);
+    return `<a href="${f}">${echapper(p?.titre || f.replace(/\.html$/, "").replace(/-/g, " "))}</a>`;
+  })
+  .join(" ·\n                ");
+const sourcesHtml = article.sources
+  .map((u) => `<a href="${echapper(u)}" target="_blank" rel="noopener noreferrer">${echapper(u.replace(/^https?:\/\//, "").replace(/\/$/, ""))}</a>`)
+  .join(" ·\n                ");
+const blocSources = sourcesHtml ? `Sources :\n                ${sourcesHtml}.` : "";
+const blocVoirAussi = voirAussiHtml ? `Voir aussi : ${voirAussiHtml}.` : "";
+const ligneSources = [blocSources, blocVoirAussi].filter(Boolean).join("\n                ");
+const blocFaq = article.faq.length
+  ? `            <h2>Questions fréquentes sur ${echapper(requete)}</h2>
+${article.faq.map((q) => `            <h3>${echapper(q.question)}</h3>
+            <p>
+                ${echapper(q.reponse)}
+            </p>`).join("\n")}
+
+`
+  : "";
+const jsonFaq = article.faq.length
+  ? `    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+${faqJson}
+        ]
+    }
+    </script>
+
+`
+  : "";
 
 const page = `<!DOCTYPE html>
 <html lang="fr">
@@ -209,7 +420,6 @@ const page = `<!DOCTYPE html>
     <meta name="description" content="${echapper(article.description)}">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <meta name="author" content="Haria">
-    <meta name="keywords" content="${echapper(sujet.mot_cle)}, chatbot ia, haria">
     <link rel="canonical" href="https://haria-chatbot.com/${slug}.html">
     <link rel="alternate" type="text/markdown" title="Résumé Haria pour les IA (llms.txt)" href="https://haria-chatbot.com/llms.txt">
     <meta property="og:type" content="article">
@@ -246,7 +456,7 @@ const page = `<!DOCTYPE html>
 
     <main class="legal-main article-main">
         <div class="container">
-            <p class="article-breadcrumb"><a href="/">Accueil</a> › Guides › ${echapper(sujet.mot_cle)}</p>
+            <p class="article-breadcrumb"><a href="/">Accueil</a> › Guides › ${echapper(requete)}</p>
 
             <h1>${echapper(article.h1 || article.titre)}</h1>
             <p class="legal-updated">Publié le ${aujourdhui.split("-").reverse().join("/")} · Article rédigé et vérifié par l'équipe Haria</p>
@@ -262,18 +472,8 @@ const page = `<!DOCTYPE html>
                 <a href="https://hariastudio.com/inscription" class="btn btn-lg">Créer mon assistant gratuit</a>
             </div>
 
-            <h2>Questions fréquentes sur ${echapper(sujet.mot_cle)}</h2>
-${article.faq.map((q) => `            <h3>${echapper(q.question)}</h3>
-            <p>
-                ${echapper(q.reponse)}
-            </p>`).join("\n")}
-
-            <p class="article-sources">
-                Sources :
-                ${sourcesHtml}.
-                Voir aussi : <a href="combien-coute-un-chatbot-ia.html">Combien coûte un chatbot IA ?</a> ·
-                <a href="chatbot-ia-rgpd.html">Chatbot IA et RGPD</a> ·
-                <a href="haria-vs-intercom-vs-crisp.html">Haria vs Intercom vs Crisp</a>.
+${blocFaq}            <p class="article-sources">
+                ${ligneSources}
             </p>
         </div>
     </main>
@@ -305,23 +505,13 @@ ${article.faq.map((q) => `            <h3>${echapper(q.question)}</h3>
     }
     </script>
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-${faqJson}
-        ]
-    }
-    </script>
-
-    <script type="application/ld+json">
+${jsonFaq}    <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://haria-chatbot.com/" },
-            { "@type": "ListItem", "position": 2, "name": ${JSON.stringify(sujet.mot_cle)}, "item": "https://haria-chatbot.com/${slug}.html" }
+            { "@type": "ListItem", "position": 2, "name": ${JSON.stringify(requete)}, "item": "https://haria-chatbot.com/${slug}.html" }
         ]
     }
     </script>
@@ -331,11 +521,32 @@ ${faqJson}
 </html>
 `;
 
+// ---- 8. Journal de génération (traçabilité du brief et des contrôles) -------
+mkdirSync(join(racine, "_articles", "journal"), { recursive: true });
+const enteteJournal = `# Journal de génération — ${slug}
+
+- Date : ${aujourdhui}
+- Mode : ${dry ? "test (sans appel API)" : "génération OpenAI"}
+- Tentatives : ${journalTentatives.length}
+- Corps : ${article.corps.replace(/<[^>]+>/g, " ").split(/\s+/).filter(Boolean).length} mots, ${(article.corps.match(/<h2>/g) || []).length} h2, FAQ ${article.faq.length}
+- Sources vérifiées : ${article.sources.length ? article.sources.join(", ") : "aucune (l'article ne s'appuie sur aucun fait externe)"}
+- Sources rejetées : ${sourcesRejetees.length ? sourcesRejetees.map((v) => `${v.url} (${v.statut})`).join(", ") : "aucune"}
+
+## Brief du sujet
+\`\`\`json
+${JSON.stringify(sujet, null, 2)}
+\`\`\`
+
+## Contrôles
+${journalTentatives.map((t) => `- Tentative ${t.essai} : ${t.problemes.length ? "refusée — " + t.problemes.join(" ; ") : "acceptée"}`).join("\n")}
+`;
+writeFileSync(join(racine, "_articles", "journal", `${aujourdhui}_${slug}.md`), enteteJournal);
+
+// ---- 9. Mise en file puis consommation du sujet -----------------------------
 const nomFile = `${aujourdhui}_${slug}.html`;
 mkdirSync(join(racine, "_articles", "file"), { recursive: true });
 writeFileSync(join(racine, "_articles", "file", nomFile), page);
 
-// ---- 6. Consommer le sujet --------------------------------------------------
 if (!dry) {
   sujets.shift();
   writeFileSync(cheminSujets, JSON.stringify(sujets, null, 2) + "\n");

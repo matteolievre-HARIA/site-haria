@@ -16,6 +16,10 @@ racine du dépôt publiée telle quelle. En ligne : https://haria-chatbot.com
   endroits seulement (animations GSAP passées en `gsap.matchMedia()`).
 - `backup/` — sections retirées du site, avec la marche à suivre pour les
   remettre. Interdit dans `robots.txt`.
+- `_articles/` + `scripts/` — le pipeline d'articles SEO quotidiens
+  (génération OpenAI depuis des briefs, file, publication + sitemap).
+  Toutes les règles de rédaction et de contrôle : voir
+  `_articles/LISEZMOI.md`. Mesure : `_articles/mesure.md`.
 
 ## Conventions
 

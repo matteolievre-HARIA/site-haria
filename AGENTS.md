@@ -17,6 +17,10 @@ racine du dépôt publiée telle quelle. En ligne : https://haria-chatbot.com
   remplacé par l'image `service-2.jpg` : fichiers rangés dans `Archive/`.
 - `backup/` — sections retirées du site, avec la marche à suivre pour les
   remettre. Interdit dans `robots.txt`.
+- `_articles/` + `scripts/` — le pipeline d'articles SEO quotidiens
+  (génération OpenAI depuis des briefs, file, publication + sitemap).
+  Toutes les règles de rédaction et de contrôle : voir
+  `_articles/LISEZMOI.md`. Mesure : `_articles/mesure.md`.
 
 ## Conventions
 
@@ -26,6 +30,10 @@ racine du dépôt publiée telle quelle. En ligne : https://haria-chatbot.com
 - Toute correction se vérifie dans un navigateur avant d'être annoncée
   (Chrome headless + CDP : mesures de positions, comparaison avant/après,
   captures aux largeurs 1440 / 768 / 390 / 360).
+- Cohérence produit (22/09/2026) : la FAQ parrainage dit « s'il **devient
+  client payant** » (le crédit -50 % naît du paiement de la filleule, pas de
+  l'inscription) ; la promesse « Accès API » du plan Pro est maintenue telle
+  quelle (choix assumé de Matteo, même sans API publique en code).
 
 ## Poids de la page (état au 17/09/2026)
 

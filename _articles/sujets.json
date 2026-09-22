@@ -2,85 +2,358 @@
   {
     "slug": "chatbot-ia-garage-automobile",
     "titre": "Chatbot IA pour garage et carrosserie",
-    "mot_cle": "chatbot IA garage automobile",
-    "angle": "estimations, prise de rendez-vous au tech, questions sur véhicules d'occasion : le cas concret de Sixt Occasion et +42 leads en un mois"
+    "requete": "chatbot ia garage automobile",
+    "intention": "Informationnelle puis commerciale : un garagiste ou carrossier évalue l'utilité d'un assistant sur son site.",
+    "probleme": "Sous le véhicule, on ne décroche pas : les demandes d'estimation, de rendez-vous technique ou d'informations sur un véhicule d'occasion arrivent au pire moment et repartent sans réponse.",
+    "requetes_secondaires": [
+      "chatbot pour carrosserie",
+      "chatbot garage auto rendez-vous",
+      "répondre aux demandes de devis garage"
+    ],
+    "questions": [
+      "Un chatbot peut-il donner une estimation de réparation ?",
+      "Peut-il prendre un rendez-vous au contrôle technique ?",
+      "Que répond-il sur les véhicules d'occasion ?"
+    ],
+    "notions": [
+      "estimation impossible sans tarif publié : bascule vers un rappel avec capture des coordonnées",
+      "prise de rendez-vous",
+      "cas client vérifiable : Sixt Occasion, +42 leads dès le premier mois"
+    ],
+    "page_cible": "chatbot-ia-artisan.html",
+    "apport": "les 4 demandes types d'un garage (estimation, rendez-vous technique, véhicule d'occasion, urgence) passées en revue avec, pour chacune, ce que l'assistant peut répondre et ce qui doit basculer en rappel",
+    "sources_a_verifier": []
   },
   {
     "slug": "chatbot-ia-pme-avantages",
     "titre": "Chatbot IA en PME : par où commencer",
-    "mot_cle": "chatbot ia pme",
-    "angle": "la PME n'a ni équipe marketing ni développeur : pourquoi un assistant construit automatiquement colle à cette réalité, et le plan de démarrage en 3 étapes"
+    "requete": "chatbot ia pme",
+    "intention": "Informationnelle : un dirigeant de PME sans équipe marketing ni développeur évalue l'intérêt et le point de départ.",
+    "probleme": "Il n'a ni temps ni compétence interne pour un projet informatique ; il craint la complexité, le coût et les outils pensés pour les grands comptes.",
+    "requetes_secondaires": [
+      "chatbot pour petite entreprise",
+      "assistant ia pour pme",
+      "par où commencer avec un chatbot"
+    ],
+    "questions": [
+      "Faut-il un développeur pour installer un chatbot ?",
+      "Combien de temps avant de capter les premiers contacts ?",
+      "Quel budget prévoir pour une PME ?"
+    ],
+    "notions": [
+      "construction automatique à partir du site existant",
+      "mise en ligne avec une ligne de code (ou envoi au webmaster)",
+      "gratuit pour commencer, puis dès 29 €/mois sans engagement"
+    ],
+    "page_cible": "combien-coute-un-chatbot-ia.html",
+    "apport": "un plan de démarrage en 3 étapes calqué sur le fonctionnement réel (inscription sans carte bancaire, test sur page d'essai, une ligne de code), avec ce que chaque étape apporte concrètement",
+    "sources_a_verifier": []
   },
   {
     "slug": "visiteurs-sans-coordonnees-relance",
     "titre": "Visiteur reparti sans laisser de coordonnées : et maintenant ?",
-    "mot_cle": "capturer leads site web",
-    "angle": "la majorité des visiteurs quittent un site sans rien laisser ; ce que change un assistant qui propose un rappel au bon moment au lieu d'un formulaire"
+    "requete": "capturer leads site web",
+    "intention": "Informationnelle puis commerciale : comment récupérer des contacts quand les visiteurs repartent sans rien laisser.",
+    "probleme": "Le trafic existe mais le carnet de contacts reste vide : les formulaires sont peu remplis et, sans coordonnées, aucune relance n'est possible.",
+    "requetes_secondaires": [
+      "convertir visiteurs en contacts",
+      "visiteurs anonymes site web",
+      "formulaire de contact peu rempli",
+      "relancer un prospect site web"
+    ],
+    "questions": [
+      "Pourquoi les visiteurs ne laissent-ils pas leurs coordonnées ?",
+      "Un chatbot remplace-t-il le formulaire de contact ?",
+      "Comment relancer un visiteur sans son e-mail ?"
+    ],
+    "notions": [
+      "taux de remplissage réel des formulaires",
+      "demander les coordonnées au bon moment de la conversation",
+      "limite honnête : sans coordonnées, le visiteur est perdu",
+      "ne pas recouvrir site-web-perd-clients-week-end.html qui traite le cas hors horaires : ici l'angle est la sortie sans trace à toute heure"
+    ],
+    "page_cible": "chatbot-ia-vs-formulaire-contact.html",
+    "apport": "le parcours d'un visiteur hésitant expliqué étape par étape, avec les 3 moments où demander des coordonnées ne fait pas fuir",
+    "sources_a_verifier": []
   },
   {
     "slug": "chatbot-ia-faux-risques",
     "titre": "Chatbot IA : 5 craintes légitimes et leurs réponses",
-    "mot_cle": "chatbot ia fiabilité",
-    "angle": "il va dire n'importe quoi, c'est cold, c'est compliqué, c'est cher, c'est risqué légalement : reprendre chaque objection avec les garde-fous concrets (12 scénarios pièges, RGPD, tarif public)"
+    "requete": "chatbot ia fiabilité",
+    "intention": "Informationnelle : lever les objections qui bloquent la décision d'installer un assistant.",
+    "probleme": "Il va dire n'importe quoi, c'est froid, compliqué, cher, risqué légalement : chaque crainte a une réponse concrète, encore faut-il l'entendre.",
+    "requetes_secondaires": [
+      "chatbot ia risques",
+      "chatbot qui invente des réponses",
+      "inconvénients chatbot site web",
+      "chatbot rgpd fiable"
+    ],
+    "questions": [
+      "Que fait le chatbot quand il ne sait pas répondre ?",
+      "Les données des visiteurs sortent-elles de France ?",
+      "Peut-on encadrer ce sur quoi il répond ?"
+    ],
+    "notions": [
+      "12 scénarios pièges validés avant mise en ligne",
+      "aucun prix, horaire ou délai inventé : proposition de rappel sinon",
+      "hébergement en France, IP jamais stockée",
+      "tarif public, essai sans carte bancaire, résiliable"
+    ],
+    "page_cible": "chatbot-ia-rgpd.html",
+    "apport": "chaque objection reprise avec le garde-fou concret qui y répond, et les situations où ne pas installer d'assistant reste un choix raisonnable",
+    "sources_a_verifier": [
+      "https://www.cnil.fr/fr/rgpd-de-quoi-parle-t-on"
+    ]
   },
   {
     "slug": "chatbot-gratuit-site-web",
     "titre": "Chatbot gratuit pour site web",
-    "mot_cle": "chatbot gratuit pour site web",
-    "angle": "panorama honnête des options gratuites : la plupart excluent l'IA de leur plan gratuit, Haria inclut l'IA, la construction automatique et la récolte de leads dès 0 € sans carte bancaire"
+    "requete": "chatbot gratuit pour site web",
+    "intention": "Commerciale : chercher un outil gratuit pour répondre aux visiteurs.",
+    "probleme": "La plupart des plans « gratuits » du marché excluent l'IA, affichent la marque de l'éditeur ou limitent la récolte de contacts : les frais cachés se découvrent après installation.",
+    "requetes_secondaires": [
+      "chatbot gratuit sans carte bancaire",
+      "meilleur chatbot gratuit",
+      "chatbot ia gratuit français"
+    ],
+    "questions": [
+      "Les chatbots gratuits sont-ils vraiment gratuits ?",
+      "Quelles limites sur un plan gratuit ?",
+      "Peut-on capter des contacts sans payer ?"
+    ],
+    "notions": [
+      "ce qu'inclut réellement un plan gratuit sur le marché (IA ou non, branding, quota)",
+      "offre Gratuite Haria : 50 crédits/mois, récolte de leads, prises de RDV, sans carte bancaire",
+      "pause après inactivité, jamais de suppression"
+    ],
+    "page_cible": "combien-coute-un-chatbot-ia.html",
+    "apport": "un tableau de ce qu'il faut vérifier ligne par ligne dans un plan gratuit, avec les limites assumées de l'offre gratuite Haria, pour décider sans mauvaise surprise",
+    "sources_a_verifier": []
   },
   {
     "slug": "creer-chatbot-site-web-sans-code",
     "titre": "Créer un chatbot pour son site sans coder",
-    "mot_cle": "créer un chatbot pour son site web",
-    "angle": "les 3 approches possibles (constructeur de scénarios, assistant construit automatiquement à partir du site, développement sur mesure) avec temps réel passé et limites de chacune"
+    "requete": "créer un chatbot pour son site web",
+    "intention": "Tutorielle : la personne veut réaliser l'installation elle-même.",
+    "probleme": "Trois familles de solutions (scénarios à dessiner, assistant construit automatiquement, développement sur mesure), des informations éparpillées et souvent datées.",
+    "requetes_secondaires": [
+      "créer un chatbot sans coder",
+      "constructeur de chatbot",
+      "ajouter un chatbot à son site"
+    ],
+    "questions": [
+      "Combien de temps prend la création d'un chatbot ?",
+      "Faut-il savoir coder ?",
+      "Quelle solution pour un site vitrine ?"
+    ],
+    "notions": [
+      "constructeur de scénarios vs assistant construit à partir du site vs sur mesure",
+      "temps réel passé dans chaque cas",
+      "limites de chaque approche"
+    ],
+    "page_cible": "combien-de-temps-installer-chatbot-ia.html",
+    "apport": "un comparatif des 3 approches avec le temps réellement passé et les limites de chacune, appuyé sur le fonctionnement documenté (lecture du site, page d'essai, une ligne de code)",
+    "sources_a_verifier": []
   },
   {
     "slug": "meilleur-chatbot-ia-francais",
     "titre": "Meilleur chatbot IA français : critères",
-    "mot_cle": "meilleur chatbot IA français",
-    "angle": "grille de choix objective : hébergement en France, construction automatique, langue, récolte de leads, prix public, essai sans carte bancaire — et comment évaluer un éditeur en 10 minutes"
+    "requete": "meilleur chatbot IA français",
+    "intention": "Commerciale comparative : raccourcir la décision d'achat avec une grille objective.",
+    "probleme": "Les classements trouvés sont des listes d'affiliation ; aucune grille de critères ne permet de comparer seul un éditeur français.",
+    "requetes_secondaires": [
+      "chatbot ia hébergé en france",
+      "chatbot français rgpd",
+      "alternative française à intercom"
+    ],
+    "questions": [
+      "Quels critères pour choisir un chatbot français ?",
+      "Comment vérifier où sont hébergées les données ?",
+      "Quel est un prix normal pour un chatbot ?"
+    ],
+    "notions": [
+      "grille : hébergement en France, construction automatique, langue, récolte de leads, prix public, essai sans carte bancaire",
+      "méthode d'évaluation d'un éditeur en 10 minutes"
+    ],
+    "page_cible": "haria-vs-intercom-vs-crisp.html",
+    "apport": "une grille de 6 critères vérifiables en 10 minutes sur le site de n'importe quel éditeur, avec la question exacte à se poser pour chacun",
+    "sources_a_verifier": []
   },
   {
     "slug": "chatbot-wordpress",
     "titre": "Chatbot WordPress",
-    "mot_cle": "chatbot WordPress",
-    "angle": "installer un chatbot sur WordPress : plugin dédié vs une seule ligne de code dans le footer, pièges du cache et des thèmes, compatibilité Elementor et autres constructeurs"
+    "requete": "chatbot WordPress",
+    "intention": "Tutorielle : installer un chatbot sur un site WordPress.",
+    "probleme": "Plugin dédié (poids, maintenance, conflits) ou simple snippet ? Les guides sont contradictoires et le cache ou le thème peuvent bloquer l'affichage.",
+    "requetes_secondaires": [
+      "installer chatbot wordpress",
+      "plugin chatbot wordpress",
+      "chatbot elementor"
+    ],
+    "questions": [
+      "Plugin ou ligne de code sur WordPress ?",
+      "Le cache peut-il empêcher l'affichage du chatbot ?",
+      "Est-ce compatible Elementor ?"
+    ],
+    "notions": [
+      "les 3 méthodes d'insertion (extension d'injection, widget de thème, footer)",
+      "pièges du cache et du chargement différé",
+      "tester sur une page d'essai avant"
+    ],
+    "page_cible": "combien-de-temps-installer-chatbot-ia.html",
+    "apport": "la marche d'installation pas à pas sur WordPress selon l'accès disponible, avec les 2 pièges classiques (cache, chargement différé) et leur contournement",
+    "sources_a_verifier": []
   },
   {
     "slug": "chatbot-taux-de-conversion",
     "titre": "Chatbot et taux de conversion",
-    "mot_cle": "chatbot taux de conversion",
-    "angle": "les mécanismes par lesquels un chatbot fait monter la conversion : réponse immédiate, qualification avant le contact, capture des visiteurs hésitants, RDV en automatique"
+    "requete": "chatbot taux de conversion",
+    "intention": "Informationnelle : comprendre par quels mécanismes un chatbot fait monter la conversion avant d'investir.",
+    "probleme": "Les promesses marketing sont partout, aucun mécanisme n'est expliqué, impossible de savoir quoi mesurer.",
+    "requetes_secondaires": [
+      "chatbot augmente la conversion",
+      "roi chatbot site web",
+      "pourquoi un chatbot convertit"
+    ],
+    "questions": [
+      "Par quel mécanisme un chatbot augmente-t-il la conversion ?",
+      "Sur quels sites fonctionne-t-il le mieux ?",
+      "Comment mesurer l'effet chez soi ?"
+    ],
+    "notions": [
+      "réponse immédiate",
+      "qualification avant le contact",
+      "capture des visiteurs hésitants",
+      "prise de rendez-vous automatique",
+      "suivi en euros du tableau de bord"
+    ],
+    "page_cible": "chatbot-ia-ecommerce.html",
+    "apport": "les 4 mécanismes distingués un à un, chacun relié à un indicateur mesurable, avec le cas Edabos (1,4× de rendez-vous, +28 % de conversion) comme illustration vérifiable",
+    "sources_a_verifier": []
   },
   {
     "slug": "combien-de-leads-genere-un-chatbot",
     "titre": "Combien de leads génère un chatbot ?",
-    "mot_cle": "leads chatbot site web",
-    "angle": "la math simple : trafic × part de visiteurs intéressés × taux de capture ; attentes réalistes par niveau de trafic et exemples clients vérifiables"
+    "requete": "combien de leads génère un chatbot",
+    "intention": "Informationnelle : obtenir des attentes chiffrées réalistes.",
+    "probleme": "Personne ne donne de méthode de calcul, seulement des témoignages invérifiables.",
+    "requetes_secondaires": [
+      "leads chatbot par mois",
+      "combien de contacts captés avec un chatbot",
+      "roi chatbot"
+    ],
+    "questions": [
+      "Combien de leads pour 1 000 visiteurs ?",
+      "Quel taux de capture est réaliste ?",
+      "Comment chiffrer un lead en euros ?"
+    ],
+    "notions": [
+      "calcul : trafic × part de visiteurs intéressés × taux de capture",
+      "attentes par niveau de trafic (hypothèses affichées, pas des promesses)",
+      "valeur moyenne d'un client paramétrable dans le tableau de bord"
+    ],
+    "page_cible": "combien-coute-un-chatbot-ia.html",
+    "apport": "un calcul expliqué pas à pas avec un tableau d'attentes par niveau de trafic et la méthode pour le recalculer avec ses propres données",
+    "sources_a_verifier": []
   },
   {
     "slug": "chatbot-shopify",
     "titre": "Chatbot Shopify",
-    "mot_cle": "chatbot Shopify",
-    "angle": "répondre aux questions bloquantes de l'achat (livraison, tailles, retours, stock) au moment où elles se posent, installation sur un thème Shopify, cas client Edabos +28 % de conversion"
+    "requete": "chatbot Shopify",
+    "intention": "Commerciale puis tutorielle : un marchand Shopify veut répondre aux questions bloquantes de l'achat.",
+    "probleme": "Livraison, tailles, retours, stock : sans réponse au moment où elles se posent, ces questions font abandonner le panier.",
+    "requetes_secondaires": [
+      "chatbot shopify app",
+      "chatbot panier abandonné shopify",
+      "assistant ia boutique shopify"
+    ],
+    "questions": [
+      "Le chatbot peut-il répondre sur les délais de livraison ?",
+      "Peut-il répondre sur les retours ?",
+      "Où coller le code sur Shopify ?"
+    ],
+    "notions": [
+      "réponses à partir des pages publiées de la boutique",
+      "condition : l'information doit exister sur le site, sinon rappel",
+      "cas client vérifiable : Edabos, +28 % de taux de conversion"
+    ],
+    "page_cible": "chatbot-ia-ecommerce.html",
+    "apport": "les 6 questions qui font abandonner un panier, avec pour chacune la condition pour que l'assistant puisse y répondre, et l'installation sur un thème Shopify",
+    "sources_a_verifier": []
   },
   {
     "slug": "chatbot-wix-webflow-squarespace",
     "titre": "Chatbot sur Wix, Webflow ou Squarespace",
-    "mot_cle": "chatbot Wix",
-    "angle": "chaque plateforme a sa méthode d'installation : ce qui change, ce qui ne change pas, et pourquoi une seule ligne de code couvre les trois"
+    "requete": "chatbot Wix",
+    "intention": "Tutorielle : ajouter un chatbot sur l'une de ces trois plateformes.",
+    "probleme": "Chaque plateforme a sa méthode d'injection de code ; les guides sont contradictoires ou datés.",
+    "requetes_secondaires": [
+      "chatbot webflow",
+      "chatbot squarespace",
+      "ajouter un chatbot sur wix"
+    ],
+    "questions": [
+      "Où coller le code sur Wix ?",
+      "Webflow accepte-t-il les scripts personnalisés ?",
+      "Squarespace permet-il un chatbot ?"
+    ],
+    "notions": [
+      "zone d'injection de code de chaque plateforme",
+      "ce qui ne change pas : une seule ligne de code partout",
+      "vérifications avant publication"
+    ],
+    "page_cible": "combien-de-temps-installer-chatbot-ia.html",
+    "apport": "pour chacune des 3 plateformes, l'emplacement exact du réglage qui accepte la ligne de code et les 2 vérifications à faire avant de publier",
+    "sources_a_verifier": []
   },
   {
     "slug": "assistant-virtuel-chatbot-difference",
     "titre": "Assistant virtuel ou chatbot : différences",
-    "mot_cle": "assistant virtuel site web",
-    "angle": "chatbot à scénarios, assistant IA, agent conversationnel : définir clairement les termes et aider le lecteur à choisir selon son site et son budget"
+    "requete": "assistant virtuel site web",
+    "intention": "Informationnelle : comprendre les termes avant de choisir.",
+    "probleme": "Chatbot, assistant virtuel, agent conversationnel : les termes sont employés n'importe comment et le choix paraît opaque.",
+    "requetes_secondaires": [
+      "différence chatbot assistant virtuel",
+      "agent conversationnel définition",
+      "assistant ia site web"
+    ],
+    "questions": [
+      "Quelle différence entre chatbot et assistant virtuel ?",
+      "Lequel choisir pour un site vitrine ?",
+      "Un assistant IA apprend-il tout seul ?"
+    ],
+    "notions": [
+      "bot à scénarios figés vs assistant IA construit à partir du site",
+      "ce que change la construction automatique",
+      "choix selon le site et le budget"
+    ],
+    "page_cible": "/",
+    "apport": "un tableau de définitions sans jargon et un arbre de décision simple (trafic, budget, capacité à rédiger des scénarios) pour trancher en 5 minutes",
+    "sources_a_verifier": []
   },
   {
     "slug": "chatbot-multilingue",
     "titre": "Chatbot multilingue : parler à tous vos visiteurs",
-    "mot_cle": "chatbot multilingue site web",
-    "angle": "les visiteurs étrangers partent faute de réponse dans leur langue : détection automatique, limites des traductions manuelles, opportunité commerciale"
+    "requete": "chatbot multilingue site web",
+    "intention": "Informationnelle : gérer les visiteurs qui ne parlent pas la langue du site.",
+    "probleme": "Une part des visiteurs étrangers repart faute de réponse dans leur langue ; les traductions manuelles du site coûtent cher et vieillissent mal.",
+    "requetes_secondaires": [
+      "chatbot détection langue",
+      "site web clients étrangers",
+      "chatbot plusieurs langues"
+    ],
+    "questions": [
+      "Comment le chatbot détecte-t-il la langue du visiteur ?",
+      "Dans combien de langues peut-il répondre ?",
+      "Faut-il traduire le site pour autant ?"
+    ],
+    "notions": [
+      "détection automatique de la langue",
+      "réponse dans la langue du visiteur",
+      "limite honnête : le contenu source reste celui publié sur le site"
+    ],
+    "page_cible": "/",
+    "apport": "le parcours d'un visiteur étranger avant et après l'installation, ce que la détection automatique résout et ce qu'elle ne résout pas (les contenus absents du site)",
+    "sources_a_verifier": []
   }
 ]

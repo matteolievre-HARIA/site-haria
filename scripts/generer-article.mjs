@@ -114,6 +114,7 @@ Règles impératives :
 - Ne cite pas la concurrence avec des prix précis (sauf si le fait figure dans les données).
 - Style concret, phrases courtes, zéro remplissage, zéro formule d'introduction passe-partout.
 - La requête principale apparaît naturellement dans les 100 premiers mots et dans un titre de section, sans être rabachue dans chaque intertitre.
+- La requête est une suite de mots-clés, pas une phrase : ne la colle JAMAIS telle quelle dans un titre ou une phrase (« Pourquoi rédiger FAQ site web », « questions fréquentes site web reviennent »). Accorde-la en français correct, avec articles et prépositions (« Pourquoi rédiger la FAQ de votre site web »). Un intertitre doit se lire comme l'écrirait un rédacteur humain.
 Tu réponds UNIQUEMENT en JSON valide conforme au schéma demandé.`;
 
 const consigne = `Rédige un article de blog SEO qui résout le problème du lecteur.
@@ -389,7 +390,7 @@ const blocSources = sourcesHtml ? `Sources :\n                ${sourcesHtml}.` :
 const blocVoirAussi = voirAussiHtml ? `Voir aussi : ${voirAussiHtml}.` : "";
 const ligneSources = [blocSources, blocVoirAussi].filter(Boolean).join("\n                ");
 const blocFaq = article.faq.length
-  ? `            <h2>Questions fréquentes sur ${echapper(requete)}</h2>
+  ? `            <h2>Questions fréquentes</h2>
 ${article.faq.map((q) => `            <h3>${echapper(q.question)}</h3>
             <p>
                 ${echapper(q.reponse)}

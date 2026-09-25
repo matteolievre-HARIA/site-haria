@@ -13,6 +13,7 @@ const PAGES_HORS_CONTENU = new Set([
   "merci.html",
   "mentions-legales.html",
   "politique-confidentialite.html",
+  "guides.html",
 ]);
 
 // Inventaire automatique : scan des .html de la racine (les dossiers
@@ -97,4 +98,85 @@ export function rechercherConflits(requete, pages, annotations = {}) {
     }
   }
   return resultats.sort((a, b) => b.score - a.score);
+}
+
+// Page guides.html : liste de tous les guides publiés, reliée depuis le bas
+// de page de l'accueil. Elle donne à chaque article au moins un lien entrant
+// (sans elle, les nouveaux articles ne sont connus de Google que par le
+// sitemap). Régénérée à chaque publication par publier-article.mjs.
+export function genererPageGuides(racine) {
+  const guides = listerPages(racine).filter(
+    (p) => p.fichier !== "index.html" && p.fichier !== "guides.html"
+  );
+  const items = guides
+    .map(
+      (p) => `                <li>
+                    <a href="${p.fichier}">${p.titre}</a><br>
+                    ${p.description}
+                </li>`
+    )
+    .join("\n");
+  return `<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guides chatbot IA pour site web | Haria</title>
+    <meta name="description" content="Tous les guides Haria sur le chatbot IA pour site web : prix, installation, RGPD, SEO, comparatifs et cas d’usage par métier.">
+    <link rel="canonical" href="https://haria-chatbot.com/guides.html">
+    <meta name="theme-color" content="#6366f1">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Meta Pixel Code -->
+    <script src="meta-pixel.js" defer></script>
+    <!-- End Meta Pixel Code -->
+</head>
+<body>
+    <!-- Meta Pixel (fallback sans JavaScript) -->
+    <noscript><img height="1" width="1" style="display:none" alt=""
+    src="https://www.facebook.com/tr?id=1703498950762071&amp;ev=PageView&amp;noscript=1" /></noscript>
+    <!-- Page générée par scripts/lib-site.mjs (genererPageGuides) : ne pas modifier à la main -->
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <img src="logo.png" alt="Haria" class="logo-icon" width="50" height="50">
+                <span class="logo-text">Haria</span>
+            </a>
+            <div class="nav-actions">
+                <a href="/" class="btn btn-primary">&#8592; Retour au site</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="legal-main">
+        <div class="container">
+            <h1>Guides</h1>
+            <p>Nos guides sur le chatbot IA pour site web.</p>
+            <ul>
+${items}
+            </ul>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Haria. Tous droits réservés.</p>
+                <p>
+                    <a href="mentions-legales.html">Mentions légales</a> ·
+                    <a href="politique-confidentialite.html">Politique de confidentialité</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+`;
 }

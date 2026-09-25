@@ -2,7 +2,7 @@
 //
 // Convention de nommage : AAAA-MM-JJ_slug.html (la date fixe l'ordre de
 // publication). Le fichier est déplacé à la racine du site sous `slug.html`,
-// puis ajouté au sitemap. L'accueil et son pied de page restent inchangés.
+// ajouté à la page guides.html (régénérée) puis au sitemap. L'accueil et son pied de page restent inchangés.
 //
 // Contrôles effectués avant publication (bloquants) :
 // - title, meta description et canonical présents, canonical = URL publiée ;
@@ -27,7 +27,7 @@
 import { readdirSync, readFileSync, writeFileSync, renameSync, existsSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { listerPages, lireAnnotations, rechercherConflits } from "./lib-site.mjs";
+import { listerPages, lireAnnotations, rechercherConflits, genererPageGuides } from "./lib-site.mjs";
 
 const racine = join(dirname(fileURLToPath(import.meta.url)), "..");
 const file = join(racine, "_articles", "file");
@@ -117,7 +117,7 @@ if (description && (description.length < 110 || description.length > 160)) avert
 // (l'inventaire de contenu ou une page utilitaire : mentions, 404, etc.).
 const pages = listerPages(racine);
 const fichiersPublies = new Set(pages.map((p) => p.fichier));
-fichiersPublies.add("404.html").add("merci.html").add("mentions-legales.html").add("politique-confidentialite.html");
+fichiersPublies.add("404.html").add("merci.html").add("mentions-legales.html").add("politique-confidentialite.html").add("guides.html");
 const hrefs = [...contenu.matchAll(/<a href="([^"]*)"/g)].map((m) => m[1]);
 for (const h of hrefs) {
   if (h.startsWith("#") || h.startsWith("/#") || h === "/") continue;
@@ -202,7 +202,11 @@ if (modeVerifier) {
 console.log(dry ? "[dry] déplacerait" : "Déplacement de", `${nomFichier} → ${slug}.html`);
 if (!dry) renameSync(join(racine, nomFichier), join(racine, slug + ".html"));
 
-// ---- 4. Sitemap (sans insertion de lien dans l'accueil) ---------------------
+// ---- 4. Page guides.html (seul lien entrant garanti vers l'article) ---------
+ecrire("guides.html", genererPageGuides(racine));
+console.log(dry ? "[dry] régénérerait guides.html" : "guides.html régénérée");
+
+// ---- 5. Sitemap (sans insertion de lien dans l'accueil) ---------------------
 let sitemap = lire("sitemap.xml");
 const entree = `  <url>
     <loc>${url}</loc>

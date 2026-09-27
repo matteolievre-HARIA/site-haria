@@ -51,18 +51,52 @@
    signatures sont calees sur la meme hauteur de casse ; SIXT, tres compact,
    a droit a un peu plus de hauteur pour peser autant que les autres. */
 .brand-section-one .brand-img img {
-  max-width: 200px;
-  max-height: 30px;
+  position: relative;
+  z-index: 1;
+  max-width: 150px;
+  max-height: 26px;
   width: auto;
   height: auto;
   object-fit: contain;
 }
-.brand-section-one .brand-img img[src*="sixt"] { max-height: 36px; }
-/* Pastille du bandeau : celle du template (123 px de haut) depleassait sur
-   ordinateur, les logos de 30 px se noyaient au centre. On resserre a 88 px,
-   meme ratio qu'au telephone (70 px de pastille pour 26 px de logo).
-   Telephone et tablette re-servent leurs tailles plus bas dans ce fichier. */
-.brand-section-one .brand-img { height: 88px; }
+.brand-section-one .brand-img img[src*="sixt"] { max-height: 32px; }
+
+/* ---------- Pastilles en verre liquide ----------
+   Verre seul : ni halo derriere le bandeau ni ombre portee. Bords du
+   bandeau fondus au lieu d'une coupe nette. Bande resserree (le
+   .section-padding du template donnait 120 px de chaque cote). */
+.brand-section-one.section-padding { padding: 56px 0; }
+.brand-section-one .marquee {
+  padding: 4px 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+}
+.brand-section-one .brand-img {
+  position: relative;
+  overflow: hidden;
+  width: 250px;
+  height: 76px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.12) 55%, rgba(255, 255, 255, 0.32) 100%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+          backdrop-filter: blur(16px) saturate(180%);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.95),
+    inset 0 -1px 1px rgba(21, 23, 26, 0.06),
+    inset 0 0 22px rgba(255, 255, 255, 0.45);
+}
+/* Reflet speculaire : une lueur en haut a gauche, comme une goutte. */
+.brand-section-one .brand-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 55% at 22% 0%, rgba(255, 255, 255, 0.85), transparent 70%),
+    radial-gradient(40% 40% at 85% 100%, rgba(255, 255, 255, 0.35), transparent 70%);
+}
 
 /* ---------- Photos des temoignages ---------- */
 .testimonial-box-items .client-info .thumb img {
@@ -781,11 +815,12 @@ body { color: var(--hp-ink-soft); }
 
   /* ---------- Bandeau de logos : format telephone ----------
      Des pastilles de 285 px sur un ecran de 390, on n'en voyait qu'une et demie. */
-  .brand-section-one .brand-img { width: 140px; height: 60px; }
+  .brand-section-one.section-padding { padding: 44px 0; }
+  .brand-section-one .brand-img { width: 150px; height: 52px; }
   .brand-section-one .marquee { --duration: 24s; gap: 14px; }
   .brand-section-one .marquee .marquee-group { gap: 14px; }
-  .brand-section-one .brand-img img { max-width: 105px; max-height: 21px; }
-  .brand-section-one .brand-img img[src*="sixt"] { max-height: 30px; }
+  .brand-section-one .brand-img img { max-width: 96px; max-height: 19px; }
+  .brand-section-one .brand-img img[src*="sixt"] { max-height: 26px; }
 
   /* ---------- Avis : titre decolle ----------
      Le template annule la marge sous le titre de section en dessous de
@@ -994,8 +1029,9 @@ body { color: var(--hp-ink-soft); }
   /* ---------- Bandeau de logos : pastilles plus petites ----------
      Les logos gardent leur taille ; seule la pastille se resserre. IDLIFT,
      plus massif que les autres, perd un peu de hauteur. */
-  .brand-section-one .brand-img { width: 140px; height: 60px; }
-  .brand-section-one .brand-img img[src*="idlift"] { max-height: 19px; }
+  .brand-section-one.section-padding { padding: 36px 0; }
+  .brand-section-one .brand-img { width: 142px; height: 48px; }
+  .brand-section-one .brand-img img[src*="idlift"] { max-height: 17px; }
 
   /* ---------- Avis : meme air au-dessus et au-dessous des cartes ----------
      Titre -> cartes : 34 px ; cartes -> bas de section : 60 px. On aligne

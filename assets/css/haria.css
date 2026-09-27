@@ -1687,3 +1687,11 @@ body { color: var(--hp-ink-soft); }
           backdrop-filter: blur(20px) saturate(180%);
   box-shadow: 0 1px 0 rgba(21, 23, 26, 0.06);
 }
+
+/* ---------- Pied de page : angles alignes sur les cartes ----------
+   12 px du template → 32 px (24 px au telephone), la carte etant plus
+   grande que les autres. */
+.footer-area { border-radius: 32px; }
+@media (max-width: 575px) {
+  .footer-area { border-radius: 24px; }
+}

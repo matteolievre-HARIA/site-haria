@@ -1592,3 +1592,98 @@ body { color: var(--hp-ink-soft); }
   .footer-widget-wrapper .footer-widget-items .gt-list-area li:not(:last-child) { margin-bottom: 7px; }
   .footer-widget-items .gt-list-area a { padding-block: 2px; }
 }
+
+/* =====================================================================
+   Passe « premium » (essai du 27/09/2026)
+   Tout est dans ce bloc : le supprimer suffit a revenir en arriere.
+   ===================================================================== */
+
+/* ---------- Fond de page un peu plus clair ---------- */
+:root { --body: #F4F5F8; }
+
+/* ---------- Rythme des fonds ----------
+   Gris clair (logos, fonctionnement) → blanc (etapes) → nuages violets
+   (avis, inchanges) → gris + lueur violette (tarifs) → blanc (FAQ) →
+   pied de page sombre. Les bandes blanches s'estompent en haut et en bas :
+   pas de ligne de coupure. */
+.how-it-section,
+.faq-section {
+  background: linear-gradient(180deg,
+    rgba(255, 255, 255, 0) 0,
+    #fff 160px,
+    #fff calc(100% - 160px),
+    rgba(255, 255, 255, 0) 100%);
+}
+.pricing-section {
+  background:
+    radial-gradient(50% 38% at 50% 0%, rgba(167, 139, 250, 0.16), transparent 70%),
+    radial-gradient(35% 30% at 50% 100%, rgba(167, 139, 250, 0.08), transparent 70%);
+}
+
+/* ---------- Cartes ----------
+   Plus de liseré blanc de 2 px ni d'ombre dure : un anneau quasi invisible,
+   une ombre tres diffuse, des angles plus ronds. */
+.service-box-items,
+.how-it-items li,
+.testimonial-box-items,
+.faq-items-1 .accordion-box .block {
+  border: 0;
+  border-radius: 24px;
+  box-shadow:
+    0 0 0 1px rgba(21, 23, 26, 0.05),
+    0 1px 2px rgba(21, 23, 26, 0.04),
+    0 12px 32px -18px rgba(21, 23, 26, 0.14);
+  transition: transform 0.4s var(--cube-3), box-shadow 0.4s var(--cube-3);
+}
+/* Sur les bandes blanches, les cartes prennent le gris tres clair : sinon
+   blanc sur blanc. */
+.how-it-items li { background: #FAFAFC; }
+.faq-items-1 .accordion-box .block { background: #FAFAFC; }
+.service-box-items .thumb,
+.service-box-items .thumb img { border-radius: 14px; }
+
+/* Survol : la carte se souleve legerement (pas les avis, qui defilent). */
+@media (hover: hover) {
+  .service-box-items:hover,
+  .how-it-items li:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 0 0 1px rgba(21, 23, 26, 0.05),
+      0 2px 4px rgba(21, 23, 26, 0.04),
+      0 24px 48px -24px rgba(21, 23, 26, 0.22);
+  }
+  .faq-items-1 .accordion-box .block:hover {
+    box-shadow:
+      0 0 0 1px rgba(124, 58, 237, 0.14),
+      0 1px 2px rgba(21, 23, 26, 0.04),
+      0 16px 36px -20px rgba(21, 23, 26, 0.18);
+  }
+}
+
+/* ---------- Apercu du widget (etapes) ----------
+   L'image embarque un cadre gris et une marge blanche, peints pour
+   l'ancien fond gris : sur la bande blanche ils faisaient double cadre.
+   On les rogne (60 px sur 960 x 1080) pour ne garder que la zone violette. */
+.how-it-image { clip-path: inset(5.6% 6.3% round 22px); }
+
+/* ---------- FAQ : boutons + plus legers ----------
+   Rond noir plein → pastille violette tres pale ; le degrade violet du
+   template reste pour la question ouverte. */
+.faq-items-1 .accordion-box .block .acc-btn .icon {
+  background: rgba(124, 58, 237, 0.08);
+  color: var(--theme);
+}
+.faq-items-1 .accordion-box .block .acc-btn.active .icon { color: #fff; }
+
+/* ---------- Titres de section plus serres ---------- */
+.section-title h2,
+.section-title-area h2 { letter-spacing: -0.025em; }
+
+/* ---------- En-tete en verre depoli ----------
+   Il est fixe : le contenu passe dessous, flou. */
+.header-section {
+  background: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+          backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 1px 0 rgba(21, 23, 26, 0.06);
+}

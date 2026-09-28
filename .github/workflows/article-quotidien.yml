@@ -5,7 +5,8 @@
 #    (faits produit issus de llms.txt, validation stricte à la sortie).
 # 2. Le plus ancien article de la file est publié : déplacement à la racine,
 #    ajout au sitemap sans modifier le pied de page de l'accueil, commit,
-#    push — Render redéploie automatiquement.
+#    push — le VPS récupère le commit en 5 min au plus (cron qui lance
+#    landing-deploy, voir deploy/README.md).
 # 3. File ET sujets vides : échec visible (pensez à alimenter sujets.json).
 #
 # Prérequis : secret OPENAI_API_KEY (dépôt → Settings → Secrets and

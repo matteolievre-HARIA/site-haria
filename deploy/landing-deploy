@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+# Met à jour le site sur le VPS depuis GitHub (branche main).
+# Sur le serveur : /usr/local/sbin/landing-deploy
+#
+# - Lancé toutes les 5 min par le cron de l'utilisateur ubuntu.
+# - « landing-deploy » (avec ou sans sudo) force une vérification immédiate.
+# - Ne fait rien si origin/main n'a pas bougé. Verrou : jamais deux à la fois.
+# - Journal : journalctl -t haria-chatbot-deploy
+set -euo pipefail
+
+DEPOT=/var/www/haria-chatbot
+BRANCHE=main
+UTILISATEUR=ubuntu
+VERROU=/run/lock/haria-chatbot-deploy.lock
+ETIQUETTE=haria-chatbot-deploy
+
+# Toujours en tant que ubuntu, propriétaire du clone (sinon git refuse le
+# dépôt, ou des fichiers passent à root).
+if [ "$(id -un)" != "$UTILISATEUR" ]; then
+    exec sudo -u "$UTILISATEUR" -- "$0" "$@"
+fi
+
+# Journal système + écran quand on le lance à la main.
+journal() {
+    logger -t "$ETIQUETTE" -- "$*"
+    if [ -t 1 ]; then echo "$*"; fi
+}
+trap 'journal "ÉCHEC (ligne $LINENO) : voir la commande ci-dessus"' ERR
+
+umask 022
+exec 9>"$VERROU"
+if ! flock -n 9; then
+    journal "Mise à jour déjà en cours, rien à faire."
+    exit 0
+fi
+
+cd "$DEPOT"
+git fetch --quiet origin "$BRANCHE"
+AVANT=$(git rev-parse HEAD)
+APRES=$(git rev-parse "origin/$BRANCHE")
+
+if [ "$AVANT" = "$APRES" ]; then
+    if [ -t 1 ]; then echo "Déjà à jour (${AVANT:0:7})."; fi
+    exit 0
+fi
+
+git reset --hard --quiet "origin/$BRANCHE"
+journal "Mis à jour ${AVANT:0:7} -> ${APRES:0:7} : $(git log -1 --format=%s)"

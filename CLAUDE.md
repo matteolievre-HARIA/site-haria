@@ -1,7 +1,11 @@
 # Site Haria — landing
 
-Site statique (pas de build). Déployé sur Render depuis la branche `main`,
-racine du dépôt publiée telle quelle. En ligne : https://haria-chatbot.com
+Site statique (pas de build). En ligne : https://haria-chatbot.com, servi
+par Nginx sur le VPS OVH derrière Cloudflare (depuis le 29/09/2026 ; Render
+gardé en secours jusqu'au 01/10). Le VPS récupère `main` toutes les 5 min.
+Config Nginx, script de mise à jour, contrôles et retour arrière :
+`deploy/README.md`. Les en-têtes HTTP se règlent dans
+`deploy/nginx/haria-chatbot.conf` (plus dans `render.yaml`).
 
 ## Structure
 
@@ -11,8 +15,7 @@ racine du dépôt publiée telle quelle. En ligne : https://haria-chatbot.com
   `main.css`** : toutes nos surcharges vont dans `assets/css/haria.css`, qui
   est chargé après et gagne donc à spécificité égale.
 - `assets/js/haria.js` — nos comportements (ancres, bascule tarifs).
-  `assets/js/globe.js` + `world-map.json` — le globe de la section
-  Fonctionnement. `assets/js/main.js` — celui du template, modifié à deux
+  `assets/js/main.js` — celui du template, modifié à deux
   endroits seulement (animations GSAP passées en `gsap.matchMedia()`).
 - `backup/` — sections retirées du site, avec la marche à suivre pour les
   remettre. Interdit dans `robots.txt`.

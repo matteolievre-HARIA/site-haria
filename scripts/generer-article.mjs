@@ -321,6 +321,11 @@ let retours = [];
 for (let essai = 1; essai <= 4 && !article; essai++) {
   if (essai > 1) console.log(`Tentative ${essai}/4 après refus : ${retours.join(" ; ")}`);
   const candidat = dry ? exempleTest : await appelAPI(retours);
+  // Le modèle écrit souvent « /page.html » au lieu de « page.html » : même
+  // page, on remet la forme relative attendue plutôt que de refuser.
+  if (typeof candidat?.corps === "string") {
+    candidat.corps = candidat.corps.replace(/<a href="\/([a-z0-9-]+\.html)"/g, '<a href="$1"');
+  }
   const problemes = valider(candidat);
   journalTentatives.push({ essai, problemes });
   if (problemes.length === 0) {
